@@ -108,56 +108,66 @@
 {% endfor %}
                     </div>
                     <div class="product_description-element">
-                      <h2 class="heading-style-h5">Pourquoi choisir nos clémentines corses ?</h2>
-                      <div class="description_element-rich-text w-richtext">
-                        <p class="text-rich-text">Récoltées à la main, à parfaite maturité, sans aucun traitement avant ou après la récolte, ces clémentines bénéficient d’un climat unique entre mer et montagne. Issues d’une agriculture biologique familiale, elles sont riches en vitamine C et offrent un équilibre parfait entre douceur et acidité. </p>
-                        <p>‍</p>
-                        <p class="text-rich-text"> Idéales à croquer, en jus ou en dessert.</p>
-                        <figure style="max-width:1252pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
-                          <div><img src="{{ 'hugo-tracteur.avif' | asset_url }}" loading="lazy" alt=""></div>
-                        </figure>
-                        <p>Nos clémentines corses sont livrées directement depuis nos vergers sans passage en chambre froide. Ce transport préserve leur fraîcheur naturelle et leur texture juteuse, permettant à chaque fruit d’offrir toutes ses qualités gustatives et nutritionnelles. Ce procédé vous garantit un produit qui respecte son terroir, riche en saveurs, sain, et prêt à être dégusté dès son arrivée.</p>
-                      </div>
+                      <h2 class="heading-style-h5">
+{{ section.settings.text_pourquoi_titre }}
+</h2>
+                      <div class="description_element-rich-text w-richtext"> {{ section.settings.richtext_pourquoi_rich_text }} </div>
                     </div>
                     <div class="product_description-element is-second">
                       <div>
-                        <h2 class="text-font-body text-size-medium">Avantage du produit</h2>
+                        <h2 class="text-font-body text-size-medium">
+{{ section.settings.text_avantage_titre }}
+</h2>
                         <ul role="list" class="product_description-list w-list-unstyled">
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Vrai clementine pour un goût sucré et concentré</div>
+                            <div>
+{{ section.settings.text_avantage_item_1 }}
+</div>
                           </li>
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Récolte à la main pour une qualité optimale</div>
+                            <div>
+{{ section.settings.text_avantage_item_2 }}
+</div>
                           </li>
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Aucun traitement chimique, naturel et sain</div>
+                            <div>
+{{ section.settings.text_avantage_item_2 }}
+</div>
                           </li>
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Sans pépins et facile à éplucher</div>
+                            <div>
+{{ section.settings.text_avantage_item_3 }}
+</div>
                           </li>
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Fraîcheur garantie, sans chambre froide</div>
+                            <div>
+{{ section.settings.text_avantage_item_4 }}
+</div>
                           </li>
                         </ul>
-                      </div><img src="{{ 'clementines.avif' | asset_url }}" loading="lazy" alt="" class="image-style-full-width image-cover-full aspect-ratio-292x220 border-radius-4">
+                      </div>{% if section.settings.image_avantage_image %}
+{{ section.settings.image_avantage_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'image-style-full-width image-cover-full aspect-ratio-292x220 border-radius-4' }}
+{% else %}
+<img src="{{ 'clementines.avif' | asset_url }}" loading="lazy" alt="" class="image-style-full-width image-cover-full aspect-ratio-292x220 border-radius-4">
+{% endif %}
                     </div>
                     <div class="product_description-element is-producteurs">
-                      <h2 class="text-font-body text-size-medium">Conseils de préparation</h2>
+                      <h2 class="text-font-body text-size-medium">Producteur & Origine</h2>
                       <p>Ferme & Région : Domaine de La Taste</p>
                       <div class="producteurs_tag-wrapper">
                         <div class="product-tag">Bio</div>
@@ -165,35 +175,57 @@
                     </div>
                     <div class="product_description-element is-producteurs">
                       <div>
-                        <h2 class="text-font-body text-size-medium">Conseils de préparation</h2>
+                        <h2 class="text-font-body text-size-medium">
+{{ section.settings.text_conseil_titre }}
+</h2>
                         <ul role="list" class="product_description-list w-list-unstyled">
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Vrai clementine pour un goût sucré et concentré</div>
+                            <div>
+{{ section.settings.text_conseil_1 }}
+</div>
                           </li>
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Récolte à la main pour une qualité optimale</div>
+                            <div>
+{{ section.settings.text_conseil_2 }}
+</div>
                           </li>
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Aucun traitement chimique, naturel et sain</div>
+                            <div>
+{{ section.settings.text_conseil_3 }}
+</div>
                           </li>
                           <li class="product_description-list-item">
                             <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
                               </svg></div>
-                            <div>Aucun traitement chimique, naturel et sain</div>
+                            <div>
+{{ section.settings.text_conseil_4 }}
+</div>
                           </li>
                         </ul>
                       </div>
-                      <div class="product_description-image-grid"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product_description-image"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product_description-image"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product_description-image"></div>
+                      <div class="product_description-image-grid">{% if section.settings.image_conseil_image_1 %}
+{{ section.settings.image_conseil_image_1 | image_url: width: 1000 | image_tag: class: 'product_description-image', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
+{% else %}
+<img class="product_description-image" src="{{ 'clementines-2.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
+{% endif %}{% if section.settings.image_conseil_image_2 %}
+{{ section.settings.image_conseil_image_2 | image_url: width: 1000 | image_tag: class: 'product_description-image', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
+{% else %}
+<img class="product_description-image" src="{{ 'clementines-2.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
+{% endif %}{% if section.settings.image_conseil_image_3 %}
+{{ section.settings.image_conseil_image_3 | image_url: width: 1000 | image_tag: class: 'product_description-image', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
+{% else %}
+<img class="product_description-image" src="{{ 'clementines-2.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
+{% endif %}</div>
                     </div>
                     <div class="product_description-element is-last">
                       <h2 class="text-font-body text-size-medium">Avis clients</h2>
@@ -201,7 +233,9 @@
                       <div class="product_description-testimonials">
                         <div class="product_description-testimonial">
                           <div class="product_description-testimonial-heading">
-                            <div class="text-weight-bold">John Doe</div>
+                            <div class="text-weight-bold">
+{{ section.settings.text_temoignage_1_titre }}
+</div>
                             <div class="hero_testimonial-stars-wrapper">
                               <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
@@ -219,14 +253,22 @@
                                   <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
                                 </svg></div>
                             </div>
-                          </div><img src="{{ 'hugo-tracteur.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1252px) 100vw, 1252px" srcset="{{ 'hugo-tracteur-p-500.avif' | asset_url }} 500w, {{ 'hugo-tracteur-p-800.avif' | asset_url }} 800w, {{ 'hugo-tracteur.avif' | asset_url }} 1252w" alt="" class="product_description-testimonial-image">
-                          <p>Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons</p>
+                          </div>{% if section.settings.image_temoignage_1_image %}
+{{ section.settings.image_temoignage_1_image | image_url: width: 1000 | image_tag: class: 'product_description-testimonial-image', sizes: '(max-width: 1252px) 100vw, 1252px', loading: 'lazy' }}
+{% else %}
+<img class="product_description-testimonial-image" src="{{ 'hugo-tracteur.avif' | asset_url }}" alt="" sizes="(max-width: 1252px) 100vw, 1252px" loading="lazy" srcset="{{ 'hugo-tracteur-p-500.avif' | asset_url }} 500w, {{ 'hugo-tracteur-p-800.avif' | asset_url }} 800w, {{ 'hugo-tracteur.avif' | asset_url }} 1252w">
+{% endif %}
+                          <p>
+{{ section.settings.text_temoignage_1_texte }}
+</p>
                         </div>
                         <div class="product_description-testimonials-column">
                           <div>
                             <div class="product_description-testimonial">
                               <div class="product_description-testimonial-heading">
-                                <div class="text-weight-bold">John Doe</div>
+                                <div class="text-weight-bold">
+{{ section.settings.text_temoignage_2_titre }}
+</div>
                                 <div class="hero_testimonial-stars-wrapper">
                                   <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                       <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
@@ -245,13 +287,17 @@
                                     </svg></div>
                                 </div>
                               </div>
-                              <p>Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons</p>
+                              <p>
+{{ section.settings.text_temoignage_2_texte }}
+</p>
                             </div>
                           </div>
                           <div>
                             <div class="product_description-testimonial">
                               <div class="product_description-testimonial-heading">
-                                <div class="text-weight-bold">John Doe</div>
+                                <div class="text-weight-bold">
+{{ section.settings.text_temoignage_3_titre }}
+</div>
                                 <div class="hero_testimonial-stars-wrapper">
                                   <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                       <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
@@ -270,7 +316,9 @@
                                     </svg></div>
                                 </div>
                               </div>
-                              <p>Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons</p>
+                              <p>
+{{ section.settings.text_temoignage_3_texte }}
+</p>
                             </div>
                           </div>
                         </div>
@@ -471,6 +519,139 @@
         }
     ],
     "settings": [
+        {
+            "id": "text_pourquoi_titre",
+            "type": "text",
+            "label": "Pourquoi - Titre",
+            "default": "Pourquoi choisir nos cl\u00e9mentines corses ?"
+        },
+        {
+            "id": "richtext_pourquoi_rich_text",
+            "type": "richtext",
+            "label": "Pourquoi - Rich Text",
+            "default": "<p>\n                        R\u00e9colt\u00e9es \u00e0 la main, \u00e0 parfaite maturit\u00e9, sans aucun traitement avant ou apr\u00e8s la r\u00e9colte, ces cl\u00e9mentines b\u00e9n\u00e9ficient d\u2019un climat unique entre mer et montagne. Issues d\u2019une agriculture biologique familiale, elles sont riches en vitamine C et offrent un \u00e9quilibre parfait entre douceur et acidit\u00e9.\u2028\n                        \u200d\n                        \u2028Id\u00e9ales \u00e0 croquer, en jus ou en dessert.\n                        \n               <\/p>"
+        },
+        {
+            "id": "text_avantage_titre",
+            "type": "text",
+            "label": "Avantage - Titre",
+            "default": "Avantage du produit"
+        },
+        {
+            "id": "text_avantage_item_1",
+            "type": "text",
+            "label": "Avantage - Item 1",
+            "default": "Vrai clementine pour un go\u00fbt sucr\u00e9 et concentr\u00e9"
+        },
+        {
+            "id": "text_avantage_item_2",
+            "type": "text",
+            "label": "Avantage - Item 2",
+            "default": "R\u00e9colte \u00e0 la main pour une qualit\u00e9 optimale"
+        },
+        {
+            "id": "text_avantage_item_3",
+            "type": "text",
+            "label": "Avantage - Item 3",
+            "default": "Sans p\u00e9pins et facile \u00e0 \u00e9plucher"
+        },
+        {
+            "id": "text_avantage_item_4",
+            "type": "text",
+            "label": "Avantage - Item 4",
+            "default": "Fra\u00eecheur garantie, sans chambre froide"
+        },
+        {
+            "id": "image_avantage_image",
+            "type": "image_picker",
+            "label": "Avantage - Image"
+        },
+        {
+            "id": "text_conseil_titre",
+            "type": "text",
+            "label": "Conseil - Titre",
+            "default": "Conseils de pr\u00e9paration"
+        },
+        {
+            "id": "text_conseil_1",
+            "type": "text",
+            "label": "Conseil - 1",
+            "default": "Vrai clementine pour un go\u00fbt sucr\u00e9 et concentr\u00e9"
+        },
+        {
+            "id": "text_conseil_2",
+            "type": "text",
+            "label": "Conseil - 2",
+            "default": "R\u00e9colte \u00e0 la main pour une qualit\u00e9 optimale"
+        },
+        {
+            "id": "text_conseil_3",
+            "type": "text",
+            "label": "Conseil - 3",
+            "default": "Aucun traitement chimique, naturel et sain"
+        },
+        {
+            "id": "text_conseil_4",
+            "type": "text",
+            "label": "Conseil - 4",
+            "default": "Aucun traitement chimique, naturel et sain"
+        },
+        {
+            "id": "image_conseil_image_1",
+            "type": "image_picker",
+            "label": "Conseil - Image 1"
+        },
+        {
+            "id": "image_conseil_image_2",
+            "type": "image_picker",
+            "label": "Conseil - Image 2"
+        },
+        {
+            "id": "image_conseil_image_3",
+            "type": "image_picker",
+            "label": "Conseil - Image 3"
+        },
+        {
+            "id": "text_temoignage_1_titre",
+            "type": "text",
+            "label": "T\u00e9moignage 1 - Titre",
+            "default": "John Doe"
+        },
+        {
+            "id": "image_temoignage_1_image",
+            "type": "image_picker",
+            "label": "T\u00e9moignage 1 - Image"
+        },
+        {
+            "id": "text_temoignage_1_texte",
+            "type": "text",
+            "label": "T\u00e9moignage 1 - Texte",
+            "default": "Juste excellent ! Produits de qualit\u00e9 !\u2028C\u2019est toujours un plaisir d\u2019\u00e9changer lors des livraisons"
+        },
+        {
+            "id": "text_temoignage_2_titre",
+            "type": "text",
+            "label": "T\u00e9moignage 2 - Titre",
+            "default": "John Doe"
+        },
+        {
+            "id": "text_temoignage_2_texte",
+            "type": "text",
+            "label": "T\u00e9moignage 2 - Texte",
+            "default": "Juste excellent ! Produits de qualit\u00e9 !\u2028C\u2019est toujours un plaisir d\u2019\u00e9changer lors des livraisons"
+        },
+        {
+            "id": "text_temoignage_3_titre",
+            "type": "text",
+            "label": "T\u00e9moignage 3 - Titre",
+            "default": "John Doe"
+        },
+        {
+            "id": "text_temoignage_3_texte",
+            "type": "text",
+            "label": "T\u00e9moignage 3 - Texte",
+            "default": "Juste excellent ! Produits de qualit\u00e9 !\u2028C\u2019est toujours un plaisir d\u2019\u00e9changer lors des livraisons"
+        },
         {
             "id": "text_pas_dabonnement",
             "type": "text",
