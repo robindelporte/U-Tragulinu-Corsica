@@ -1,0 +1,55 @@
+<div class="padding-global">
+          <div class="padding-section-medium">
+            <div class="container-small">
+              <div class="newsletter_component-wrapper"><img src="{{ 'illu-newsletter-2.svg' | asset_url }}" loading="lazy" alt="" class="illustration_newsletter-2 hide-mobile-landscape">
+                <div class="newsletter_component">
+                  <h2 class="text-align-center">
+{{ section.settings.text_titre }}
+</h2>
+                  <div class="newsletter_form-block w-form">
+                    {% form 'customer', return_to: '/', class: 'newsletter_form' %}
+<div class="form_field-wrapper"><input class="form_input w-input" maxlength="256" name="contact[email]" data-name="Email" placeholder="{{ section.settings.placeholder_text }}" type="email" id="Email" required=""></div>
+                      <div li-object="form.errors | default_errors" class="text-size-regular">{{ form.errors | default_errors }}</div>
+                      <div id="w-node-_2ff536a4-ea02-a1ed-08a6-d4091c706873-1c706862" class="hide w-embed"><input type="hidden" name="contact[accepts_marketing]" value="false"></div><label id="w-node-_2ff536a4-ea02-a1ed-08a6-d4091c706874-1c706862" class="w-checkbox form_checkbox" name="contact[accepts_marketing]">
+                        <div class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox-icon"></div><input type="checkbox" name="Accepts-Marketing" id="Accepts-Marketing" data-name="Accepts Marketing" required="" style="opacity:0;position:absolute;z-index:-1"><span class="form_checkbox-label text-size-tiny w-form-label" for="Accepts-Marketing">
+{{ section.settings.text_checkbox }}
+</span>
+                      </label><input type="submit" data-wait="" id="w-node-_2ff536a4-ea02-a1ed-08a6-d4091c706878-1c706862" class="button w-button" value="S’inscrire">
+                    {% endform %}
+                    <div class="hide w-form-done">
+                      <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="hide w-form-fail">
+                      <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                  </div>
+                </div><img src="{{ 'illu-newsletter-1.svg' | asset_url }}" loading="lazy" alt="" class="illustration_newsletter hide-mobile-landscape">
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Newsletter",
+    "class": "section_newsletter",
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "Rejoignez le mouvement du <strong>vrai go\u00fbt Corse<\/strong>"
+        },
+        {
+            "id": "text_checkbox",
+            "type": "text",
+            "label": "Checkbox",
+            "default": "En vous inscrivant, vous acceptez de recevoir des messages de marketing. Affichez notre politique de confidentialit\u00e9 et nos conditions de service pour en savoir plus."
+        }
+    ],
+    "presets": [
+        {
+            "name": "Newsletter",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

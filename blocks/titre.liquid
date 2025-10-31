@@ -1,0 +1,26 @@
+<div li-block="Titre">
+                    
+                    
+                    <h2>
+                      <div>
+{{ block.settings.text_texte }}
+</div>
+                    </h2>
+                    
+                  
+                </div> {% schema %} {
+    "name": "Titre",
+    "settings": [
+        {
+            "id": "text_texte",
+            "type": "text",
+            "label": "Texte",
+            "default": "Notre histoire"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Titre"
+        }
+    ]
+} {% endschema %}

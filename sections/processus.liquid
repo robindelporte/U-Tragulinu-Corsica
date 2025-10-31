@@ -1,0 +1,42 @@
+<div class="padding-global">
+          <div class="padding-section-3-75">
+            <div class="container-large">
+              <div class="process_component">
+                <div class="process_heading">
+                  <h2>
+{{ section.settings.text_titre }}
+</h2>
+                </div>
+                <div class="process_image-wrapper">{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'process_image' }}
+{% else %}
+<img src="{{ 'process.svg' | asset_url }}" loading="lazy" alt="" class="process_image">
+{% endif %}</div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Processus",
+    "class": "section_process",
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "Un processus qui garantit"
+        },
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Processus",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

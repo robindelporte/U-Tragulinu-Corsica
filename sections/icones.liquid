@@ -1,0 +1,60 @@
+<div class="padding-global">
+          <div class="padding-section-small">
+            <div class="container-small">
+              <div class="icons_list">
+                {% for block in section.blocks %}
+    {% if block.type == "item" %}
+                    <div li-block="Item" class="icons_item">
+                                    {% if block.settings.image_image %}
+{{ block.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'icons_item-illustration' }}
+{% else %}
+<img src="{{ 'clementines.svg' | asset_url }}" loading="lazy" alt="" class="icons_item-illustration">
+{% endif %}
+                                    
+                  
+                                    <p class="heading-style-h5">
+{{ block.settings.text_texte }}
+</p>
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Ic\u00f4nes",
+    "class": "section_icons",
+    "blocks": [
+        {
+            "name": "Item",
+            "type": "item",
+            "settings": [
+                {
+                    "id": "image_image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id": "text_texte",
+                    "type": "text",
+                    "label": "Texte",
+                    "default": "Produits <br\/>100 % Corse"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Ic\u00f4nes",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "item"
+                }
+            ]
+        }
+    ]
+} {% endschema %}

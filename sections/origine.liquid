@@ -1,0 +1,114 @@
+<div class="padding-global">
+          <div class="padding-section-medium">
+            <div class="origine_component-wrapper">
+              <div class="container-xlarge">
+                <div class="origine_component">
+                  <div class="origine_heading">
+                    <h2>
+{{ section.settings.text_titre }}
+</h2>
+                  </div>
+                  <div class="origine_content">
+                    <div class="origine_step-line">
+                      <div class="origine_step">{% if section.settings.image_image_origine_1 %}
+{{ section.settings.image_image_origine_1 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'origine_image' }}
+{% else %}
+<img src="{{ 'partenaires.avif' | asset_url }}" loading="lazy" alt="" class="origine_image">
+{% endif %}
+                        <div class="text-style-tagline">
+{{ section.settings.text_texte_origine_1 }}
+</div>
+                      </div><img src="{{ 'illu-origine-1.svg' | asset_url }}" loading="lazy" alt="" class="origine_illustration">
+                      <div class="origine_step is-second">{% if section.settings.image_image_origine_2 %}
+{{ section.settings.image_image_origine_2 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'origine_image' }}
+{% else %}
+<img src="{{ 'partenaires.avif' | asset_url }}" loading="lazy" alt="" class="origine_image">
+{% endif %}
+                        <div class="text-style-tagline">
+{{ section.settings.text_texte_origine_2 }}
+</div>
+                      </div>
+                    </div><img src="{{ 'illu-origine-2.svg' | asset_url }}" loading="lazy" alt="" class="origine_illustration is-second"><img src="{{ 'illu-origine-3.svg' | asset_url }}" loading="lazy" alt="" class="origine_illustration is-mobile">
+                    <div class="origine_step-line">
+                      <div class="origine_step is-third">{% if section.settings.image_image_origine_3 %}
+{{ section.settings.image_image_origine_3 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'origine_image' }}
+{% else %}
+<img src="{{ 'partenaires.avif' | asset_url }}" loading="lazy" alt="" class="origine_image">
+{% endif %}
+                        <div class="text-style-tagline">
+{{ section.settings.text_texte_origine_3 }}
+</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="align-center">
+                    <a href="{{ section.settings.url_bouton_lien }}" class="button w-button"> {{ section.settings.text_bouton_texte }} </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Origine",
+    "class": "section_origine",
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "<strong>L\u2019origine <\/strong>de nos produits"
+        },
+        {
+            "id": "image_image_origine_1",
+            "type": "image_picker",
+            "label": "Image : Origine 1"
+        },
+        {
+            "id": "text_texte_origine_1",
+            "type": "text",
+            "label": "Texte : Origine 1",
+            "default": "S\u00e9l\u00e9ction de partenaires"
+        },
+        {
+            "id": "image_image_origine_2",
+            "type": "image_picker",
+            "label": "Image : Origine 2"
+        },
+        {
+            "id": "text_texte_origine_2",
+            "type": "text",
+            "label": "Texte : Origine 2",
+            "default": "R\u00e9colt\u00e9s &amp; produits en Corse"
+        },
+        {
+            "id": "image_image_origine_3",
+            "type": "image_picker",
+            "label": "Image : Origine 3"
+        },
+        {
+            "id": "text_texte_origine_3",
+            "type": "text",
+            "label": "Texte : Origine 3",
+            "default": "Directement \u00e0 votre table"
+        },
+        {
+            "id": "url_bouton_lien",
+            "type": "url",
+            "label": "Bouton : Lien"
+        },
+        {
+            "id": "text_bouton_texte",
+            "type": "text",
+            "label": "Bouton : Texte",
+            "default": "Nos partenaires &amp; leurs produits"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Origine",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

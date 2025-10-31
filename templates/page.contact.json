@@ -1,0 +1,29 @@
+{
+    "sections": {
+        "contact": {
+            "type": "contact"
+        },
+        "faq": {
+            "type": "faq",
+            "blocks": {
+                "faq-item": {
+                    "name": "FAQ Item",
+                    "type": "faq-item"
+                }
+            },
+            "block_order": [
+                "faq-item"
+            ]
+        },
+        "reseaux": {
+            "type": "reseaux"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "div.main-wrapper",
+    "order": [
+        "contact",
+        "faq",
+        "reseaux"
+    ]
+}

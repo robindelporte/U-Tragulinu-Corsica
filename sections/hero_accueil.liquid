@@ -1,0 +1,94 @@
+<div class="padding-global">
+          <div class="padding-section-hero">
+            <div class="container-xlarge">
+              <div class="hero-home_component">
+                <div li-content-for-theme-blocks="" class="hero-home_content-wrapper">
+{% content_for 'blocks' %}
+</div>
+                <div class="hero-home_image-wrapper">{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: class: 'hero-home_image', width: '619', sizes: '(max-width: 767px) 100vw, 619px', loading: 'lazy' }}
+{% else %}
+<img class="hero-home_image" src="{{ 'clementines-2.avif' | asset_url }}" width="619" alt="" sizes="(max-width: 767px) 100vw, 619px" loading="lazy" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
+{% endif %}</div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "div",
+    "name": "Hero Accueil",
+    "class": "section_hero-home",
+    "blocks": [
+        {
+            "type": "titre"
+        },
+        {
+            "type": "espace-small"
+        },
+        {
+            "type": "paragraphe-italique"
+        },
+        {
+            "type": "espace-small"
+        },
+        {
+            "type": "paragraphe"
+        },
+        {
+            "type": "espace-medium"
+        },
+        {
+            "type": "boutons"
+        },
+        {
+            "type": "espace-medium"
+        },
+        {
+            "type": "temoignage-accueil"
+        },
+        {
+            "type": "@app"
+        }
+    ],
+    "settings": [
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero Accueil",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "titre"
+                },
+                {
+                    "type": "espace-small"
+                },
+                {
+                    "type": "paragraphe-italique"
+                },
+                {
+                    "type": "espace-small"
+                },
+                {
+                    "type": "paragraphe"
+                },
+                {
+                    "type": "espace-medium"
+                },
+                {
+                    "type": "boutons"
+                },
+                {
+                    "type": "espace-medium"
+                },
+                {
+                    "type": "temoignage-accueil"
+                }
+            ]
+        }
+    ]
+} {% endschema %}

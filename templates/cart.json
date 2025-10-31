@@ -1,0 +1,26 @@
+{
+    "sections": {
+        "cart": {
+            "type": "cart",
+            "blocks": {
+                "bloc-vide": {
+                    "name": "Bloc vide",
+                    "type": "bloc-vide"
+                },
+                "bloc-vide-2": {
+                    "name": "Bloc vide 2",
+                    "type": "bloc-vide-2"
+                }
+            },
+            "block_order": [
+                "bloc-vide",
+                "bloc-vide-2"
+            ]
+        }
+    },
+    "layout": "theme",
+    "wrapper": "div.main-wrapper",
+    "order": [
+        "cart"
+    ]
+}

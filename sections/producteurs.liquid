@@ -1,0 +1,148 @@
+<style>.button.is-tab-button {
+  opacity: 60%;
+}
+.button.is-tab-button.is-active {
+  opacity: 100%;
+}
+</style>
+        <div class="padding-global">
+          <div class="padding-section-tabs">
+            <div class="container-large">
+              <div class="tabs_wrapper is-team">
+                <h3>
+{{ section.settings.text_titre }}
+</h3>
+                <div x-data="{tab: 1}" class="tabs_element is-etapes">
+                  <div li-for:inside="block in section.blocks" class="tabs_menu is-team">
+        {% for block in section.blocks %}                            {% if block.type == 'tab' %}    <button x-bind:class="tab === {{forloop.index}} ? 'is-active' : ''" x-on:click="tab = {{forloop.index}}" role="tab" aria-controls="panel-{{section.index}}-{{forloop.index}}" tabindex="0" id="tab-{{section.index}}-{{forloop.index}}" x-bind:aria-selected="tab === {{forloop.index}} ? 'true' : 'false'" li-if="block.type == 'tab'" class="button is-team-tab">
+    
+                      <div li-object="block.settings.text_tab_label">{{ block.settings.text_tab_label }}</div>
+                        </button>
+{% endif %}
+                    {% endfor %}    </div>
+                  <div class="tabs_body">
+                    {% for block in section.blocks %}
+    {% if block.type == "tab" %}
+                    <div id="panel-{{section.index}}-{{forloop.index}}" x-show="tab === {{forloop.index}}" aria-labelledby="tab-{{section.index}}-{{forloop.index}}" role="tabpanel" x-bind:aria-hidden="tab === {{forloop.index}} ? 'false' : 'true'" x-cloaks="" li-block="Tab" class="tabs_panel">
+                                    
+                      
+                                    <div class="tabs_panel-content is-team">
+                        <article class="tabs_panel-article">
+                          <div class="tabs_panel-article-heading">
+{{ block.settings.text_titre }}
+</div>
+                          <div class="rich-text-tabs w-richtext"> {{ block.settings.richtext_contenu }} </div>
+                        </article>
+                        <div class="tabs_panel-image-wrapper">{% if block.settings.image_image %}
+{{ block.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'tabs_panel-image' }}
+{% else %}
+<img loading="lazy" alt="" src="{{ 'partenaires.avif' | asset_url }}" class="tabs_panel-image">
+{% endif %}{% if block.settings.image_image_2 %}
+{{ block.settings.image_image_2 | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'tabs_panel-image' }}
+{% else %}
+<img loading="lazy" alt="" src="{{ 'reseaux-sociaux.avif' | asset_url }}" class="tabs_panel-image">
+{% endif %}</div>
+                      </div>
+                                    
+                      
+                                    <div class="hide">
+{{ block.settings.text_tab_label }}
+</div>
+                                    
+                    
+                            </div>
+            {% endif %}
+{% endfor %}
+                  </div>
+                </div>
+                <ul li-for:inside="block in section.blocks" x-data="{open: 1}" role="list" class="faq_list is-tabs">
+        {% for block in section.blocks %}                            
+                  
+                            <li :class="open === {{forloop.index}} ? 'is-active' : ''" role="button" tabindex="0" aria-controls="faq-body-{{forloop.index}}" x-on:click="open = (open === {{forloop.index}} ? 0 : {{forloop.index}}); $el.setAttribute('aria-expanded', open === {{forloop.index}} ? 'true' : 'false')" class="tabs_item is-active">
+                    <div class="faq_item-heading">
+                      <div li-object="block.settings.text_tab_label" class="heading-style-h4">{{ block.settings.text_tab_label }}</div>
+                      <div x-bind:style="open === {{ forloop.index }} ? 'transform: rotate(180deg)' : 'transform: rotate(0deg)'" class="faq_icon w-embed"><svg width="24" height="25" viewbox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <mask id="mask0_7620_8288" style="mask-type:alpha" maskunits="userSpaceOnUse" x="0" y="0" width="24" height="25">
+                            <rect y="0.859375" width="24" height="24" fill="#D9D9D9"></rect>
+                          </mask>
+                          <g mask="url(#mask0_7620_8288)">
+                            <path d="M11 13.7188H5V11.7188H11V5.71875H13V11.7188H19V13.7188H13V19.7188H11V13.7188Z" fill="currentColor"></path>
+                          </g>
+                        </svg></div>
+                    </div>
+                    <div id="faq-body-{{forloop.index}}" x-show="open === {{ forloop.index }}" x-collapse="" x-cloaks="" aria-labelledby="faq-heading-{{forloop.index}}" class="faq_item-body">
+                      <div class="tabs_panel-content is-team">
+                        <div class="tabs_panel-image-wrapper"><img id="w-node-_55026206-c7a8-1f9d-ad31-14fd7addd73a-d38b496b" li-object:src="block.settings.image_image | img_url: 'master'" alt="" src="{{ block.settings.image_image | img_url: 'master' }}" loading="lazy" class="tabs_panel-image"></div>
+                        <article class="tabs_panel-article">
+                          <div li-object="block.settings.text_titre" class="heading-style-h5 z-index-2">{{ block.settings.text_titre }}</div>
+                          <div li-object="block.settings.richtext_contenu" class="rich-text-tabs z-index-2 w-richtext">{{ block.settings.richtext_contenu }}</div>
+                        </article>
+                      </div>
+                    </div>
+                  </li>
+                            
+                
+                    {% endfor %}    </ul>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Producteurs",
+    "class": "section_tabs",
+    "blocks": [
+        {
+            "name": "Tab",
+            "type": "tab",
+            "settings": [
+                {
+                    "id": "text_titre",
+                    "type": "text",
+                    "label": "Titre",
+                    "default": "Le lancement"
+                },
+                {
+                    "id": "richtext_contenu",
+                    "type": "richtext",
+                    "label": "Contenu",
+                    "default": "<p>\n                            N\u00e9e sur les routes des march\u00e9s corses, l\u2019initiative remet les producteurs au centre de la table. Notre promesse : des produits s\u00e9lectionn\u00e9s avec respect des saisons et une relation directe, honn\u00eate, chaleureuse.\n                            \u200d\n                            Concr\u00e8tement, c\u00f4t\u00e9 public :\n                            \n                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr<\/p>"
+                },
+                {
+                    "id": "image_image",
+                    "type": "image_picker",
+                    "label": "image"
+                },
+                {
+                    "id": "image_image_2",
+                    "type": "image_picker",
+                    "label": "image-2"
+                },
+                {
+                    "id": "text_tab_label",
+                    "type": "text",
+                    "label": "Tab Label",
+                    "default": "This is some text inside of a div block."
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "\u00c9tapes clefs de l\u2019entreprise"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Producteurs",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "tab"
+                }
+            ]
+        }
+    ]
+} {% endschema %}

@@ -1,0 +1,498 @@
+<div li-render-custom-reinit="true" li-render-custom="wrapper" class="padding-global padding-section-small">
+          <div class="container-large">
+            <div class="product-header_component">
+              <div class="breadcrumbs_wrapper">
+                <a href="#" class="breadcrumbs_link">Accueil</a>
+                <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                    <path fill="currentColor" d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42"></path>
+                  </svg></div>
+                <a href="../shop/collection.html" class="breadcrumbs_link">Collection</a>
+                <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                    <path fill="currentColor" d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42"></path>
+                  </svg></div>
+                <div li-object:text="product.title" class="breadcrumbs_link is-current">
+{{ product.title }}
+</div>
+              </div>
+              <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-liquid-container" class="product-header_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})">
+                <div id="w-node-b052a8c4-be84-7016-decd-3fcc99595f1c-6283bfc9" class="product-header_left">
+                  <div class="hide-tablet">
+                    <div class="swiper-container is-product-gallery">
+                      <div class="product-header_slider-wrapper">
+                        <div class="swiper is-product-thumbnail">
+                          <div class="swiper-wrapper is-product-thumbnail">
+                            {% for image in product.images %}    <div li-for="image in product.images" class="swiper-slide is-product-thumbnail">
+                                    <img alt="{{ image.alt }}" src="{{ image.src | product_img_url: 'master' }}" li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" loading="lazy" class="product_thumbnail-image">
+                        </div>
+{% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper is-product-gallery">
+                        <div id="my-gallery" class="swiper-wrapper is-product-gallery">
+                          {% for image in product.images %}    <div li-for="image in product.images" class="swiper-slide is-product-gallery">
+                                    
+                            
+                            <div class="product-header_gallery-lightbox"><img alt="{{ image.alt }}" src="{{ image.src | product_img_url: 'master' }}" li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" loading="lazy" class="product-header_gallery-image"></div>
+                            
+                          
+                        </div>
+{% endfor %}
+                        </div>
+                        <div class="swiper_button-wrapper is-product-slider pointer-events-off z-index-1 hide-mobile-landscape">
+                          <a aria-label="Previous Slide" href="#" class="swiper_button swiper-prev pointer-events-on w-inline-block">
+                            <div class="swiper_button-icon is-reversed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
+                                <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)">
+                                  <path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path>
+                                  <line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line>
+                                </g>
+                              </svg></div>
+                          </a>
+                          <a aria-label="Next Slide" href="#" class="swiper_button swiper-next pointer-events-on w-inline-block">
+                            <div class="swiper_button-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
+                                <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)">
+                                  <path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path>
+                                  <line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line>
+                                </g>
+                              </svg></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="swiper-slide is-product-thumbnail is-active hide"></div>
+                    </div>
+                  </div>
+                  <div class="product_description-wrapper">
+                    <div class="product_description-component">
+                      <div class="product_description-nav">
+                        <a href="#" class="product_description-nav-item is-active w-inline-block">
+                          <div class="text-weight-medium">Présentation</div>
+                          <div class="product_description-nav-item-progress"></div>
+                        </a>
+                        <a href="#" class="product_description-nav-item w-inline-block">
+                          <div class="text-weight-medium">Avantages</div>
+                          <div class="product_description-nav-item-progress"></div>
+                        </a>
+                        <a href="#" class="product_description-nav-item w-inline-block">
+                          <div class="text-weight-medium">Producteur</div>
+                          <div class="product_description-nav-item-progress"></div>
+                        </a>
+                        <a href="#" class="product_description-nav-item w-inline-block">
+                          <div class="text-weight-medium">Conseils</div>
+                          <div class="product_description-nav-item-progress"></div>
+                        </a>
+                        <a href="#" class="product_description-nav-item w-inline-block">
+                          <div class="text-weight-medium">Avis</div>
+                          <div class="product_description-nav-item-progress"></div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="product_description-icon-list">
+                      {% for block in section.blocks %}
+    {% if block.type == "item" %}
+                    <div li-block="Item" class="product_description-icon">
+                                    {% if block.settings.image_image %}
+{{ block.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'product_description-icon-illustration' }}
+{% else %}
+<img src="{{ 'clementines.svg' | asset_url }}" loading="lazy" alt="" class="product_description-icon-illustration">
+{% endif %}
+                                    
+                        
+                                    <p class="text-font-heading text-size-small text-weight-bold">
+{{ block.settings.text_texte }}
+</p>
+                                    
+                      
+                            </div>
+            {% endif %}
+{% endfor %}
+                    </div>
+                    <div class="product_description-element">
+                      <h2 class="heading-style-h5">Pourquoi choisir nos clémentines corses ?</h2>
+                      <div class="description_element-rich-text w-richtext">
+                        <p class="text-rich-text">Récoltées à la main, à parfaite maturité, sans aucun traitement avant ou après la récolte, ces clémentines bénéficient d’un climat unique entre mer et montagne. Issues d’une agriculture biologique familiale, elles sont riches en vitamine C et offrent un équilibre parfait entre douceur et acidité. </p>
+                        <p>‍</p>
+                        <p class="text-rich-text"> Idéales à croquer, en jus ou en dessert.</p>
+                        <figure style="max-width:1252pxpx" class="w-richtext-align-fullwidth w-richtext-figure-type-image">
+                          <div><img src="{{ 'hugo-tracteur.avif' | asset_url }}" loading="lazy" alt=""></div>
+                        </figure>
+                        <p>Nos clémentines corses sont livrées directement depuis nos vergers sans passage en chambre froide. Ce transport préserve leur fraîcheur naturelle et leur texture juteuse, permettant à chaque fruit d’offrir toutes ses qualités gustatives et nutritionnelles. Ce procédé vous garantit un produit qui respecte son terroir, riche en saveurs, sain, et prêt à être dégusté dès son arrivée.</p>
+                      </div>
+                    </div>
+                    <div class="product_description-element is-second">
+                      <div>
+                        <h2 class="text-font-body text-size-medium">Avantage du produit</h2>
+                        <ul role="list" class="product_description-list w-list-unstyled">
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Vrai clementine pour un goût sucré et concentré</div>
+                          </li>
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Récolte à la main pour une qualité optimale</div>
+                          </li>
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Aucun traitement chimique, naturel et sain</div>
+                          </li>
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Sans pépins et facile à éplucher</div>
+                          </li>
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Fraîcheur garantie, sans chambre froide</div>
+                          </li>
+                        </ul>
+                      </div><img src="{{ 'clementines.avif' | asset_url }}" loading="lazy" alt="" class="image-style-full-width image-cover-full aspect-ratio-292x220 border-radius-4">
+                    </div>
+                    <div class="product_description-element is-producteurs">
+                      <h2 class="text-font-body text-size-medium">Conseils de préparation</h2>
+                      <p>Ferme & Région : Domaine de La Taste</p>
+                      <div class="producteurs_tag-wrapper">
+                        <div class="product-tag">Bio</div>
+                      </div><img src="{{ 'domaine-de-la-taste.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'domaine-de-la-taste-p-500.avif' | asset_url }} 500w, {{ 'domaine-de-la-taste-p-800.avif' | asset_url }} 800w, {{ 'domaine-de-la-taste.avif' | asset_url }} 1238w" alt="" class="image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full">
+                    </div>
+                    <div class="product_description-element is-producteurs">
+                      <div>
+                        <h2 class="text-font-body text-size-medium">Conseils de préparation</h2>
+                        <ul role="list" class="product_description-list w-list-unstyled">
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Vrai clementine pour un goût sucré et concentré</div>
+                          </li>
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Récolte à la main pour une qualité optimale</div>
+                          </li>
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Aucun traitement chimique, naturel et sain</div>
+                          </li>
+                          <li class="product_description-list-item">
+                            <div class="icon-1x1-10 w-embed"><svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="5" cy="5" r="5" fill="#FA5F2B"></circle>
+                              </svg></div>
+                            <div>Aucun traitement chimique, naturel et sain</div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="product_description-image-grid"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product_description-image"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product_description-image"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product_description-image"></div>
+                    </div>
+                    <div class="product_description-element is-last">
+                      <h2 class="text-font-body text-size-medium">Avis clients</h2>
+                      <div class="loox_parent"></div>
+                      <div class="product_description-testimonials">
+                        <div class="product_description-testimonial">
+                          <div class="product_description-testimonial-heading">
+                            <div class="text-weight-bold">John Doe</div>
+                            <div class="hero_testimonial-stars-wrapper">
+                              <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                </svg></div>
+                              <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                </svg></div>
+                              <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                </svg></div>
+                              <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                </svg></div>
+                              <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                </svg></div>
+                            </div>
+                          </div><img src="{{ 'hugo-tracteur.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1252px) 100vw, 1252px" srcset="{{ 'hugo-tracteur-p-500.avif' | asset_url }} 500w, {{ 'hugo-tracteur-p-800.avif' | asset_url }} 800w, {{ 'hugo-tracteur.avif' | asset_url }} 1252w" alt="" class="product_description-testimonial-image">
+                          <p>Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons</p>
+                        </div>
+                        <div class="product_description-testimonials-column">
+                          <div>
+                            <div class="product_description-testimonial">
+                              <div class="product_description-testimonial-heading">
+                                <div class="text-weight-bold">John Doe</div>
+                                <div class="hero_testimonial-stars-wrapper">
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                </div>
+                              </div>
+                              <p>Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons</p>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="product_description-testimonial">
+                              <div class="product_description-testimonial-heading">
+                                <div class="text-weight-bold">John Doe</div>
+                                <div class="hero_testimonial-stars-wrapper">
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                  <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                                    </svg></div>
+                                </div>
+                              </div>
+                              <p>Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-size-small text-weight-medium">
+                        <a href="#" class="text-color-orange text-style-underline">Tous nos avis</a> sur le produit
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="w-node-_004a3e7c-3466-3cbc-2082-5b8201101fe1-6283bfc9" class="product-header_product-details">
+                  <div class="hide-desktop">
+                    <div class="swiper-container is-product-gallery">
+                      <div class="product-header_slider-wrapper">
+                        <div class="swiper is-product-thumbnail">
+                          <div class="swiper-wrapper is-product-thumbnail">
+                            {% for image in product.images %}    <div li-for="image in product.images" class="swiper-slide is-product-thumbnail">
+                                    <img alt="{{ image.alt }}" src="{{ image.src | product_img_url: 'master' }}" li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" loading="lazy" class="product_thumbnail-image">
+                        </div>
+{% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper is-product-gallery">
+                        <div id="my-gallery" class="swiper-wrapper is-product-gallery">
+                          {% for image in product.images %}    <div li-for="image in product.images" class="swiper-slide is-product-gallery">
+                                    
+                            
+                            <div class="product-header_gallery-lightbox"><img alt="{{ image.alt }}" src="{{ image.src | product_img_url: 'master' }}" li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" loading="lazy" class="product-header_gallery-image"></div>
+                            
+                          
+                        </div>
+{% endfor %}
+                        </div>
+                        <div class="swiper_button-wrapper is-product-slider pointer-events-off z-index-1 hide-mobile-landscape">
+                          <a aria-label="Previous Slide" href="#" class="swiper_button swiper-prev pointer-events-on w-inline-block">
+                            <div class="swiper_button-icon is-reversed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
+                                <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)">
+                                  <path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path>
+                                  <line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line>
+                                </g>
+                              </svg></div>
+                          </a>
+                          <a aria-label="Next Slide" href="#" class="swiper_button swiper-next pointer-events-on w-inline-block">
+                            <div class="swiper_button-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
+                                <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)">
+                                  <path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path>
+                                  <line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line>
+                                </g>
+                              </svg></div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="swiper-slide is-product-thumbnail is-active hide"></div>
+                    </div>
+                  </div>
+                  <div class="product-header_heading">
+                    <div class="product_heading">
+                      <h1 li-object:text="product.title" class="heading-style-h3">
+{{ product.title }}
+</h1>
+                      <div class="loox_parent hide-designer"></div>
+                    </div>
+                    <div class="product-header_tag-wrapper">
+                      <div class="product-tag">Bio</div>
+                    </div>
+                  </div>
+                  <div class="product-header_price-wrapper">
+                    <div class="product-header_price">
+                      <div li-object="product.price | money" class="heading-style-h4">{{ product.price | money }}</div>
+                    </div>
+                    <p class="heading-style-h4">/ caisse (5kg)</p>
+                  </div>
+                  <div li-object="product.description" class="product_description w-richtext">{{ product.description }}</div>
+                  <div class="product-header_form-block w-form">
+                    {% form 'product', product, class: 'product-header_default-state' %}
+<div class="product_add-to-cart-wrapper">
+                        <div class="quantity_wrapper">
+                          <div class="quantity_holder">
+                            <a href="#" class="quantity_selector w-inline-block">
+                              <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                                  <path fill="currentColor" d="M19 12.998H5v-2h14z"></path>
+                                </svg></div>
+                            </a><input li-element="add-to-cart-quantity" class="mini-cart_line-item_quantity-adjust is-product" value="1" x-model="quantity">
+                            <a href="#" class="quantity_selector w-inline-block">
+                              <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                                  <path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"></path>
+                                </svg></div>
+                            </a>
+                          </div>
+                          <div class="product_description-fidelity-wrap">
+                            <div class="text-weight-medium">Gagnez <span class="fidelity_count">20</span> <span class="text-color-orange">points </span>de fidélité</div>
+                            <div data-tippy-content="1 € dépensés = 1 point fidélité. Points cumulables sur vos prochaines commandes.">
+                              <div class="icon-embed-xsmall w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <circle cx="12" cy="12" r="12" fill="#FA5F2B"></circle>
+                                  <circle cx="12" cy="12" r="7.5" stroke="#FFF3DE"></circle>
+                                  <path d="M11.5999 14.0197C11.5532 13.7064 11.5699 13.4297 11.6499 13.1897C11.7299 12.943 11.8399 12.723 11.9799 12.5297C12.1265 12.3297 12.2732 12.1397 12.4199 11.9597C12.5732 11.7797 12.7032 11.5997 12.8099 11.4197C12.9165 11.2397 12.9699 11.043 12.9699 10.8297C12.9699 10.6497 12.9332 10.4864 12.8599 10.3397C12.7865 10.193 12.6765 10.0764 12.5299 9.98969C12.3899 9.90302 12.2132 9.85969 11.9999 9.85969C11.7865 9.85969 11.5799 9.91302 11.3799 10.0197C11.1865 10.1197 11.0099 10.2597 10.8499 10.4397L10.3799 10.0097C10.5932 9.76969 10.8399 9.57302 11.1199 9.41969C11.4065 9.25969 11.7332 9.17969 12.0999 9.17969C12.4332 9.17969 12.7265 9.24635 12.9799 9.37969C13.2332 9.50635 13.4266 9.68969 13.5599 9.92969C13.6999 10.163 13.7699 10.4464 13.7699 10.7797C13.7699 11.0397 13.7165 11.2764 13.6099 11.4897C13.5032 11.6964 13.3699 11.8964 13.2099 12.0897C13.0565 12.2764 12.9065 12.4664 12.7599 12.6597C12.6132 12.8464 12.4965 13.0497 12.4099 13.2697C12.3232 13.4897 12.2932 13.7397 12.3199 14.0197H11.5999ZM11.9799 16.1197C11.8199 16.1197 11.6799 16.063 11.5599 15.9497C11.4465 15.8297 11.3899 15.6797 11.3899 15.4997C11.3899 15.3064 11.4465 15.153 11.5599 15.0397C11.6799 14.9197 11.8199 14.8597 11.9799 14.8597C12.1465 14.8597 12.2865 14.9197 12.3999 15.0397C12.5199 15.153 12.5799 15.3064 12.5799 15.4997C12.5799 15.6797 12.5199 15.8297 12.3999 15.9497C12.2865 16.063 12.1465 16.1197 11.9799 16.1197Z" fill="#FFF3DE"></path>
+                                </svg></div>
+                            </div>
+                          </div>
+                        </div>
+                        {% if product.selling_plan_groups.size > 0 %}    <div li-if="product.selling_plan_groups.size > 0">
+    
+                          <div li-for:inside="variant in product.variants">
+        {% for variant in product.variants %}                            
+                            
+                            <template x-if="{{ variant.id }} === product.selected_or_first_available_variant.id">
+            <div x-data="{ sellingplan_active: false, selling_plan: '' }" li-js-if="{{ variant.id }} === product.selected_or_first_available_variant.id" class="product-header_subscription">
+        
+                              <div :class="{ 'is-active': sellingplan_active === false }" x-data="{ subscriptionPonctual: true }" class="product-header_subscription_radio-wrap is-active"><label class="product-header_subscription_radio-label w-radio">
+                                  <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product_header-radio w-radio-input w--redirected-checked"></div><input x-on:click="sellingplan_active = false; selling_plan = ''" name="selling_plan_active" data-name="selling_plan_active" type="radio" id="radio-5" style="opacity:0;position:absolute;z-index:-1" checked="" value=""><span class="product-header_radio-label w-form-label" for="radio-5">
+{{ section.settings.text_pas_dabonnement }}
+</span>
+                                </label></div>
+                              <div :class="{ 'is-active': sellingplan_active === true }" class="product-header_subscription_radio-wrap"><label class="product-header_subscription_radio-label is-on w-radio">
+                                  <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product_header-radio w-radio-input"></div><input type="radio" name="selling_plan_active" id="radio-4" data-name="selling_plan_active" x-on:click="sellingplan_active = true; selling_plan = '{{ variant.selling_plan_allocations.first.selling_plan.id }}'" style="opacity:0;position:absolute;z-index:-1" value="Radio 4"><span class="product-header_radio-label w-form-label" for="radio-4">
+{{ section.settings.text_with_subscription }}
+</span>
+                                </label>
+                                <div x-show="sellingplan_active" class="w-layout-vflex product-header_subscription_radio-label">
+                                  <div class="subscription_ponctual"><select x-model="selling_plan" data-name="selling_plan" class="form_input is-select">
+                                      <option value="">Choisir un plan</option>
+                                      {% for plan in variant.selling_plan_allocations %}    <option li-for="plan in variant.selling_plan_allocations" value="{{ plan.selling_plan.id }}">
+                                    {{ plan.selling_plan.name }}
+                        </option>
+{% endfor %}
+                                    </select></div>
+                                </div>
+                              </div>
+                                    </div>
+    </template>
+                            <template x-if="sellingplan_active">
+            <input name="selling_plan" type="hidden" x-model="selling_plan" li-js-if="sellingplan_active">
+    </template>
+                            
+                          
+                    {% endfor %}    </div>
+                            </div>
+{% endif %}
+                        <div class="product-header_add-to-cart-wrapper">
+                          <template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
+        
+                            <a li-element="add-to-cart" href="#" class="button is-product w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Ajouter au panier</a>
+                                  </div>
+    </template>
+                          <template x-if="!selected_or_first_available_variant.available">
+            <div li-js-if="!selected_or_first_available_variant.available" class="product-header_out-of-stock">
+        
+                            <a href="#" class="button is-product is-out-off-stock w-button">En rupture de stock</a>
+                            <div class="text-size-small text-weight-medium">Victime de son succès, nous vous préviendrons de son arrivé au plus vite.</div>
+                                  </div>
+    </template>
+                          <div class="product-header_out-of-stock">
+                            <a href="#" class="button is-product is-out-off-stock w-button">Nous sommes hors saison</a>
+                            <div>
+                              <div class="text-size-small text-weight-medium">La saison des clémentines est terminé. </div>
+                              <div class="hors-saison_rich-text w-richtext">
+                                <p>Prochaine récolte prévue en <strong>novembre 2025</strong></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {% endform %}
+                    <div class="hide w-form-done">
+                      <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="hide w-form-fail">
+                      <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "R-Product-Hero",
+    "class": "section_product-header",
+    "blocks": [
+        {
+            "name": "Item",
+            "type": "item",
+            "settings": [
+                {
+                    "id": "image_image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id": "text_texte",
+                    "type": "text",
+                    "label": "Texte",
+                    "default": "Produits <br\/>100 % Corse"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "id": "text_pas_dabonnement",
+            "type": "text",
+            "label": "Pas d'abonnement",
+            "default": "Je commande ponctuellement"
+        },
+        {
+            "id": "text_with_subscription",
+            "type": "text",
+            "label": "with Subscription",
+            "default": "S\u2019abonner"
+        }
+    ],
+    "presets": [
+        {
+            "name": "R-Product-Hero",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "item"
+                }
+            ]
+        }
+    ]
+} {% endschema %}

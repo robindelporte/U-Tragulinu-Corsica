@@ -1,0 +1,33 @@
+{
+    "sections": {
+        "hero_partenaires": {
+            "type": "hero_partenaires"
+        },
+        "processus": {
+            "type": "processus"
+        },
+        "producteurs": {
+            "type": "producteurs",
+            "blocks": {
+                "tab": {
+                    "name": "Tab",
+                    "type": "tab"
+                }
+            },
+            "block_order": [
+                "tab"
+            ]
+        },
+        "banniere": {
+            "type": "banniere"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "div.main-wrapper",
+    "order": [
+        "hero_partenaires",
+        "processus",
+        "producteurs",
+        "banniere"
+    ]
+}

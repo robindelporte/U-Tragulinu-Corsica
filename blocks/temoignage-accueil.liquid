@@ -1,0 +1,67 @@
+<div li-block="Témoignage Accueil" class="hero_testimonial">
+                    
+                    
+                    <div class="hero_testimonial-content">
+                      <div class="hero_testimonial-author-wrapper">
+                        <div class="text-size-tiny">Ils ont gouté</div>
+                        <div class="hero_testimonial-author">
+                          <div class="text-style-tagline">
+{{ block.settings.text_nom }}
+</div>
+                          <div class="hero_testimonial-stars-wrapper">
+                            <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                              </svg></div>
+                            <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                              </svg></div>
+                            <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                              </svg></div>
+                            <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                              </svg></div>
+                            <div class="icon-1x1-19 w-embed"><svg width="20" height="18" viewbox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0L12.1329 6.56434H19.035L13.4511 10.6213L15.584 17.1857L10 13.1287L4.41604 17.1857L6.54892 10.6213L0.964963 6.56434H7.86712L10 0Z" fill="#FA5F2B"></path>
+                              </svg></div>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="text-size-tiny text-weight-medium">
+{{ block.settings.text_avis }}
+</p>
+                    </div>
+                    {% if block.settings.image_image %}
+{{ block.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'hero_testimonial-image' }}
+{% else %}
+<img src="{{ 'clementines.avif' | asset_url }}" loading="lazy" alt="" class="hero_testimonial-image">
+{% endif %}
+                    
+                  
+                </div> {% schema %} {
+    "name": "T\u00e9moignage Accueil",
+    "settings": [
+        {
+            "id": "text_nom",
+            "type": "text",
+            "label": "Nom",
+            "default": "Liliane B."
+        },
+        {
+            "id": "text_avis",
+            "type": "text",
+            "label": "Avis",
+            "default": "Les cl\u00e9mentines de Corse. Petites, mais hyper juteuses, d\u2019une douceur incomparable, un pur r\u00e9gal comme les pr\u00e9c\u00e9dentes commandes et je les ai achet\u00e9es qu\u2019\u00e0 U-Tragullinu."
+        },
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "T\u00e9moignage Accueil"
+        }
+    ]
+} {% endschema %}

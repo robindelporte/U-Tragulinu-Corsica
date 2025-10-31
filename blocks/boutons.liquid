@@ -1,0 +1,48 @@
+<div li-block="Boutons" class="button-group">
+                    
+                    
+                    <a href="{{ block.settings.url_bouton_1_lien }}" class="button w-button"> {{ block.settings.text_bouton_1_texte }} </a>
+                    
+                    
+                    {% if block.settings.checkbox_afficher_le_2eme_bouton == true %}
+Créez une alerte{% endif %}
+                    
+                  
+                </div> {% schema %} {
+    "name": "Boutons",
+    "settings": [
+        {
+            "id": "url_bouton_1_lien",
+            "type": "url",
+            "label": "Bouton 1 : Lien"
+        },
+        {
+            "id": "text_bouton_1_texte",
+            "type": "text",
+            "label": "Bouton 1 : Texte",
+            "default": "Pr\u00e9commandez"
+        },
+        {
+            "id": "checkbox_afficher_le_2eme_bouton",
+            "type": "checkbox",
+            "label": "Afficher le 2\u00e8me bouton",
+            "default": true
+        },
+        {
+            "id": "text_bouton_2_texte",
+            "type": "text",
+            "label": "Bouton 2 : Texte",
+            "default": "Cr\u00e9ez une alerte"
+        },
+        {
+            "id": "url_bouton_2_lien",
+            "type": "url",
+            "label": "Bouton 2 : Lien"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Boutons"
+        }
+    ]
+} {% endschema %}
