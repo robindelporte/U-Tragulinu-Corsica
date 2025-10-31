@@ -1,0 +1,107 @@
+{
+    "sections": {
+        "hero_contenu": {
+            "type": "hero_contenu"
+        },
+        "team": {
+            "type": "team",
+            "blocks": {
+                "tab": {
+                    "name": "Tab",
+                    "type": "tab"
+                }
+            },
+            "block_order": [
+                "tab"
+            ]
+        },
+        "contenu_video": {
+            "type": "contenu_video",
+            "blocks": {
+                "sur-titre": {
+                    "name": "Sur titre",
+                    "type": "sur-titre"
+                },
+                "titre": {
+                    "name": "Titre",
+                    "type": "titre"
+                },
+                "texte": {
+                    "name": "Texte",
+                    "type": "texte"
+                },
+                "boutons": {
+                    "name": "Boutons",
+                    "type": "boutons"
+                }
+            },
+            "block_order": [
+                "sur-titre",
+                "titre",
+                "texte",
+                "boutons"
+            ]
+        },
+        "banniere": {
+            "type": "banniere"
+        },
+        "producteurs": {
+            "type": "producteurs",
+            "blocks": {
+                "producteur": {
+                    "name": "Producteur",
+                    "type": "producteur"
+                },
+                "sur-titre": {
+                    "name": "Sur titre",
+                    "type": "sur-titre"
+                },
+                "headline": {
+                    "name": "Headline",
+                    "type": "headline"
+                },
+                "text": {
+                    "name": "Text",
+                    "type": "text"
+                },
+                "boutons": {
+                    "name": "Boutons",
+                    "type": "boutons"
+                }
+            },
+            "block_order": [
+                "producteur",
+                "sur-titre",
+                "headline",
+                "text",
+                "boutons"
+            ]
+        },
+        "faq": {
+            "type": "faq",
+            "blocks": {
+                "faq-item": {
+                    "name": "FAQ Item",
+                    "type": "faq-item"
+                }
+            },
+            "block_order": [
+                "faq-item"
+            ]
+        },
+        "reseaux": {
+            "type": "reseaux"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "div.main-wrapper",
+    "order": [
+        "hero_contenu",
+        "team",
+        "contenu_video",
+        "banniere",
+        "producteurs",
+        "faq",
+        "reseaux"
+    ]
+}

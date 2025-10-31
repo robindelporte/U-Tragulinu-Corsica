@@ -1,0 +1,112 @@
+<div class="padding-section-small">
+          <div class="banner_component-wrapper">
+            <div class="padding-global">
+              <div class="container-xlarge">
+                <div class="banner_component">
+                  <div class="banner_heading">
+                    <h2 class="text-color-support">
+{{ section.settings.text_titre }}
+</h2>
+                  </div>
+                  <div class="banner_list">
+                    <div id="w-node-_6dc28d66-492b-5cca-9e25-1bcffdd0806f-fdd08065" class="banner_item">
+                      <h3 class="z-index-2">
+{{ section.settings.text_bloc_1_titre }}
+</h3>
+                      <div class="banner_image-wrapper">{% if section.settings.image_bloc_1_image_1 %}
+{{ section.settings.image_bloc_1_image_1 | image_url: width: 1000 | image_tag: loading: 'lazy', width: '285', class: 'banner_image' }}
+{% else %}
+<img src="{{ 'hugo.avif' | asset_url }}" loading="lazy" width="285" alt="" class="banner_image">
+{% endif %}{% if section.settings.image_bloc_1_image_2 %}
+{{ section.settings.image_bloc_1_image_2 | image_url: width: 1000 | image_tag: loading: 'lazy', width: '285', class: 'banner_image is-second' }}
+{% else %}
+<img src="{{ 'hugo.avif' | asset_url }}" loading="lazy" width="285" alt="" class="banner_image is-second">
+{% endif %}</div><img src="{{ 'background.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg"><img src="{{ 'background-mobile.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg is-mobile">
+                      <div class="clickable_wrap">
+                        <a href="{{ section.settings.url_bloc_1_lien }}" class="clickable_link w-inline-block"> </a>
+                      </div>
+                    </div>
+                    <div id="w-node-_6dc28d66-492b-5cca-9e25-1bcffdd08079-fdd08065" class="banner_item">
+                      <h3 class="z-index-2">
+{{ section.settings.text_bloc_2_titre }}
+</h3>
+                      <div class="banner_image-wrapper">{% if section.settings.image_bloc_2_image_1 %}
+{{ section.settings.image_bloc_2_image_1 | image_url: width: 1000 | image_tag: loading: 'lazy', width: '285', class: 'banner_image' }}
+{% else %}
+<img src="{{ 'hugo.avif' | asset_url }}" loading="lazy" width="285" alt="" class="banner_image">
+{% endif %}{% if section.settings.image_bloc_2_image_2 %}
+{{ section.settings.image_bloc_2_image_2 | image_url: width: 1000 | image_tag: loading: 'lazy', width: '285', class: 'banner_image is-second' }}
+{% else %}
+<img src="{{ 'hugo.avif' | asset_url }}" loading="lazy" width="285" alt="" class="banner_image is-second">
+{% endif %}</div><img src="{{ 'background.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg"><img src="{{ 'background-mobile.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg is-mobile">
+                      <div class="clickable_wrap">
+                        <a href="{{ section.settings.url_bloc_2_lien }}" class="clickable_link w-inline-block"> </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Banni\u00e8re",
+    "class": "section_banner",
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "D\u00e9couvrez nos sp\u00e9cialit\u00e9s"
+        },
+        {
+            "id": "text_bloc_1_titre",
+            "type": "text",
+            "label": "Bloc 1 : Titre",
+            "default": "Nos fruits &amp; agrumes"
+        },
+        {
+            "id": "image_bloc_1_image_1",
+            "type": "image_picker",
+            "label": "Bloc 1 : Image 1"
+        },
+        {
+            "id": "image_bloc_1_image_2",
+            "type": "image_picker",
+            "label": "Bloc 1 : Image 2"
+        },
+        {
+            "id": "url_bloc_1_lien",
+            "type": "url",
+            "label": "Bloc 1 : Lien"
+        },
+        {
+            "id": "text_bloc_2_titre",
+            "type": "text",
+            "label": "Bloc 2 : Titre",
+            "default": "Notre \u00e9picerie Corse"
+        },
+        {
+            "id": "image_bloc_2_image_1",
+            "type": "image_picker",
+            "label": "Bloc 2 : Image 1"
+        },
+        {
+            "id": "image_bloc_2_image_2",
+            "type": "image_picker",
+            "label": "Bloc 2 : Image 2"
+        },
+        {
+            "id": "url_bloc_2_lien",
+            "type": "url",
+            "label": "Bloc 2 : Lien"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banni\u00e8re",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

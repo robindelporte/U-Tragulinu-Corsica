@@ -1,0 +1,177 @@
+<div class="padding-global padding-section-3-75">
+          <div class="container-large">
+            <div class="card_component">
+              <div id="w-node-e8f02e4e-6683-77ba-3eda-97d101733853-0173384f" class="card_img-wrapper" style="{% if section.settings.left_right == 'right'%}order: 9999;{% endif %}">
+                <div li-object="section.settings.video | video_tag: controls: true, width: '100%'" class="video_component is-testimonial">{{ section.settings.video | video_tag: controls: true, width: '100%' }}</div>
+              </div>
+              <div li-content-for-blocks="" id="w-node-e8f02e4e-6683-77ba-3eda-97d101733855-0173384f" class="content_wrapper">
+{% for block in section.blocks %}
+{% case block.type %}
+{% when '@app' %}
+{% render block %}
+
+                {% when 'sur-titre' %}
+            <div li-block="Sur titre">
+                    
+                  
+                    <div class="text-size-small text-weight-semibold">Small Headline</div>
+                    
+                
+                </div>
+                {% when 'titre' %}
+            <div li-block="Titre">
+                    
+                  
+                    <h3>
+{{ block.settings.text_headline }}
+</h3>
+                    
+                
+                </div>
+                {% when 'texte' %}
+            <div li-block="Texte">
+                    
+                  
+                    <div> {{ block.settings.richtext_paragraph }} </div>
+                    
+                
+                </div>
+                {% when 'boutons' %}
+            <div li-block="Boutons">
+                    
+                  
+                    <div class="button-group">
+                    {% if block.settings.url_button_link %}    <div li-if="block.settings.url_button_link">
+    
+                      <a href="{{ block.settings.url_button_link }}" class="button w-button"> {{ block.settings.text_button_text }} </a>
+                        </div>
+{% endif %}
+                    {% if block.settings.url_button_link_2 %}    <div li-if="block.settings.url_button_link_2">
+    
+                      <a href="{{ block.settings.url_button_link_2 }}" class="button is-secondary w-button"> {{ block.settings.text_button_text_2 }} </a>
+                        </div>
+{% endif %}
+                  </div>
+                    
+                
+                </div>
+              {% endcase %}
+{% endfor %}
+
+    </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Contenu Video",
+    "class": "section_content",
+    "blocks": [
+        {
+            "name": "Sur titre",
+            "type": "sur-titre",
+            "settings": null
+        },
+        {
+            "name": "Titre",
+            "type": "titre",
+            "settings": [
+                {
+                    "id": "text_headline",
+                    "type": "text",
+                    "label": "Headline",
+                    "default": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy."
+                }
+            ]
+        },
+        {
+            "name": "Texte",
+            "type": "texte",
+            "settings": [
+                {
+                    "id": "richtext_paragraph",
+                    "type": "richtext",
+                    "label": "Paragraph",
+                    "default": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.<\/p>"
+                }
+            ]
+        },
+        {
+            "name": "Boutons",
+            "type": "boutons",
+            "settings": [
+                {
+                    "id": "url_button_link",
+                    "type": "url",
+                    "label": "Button Link"
+                },
+                {
+                    "id": "text_button_text",
+                    "type": "text",
+                    "label": "Button Text",
+                    "default": "Button"
+                },
+                {
+                    "id": "url_button_link_2",
+                    "type": "url",
+                    "label": "Button Link 2"
+                },
+                {
+                    "id": "text_button_text_2",
+                    "type": "text",
+                    "label": "Button Text 2",
+                    "default": "Button 2"
+                }
+            ]
+        },
+        {
+            "type": "@app"
+        }
+    ],
+    "settings": [
+        {
+            "type": "header",
+            "content": "image-position"
+        },
+        {
+            "type": "video",
+            "id": "video",
+            "label": "Upload Video"
+        },
+        {
+            "type": "select",
+            "id": "image_position",
+            "label": "Image position",
+            "options": [
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "right",
+                    "label": "Right"
+                }
+            ],
+            "default": "left"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Contenu Video",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "sur-titre"
+                },
+                {
+                    "type": "titre"
+                },
+                {
+                    "type": "texte"
+                },
+                {
+                    "type": "boutons"
+                }
+            ]
+        }
+    ]
+} {% endschema %}

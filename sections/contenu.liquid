@@ -1,0 +1,94 @@
+<div class="padding-global">
+          <div class="padding-section-medium">
+            <div class="container-large">
+              <div class="content_component">
+                <div li-content-for-theme-blocks="" class="content_content">
+{% content_for 'blocks' %}
+</div>
+                <div class="content_media-wrapper">{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'content_media' }}
+{% else %}
+<img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="content_media">
+{% endif %}
+                  {% if block.settings.video_desktop != blank %}    <div li-if="block.settings.video_desktop != blank">
+    
+                    <video style="height: 100%; width: 100%; object-fit: cover" volume="0" slot="media" playsinline="" loop="" autoplay="" muted="" alt="{{block.settings.video_desktop.alt}}">{% for video_source in block.settings.video_desktop.sources %}<source src="{{video_source.url}}" type="{{video_source.mime_type}}">{% endfor %}</video>
+                      </div>
+{% endif %}{% if section.settings.image_illustration %}
+{{ section.settings.image_illustration | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'content_illustration' }}
+{% else %}
+<img src="{{ 'illustration-content.svg' | asset_url }}" loading="lazy" alt="" class="content_illustration">
+{% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Contenu",
+    "class": "section_content",
+    "blocks": [
+        {
+            "type": "titre"
+        },
+        {
+            "type": "espace-small"
+        },
+        {
+            "type": "paragraphe"
+        },
+        {
+            "type": "espace-medium"
+        },
+        {
+            "type": "boutons"
+        },
+        {
+            "type": "@app"
+        }
+    ],
+    "settings": [
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "image_illustration",
+            "type": "image_picker",
+            "label": "Illustration"
+        },
+        {
+            "type": "header",
+            "content": "Video"
+        },
+        {
+            "type": "video",
+            "id": "video_desktop",
+            "label": "Video Desktop"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Contenu",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "titre"
+                },
+                {
+                    "type": "espace-small"
+                },
+                {
+                    "type": "paragraphe"
+                },
+                {
+                    "type": "espace-medium"
+                },
+                {
+                    "type": "boutons"
+                }
+            ]
+        }
+    ]
+} {% endschema %}

@@ -1,0 +1,5 @@
+<img class="mini-cart_recommended-product-image" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}" sizes="100vw" li-object:src="product.featured_image | img_url: 'master'" loading="lazy" li-object:alt="product.featured_image.alt" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
+                                    <div li-object="product.title" class="text-style-tagline">{{ product.title }}</div>
+                                    <div class="clickable_wrap">
+                                      <a li-object="product.url" href="#" class="clickable_link w-inline-block">{{ product.url }}</a>
+                                    </div>

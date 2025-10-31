@@ -1,0 +1,80 @@
+<div class="padding-global padding-section-medium">
+          <div class="container-large">
+            <div class="faq_wrapper">
+              <div class="faq_heading">
+                <h2>
+{{ section.settings.text_heading }}
+</h2>
+              </div>
+              <ul x-data="{open: 1}" role="list" class="faq_faq-list is-product">
+                {% for block in section.blocks %}
+    {% if block.type == "faq-item" %}
+                    <li li-block="FAQ Item" role="button" tabindex="0" aria-controls="faq-body-{{forloop.index}}" x-on:click="open = (open === {{forloop.index}} ? 0 : {{forloop.index}}); $el.setAttribute('aria-expanded', open === {{forloop.index}} ? 'true' : 'false')" id="w-node-f2943c65-69e5-68c7-9576-31cf62d5043d-62d50433" class="faq-product_item">
+                                    
+                  
+                                    <div class="faq_item-heading">
+                    <h3 id="faq-heading-{{forloop.index}}" class="faq_title">
+{{ block.settings.text_question }}
+</h3>
+                    <div x-bind:style="open === {{ forloop.index }} ? 'transform: rotate(45deg)' : 'transform: rotate(0deg)'" class="faq_icon w-embed"><svg width="22" height="21" viewbox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="9.49744" y="20.9995" width="21" height="3" rx="1" transform="rotate(-89.9834 9.49744 20.9995)" fill="currentColor"></rect>
+                        <rect x="0.500854" y="8.99707" width="21" height="3" rx="1" transform="rotate(0.0166336 0.500854 8.99707)" fill="currentColor"></rect>
+                      </svg></div>
+                  </div>
+                                    
+                  
+                                    <div id="faq-body-{{forloop.index}}" x-show="open === {{ forloop.index }}" x-collapse="" x-cloaks="" aria-labelledby="faq-heading-{{forloop.index}}" class="faq_item-body">
+                    <div class="text-rich-text margin-top margin-small w-richtext"> {{ block.settings.richtext_reponse }} </div>
+                  </div>
+                                    
+                
+                            </li>
+            {% endif %}
+{% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "FAQ Produits",
+    "class": "section_faq",
+    "blocks": [
+        {
+            "name": "FAQ Item",
+            "type": "faq-item",
+            "settings": [
+                {
+                    "id": "text_question",
+                    "type": "text",
+                    "label": "Question",
+                    "default": "Heading"
+                },
+                {
+                    "id": "richtext_reponse",
+                    "type": "richtext",
+                    "label": "R\u00e9ponse",
+                    "default": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    <\/p>"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "On \u00e0 r\u00e9ponse \u00e0 tout <strong>(ou presque)<\/strong>"
+        }
+    ],
+    "presets": [
+        {
+            "name": "FAQ Produits",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "faq-item"
+                }
+            ]
+        }
+    ]
+} {% endschema %}

@@ -1,0 +1,42 @@
+{
+    "sections": {
+        "r_product_hero": {
+            "type": "r_product_hero",
+            "blocks": {
+                "item": {
+                    "name": "Item",
+                    "type": "item"
+                }
+            },
+            "block_order": [
+                "item"
+            ]
+        },
+        "faq_produits": {
+            "type": "faq_produits",
+            "blocks": {
+                "faq-item": {
+                    "name": "FAQ Item",
+                    "type": "faq-item"
+                }
+            },
+            "block_order": [
+                "faq-item"
+            ]
+        },
+        "newsletter": {
+            "type": "newsletter"
+        },
+        "reseaux": {
+            "type": "reseaux"
+        }
+    },
+    "layout": "product",
+    "wrapper": "div.main-wrapper",
+    "order": [
+        "r_product_hero",
+        "faq_produits",
+        "newsletter",
+        "reseaux"
+    ]
+}

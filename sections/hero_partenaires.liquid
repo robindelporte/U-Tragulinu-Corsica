@@ -1,0 +1,75 @@
+<div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-4rem">
+              <div class="header_component">
+                <div class="margin-bottom margin-medium">
+                  <div class="header_content-wrapper">
+                    <div class="header_heading">
+                      <h1 class="heading-style-h1">
+{{ section.settings.text_heading }}
+</h1>
+                    </div>
+                    <div class="header_content">
+                      <p class="text-weight-medium">
+{{ section.settings.text_paragraphe }}
+</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="header_image-wrapper is-partners">{% if section.settings.image_image_1 %}
+{{ section.settings.image_image_1 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_image is-partners' }}
+{% else %}
+<img loading="eager" alt="" src="{{ 'Placeholder-Image---Landscape.svg' | asset_url }}" class="header_image is-partners">
+{% endif %}{% if section.settings.image_image_2 %}
+{{ section.settings.image_image_2 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_image is-partners' }}
+{% else %}
+<img loading="eager" alt="" src="{{ 'Placeholder-Image---Landscape.svg' | asset_url }}" class="header_image is-partners">
+{% endif %}{% if section.settings.image_image_3 %}
+{{ section.settings.image_image_3 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_image is-partners' }}
+{% else %}
+<img loading="eager" alt="" src="{{ 'Placeholder-Image---Landscape.svg' | asset_url }}" class="header_image is-partners">
+{% endif %}</div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "header",
+    "name": "Hero partenaires",
+    "class": "section_header",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Histoire de la marque"
+        },
+        {
+            "id": "text_paragraphe",
+            "type": "text",
+            "label": "Paragraphe",
+            "default": "Partie de simples tourn\u00e9es de cl\u00e9mentines en r\u00e9gion PACA, U-Tragulinu-Corsica est devenue une r\u00e9f\u00e9rence pour relier directement producteurs corses et consommateurs fran\u00e7ais, garantissant qualit\u00e9, authenticit\u00e9 et prix justes."
+        },
+        {
+            "id": "image_image_1",
+            "type": "image_picker",
+            "label": "Image 1"
+        },
+        {
+            "id": "image_image_2",
+            "type": "image_picker",
+            "label": "Image 2"
+        },
+        {
+            "id": "image_image_3",
+            "type": "image_picker",
+            "label": "Image 3"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero partenaires",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
