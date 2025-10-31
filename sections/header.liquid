@@ -93,7 +93,7 @@
                       </div><predictive-search>
                         <div class="predictive-search_holder">
                           <div class="predictive-search_form w-form">
-                            <form id="wf-form-produkt-suche" name="wf-form-produkt-suche" data-name="produkt-suche" action="/search" method="get" class="predictive-search_form-component" data-wf-page-id="68ff862037dcce68550b4e28" data-wf-element-id="157c9fd8-515c-55e7-4eac-67b473299328">
+                            <form id="wf-form-produkt-suche" name="wf-form-produkt-suche" data-name="produkt-suche" action="/search" method="get" class="predictive-search_form-component" data-wf-page-id="68f8dfc79e590fbe6283bfc9" data-wf-element-id="157c9fd8-515c-55e7-4eac-67b473299328">
                               <div class="predictive-search_input-holder"><label for="search-input" class="form_hidden-label">Search</label><input type="search" id="search-input" placeholder="Search now" name="q" class="predictive-search_input">
                                 <a href="#" class="predictive-search_search-button w-inline-block">
                                   <div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 25 25" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
@@ -677,7 +677,7 @@
                         <div class="mini-cart_line-item no-scrollbar">
                           <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
                             <template x-for="product in products" :key="product.key">
-    <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img loading="lazy" alt="" src="images/product-apparel-2.svg" class="mini-cart_line-item_img" x-bind:src="product.image">
+    <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img loading="lazy" alt="" src="../images/product-apparel-2.svg" class="mini-cart_line-item_img" x-bind:src="product.image">
                               <div class="mini-cart_line-item_product-info">
                                 <div class="mini-cart_line-item-info">
                                   <div>
@@ -746,27 +746,6 @@
                             <div class="heading-style-h5">Votre panier est vide ?</div>
                             <div class="text-size-regular">Il semble que rien ne ce trouve dans ce panier pour le moment</div>
                           </div><img src="{{ 'panier-empty.svg' | asset_url }}" loading="lazy" alt="">
-                        </div>
-                        <div class="mini-cart_recommended-wrapper">
-                          <div class="mini-cart_recommended-heading">
-                            <div class="heading-style-h6">Mais nous avons ce qu’il faut pour vous</div>
-                          </div>
-                          <div class="swiper is-reco-swiper">
-                            <div class="swiper-wrapper">
-                              {% for product in recommendations.products %}    <div li-for="product in recommendations.products" class="swiper-slide">
-                                    
-                                
-                            {% if !cart.items | map: 'product_id' | contains: product.id %}    <div li-if="!cart.items | map: 'product_id' | contains: product.id">
-    
-                                  {% render 'cart_product', product: product %}
-                                    </div>
-{% endif %}
-                            
-                              
-                        </div>
-{% endfor %}
-                            </div>
-                          </div>
                         </div>
                         <div class="mini-cart_footer">
                           <div li-element="mini-cart-api-response" class="mini-cart_footer-message hide">
