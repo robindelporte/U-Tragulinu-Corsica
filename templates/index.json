@@ -104,7 +104,7 @@
         "text_titre": "Nos meilleures ventes",
         "collection_collection": "meilleures-ventes",
         "collection_collection_limit": 4,
-        "url_bouton_lien": "",
+        "url_bouton_lien": "shopify://collections/meilleures-ventes",
         "text_bouton_texte": "Tous nos produits"
       }
     },
