@@ -8,6 +8,150 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "hero_accueil": {
+      "type": "hero_accueil",
+      "blocks": {
+        "titre": {
+          "type": "titre",
+          "name": "Titre",
+          "settings": {}
+        },
+        "espace-small": {
+          "type": "espace-small",
+          "name": "Espace : Small",
+          "settings": {}
+        },
+        "paragraphe-italique": {
+          "type": "paragraphe-italique",
+          "name": "Paragraphe italique",
+          "settings": {}
+        },
+        "paragraphe": {
+          "type": "paragraphe",
+          "name": "Paragraphe",
+          "settings": {}
+        },
+        "boutons": {
+          "type": "boutons",
+          "name": "Boutons",
+          "settings": {}
+        },
+        "espace-medium": {
+          "type": "espace-medium",
+          "name": "Espace : Medium",
+          "settings": {}
+        },
+        "temoignage-accueil": {
+          "type": "temoignage-accueil",
+          "name": "Témoignage Accueil",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "titre",
+        "espace-small",
+        "paragraphe-italique",
+        "paragraphe",
+        "boutons",
+        "espace-medium",
+        "temoignage-accueil"
+      ],
+      "settings": {}
+    },
+    "icones": {
+      "type": "icones",
+      "blocks": {
+        "item": {
+          "type": "item",
+          "name": "Item",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item"
+      ],
+      "settings": {}
+    },
+    "banniere": {
+      "type": "banniere",
+      "settings": {}
+    },
+    "contenu": {
+      "type": "contenu",
+      "blocks": {
+        "titre": {
+          "type": "titre",
+          "name": "Titre",
+          "settings": {}
+        },
+        "espace-small": {
+          "type": "espace-small",
+          "name": "Espace : Small",
+          "settings": {}
+        },
+        "paragraphe": {
+          "type": "paragraphe",
+          "name": "Paragraphe",
+          "settings": {}
+        },
+        "espace-medium": {
+          "type": "espace-medium",
+          "name": "Espace : Medium",
+          "settings": {}
+        },
+        "boutons": {
+          "type": "boutons",
+          "name": "Boutons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "titre",
+        "espace-small",
+        "paragraphe",
+        "espace-medium",
+        "boutons"
+      ],
+      "settings": {}
+    },
+    "origine": {
+      "type": "origine",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq-item": {
+          "type": "faq-item",
+          "name": "FAQ Item",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "faq-item"
+      ],
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
+    },
+    "reseaux": {
+      "type": "reseaux",
+      "settings": {}
+    }
+  },
+  "layout": "theme",
+  "wrapper": "div.main-wrapper",
+  "order": [
+    "hero_accueil",
+    "icones",
+    "banniere",
+    "contenu",
+    "origine",
+    "faq",
+    "newsletter",
+    "reseaux"
+  ]
 }
