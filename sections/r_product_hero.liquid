@@ -59,7 +59,126 @@
                           </a>
                         </div>
                       </div>
-                      <div class="swiper-slide is-product-thumbnail is-active hide"></div>
+                      <div class="hide w-embed w-script">
+                        <script>
+let swiperInstance = null;
+let thumbsSwiperInstance = null;
+$(".swiper-container").each(function (index) {
+    thumbsSwiperInstance = new Swiper($(this).find(".swiper.is-product-thumbnail")[0], {
+        slidesPerView: "auto",
+        rewind: false,
+        loopedSlides: 8,
+        slideToClickedSlide: true,
+        spaceBetween: "4%",
+    });
+    swiperInstance = new Swiper($(this).find(".swiper.is-product-gallery")[0], {
+        mousewheel: {
+            forceToAxis: true
+        },
+        thumbs: {
+            swiper: thumbsSwiperInstance,
+            slideThumbActiveClass: "is-active",
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
+        navigation: {
+            nextEl: $(this).find(".swiper-next")[0],
+            prevEl: $(this).find(".swiper-prev")[0],
+        },
+        pagination: {
+            el: $(this).find(".swiper_pagination")[0],
+            bulletActiveClass: "is-active",
+            bulletClass: "swiper_bullet",
+            clickable: true,
+            dynamicBullets: false,
+        },
+        breakpoints: {
+            768: {
+                pagination: {
+                    enabled: false,
+                }
+            }
+        }
+    });
+});
+function syncSwiperWithVariant(selectedVariant) {
+    if (!swiperInstance) return;
+    const slides = document.querySelectorAll('.swiper-slide.is-product-gallery img');
+    let targetIndex = 0;
+    let found = false;
+    let variantImageSrc = null;
+    if (selectedVariant.featured_image && typeof selectedVariant.featured_image === 'object') {
+        variantImageSrc = selectedVariant.featured_image.src;
+        if (selectedVariant.featured_image.id) {
+            const imageId = selectedVariant.featured_image.id.toString();
+            slides.forEach((img, index) => {
+                const imgSrc = img.getAttribute('src') || '';
+                if (imgSrc.includes(imageId)) {
+                    targetIndex = index;
+                    found = true;
+                }
+            });
+        }
+    } else if (selectedVariant.featured_image && typeof selectedVariant.featured_image === 'string') {
+        variantImageSrc = selectedVariant.featured_image;
+    } else if (selectedVariant.featured_media && selectedVariant.featured_media.preview_image) {
+        variantImageSrc = selectedVariant.featured_media.preview_image.src;
+    }
+    if (!found && variantImageSrc) {
+        const cleanUrl = variantImageSrc.replace(/^\/\//, 'https://');
+        const fileName = cleanUrl.split('/').pop().split('?')[0];
+        slides.forEach((img, index) => {
+            const imgSrc = img.getAttribute('src') || '';
+            const slideFileName = imgSrc.split('/').pop().split('?')[0];
+            if (slideFileName === fileName) {
+                targetIndex = index;
+                found = true;
+            }
+        });
+    }
+    if (!found && variantImageSrc) {
+        slides.forEach((img, index) => {
+            const imgSrc = img.getAttribute('src') || '';
+            const cleanImgSrc = imgSrc.replace(/^\/\//, 'https://').split('?')[0];
+            const cleanVariantSrc = variantImageSrc.replace(/^\/\//, 'https://').split('?')[0];
+            if (cleanImgSrc === cleanVariantSrc) {
+                targetIndex = index;
+                found = true;
+            }
+        });
+    }
+    if (!found && variantImageSrc) {
+        const fileName = variantImageSrc.split('/').pop().split('?')[0].replace('.webp', '');
+        slides.forEach((img, index) => {
+            const imgSrc = img.getAttribute('src') || '';
+            if (imgSrc.includes(fileName)) {
+                targetIndex = index;
+                found = true;
+            }
+        });
+    }
+    swiperInstance.slideTo(targetIndex, 300);
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const variantInputs = document.querySelectorAll('input[data-selectortype="radio"]');
+    variantInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            setTimeout(() => {
+                const productContainer = document.querySelector('[x-data*="handleVariant"]');
+                if (productContainer && productContainer._x_dataStack) {
+                    const alpineData = productContainer._x_dataStack[0];
+                    if (alpineData.selected_or_first_available_variant) {
+                        syncSwiperWithVariant(alpineData.selected_or_first_available_variant);
+                    }
+                }
+            }, 100);
+        });
+    });
+});
+</script>
+                      </div>
                     </div>
                   </div>
                   <div class="product_description-wrapper">
@@ -167,11 +286,19 @@
 {% endif %}
                     </div>
                     <div class="product_description-element is-producteurs">
-                      <h2 class="text-font-body text-size-medium">Producteur & Origine</h2>
-                      <p>Ferme & Région : Domaine de La Taste</p>
+                      <h2 class="text-font-body text-size-medium">
+{{ section.settings.text_producteur_titre }}
+</h2>
+                      <p>Ferme & Région : <span>
+{{ section.settings.text_producteur_ferme }}
+</span></p>
                       <div class="producteurs_tag-wrapper">
                         <div class="product-tag">Bio</div>
-                      </div><img src="{{ 'domaine-de-la-taste.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'domaine-de-la-taste-p-500.avif' | asset_url }} 500w, {{ 'domaine-de-la-taste-p-800.avif' | asset_url }} 800w, {{ 'domaine-de-la-taste.avif' | asset_url }} 1238w" alt="" class="image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full">
+                      </div>{% if section.settings.image_producteur_image %}
+{{ section.settings.image_producteur_image | image_url: width: 1000 | image_tag: class: 'image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
+{% else %}
+<img class="image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full" src="{{ 'domaine-de-la-taste.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'domaine-de-la-taste-p-500.avif' | asset_url }} 500w, {{ 'domaine-de-la-taste-p-800.avif' | asset_url }} 800w, {{ 'domaine-de-la-taste.avif' | asset_url }} 1238w">
+{% endif %}
                     </div>
                     <div class="product_description-element is-producteurs">
                       <div>
@@ -572,6 +699,23 @@
             "id": "image_avantage_image",
             "type": "image_picker",
             "label": "Avantage - Image"
+        },
+        {
+            "id": "text_producteur_titre",
+            "type": "text",
+            "label": "Producteur - Titre",
+            "default": "Producteur &amp; Origine"
+        },
+        {
+            "id": "text_producteur_ferme",
+            "type": "text",
+            "label": "Producteur - Ferme",
+            "default": "Domaine de La Taste"
+        },
+        {
+            "id": "image_producteur_image",
+            "type": "image_picker",
+            "label": "Producteur - Image"
         },
         {
             "id": "text_conseil_titre",

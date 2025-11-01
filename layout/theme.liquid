@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-wf-page="68f8dfc79e590fbe6283bfc9" data-wf-site="68e63cea4969ff06483b2dd7" lang="{{ request.locale.iso_code }}">
+<html data-wf-page="68f0ca6da225fb12cecccced" data-wf-site="68e63cea4969ff06483b2dd7" lang="{{ request.locale.iso_code }}">
 <head>
   <meta charset="utf-8">
   <title>{{ page_title }}</title>
@@ -15,6 +15,7 @@
   <link href="{{ 'normalize.css' | asset_url }}" rel="stylesheet" type="text/css">
   <link href="{{ 'webflow.css' | asset_url }}" rel="stylesheet" type="text/css">
   <link href="{{ 'u-tragulinu-theme.webflow.css' | asset_url }}" rel="stylesheet" type="text/css">
+  <style>@media (max-width:991px) and (min-width:768px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="b453a388-6b88-1c23-86ff-6112fe5ede1a"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}@media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="b453a388-6b88-1c23-86ff-6112fe5ede1a"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="b453a388-6b88-1c23-86ff-6112fe5ede1a"] {-webkit-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 120%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -120,8 +121,19 @@
   }
 </style>
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+  <script type="application/ld+json">
+          {
+             "@context":"http:\/\/schema.org",
+             "@type":"WebPage",
+             "url":"{{ shop.url }}",
+             "mainEntity":{"@type":"offerCatalog",
+             "name": "{{ collection.title }}",
+             "url": "{{ collection.url }}",
+             "numberOfItems":{{ collection.products.size }}}
+      }
+    </script>
 <script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
-<body li-page="product" li-layout="theme">
+<body li-page="collection" li-layout="theme">
   <div class="page-wrapper">
     {% render 'global_styles' %}
     {% section 'header' %}
@@ -140,5 +152,61 @@
   });
 </script>
   {% render 'search_javascript' %}
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const THRESHOLD_REM = 7.5;
+  const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+  const THRESHOLD_PX = THRESHOLD_REM * remPx;
+  document.querySelectorAll('.small-hero_subtitle').forEach((wrap) => {
+    const content = wrap.querySelector('.collection_description');
+    const overlay = wrap.querySelector('.small_hero-subtitle-overlay');
+    const toggle  = wrap.querySelector('.small-hero_subtitle-link');
+    if (!content || !overlay || !toggle) return;
+    const collapse = () => {
+      wrap.classList.remove('is-expanded');
+      wrap.classList.add('is-collapsed');
+      content.style.maxHeight = THRESHOLD_PX + 'px';
+      if (overlay) overlay.style.display = ''; // visible
+      if (toggle) { toggle.style.display = ''; toggle.textContent = 'Lire plus'; }
+    };
+    const expand = () => {
+      wrap.classList.add('is-expanded');
+      wrap.classList.remove('is-collapsed');
+      content.style.maxHeight = content.scrollHeight + 'px';
+      if (overlay) overlay.style.display = 'none'; // masque l&rsquo;overlay quand c&rsquo;est ouvert
+      if (toggle) toggle.textContent = 'Lire moins';
+    };
+    const evaluate = () => {
+      const needs = content.scrollHeight > THRESHOLD_PX + 1;
+      if (!needs) {
+        // Pas assez de contenu &rarr; pas d&rsquo;overlay, pas de lien
+        content.style.maxHeight = '';
+        if (overlay) overlay.style.display = 'none';
+        if (toggle) toggle.style.display = 'none';
+        wrap.classList.remove('is-expanded', 'is-collapsed');
+      } else {
+        if (!wrap.classList.contains('is-expanded')) collapse();
+      }
+    };
+    // Toggle
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (wrap.classList.contains('is-expanded')) collapse();
+      else expand();
+    });
+    // Recalcule quand le contenu change
+    const ro = new ResizeObserver(() => { if (!wrap.classList.contains('is-expanded')) evaluate(); });
+    ro.observe(content);
+    // Images charg&eacute;es apr&egrave;s coup
+    content.querySelectorAll('img').forEach(img => {
+      if (!img.complete) img.addEventListener('load', () => {
+        if (!wrap.classList.contains('is-expanded')) evaluate();
+      }, { once: true });
+    });
+    // Premi&egrave;re passe
+    evaluate();
+  });
+});
+</script>
 </body>
 </html>
