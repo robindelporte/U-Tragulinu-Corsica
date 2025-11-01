@@ -239,6 +239,27 @@ html.wf-design-mode .hide-designer {
   color: var(--_primitives---brand--orange);
   font-weight: inherit;
 }
+.product-item_component {
+  transition: border-color 0.3s ease, border-width 0s;
+}
+.product-item_component .text-style-tagline {
+  transition: color 0.3s ease;
+}
+.product-item_component .product_item-star-wrapper {
+  transition: opacity 0.3s ease;
+}
+.nav_dropdown-grid:has(.product-item_component:hover) .product-item_component:not(:hover) {
+  border-color: var(--_primitives---colors--neutral-lighter);
+}
+.nav_dropdown-grid:has(.product-item_component:hover) .product-item_component:not(:hover) .text-style-tagline {
+  color: var(--_primitives---colors--neutral-lighter);
+}
+.nav_dropdown-grid:has(.product-item_component:hover) .product-item_component:not(:hover) .product_item-star-wrapper {
+  opacity: 0.5;
+}
+.product-item_component:hover {
+  border-width: 2px;
+}
 </style>
       </div>
       <div class="color-schemes w-embed">
