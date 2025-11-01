@@ -1,0 +1,58 @@
+<style>.collections_item:hover .collections_image,
+.collections_item:focus-within .collections_image,
+.collections_item:hover .collections_overlay-image,
+.collections_item:focus-within .collections_overlay-image {
+  scale: 1.1;
+}
+@media screen and (max-width: 1440px) {
+  .swiper.is-collections {
+    overflow: visible;
+  }
+}
+</style>
+        <div class="padding-global padding-section-medium">
+          <div class="container-large">
+            <div class="collection_grid-wrapper">
+              <div class="products_heading">
+                <h2 class="best-sellers-heading">
+{{ section.settings.text_titre }}
+</h2>
+                <p class="text-style-tagline">Pour tous les fans de (vrai) produit</p>
+              </div>
+              <div class="swiper_component is-product-swiper">
+                <div class="swiper is-product-swiper">
+                  <div li-for:inside="product in collection.products limit: 8" class="swiper-wrapper is-product-swiper">
+        {% for product in collection.products limit: 8 %}                            
+                    
+                            <div class="swiper-slide is-product-swiper">
+                      {% render 'product_item', product: product %}
+                    </div>
+                            
+                  
+                    {% endfor %}    </div>
+                </div>
+                <div class="swiper_pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script> document.addEventListener('DOMContentLoaded', () =>{const swiper = new Swiper('.swiper_component.is-collections .swiper',{// Options de base slidesPerView: 4, spaceBetween: 24, // 1.5rem loop: true, // Pagination pagination:{el: '.swiper_component.is-collections .swiper_pagination', clickable: true, bulletActiveClass: 'is-active', bulletClass: 'swiper_bullet', bulletElement: 'button'}, // Navigation navigation:{nextEl: '.swiper_component.is-collections .swiper_button.swiper-next', prevEl: '.swiper_component.is-collections .swiper_button.swiper-prev'}, // Responsive breakpoints breakpoints:{320:{slidesPerView: 1}, 576:{slidesPerView: 2}, 992:{slidesPerView: 4}, 1200:{slidesPerView: 4}}});}); </script> {% schema %} {
+    "tag": "section",
+    "name": "Collection",
+    "class": "section_collections",
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "Nos <strong>meilleures <\/strong>ventes"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collection",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

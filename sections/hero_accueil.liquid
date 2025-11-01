@@ -5,8 +5,8 @@
                 <div li-content-for-theme-blocks="" class="hero-home_content-wrapper">
 {% content_for 'blocks' %}
 </div>
-                <div class="hero-home_image-wrapper">{% if section.settings.image_image %}
-{{ section.settings.image_image | image_url: width: 1000 | image_tag: class: 'hero-home_image', width: '619', sizes: '(max-width: 767px) 100vw, 619px', loading: 'lazy' }}
+                <div class="hero-home_image-wrapper">{% if section.settings.image_image_principale %}
+{{ section.settings.image_image_principale | image_url: width: 1000 | image_tag: class: 'hero-home_image', width: '619', sizes: '(max-width: 767px) 100vw, 619px', loading: 'lazy' }}
 {% else %}
 <img class="hero-home_image" src="{{ 'clementines-2.avif' | asset_url }}" width="619" alt="" sizes="(max-width: 767px) 100vw, 619px" loading="lazy" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
 {% endif %}</div>
@@ -48,6 +48,11 @@
             "id": "image_image",
             "type": "image_picker",
             "label": "Image"
+        },
+        {
+            "id": "image_image_principale",
+            "type": "image_picker",
+            "label": "Image Principale"
         }
     ],
     "presets": [
