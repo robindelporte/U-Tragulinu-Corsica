@@ -2103,6 +2103,11 @@ figcaption {
   display: flex;
 }
 
+.nav_search {
+  z-index: 5;
+  position: relative;
+}
+
 .nav_dropdown {
   z-index: 1;
   display: block;
@@ -2147,6 +2152,7 @@ figcaption {
 }
 
 .predictive-search_header {
+  z-index: 1240;
   border-bottom: 1px solid #0000001a;
   justify-content: space-between;
   align-items: center;
@@ -2318,6 +2324,7 @@ figcaption {
 }
 
 .nav_mini-cart {
+  z-index: 2;
   border-radius: var(--_ui-styles---radius--full);
   background-color: var(--_primitives---brand--orange);
   justify-content: center;
@@ -2325,6 +2332,7 @@ figcaption {
   width: 4.8125rem;
   height: 2.375rem;
   display: flex;
+  position: relative;
 }
 
 .nav_shop-quantity {
@@ -5806,6 +5814,10 @@ figcaption {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+.predictive-search {
+  flex: 1;
 }
 
 @media screen and (max-width: 991px) {
