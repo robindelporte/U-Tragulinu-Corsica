@@ -9,6 +9,17 @@
  */
 {
   "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "text_search": "Recherche",
+          "collection_search_bestseller": "",
+          "collection_search_bestseller_limit": 6,
+          "menu": "main-menu"
+        }
+      }
+    },
     "content_for_index": [],
     "blocks": {
       "11532412952436166569": {
