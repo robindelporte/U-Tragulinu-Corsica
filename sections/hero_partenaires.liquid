@@ -17,17 +17,17 @@
                   </div>
                 </div>
                 <div class="header_image-wrapper is-partners">{% if section.settings.image_image_1 %}
-{{ section.settings.image_image_1 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_image is-partners' }}
+{{ section.settings.image_image_1 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_image is-partners hide-mobile-landscape' }}
 {% else %}
-<img loading="eager" alt="" src="{{ 'Placeholder-Image---Landscape.svg' | asset_url }}" class="header_image is-partners">
+<img loading="eager" alt="" src="{{ 'Placeholder-Image---Landscape.svg' | asset_url }}" class="header_image is-partners hide-mobile-landscape">
 {% endif %}{% if section.settings.image_image_2 %}
 {{ section.settings.image_image_2 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_image is-partners' }}
 {% else %}
 <img loading="eager" alt="" src="{{ 'Placeholder-Image---Landscape.svg' | asset_url }}" class="header_image is-partners">
 {% endif %}{% if section.settings.image_image_3 %}
-{{ section.settings.image_image_3 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_image is-partners' }}
+{{ section.settings.image_image_3 | image_url: width: 1000 | image_tag: loading: 'eager', class: 'header_image is-partners hide-mobile-landscape' }}
 {% else %}
-<img loading="eager" alt="" src="{{ 'Placeholder-Image---Landscape.svg' | asset_url }}" class="header_image is-partners">
+<img loading="eager" alt="" src="{{ 'Placeholder-Image---Landscape.svg' | asset_url }}" class="header_image is-partners hide-mobile-landscape">
 {% endif %}</div>
               </div>
             </div>
@@ -35,7 +35,7 @@
         </div> {% schema %} {
     "tag": "header",
     "name": "Hero partenaires",
-    "class": "section_header",
+    "class": "section_hero-partenaire",
     "settings": [
         {
             "id": "text_heading",
