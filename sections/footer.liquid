@@ -22,7 +22,7 @@
 {% endfor %}
               </div>
               <div class="footer_links-wrapper">
-                {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer_link-column">
+                {% for link in linklists['footer'].links %}    <div li-for="link in linklists['footer'].links" class="footer_link-column">
                                     
                   
                             <div li-object="link.title" class="text-weight-semibold">{{ link.title }}</div>
@@ -56,7 +56,13 @@
 {% endfor %}
                   </ul>
                   <div class="w-layout-grid footer_legal-list">
-                    <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_legal-link">{{ link.title }}</a>
+                    <div li-for:inside="link in linklists['politiques'].links" class="footer_legal-links">
+        {% for link in linklists['politiques'].links %}                            
+                      
+                            <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_legal-link">{{ link.title }}</a>
+                            
+                    
+                    {% endfor %}    </div>
                   </div>
                 </div>
               </div>
