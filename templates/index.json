@@ -97,11 +97,15 @@
       ],
       "settings": {}
     },
-    "collection_wQPyy4": {
-      "type": "collection",
-      "name": "Collection",
+    "produits_DFqngF": {
+      "type": "produits",
+      "name": "Produits",
       "settings": {
-        "text_titre": "Nos <strong>meilleures </strong>ventes"
+        "text_titre": "Nos meilleures ventes",
+        "collection_collection": "meilleures-ventes",
+        "collection_collection_limit": 6,
+        "url_bouton_lien": "",
+        "text_bouton_texte": "Tous nos produits"
       }
     },
     "banniere": {
@@ -225,7 +229,7 @@
   "order": [
     "hero_accueil",
     "icones",
-    "collection_wQPyy4",
+    "produits_DFqngF",
     "banniere",
     "contenu",
     "origine",
