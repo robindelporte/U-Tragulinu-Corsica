@@ -1,126 +1,13 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero_accueil": {
-            "type": "hero_accueil",
-            "blocks": {
-                "titre": {
-                    "type": "titre",
-                    "name": "Titre"
-                },
-                "espace-small": {
-                    "type": "espace-small",
-                    "name": "Espace : Small"
-                },
-                "paragraphe-italique": {
-                    "type": "paragraphe-italique",
-                    "name": "Paragraphe italique"
-                },
-                "paragraphe": {
-                    "type": "paragraphe",
-                    "name": "Paragraphe"
-                },
-                "espace-medium": {
-                    "type": "espace-medium",
-                    "name": "Espace : Medium"
-                },
-                "boutons": {
-                    "type": "boutons",
-                    "name": "Boutons"
-                },
-                "temoignage-accueil": {
-                    "type": "temoignage-accueil",
-                    "name": "T\u00e9moignage Accueil"
-                }
-            },
-            "block_order": [
-                "titre",
-                "espace-small",
-                "paragraphe-italique",
-                "paragraphe",
-                "espace-medium",
-                "boutons",
-                "temoignage-accueil"
-            ]
-        },
-        "icones": {
-            "type": "icones",
-            "blocks": {
-                "item": {
-                    "name": "Item",
-                    "type": "item"
-                }
-            },
-            "block_order": [
-                "item"
-            ]
-        },
-        "banniere": {
-            "type": "banniere"
-        },
-        "contenu": {
-            "type": "contenu",
-            "blocks": {
-                "titre": {
-                    "type": "titre",
-                    "name": "Titre"
-                },
-                "espace-small": {
-                    "type": "espace-small",
-                    "name": "Espace : Small"
-                },
-                "paragraphe": {
-                    "type": "paragraphe",
-                    "name": "Paragraphe"
-                },
-                "espace-medium": {
-                    "type": "espace-medium",
-                    "name": "Espace : Medium"
-                },
-                "boutons": {
-                    "type": "boutons",
-                    "name": "Boutons"
-                }
-            },
-            "block_order": [
-                "titre",
-                "espace-small",
-                "paragraphe",
-                "espace-medium",
-                "boutons"
-            ]
-        },
-        "origine": {
-            "type": "origine"
-        },
-        "faq": {
-            "type": "faq",
-            "blocks": {
-                "faq-item": {
-                    "name": "FAQ Item",
-                    "type": "faq-item"
-                }
-            },
-            "block_order": [
-                "faq-item"
-            ]
-        },
-        "newsletter": {
-            "type": "newsletter"
-        },
-        "reseaux": {
-            "type": "reseaux"
-        }
-    },
-    "layout": "theme",
-    "wrapper": "div.main-wrapper",
-    "order": [
-        "hero_accueil",
-        "icones",
-        "banniere",
-        "contenu",
-        "origine",
-        "faq",
-        "newsletter",
-        "reseaux"
-    ]
+  "sections": {},
+  "order": []
 }
