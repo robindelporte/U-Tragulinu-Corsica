@@ -1,0 +1,85 @@
+<div data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4&intent=related" class="padding-global">
+          <div class="padding-section-small">
+            <div class="container-medium">
+              <div class="products_components">
+                <div class="products_heading">
+                  <h2 class="best-sellers-heading">
+{{ section.settings.text_titre }}
+</h2>
+                  <p class="text-style-tagline">Pour tous les fans de (vrai) produit</p>
+                </div>
+                <div class="swiper is-product-swiper">
+                  <div li-for:inside="product in collection.products limit: 8" class="swiper-wrapper is-product-swiper">
+        {% for product in collection.products limit: 8 %}                            
+                    
+                            {% for product in recommendations.products %}    <div li-for="product in recommendations.products" class="swiper-slide is-product-swiper">
+                                    
+                      
+                            {% render 'product_item', product: product %}
+                            
+                    
+                        </div>
+{% endfor %}
+                            
+                  
+                    {% endfor %}    </div>
+                </div>
+                <div class="products_button-wrapper">
+                  <a href="{{ section.settings.url_bouton_lien }}" class="button w-button"> {{ section.settings.text_bouton_texte }} </a>
+                </div>
+                <script> document.addEventListener('DOMContentLoaded', function (){if (window.innerWidth >= 991) return; new Swiper('.swiper.is-product-swiper',{slidesPerView: 'auto', // respecte ta largeur fixe slidesPerGroup: 1, // 1 par move spaceBetween: 14, loop: false, allowTouchMove: true, simulateTouch: true, slideToClickedSlide: true, speed: 400, observer: true, observeParents: true});}); </script>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hide w-embed w-script">
+          <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const productRecommendationsSection = document.querySelector('.product-recommendations');
+    const url = productRecommendationsSection.dataset.url;
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+      const html = document.createElement('div');
+      html.innerHTML = text;
+      const recommendations = html.querySelector('.product-recommendations');
+      if (recommendations && recommendations.innerHTML.trim().length) {
+        productRecommendationsSection.innerHTML = recommendations.innerHTML;
+      }
+    })
+      .catch(e => {
+      console.error(e);
+    });
+  });
+</script>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Produits",
+    "class": "section_products",
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "Nos <strong>meilleures <\/strong>ventes"
+        },
+        {
+            "id": "url_bouton_lien",
+            "type": "url",
+            "label": "Bouton : Lien"
+        },
+        {
+            "id": "text_bouton_texte",
+            "type": "text",
+            "label": "Bouton : Texte",
+            "default": "Tous nos produits"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Produits",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
