@@ -90,10 +90,31 @@
           "settings": {
             "text_texte": "Produits <br>100 % Corse"
           }
+        },
+        "item_AB9tdm": {
+          "type": "item",
+          "settings": {
+            "text_texte": "Produits 100 % Corse"
+          }
+        },
+        "item_VYGW66": {
+          "type": "item",
+          "settings": {
+            "text_texte": "Produits 100 % Corse"
+          }
+        },
+        "item_t6nFw9": {
+          "type": "item",
+          "settings": {
+            "text_texte": "Produits 100 % Corse"
+          }
         }
       },
       "block_order": [
-        "item"
+        "item",
+        "item_AB9tdm",
+        "item_VYGW66",
+        "item_t6nFw9"
       ],
       "settings": {}
     },
@@ -192,13 +213,45 @@
             "text_question": "Heading",
             "richtext_reponse": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    </p>"
           }
+        },
+        "faq_item_hbJFeC": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "Heading",
+            "richtext_reponse": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    </p>"
+          }
+        },
+        "faq_item_rRKrFV": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "Heading",
+            "richtext_reponse": "<p><br/>                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br/>                    </p>"
+          }
+        },
+        "faq_item_YBgbqR": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "Heading",
+            "richtext_reponse": "<p><br/>                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br/>                    </p>"
+          }
+        },
+        "faq_item_DVWdFy": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "Heading",
+            "richtext_reponse": "<p><br/>                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br/>                    </p>"
+          }
         }
       },
       "block_order": [
-        "faq-item"
+        "faq-item",
+        "faq_item_hbJFeC",
+        "faq_item_rRKrFV",
+        "faq_item_YBgbqR",
+        "faq_item_DVWdFy"
       ],
       "settings": {
-        "text_heading": "On à réponse à tout <strong>(ou presque)</strong>"
+        "text_heading": "On à réponse à tout (ou presque)"
       }
     },
     "newsletter": {
