@@ -13,6 +13,38 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "item_TLVd7d": {
+          "type": "item",
+          "settings": {
+            "text_texte": "Produits 100 % Corse"
+          }
+        },
+        "item_XhLGzL": {
+          "type": "item",
+          "settings": {
+            "text_texte": "Produits <br>100 % Corse"
+          }
+        },
+        "item_XxPQqj": {
+          "type": "item",
+          "settings": {
+            "text_texte": "Produits 100 % Corse"
+          }
+        },
+        "item_FryX6g": {
+          "type": "item",
+          "settings": {
+            "text_texte": "Produits 100 % Corse"
+          }
+        }
+      },
+      "block_order": [
+        "item_TLVd7d",
+        "item_XhLGzL",
+        "item_XxPQqj",
+        "item_FryX6g"
+      ],
       "settings": {}
     }
   },
