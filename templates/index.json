@@ -103,7 +103,7 @@
       "settings": {
         "text_titre": "Nos meilleures ventes",
         "collection_collection": "meilleures-ventes",
-        "collection_collection_limit": 6,
+        "collection_collection_limit": 4,
         "url_bouton_lien": "",
         "text_bouton_texte": "Tous nos produits"
       }
