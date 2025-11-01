@@ -5799,6 +5799,14 @@ figcaption {
   display: flex;
 }
 
+.section_hero-partenaire {
+  background-color: var(--color-scheme-1--background);
+  color: var(--color-scheme-1--text);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     letter-spacing: -3.2px;
@@ -7237,6 +7245,11 @@ figcaption {
     grid-column-gap: 1.25rem;
     grid-row-gap: 1.25rem;
     grid-template-columns: 1fr;
+  }
+
+  .header_image-wrapper.is-partners {
+    grid-template-columns: 1fr 1.5fr;
+    display: block;
   }
 
   .tabs_wrapper, .tabs_element {

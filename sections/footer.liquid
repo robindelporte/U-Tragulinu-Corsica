@@ -1,0 +1,104 @@
+<div class="padding-global">
+          <div class="container-large">
+            <div class="footer_component-wrapper">
+              <div class="icons_list in-footer">
+                {% for block in section.blocks %}
+    {% if block.type == "item" %}
+                    <div li-block="Item" class="icons_item">
+                                    {% if block.settings.image_image %}
+{{ block.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'icons_item-illustration' }}
+{% else %}
+<img src="{{ 'clementines.svg' | asset_url }}" loading="lazy" alt="" class="icons_item-illustration">
+{% endif %}
+                                    
+                  
+                                    <p class="heading-style-h5">
+{{ block.settings.text_texte }}
+</p>
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
+              </div>
+              <div class="footer_links-wrapper">
+                {% for link in linklists[section.settings.footer_menu].links %}    <div li-for="link in linklists[section.settings.footer_menu].links" class="footer_link-column">
+                                    
+                  
+                            <div li-object="link.title" class="text-weight-semibold">{{ link.title }}</div>
+                            
+                  
+                            <div li-for:inside="child_link in link.links" class="footer_link-list">
+        {% for child_link in link.links %}                            
+                    
+                            <a li-object:href="child_link.url" li-object="child_link.title" href="{{ child_link.url }}" class="footer_link">{{ child_link.title }}</a>
+                            
+                  
+                    {% endfor %}    </div>
+                            
+                
+                        </div>
+{% endfor %}
+              </div>
+              <div class="footer_bottom-wrapper">
+                <div class="footer_bottom-left"><img src="{{ 'logo-full.svg' | asset_url }}" loading="lazy" alt="" class="footer_logo">
+                  <p class="text-color-gris text-size-small">Sélection corse à la source, trajets écourtés, marges superflues coupées : des produits d’exception au prix accessible. Saison. Traçabilité. Fraîcheur (sans chambre froide). Service humain. La Corse traverse la mer, pas les prix.</p>
+                </div>
+                <div class="footer_legal-wrapper">
+                  <ul role="list" class="footer_payment-list w-list-unstyled">
+                    {% for type in shop.enabled_payment_types %}    <li li-for="type in shop.enabled_payment_types" class="footer_payment-item">
+                                    
+                      
+                            <div li-object="type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color'" class="footer_payment-svg">{{ type | payment_type_svg_tag: class: 'footer_payment-img icon--full-color' }}</div>
+                            
+                    
+                        </li>
+{% endfor %}
+                  </ul>
+                  <div class="w-layout-grid footer_legal-list">
+                    <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_legal-link">{{ link.title }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "footer",
+    "name": "footer",
+    "class": "section_footer",
+    "blocks": [
+        {
+            "name": "Item",
+            "type": "item",
+            "settings": [
+                {
+                    "id": "image_image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id": "text_texte",
+                    "type": "text",
+                    "label": "Texte",
+                    "default": "Produits <br\/>100 % Corse"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "footer",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "item"
+                }
+            ]
+        }
+    ],
+    "enabled_on": {
+        "groups": [
+            "*"
+        ]
+    }
+} {% endschema %}
