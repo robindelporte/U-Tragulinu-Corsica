@@ -386,11 +386,18 @@
                       <div class="product-tag">Bio</div>
                     </div>
                   </div>
-                  <div class="product-header_price-wrapper">
-                    <div class="product-header_price">
-                      <div li-object="product.price | money" class="heading-style-h4">{{ product.price | money }}</div>
+                  <div>
+                    <div class="product-header_price-wrapper">
+                      <div class="product-header_price">
+                        <div li-object="product.price | money" class="heading-style-h4">{{ product.price | money }}</div>
+                      </div>
+                      <p class="heading-style-h4">
+{{ section.settings.text_unite_de_mesure }}
+</p>
                     </div>
-                    <p class="heading-style-h4">/ caisse (5kg)</p>
+                    <div class="produt_header-price-unity">
+                      <div li-object="product.selected_or_first_available_variant.unit_price_measurement.reference_unit">{{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}</div>
+                    </div>
                   </div>
                   <div li-object="product.description" class="product_description w-richtext">{{ product.description }}</div>
                   <div class="product-header_form-block w-form">
@@ -651,6 +658,12 @@
             "type": "text",
             "label": "T\u00e9moignage 3 - Texte",
             "default": "Juste excellent ! Produits de qualit\u00e9 !\u2028C\u2019est toujours un plaisir d\u2019\u00e9changer lors des livraisons"
+        },
+        {
+            "id": "text_unite_de_mesure",
+            "type": "text",
+            "label": "Unit\u00e9 de mesure",
+            "default": "\/ caisse (5kg)"
         },
         {
             "id": "text_pas_dabonnement",
