@@ -97,6 +97,13 @@
       ],
       "settings": {}
     },
+    "collection_wQPyy4": {
+      "type": "collection",
+      "name": "Collection",
+      "settings": {
+        "text_titre": "Nos <strong>meilleures </strong>ventes"
+      }
+    },
     "banniere": {
       "type": "banniere",
       "settings": {
@@ -218,6 +225,7 @@
   "order": [
     "hero_accueil",
     "icones",
+    "collection_wQPyy4",
     "banniere",
     "contenu",
     "origine",
