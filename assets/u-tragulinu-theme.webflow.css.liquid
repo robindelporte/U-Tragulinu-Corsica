@@ -2295,7 +2295,7 @@ figcaption {
 .predictive-search_line-item {
   border-bottom: 1px solid var(--_primitives---brand--orange);
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   height: auto;
   padding-bottom: .5rem;
@@ -2316,10 +2316,13 @@ figcaption {
 }
 
 .predictive-search_product-info {
-  flex-flow: row;
+  grid-column-gap: .5rem;
+  grid-row-gap: .5rem;
+  flex-flow: column;
   flex: 1;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
+  margin-top: .25rem;
   display: flex;
 }
 
