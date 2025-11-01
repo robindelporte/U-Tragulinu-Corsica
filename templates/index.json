@@ -15,37 +15,59 @@
         "titre": {
           "type": "titre",
           "name": "Titre",
-          "settings": {}
+          "settings": {
+            "text_texte": "Notre histoire"
+          },
+          "blocks": {}
         },
         "espace-small": {
           "type": "espace-small",
           "name": "Espace : Small",
-          "settings": {}
+          "settings": {},
+          "blocks": {}
         },
         "paragraphe-italique": {
           "type": "paragraphe-italique",
           "name": "Paragraphe italique",
-          "settings": {}
+          "settings": {
+            "text_paragraphe_italique": "Récolte prévue mi-novembre"
+          },
+          "blocks": {}
         },
         "paragraphe": {
           "type": "paragraphe",
           "name": "Paragraphe",
-          "settings": {}
+          "settings": {
+            "text_paragraphe": "U TRAGULINU CORSICA est né en 2021 de l’envie de valoriser les fruits et agrumes souvent sous-exploités ou gaspillés. Partie de simples tournées de clémentines en région PACA, la marque est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes."
+          },
+          "blocks": {}
         },
         "boutons": {
           "type": "boutons",
           "name": "Boutons",
-          "settings": {}
+          "settings": {
+            "url_bouton_1_lien": "",
+            "text_bouton_1_texte": "Précommandez",
+            "checkbox_afficher_le_2eme_bouton": true,
+            "text_bouton_2_texte": "Créez une alerte",
+            "url_bouton_2_lien": "shopify://collections/concours"
+          },
+          "blocks": {}
         },
         "espace-medium": {
           "type": "espace-medium",
           "name": "Espace : Medium",
-          "settings": {}
+          "settings": {},
+          "blocks": {}
         },
         "temoignage-accueil": {
           "type": "temoignage-accueil",
           "name": "Témoignage Accueil",
-          "settings": {}
+          "settings": {
+            "text_nom": "Liliane B.",
+            "text_avis": "Les clémentines de Corse. Petites, mais hyper juteuses, d’une douceur incomparable, un pur régal comme les précédentes commandes et je les ai achetées qu’à U-Tragullinu."
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -65,7 +87,9 @@
         "item": {
           "type": "item",
           "name": "Item",
-          "settings": {}
+          "settings": {
+            "text_texte": "Produits <br>100 % Corse"
+          }
         }
       },
       "block_order": [
@@ -75,7 +99,13 @@
     },
     "banniere": {
       "type": "banniere",
-      "settings": {}
+      "settings": {
+        "text_titre": "Découvrez nos spécialités",
+        "text_bloc_1_titre": "Nos fruits &amp; agrumes",
+        "url_bloc_1_lien": "",
+        "text_bloc_2_titre": "Notre épicerie Corse",
+        "url_bloc_2_lien": ""
+      }
     },
     "contenu": {
       "type": "contenu",
@@ -83,27 +113,42 @@
         "titre": {
           "type": "titre",
           "name": "Titre",
-          "settings": {}
+          "settings": {
+            "text_texte": "Notre histoire"
+          },
+          "blocks": {}
         },
         "espace-small": {
           "type": "espace-small",
           "name": "Espace : Small",
-          "settings": {}
+          "settings": {},
+          "blocks": {}
         },
         "paragraphe": {
           "type": "paragraphe",
           "name": "Paragraphe",
-          "settings": {}
+          "settings": {
+            "text_paragraphe": "U TRAGULINU CORSICA est né en 2021 de l’envie de valoriser les fruits et agrumes souvent sous-exploités ou gaspillés. <br><br>Partie de simples tournées de clémentines en région PACA, la marque est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes."
+          },
+          "blocks": {}
         },
         "espace-medium": {
           "type": "espace-medium",
           "name": "Espace : Medium",
-          "settings": {}
+          "settings": {},
+          "blocks": {}
         },
         "boutons": {
           "type": "boutons",
           "name": "Boutons",
-          "settings": {}
+          "settings": {
+            "url_bouton_1_lien": "",
+            "text_bouton_1_texte": "Précommandez",
+            "checkbox_afficher_le_2eme_bouton": true,
+            "text_bouton_2_texte": "Créez une alerte",
+            "url_bouton_2_lien": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -117,7 +162,14 @@
     },
     "origine": {
       "type": "origine",
-      "settings": {}
+      "settings": {
+        "text_titre": "<strong>L’origine </strong>de nos produits",
+        "text_texte_origine_1": "Séléction de partenaires",
+        "text_texte_origine_2": "Récoltés &amp; produits en Corse",
+        "text_texte_origine_3": "Directement à votre table",
+        "url_bouton_lien": "",
+        "text_bouton_texte": "Nos partenaires &amp; leurs produits"
+      }
     },
     "faq": {
       "type": "faq",
@@ -125,21 +177,40 @@
         "faq-item": {
           "type": "faq-item",
           "name": "FAQ Item",
-          "settings": {}
+          "settings": {
+            "text_question": "Heading",
+            "richtext_reponse": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    </p>"
+          }
         }
       },
       "block_order": [
         "faq-item"
       ],
-      "settings": {}
+      "settings": {
+        "text_heading": "On à réponse à tout <strong>(ou presque)</strong>"
+      }
     },
     "newsletter": {
       "type": "newsletter",
-      "settings": {}
+      "settings": {
+        "text_titre": "Rejoignez le mouvement du <strong>vrai goût Corse</strong>",
+        "text_checkbox": "En vous inscrivant, vous acceptez de recevoir des messages de marketing. Affichez notre politique de confidentialité et nos conditions de service pour en savoir plus."
+      }
     },
     "reseaux": {
       "type": "reseaux",
-      "settings": {}
+      "settings": {
+        "text_heading": "Suivez-nous sur nos réseaux sociaux",
+        "text_paragraphe": "“Partagez vos plus belles recettes et vos paniers de fruits corses sur Instagram,Facebook et TikTok avec le hashtag #UTragulinuCorsica pour être mis en avant sur notre page !”",
+        "url_facebook": "",
+        "text_nom_facebook": "U Tragulinu Corsica",
+        "url_instagram": "",
+        "text_nom_instagram": "@U_tragulinu_corsica",
+        "url_youtube": "",
+        "text_nom_tiktok": "U-tragulinu-corsica",
+        "url_linkedin": "",
+        "text_nom_linkedin": "Hugo Delorieux"
+      }
     }
   },
   "layout": "theme",
