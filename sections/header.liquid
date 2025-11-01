@@ -90,11 +90,11 @@
                             <path d="M1.84775 14.178L0.447754 12.778L6.04775 7.17798L0.447754 1.57798L1.84775 0.177979L7.44775 5.77798L13.0478 0.177979L14.4478 1.57798L8.84775 7.17798L14.4478 12.778L13.0478 14.178L7.44775 8.57798L1.84775 14.178Z" fill="currentColor"></path>
                           </svg></div>
                       </button>
-                    </div><predictive-search>
+                    </div><predictive-search class="predictive-search">
                       <div class="predictive-search_holder">
                         <div class="predictive-search_form w-form">
-                          <form id="wf-form-produkt-suche" name="wf-form-produkt-suche" data-name="produkt-suche" action="/search" method="get" class="predictive-search_form-component" data-wf-page-id="68f8dfc79e590fbe6283bfc9" data-wf-element-id="157c9fd8-515c-55e7-4eac-67b473299328">
-                            <div class="predictive-search_input-holder"><label for="search-input" class="form_hidden-label">Search</label><input type="search" id="search-input" placeholder="Search now" name="q" class="predictive-search_input">
+                          <form id="wf-form-produkt-suche" name="wf-form-produkt-suche" data-name="produkt-suche" action="/search" method="get" class="predictive-search_form-component" data-wf-page-id="68f8dfc79e590fbe6283bfc9" data-wf-element-id="d4fd6338-abda-ad60-1e57-0c0079543165">
+                            <div class="predictive-search_input-holder"><label for="search-input" class="form_hidden-label">Search</label><input type="search" id="search-input" placeholder="Rechercher" name="q" class="predictive-search_input">
                               <a href="#" class="predictive-search_search-button w-inline-block">
                                 <div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 25 25" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
                                     <mask id="mask0_2941_121300" style="mask-type:alpha" maskunits="userSpaceOnUse" x="0" y="0" width="25" height="25">
@@ -106,13 +106,36 @@
                                   </svg></div>
                               </a><input type="submit" data-wait="Please wait..." id="submit-search" class="hide w-button" value="Submit">
                             </div>
-                            <div id="predictive-search" class="predictive-search_overflow no-scrollbar">
+                            <div id="predictive-search" fs-scrolldisable-element="preserve" class="predictive-search_overflow no-scrollbar">
                               <div li-section="predictive_search" class="predictive-search_section">
                                 {% if predictive_search.performed %}    <div li-if="predictive_search.performed" class="predictive-search_conditional">
     
                                   {% assign first_column_results_size = predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size | plus: predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size | plus: predictive_search.resources.products.size %}
                                   {% if first_column_results_size > 0 %}    <div li-if="first_column_results_size > 0" class="predictive-search_conditional">
     
+                                    {% if predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 %}    <div li-if="predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0" class="predictive-search_topic">
+    
+                                      <div class="predictive-search_headline">
+                                        <div class="text-style-muted">Produits</div>
+                                      </div>
+                                      <ul role="list" class="predictive-search_product-list w-list-unstyled">
+                                        {% for product in predictive_search.resources.products %}    <li li-for="product in predictive_search.resources.products" class="predictive-search_produt-item">
+                                    
+                                          
+                            <a li-object:href="product.url" href="{{ product.url }}" class="predictive-search_line-item w-inline-block">
+                                            <div class="predictive-search_image-wrapper"><img li-object:src="product.featured_media | image_url: width: 150" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_media | image_url: width: 150 }}" loading="lazy" class="predictive-search_image"></div>
+                                            <div class="predictive-search_product-info">
+                                              <div class="text-size-regular text-weight-bold"><span li-object="product.title">{{ product.title }}</span></div>
+                                              <div class="text-size-small"><span li-object="product.price | money">{{ product.price | money }}</span></div>
+                                            </div>
+                                          </a>
+                            
+                                        
+                        </li>
+{% endfor %}
+                                      </ul>
+                                        </div>
+{% endif %}
                                     {% if predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 %}    <div li-if="predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0" class="predictive-search_topic">
     
                                       <div class="predictive-search_headline">
@@ -142,54 +165,12 @@
                                       </ul>
                                         </div>
 {% endif %}
-                                    {% if predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 %}    <div li-if="predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0" class="predictive-search_topic">
-    
-                                      <div class="predictive-search_headline">
-                                        <div class="text-style-muted">Produits</div>
-                                      </div>
-                                      <ul role="list" class="predictive-search_product-list w-list-unstyled">
-                                        {% for product in predictive_search.resources.products %}    <li li-for="product in predictive_search.resources.products" class="predictive-search_produt-item">
-                                    
-                                          
-                            <a li-object:href="product.url" href="{{ product.url }}" class="predictive-search_line-item w-inline-block">
-                                            <div class="predictive-search_image-wrapper"><img li-object:src="product.featured_media | image_url: width: 150" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_media | image_url: width: 150 }}" loading="lazy" class="predictive-search_image"></div>
-                                            <div class="predictive-search_product-info">
-                                              <div class="text-size-regular text-weight-bold"><span li-object="product.title" class="text-style-tagline">{{ product.title }}</span></div>
-                                              <div class="text-size-small"><span li-object="product.price | money" class="text-style-tagline text-size-small">{{ product.price | money }}</span></div>
-                                            </div>
-                                          </a>
-                            
-                                        
-                        </li>
-{% endfor %}
-                                      </ul>
-                                        </div>
-{% endif %}
-                                    {% if predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 %}    <div li-if="predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0" class="predictive-search_topic">
-    
-                                      <div class="predictive-search_headline">
-                                        <div class="text-style-muted">Pages</div>
-                                      </div>
-                                      <ul role="list" class="predictive-search_list w-list-unstyled">
-                                        {% for page in predictive_search.resources.pages %}    <li li-for="page in predictive_search.resources.pages" class="predictive-search_item">
-                                    
-                                          
-                            <a li-object:href="page.url" href="{{ page.url }}" class="predictive-search_link w-inline-block">
-                                            <div li-object="page.title">{{ page.title }}</div>
-                                          </a>
-                            
-                                        
-                        </li>
-{% endfor %}
-                                      </ul>
-                                        </div>
-{% endif %}
                                       </div>
 {% endif %}
                                   {% if first_column_results_size == 0 %}    <div li-if="first_column_results_size == 0" class="predictive-search_conditional">
     
                                     <div class="predictive-search_topic">
-                                      <div class="text-style-muted">Nothing found in "<span li-object="predictive_search.terms">{{ predictive_search.terms }}</span>"</div>
+                                      <div class="text-style-muted">Nous avons rien trouvé avec "<span li-object="predictive_search.terms">{{ predictive_search.terms }}</span>"</div>
                                     </div>
                                       </div>
 {% endif %}
@@ -198,24 +179,6 @@
                                 {% unless predictive_search.performed %}    <div li-unless="predictive_search.performed" class="predictive-search_conditional">
     
                                   <div class="predictive-search_overflow">
-                                    <div class="predictive-search_topic">
-                                      <div class="predictive-search_headline">
-                                        <div class="text-style-muted">Suggestions</div>
-                                      </div>
-                                      <ul role="list" class="predictive-search_list w-list-unstyled">
-                                        {% for block in section.blocks %}
-    {% if block.type == "search-suggestion" %}
-                    <li li-block="Search - Suggestion" class="predictive-search_item">
-                                    
-                                          
-                                    <a href="{{ block.settings.url_link }}" class="predictive-search_link w-inline-block"> <div>{{ block.settings.text_text }}</div> </a>
-                                    
-                                        
-                            </li>
-            {% endif %}
-{% endfor %}
-                                      </ul>
-                                    </div>
                                     <div class="predictive-search_topic">
                                       <div class="predictive-search_headline">
                                         <div class="text-style-muted">Meilleures ventes</div>
@@ -776,25 +739,6 @@
     "tag": "section",
     "name": "header",
     "class": "section_header-group",
-    "blocks": [
-        {
-            "name": "Search - Suggestion",
-            "type": "search-suggestion",
-            "settings": [
-                {
-                    "id": "url_link",
-                    "type": "url",
-                    "label": "Link"
-                },
-                {
-                    "id": "text_text",
-                    "type": "text",
-                    "label": "Text",
-                    "default": "Tag"
-                }
-            ]
-        }
-    ],
     "settings": [
         {
             "id": "image_logo",
@@ -836,11 +780,7 @@
         {
             "name": "header",
             "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "search-suggestion"
-                }
-            ]
+            "blocks": []
         }
     ]
 } {% endschema %}
