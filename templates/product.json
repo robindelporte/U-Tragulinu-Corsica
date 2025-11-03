@@ -62,7 +62,8 @@
         "text_temoignage_3_texte": "Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons",
         "text_unite_de_mesure": "{{ product.metafields.custom.conditionnement.value }}",
         "text_pas_dabonnement": "Je commande ponctuellement",
-        "text_with_subscription": "S’abonner"
+        "text_with_subscription": "S’abonner",
+        "richtext_prochaine_recolte": "<p><br/>                                Prochaine récolte prévue en <strong>novembre 2025</strong><br/>                              </p>"
       }
     },
     "faq_8zTCbL": {
@@ -71,13 +72,37 @@
         "faq_item_Y9HHDc": {
           "type": "faq-item",
           "settings": {
-            "text_question": "Heading",
-            "richtext_reponse": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    </p>"
+            "text_question": "{{ product.metafields.custom.faq_titre_n_1.value }}",
+            "richtext_reponse": "{{ product.metafields.custom.faq_contenu_n_1 | metafield_tag }}"
+          }
+        },
+        "faq_item_TxPpF9": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "{{ product.metafields.custom.faq_titre_n_2.value }}",
+            "richtext_reponse": "{{ product.metafields.custom.faq_contenu_n_2 | metafield_tag }}"
+          }
+        },
+        "faq_item_APNkyj": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "{{ product.metafields.custom.faq_titre_n_3.value }}",
+            "richtext_reponse": "{{ product.metafields.custom.faq_contenu_n_3 | metafield_tag }}"
+          }
+        },
+        "faq_item_nFwUBp": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "{{ product.metafields.custom.faq_titre_n_4.value }}",
+            "richtext_reponse": "{{ product.metafields.custom.faq_contenu_n_4 | metafield_tag }}"
           }
         }
       },
       "block_order": [
-        "faq_item_Y9HHDc"
+        "faq_item_Y9HHDc",
+        "faq_item_TxPpF9",
+        "faq_item_APNkyj",
+        "faq_item_nFwUBp"
       ],
       "name": "FAQ",
       "settings": {
