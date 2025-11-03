@@ -4248,8 +4248,12 @@ figcaption {
 }
 
 .product-header_gallery-lightbox {
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
 .product-header_gallery-image {
@@ -4258,6 +4262,7 @@ figcaption {
   background-color: #eee;
   border-radius: .5rem;
   width: 100%;
+  max-width: 38.9404rem;
   height: 41.25rem;
 }
 
@@ -6703,6 +6708,10 @@ figcaption {
     flex-flow: column;
     padding-right: 0;
     position: static;
+  }
+
+  .product-header_gallery-image {
+    max-width: 100%;
   }
 
   .product-header_slider-wrapper {
