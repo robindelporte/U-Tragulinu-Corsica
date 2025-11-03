@@ -311,10 +311,12 @@ document.addEventListener('DOMContentLoaded', function() {
                       {% if product.metafields.custom.producteur != blank %}    <div li-if="product.metafields.custom.producteur != blank" class="producteurs_tag-wrapper">
     
                         {% assign producteur = product.metafields.custom.producteur.value %}
-                        {% for balise in producteur.balises %}    <div li-for="balise in producteur.balises">
+                        {% assign balises_raw = producteur.balises | remove: '[' | remove: ']' | replace: '&quot;', '' %}
+                        {% assign balises_array = balises_raw | split: ',' %}
+                        {% for balise in balises_array %}    <div li-for="balise in balises_array">
                                     
                           
-                            <div li-object="balise" class="product-tag">{{ balise }}</div>
+                            <div li-object="balise | strip" class="product-tag">{{ balise | strip }}</div>
                             
                         
                         </div>
