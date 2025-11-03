@@ -372,7 +372,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div id="avis" class="product_description-element is-last">
                       <h2 class="text-font-body text-size-medium">Avis clients</h2>
-                      <div class="loox_parent"></div>
+                      <div li-content-for-blocks="" class="loox_parent hide-designer">
+{% for block in section.blocks %}
+{% case block.type %}
+{% when '@app' %}
+{% render block %}
+{% endcase %}
+{% endfor %}
+
+    </div>
                       <div class="product_description-testimonials">
                         <div class="product_description-testimonial">
                           <div class="product_description-testimonial-heading">
