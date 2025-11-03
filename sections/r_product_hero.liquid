@@ -526,7 +526,14 @@ document.addEventListener('DOMContentLoaded', function() {
                       <div class="loox_parent hide-designer"></div>
                     </div>
                     <div class="product-header_tag-wrapper">
-                      <div li-object="tag" li-for="tag in product.tags" class="product-tag">{{ tag }}</div>
+                      {% for tag in product.tags %}    <div li-for="tag in product.tags">
+                                    
+                        
+                            <div li-object="tag" class="product-tag">{{ tag }}</div>
+                            
+                      
+                        </div>
+{% endfor %}
                     </div>
                   </div>
                   <div>
