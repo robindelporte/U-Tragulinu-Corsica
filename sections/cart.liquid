@@ -48,7 +48,7 @@
                         
                             <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0bebb4-0526affc" class="cart_table-item anzahl">
                           <div class="cart_quantity-wrapper">
-                            <div>Quantité</div><input class="cart_quantity w-input" li-object:value="item.quantity" maxlength="256" name="Updates" data-name="Updates" placeholder="1" type="number" id="Updates" required="" value="{{ item.quantity }}">
+                            <div>Quantité</div><input class="cart_quantity w-input" li-object:value="{{ item.quantity }}" maxlength="256" name="updates[]" data-name="updates[]" placeholder="1" type="number" id="updates[]" required="" value="{{ {{ item.quantity }} }}">
                           </div>
                         </div>
                             
@@ -113,7 +113,7 @@
                             <div class="text-size-small">Vous gagner <span li-object="cart.total_price | divided_by: 100" class="fidelity_count text-style-underline">{{ cart.total_price | divided_by: 100 }}</span><span class="text-color-orange text-style-underline"> points de fidélité</span> pour cette commande</div>
                           </div>
                         </div>
-                        <div class="cart_action"><input type="submit" data-wait="Please wait..." class="button is-secondary is-cart w-button" value="Update cart"></div>
+                        <div class="cart_action"><input type="submit" data-wait="Please wait..." class="button is-secondary is-cart w-button" value="Update cart" name="Mettre a jour le panier"></div>
                       </div>
                     </div>
                     <div class="cart_table outline-solid-1">
