@@ -309,7 +309,14 @@ document.addEventListener('DOMContentLoaded', function() {
 {{ section.settings.text_producteur_ferme }}
 </span></p>
                       <div class="producteurs_tag-wrapper">
-                        <div class="product-tag">Bio</div>
+                        {% for balise in product.metafields.custom.producteur.balises %}    <div li-for="balise in product.metafields.custom.producteur.balises">
+                                    
+                          
+                            <div li-object="balise" class="product-tag">{{ balise }}</div>
+                            
+                        
+                        </div>
+{% endfor %}
                       </div>{% if section.settings.image_producteur_image %}
 {{ section.settings.image_producteur_image | image_url: width: 1000 | image_tag: class: 'image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
 {% else %}
