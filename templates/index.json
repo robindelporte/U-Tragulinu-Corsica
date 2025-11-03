@@ -212,12 +212,13 @@
     "origine": {
       "type": "origine",
       "settings": {
-        "text_titre": "<strong>L’origine </strong>de nos produits",
+        "text_titre": "L’origine de nos produits",
         "text_texte_origine_1": "Séléction de partenaires",
-        "text_texte_origine_2": "Récoltés &amp; produits en Corse",
+        "image_image_origine_2": "shopify://shop_images/recolte_26b6788e-1e13-4e57-a9d5-cef5e46fb129.webp",
+        "text_texte_origine_2": "Récoltés & produits en Corse",
         "text_texte_origine_3": "Directement à votre table",
         "url_bouton_lien": "",
-        "text_bouton_texte": "Nos partenaires &amp; leurs produits"
+        "text_bouton_texte": "Nos partenaires & leurs produits"
       }
     },
     "faq": {
