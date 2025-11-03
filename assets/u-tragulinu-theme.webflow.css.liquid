@@ -6256,7 +6256,7 @@ figcaption {
   .nav_dropdown-grid {
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .nav_dropdown-link {
@@ -6363,6 +6363,10 @@ figcaption {
     height: 2px;
     padding-bottom: 0;
     padding-right: 0;
+  }
+
+  .nav_dropdown-content {
+    width: 100%;
   }
 
   .heading-style-h4-2 {
@@ -7508,7 +7512,6 @@ figcaption {
   }
 
   .nav_dropdown-toggle {
-    border-top: 1px solid #eee;
     padding-left: 1.2rem;
     padding-right: 1.2rem;
     font-size: 1.3rem;
@@ -7518,9 +7521,13 @@ figcaption {
     right: 1rem;
   }
 
+  .nav_dropdown-list.no-scrollbar.w--open {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .nav_dropdown-grid {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    grid-template-columns: 1fr;
   }
 
   .nav_dropdown-link {
