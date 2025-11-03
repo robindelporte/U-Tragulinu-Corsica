@@ -3877,6 +3877,10 @@ figcaption {
   display: grid;
 }
 
+.filter_layout.without-filters {
+  grid-template-columns: 1fr;
+}
+
 .filter_filters-wrapper {
   max-width: 19rem;
   position: sticky;
@@ -4075,6 +4079,10 @@ figcaption {
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
   display: grid;
+}
+
+.filter_product-list.without-filters {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .filter_empty {
@@ -6666,7 +6674,7 @@ figcaption {
     display: flex;
   }
 
-  .filter_product-list {
+  .filter_product-list, .filter_product-list.without-filters {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
@@ -7323,7 +7331,7 @@ figcaption {
     padding-bottom: 1rem;
   }
 
-  .filter_product-list {
+  .filter_product-list, .filter_product-list.without-filters {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -7759,7 +7767,7 @@ figcaption {
     margin-left: 0;
   }
 
-  .filter_product-list, .product-header_layout {
+  .filter_product-list, .filter_product-list.without-filters, .product-header_layout {
     grid-template-columns: 1fr;
   }
 
@@ -9299,7 +9307,7 @@ figcaption {
   justify-self: start;
 }
 
-#w-node-b453a388-6b88-1c23-86ff-6112fe5ede1a-cecccced, #w-node-b453a388-6b88-1c23-86ff-6112fe5ede1c-cecccced, #w-node-b453a388-6b88-1c23-86ff-6112fe5ede47-cecccced {
+#w-node-b453a388-6b88-1c23-86ff-6112fe5ede47-cecccced, #w-node-_36431040-2007-b624-b846-7475b14bd7ae-cecccced, #w-node-_36431040-2007-b624-b846-7475b14bd7b0-cecccced, #w-node-_36431040-2007-b624-b846-7475b14bd7e5-cecccced {
   grid-area: span 1 / span 1 / span 1 / span 1;
 }
 
