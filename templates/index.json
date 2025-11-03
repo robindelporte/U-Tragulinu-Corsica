@@ -95,24 +95,28 @@
           "type": "item",
           "name": "Item",
           "settings": {
-            "text_texte": "Produits <br>100 % Corse"
+            "image_image": "shopify://shop_images/illu-4.svg",
+            "text_texte": "Produits 100 % Corse"
           }
         },
         "item_AB9tdm": {
           "type": "item",
           "settings": {
+            "image_image": "shopify://shop_images/illu.svg",
             "text_texte": "Circuit court garanti"
           }
         },
         "item_VYGW66": {
           "type": "item",
           "settings": {
+            "image_image": "shopify://shop_images/illu-1.svg",
             "text_texte": "Rémunération  des producteurs"
           }
         },
         "item_t6nFw9": {
           "type": "item",
           "settings": {
+            "image_image": "shopify://shop_images/illu-2.svg",
             "text_texte": "Programme  de fidélité"
           }
         }
@@ -140,10 +144,14 @@
       "type": "banniere",
       "settings": {
         "text_titre": "Découvrez nos spécialités",
-        "text_bloc_1_titre": "Nos fruits &amp; agrumes",
-        "url_bloc_1_lien": "",
+        "text_bloc_1_titre": "Nos fruits & agrumes",
+        "image_bloc_1_image_1": "shopify://shop_images/pomelos.webp",
+        "image_bloc_1_image_2": "shopify://shop_images/citrons.webp",
+        "url_bloc_1_lien": "shopify://collections/fruits-agrumes",
         "text_bloc_2_titre": "Notre épicerie Corse",
-        "url_bloc_2_lien": ""
+        "image_bloc_2_image_1": "shopify://shop_images/liqueurs.webp",
+        "image_bloc_2_image_2": "shopify://shop_images/vin.webp",
+        "url_bloc_2_lien": "shopify://collections/lepicerie"
       }
     },
     "contenu": {
@@ -182,8 +190,8 @@
           "name": "Boutons",
           "settings": {
             "url_bouton_1_lien": "",
-            "text_bouton_1_texte": "Précommandez",
-            "checkbox_afficher_le_2eme_bouton": true,
+            "text_bouton_1_texte": "En savoir plus",
+            "checkbox_afficher_le_2eme_bouton": false,
             "url_bouton_2_lien": "",
             "text_bouton_2_texte": "Créez une alerte"
           },
@@ -197,7 +205,9 @@
         "espace-medium",
         "boutons"
       ],
-      "settings": {}
+      "settings": {
+        "image_image": "shopify://shop_images/u-tragulinu.webp"
+      }
     },
     "origine": {
       "type": "origine",
