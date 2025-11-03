@@ -16,14 +16,8 @@
           "type": "titre",
           "name": "Titre",
           "settings": {
-            "text_texte": "Notre histoire"
+            "text_texte": "Les vraies clémentines sont bientôt de retour"
           },
-          "blocks": {}
-        },
-        "espace-small": {
-          "type": "espace-small",
-          "name": "Espace : Small",
-          "settings": {},
           "blocks": {}
         },
         "paragraphe-italique": {
@@ -34,12 +28,24 @@
           },
           "blocks": {}
         },
+        "espace_small_htweMP": {
+          "type": "espace-small",
+          "name": "Espace : Small",
+          "settings": {},
+          "blocks": {}
+        },
         "paragraphe": {
           "type": "paragraphe",
           "name": "Paragraphe",
           "settings": {
             "text_paragraphe": "U TRAGULINU CORSICA est né en 2021 de l’envie de valoriser les fruits et agrumes souvent sous-exploités ou gaspillés.Partie de simples tournées de clémentines en région PACA, la marque est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes."
           },
+          "blocks": {}
+        },
+        "espace_medium_L4WrXP": {
+          "type": "espace-medium",
+          "name": "Espace : Medium",
+          "settings": {},
           "blocks": {}
         },
         "boutons": {
@@ -72,9 +78,10 @@
       },
       "block_order": [
         "titre",
-        "espace-small",
         "paragraphe-italique",
+        "espace_small_htweMP",
         "paragraphe",
+        "espace_medium_L4WrXP",
         "boutons",
         "espace-medium",
         "temoignage-accueil"
@@ -94,19 +101,19 @@
         "item_AB9tdm": {
           "type": "item",
           "settings": {
-            "text_texte": "Produits 100 % Corse"
+            "text_texte": "Circuit court garanti"
           }
         },
         "item_VYGW66": {
           "type": "item",
           "settings": {
-            "text_texte": "Produits 100 % Corse"
+            "text_texte": "Rémunération  des producteurs"
           }
         },
         "item_t6nFw9": {
           "type": "item",
           "settings": {
-            "text_texte": "Produits 100 % Corse"
+            "text_texte": "Programme  de fidélité"
           }
         }
       },
