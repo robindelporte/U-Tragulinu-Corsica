@@ -1,145 +1,140 @@
 <div class="padding-global padding-section-medium">
-          <div li-case="collection.filters.size">
-{% case collection.filters.size %}
-
-            {% when collection.filters.size == 0 %} 
-<div li-when="collection.filters.size == 0">
-
-              <div class="container-large">
-                {% paginate collection.products by 50 %}
+          {% if collection.filters.size == 0 %}    <div li-if="collection.filters.size == 0">
+    
+            <div class="container-large">
+              {% paginate collection.products by 50 %}
     <div li-paginate:by="50" li-paginate="collection.products" class="filter_layout without-filters" by="50">
-                  <div id="w-node-b453a388-6b88-1c23-86ff-6112fe5ede47-cecccced" class="filter_feed">
-                    <div class="filter_product-list-wrapper w-dyn-list">
-                      <div role="list" class="filter_product-list without-filters w-dyn-items">
-                        {% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="filter_product-list-item w-dyn-item">
+                <div id="w-node-b453a388-6b88-1c23-86ff-6112fe5ede47-cecccced" class="filter_feed">
+                  <div class="filter_product-list-wrapper w-dyn-list">
+                    <div role="list" class="filter_product-list without-filters w-dyn-items">
+                      {% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="filter_product-list-item w-dyn-item">
                                     
-                          
+                        
                             {% render 'product_item', product: product %}
                             
-                        
+                      
                         </div>
 {% endfor %}
-                      </div>
-                      {% if collection.products == blank %}    <div li-if="collection.products == blank" class="filter_empty w-dyn-empty">
-    
-                        <div class="heading-style-h6-2">No results found.</div>
-                        <div class="spacer-xxsmall"></div>
-                        <div>There are no results with this criteria. Try changing your search.</div>
-                          </div>
-{% endif %}
                     </div>
+                    {% if collection.products == blank %}    <div li-if="collection.products == blank" class="filter_empty w-dyn-empty">
+    
+                      <div class="heading-style-h6-2">No results found.</div>
+                      <div class="spacer-xxsmall"></div>
+                      <div>There are no results with this criteria. Try changing your search.</div>
+                        </div>
+{% endif %}
                   </div>
-                </div>{% endpaginate %}
-              </div>
+                </div>
+              </div>{% endpaginate %}
             </div>
-            {% when collection.filters.size > 0 %} 
-<div li-when="collection.filters.size > 0">
-
-              <div class="container-large">
-                {% paginate collection.products by 50 %}
+              </div>
+{% endif %}
+          {% if collection.filters.size > 0 %}    <div li-if="collection.filters.size > 0">
+    
+            <div class="container-large">
+              {% paginate collection.products by 50 %}
     <div li-paginate:by="50" li-paginate="collection.products" class="filter_layout" by="50">
-                  <div id="w-node-_36431040-2007-b624-b846-7475b14bd7ae-cecccced" data-w-id="36431040-2007-b624-b846-7475b14bd7ae" class="filter_filters-wrapper">
-                    <form action="{{ routes.search_url }}" method="get" role="search" class="filter_form_component">
-                      <div id="w-node-_36431040-2007-b624-b846-7475b14bd7b0-cecccced" class="filter_form">
-                        <div class="filter_form-header">
-                          <div class="filter_heading">
+                <div id="w-node-_36431040-2007-b624-b846-7475b14bd7ae-cecccced" data-w-id="36431040-2007-b624-b846-7475b14bd7ae" class="filter_filters-wrapper">
+                  <form action="{{ routes.search_url }}" method="get" role="search" class="filter_form_component">
+                    <div id="w-node-_36431040-2007-b624-b846-7475b14bd7b0-cecccced" class="filter_form">
+                      <div class="filter_form-header">
+                        <div class="filter_heading">
 {{ section.settings.text_filter }}
 </div>
-                          <a li-object:href="collection.url" href="{{ collection.url }}" class="button is-link hide-tablet w-inline-block">
-                            <div>
+                        <a li-object:href="collection.url" href="{{ collection.url }}" class="button is-link hide-tablet w-inline-block">
+                          <div>
 {{ section.settings.text_clear_all }}
 </div>
-                          </a>
-                        </div>
-                        <div class="filter_results-wrapper">
-                          <div class="filter_results-text"><span li-object="collection.all_products_count | append: ' '">{{ collection.all_products_count | append: ' ' }}</span> <span>
-{{ section.settings.text_products_shown }}
-</span></div>
-                        </div>
-                        <div class="filter_scroll-wrapper">
-                          <div class="filter_filter-group-list">
-                            {% if filter.type == 'price_range' %}    <div li-if="filter.type == 'price_range'" class="filter_group-item is-price">
-    
-                              <div class="filter_filter-options">
-                                <div class="filter_list-wrapper">
-                                  <div class="filter_price-range">
-                                    <div class="filter_input-wrapper"><input type="number" li-render-filter="price-min" li-render-filter-min-param="{{ filter.min_value.param_name }}" class="filter_input" value="{{ filter.min_value }}">
-                                      <div li-object="localization.country.currency.symbol" class="filter_input-currency">{{ localization.country.currency.symbol }}</div>
-                                    </div>
-                                    <div class="text-size-small">à</div>
-                                    <div class="filter_input-wrapper"><input type="number" li-render-filter="price-max" li-render-filter-min-param="{{ filter.max_value.param_name }}" class="filter_input" value="{{ filter.max_value }}">
-                                      <div li-object="localization.country.currency.symbol" class="filter_input-currency">{{ localization.country.currency.symbol }}</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                                </div>
-{% endif %}
-                            {% if filter.values.size > 1 and filter.type != 'price_range' %}    <div x-data="{open: false}" li-if="filter.values.size > 1 and filter.type != 'price_range'" class="filter_group-item">
-    
-                              <div x-on:click="open = !open" class="filter_filter-group-heading">
-                                <div li-object="filter.label">{{ filter.label }}</div>
-                                <div x-bind:class="open === true ? 'is-open' : ''" class="filter-toggle w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="16" height="16" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
-                                    <path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"></path>
-                                  </svg></div>
-                              </div>
-                              <div x-collapse="" x-show="open" class="filter_filter-options">
-                                <div class="filter_list-wrapper">
-                                  <div class="filter_list">
-                                    {% for filter_value in filter.values %}    <div li-for="filter_value in filter.values" class="filter_item">
-                                    
-                                      
-                            <a href="{% if filter_value.active %}{{ filter_value.url_to_remove }}{% else %}{{ filter_value.url_to_add }}{% endif %}" class="{% if filter_value.count == 0 and filter_value.active == false %}filter_form_checkbox is-disabled{% else %}filter_form_checkbox{% endif %}">
-                                        <div class="{% if filter_value.active %}filter_form_checkbox-icon is-checked{% else %}filter_form_checkbox-icon{% endif %}"></div>
-                                        <div class="filter_form_checkbox-label"><span li-object="filter_value.label | append: ' '">{{ filter_value.label | append: ' ' }}</span></div>
-                                      </a>
-                            
-                                    
-                        </div>
-{% endfor %}
-                                  </div>
-                                </div>
-                              </div>
-                                </div>
-{% endif %}
-                          </div>
-                        </div>
-                        <a data-w-id="36431040-2007-b624-b846-7475b14bd7dc" href="#" class="button is-filter-button w-inline-block">
-                          <div>Filtrer</div>
                         </a>
                       </div>
-                    </form>
-                    <a data-w-id="36431040-2007-b624-b846-7475b14bd7df" href="#" class="filter_tablet-modal-close-button w-inline-block"><img alt="" src="https://uploads-ssl.webflow.com/624380709031623bfe4aee60/624380709031623afe4aee7e_icon_close-modal.svg" class="icon-1x1-small"></a>
-                  </div>
-                  <a data-w-id="36431040-2007-b624-b846-7475b14bd7e1" href="#" class="filter_tablet-filters-button w-inline-block"><img loading="lazy" src="https://uploads-ssl.webflow.com/624380709031623bfe4aee60/62942b9f00484cf074e6f851_icon-filters.svg" alt="" class="button-icon-left">
-                    <div>Filtres</div>
-                  </a>
-                  <div id="w-node-_36431040-2007-b624-b846-7475b14bd7e5-cecccced" class="filter_feed">
-                    <div class="filter_product-list-wrapper w-dyn-list">
-                      <div role="list" class="filter_product-list w-dyn-items">
-                        {% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="filter_product-list-item w-dyn-item">
+                      <div class="filter_results-wrapper">
+                        <div class="filter_results-text"><span li-object="collection.all_products_count | append: ' '">{{ collection.all_products_count | append: ' ' }}</span> <span>
+{{ section.settings.text_products_shown }}
+</span></div>
+                      </div>
+                      <div class="filter_scroll-wrapper">
+                        <div class="filter_filter-group-list">
+                          {% if filter.type == 'price_range' %}    <div li-if="filter.type == 'price_range'" class="filter_group-item is-price">
+    
+                            <div class="filter_filter-options">
+                              <div class="filter_list-wrapper">
+                                <div class="filter_price-range">
+                                  <div class="filter_input-wrapper"><input type="number" li-render-filter="price-min" li-render-filter-min-param="{{ filter.min_value.param_name }}" class="filter_input" value="{{ filter.min_value }}">
+                                    <div li-object="localization.country.currency.symbol" class="filter_input-currency">{{ localization.country.currency.symbol }}</div>
+                                  </div>
+                                  <div class="text-size-small">à</div>
+                                  <div class="filter_input-wrapper"><input type="number" li-render-filter="price-max" li-render-filter-min-param="{{ filter.max_value.param_name }}" class="filter_input" value="{{ filter.max_value }}">
+                                    <div li-object="localization.country.currency.symbol" class="filter_input-currency">{{ localization.country.currency.symbol }}</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                              </div>
+{% endif %}
+                          {% if filter.values.size > 1 and filter.type != 'price_range' %}    <div x-data="{open: false}" li-if="filter.values.size > 1 and filter.type != 'price_range'" class="filter_group-item">
+    
+                            <div x-on:click="open = !open" class="filter_filter-group-heading">
+                              <div li-object="filter.label">{{ filter.label }}</div>
+                              <div x-bind:class="open === true ? 'is-open' : ''" class="filter-toggle w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="16" height="16" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                                  <path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"></path>
+                                </svg></div>
+                            </div>
+                            <div x-collapse="" x-show="open" class="filter_filter-options">
+                              <div class="filter_list-wrapper">
+                                <div class="filter_list">
+                                  {% for filter_value in filter.values %}    <div li-for="filter_value in filter.values" class="filter_item">
                                     
-                          
-                            {% render 'product_item', product: product %}
+                                    
+                            <a href="{% if filter_value.active %}{{ filter_value.url_to_remove }}{% else %}{{ filter_value.url_to_add }}{% endif %}" class="{% if filter_value.count == 0 and filter_value.active == false %}filter_form_checkbox is-disabled{% else %}filter_form_checkbox{% endif %}">
+                                      <div class="{% if filter_value.active %}filter_form_checkbox-icon is-checked{% else %}filter_form_checkbox-icon{% endif %}"></div>
+                                      <div class="filter_form_checkbox-label"><span li-object="filter_value.label | append: ' '">{{ filter_value.label | append: ' ' }}</span></div>
+                                    </a>
                             
-                        
+                                  
                         </div>
 {% endfor %}
-                      </div>
-                      {% if collection.products == blank %}    <div li-if="collection.products == blank" class="filter_empty w-dyn-empty">
-    
-                        <div class="heading-style-h6-2">No results found.</div>
-                        <div class="spacer-xxsmall"></div>
-                        <div>There are no results with this criteria. Try changing your search.</div>
-                          </div>
+                                </div>
+                              </div>
+                            </div>
+                              </div>
 {% endif %}
+                        </div>
+                      </div>
+                      <a data-w-id="36431040-2007-b624-b846-7475b14bd7dc" href="#" class="button is-filter-button w-inline-block">
+                        <div>Filtrer</div>
+                      </a>
                     </div>
+                  </form>
+                  <a data-w-id="36431040-2007-b624-b846-7475b14bd7df" href="#" class="filter_tablet-modal-close-button w-inline-block"><img alt="" src="https://uploads-ssl.webflow.com/624380709031623bfe4aee60/624380709031623afe4aee7e_icon_close-modal.svg" class="icon-1x1-small"></a>
+                </div>
+                <a data-w-id="36431040-2007-b624-b846-7475b14bd7e1" href="#" class="filter_tablet-filters-button w-inline-block"><img loading="lazy" src="https://uploads-ssl.webflow.com/624380709031623bfe4aee60/62942b9f00484cf074e6f851_icon-filters.svg" alt="" class="button-icon-left">
+                  <div>Filtres</div>
+                </a>
+                <div id="w-node-_36431040-2007-b624-b846-7475b14bd7e5-cecccced" class="filter_feed">
+                  <div class="filter_product-list-wrapper w-dyn-list">
+                    <div role="list" class="filter_product-list w-dyn-items">
+                      {% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="filter_product-list-item w-dyn-item">
+                                    
+                        
+                            {% render 'product_item', product: product %}
+                            
+                      
+                        </div>
+{% endfor %}
+                    </div>
+                    {% if collection.products == blank %}    <div li-if="collection.products == blank" class="filter_empty w-dyn-empty">
+    
+                      <div class="heading-style-h6-2">No results found.</div>
+                      <div class="spacer-xxsmall"></div>
+                      <div>There are no results with this criteria. Try changing your search.</div>
+                        </div>
+{% endif %}
                   </div>
-                </div>{% endpaginate %}
-              </div>
+                </div>
+              </div>{% endpaginate %}
             </div>
-          {% endcase %}
-</div>
+              </div>
+{% endif %}
         </div>
         <div class="hide w-embed w-script">
           <script>
