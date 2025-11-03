@@ -48,7 +48,8 @@
         "text_avantage_item_3": "{{ product.metafields.custom.avantage_n_3.value }}",
         "text_avantage_item_4": "{{ product.metafields.custom.avantage_n_4.value }}",
         "text_producteur_titre": "Producteur & Origine",
-        "text_producteur_ferme": "Domaine de La Taste",
+        "text_producteur_ferme": "{{ product.metafields.custom.producteur.value.ferme.value }}",
+        "image_producteur_image": "{{ product.metafields.custom.producteur.value.image.value }}",
         "text_conseil_titre": "Conseils de préparation",
         "text_conseil_1": "Vrai clementine pour un goût sucré et concentré",
         "text_conseil_2": "Récolte à la main pour une qualité optimale",
@@ -63,7 +64,7 @@
         "text_unite_de_mesure": "{{ product.metafields.custom.conditionnement.value }}",
         "text_pas_dabonnement": "Je commande ponctuellement",
         "text_with_subscription": "S’abonner",
-        "richtext_prochaine_recolte": "<p><br/>                                Prochaine récolte prévue en <strong>novembre 2025</strong><br/>                              </p>"
+        "richtext_prochaine_recolte": "<p>{{ product.metafields.custom.disponibilite.value }}<br/>                              </p>"
       }
     },
     "faq_8zTCbL": {
