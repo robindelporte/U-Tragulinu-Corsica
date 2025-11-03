@@ -548,16 +548,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="product_add-to-cart-wrapper">
                         <div class="quantity_wrapper">
                           <div class="quantity_holder">
-                            <a href="#" class="quantity_selector w-inline-block">
+                            <div aria-label="Baisser quantité" x-on:click="quantity--, inputSize()" role="button" class="quantity_selector">
                               <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
                                   <path fill="currentColor" d="M19 12.998H5v-2h14z"></path>
                                 </svg></div>
-                            </a><input li-element="add-to-cart-quantity" class="mini-cart_line-item_quantity-adjust is-product" value="1" x-model="quantity">
-                            <a href="#" class="quantity_selector w-inline-block">
+                            </div><input li-element="add-to-cart-quantity" class="mini-cart_line-item_quantity-adjust is-product" value="1" x-model="quantity">
+                            <div aria-label="Augmenter quantité" x-on:click="quantity++, inputSize()" role="button" class="quantity_selector">
                               <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
                                   <path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"></path>
                                 </svg></div>
-                            </a>
+                            </div>
                           </div>
                           <div class="product_description-fidelity-wrap">
                             <div class="text-weight-medium">Gagnez <span class="fidelity_count">20</span> <span class="text-color-orange">points </span>de fidélité</div>
