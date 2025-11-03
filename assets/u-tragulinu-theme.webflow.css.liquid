@@ -4511,6 +4511,15 @@ figcaption {
   display: inline-flex;
 }
 
+.quantity_selector {
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.quantity_selector:active {
+  transform: scale(.9);
+}
+
 .quantity_wrapper {
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
@@ -6713,6 +6722,7 @@ figcaption {
     flex-flow: column;
     padding-right: 0;
     position: static;
+    overflow: hidden;
   }
 
   .product-header_gallery-image {
@@ -7092,6 +7102,7 @@ figcaption {
   }
 
   .heading-style-h3 {
+    letter-spacing: -1.6px;
     font-size: 2rem;
   }
 
