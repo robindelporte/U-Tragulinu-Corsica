@@ -54,9 +54,9 @@
           "settings": {
             "url_bouton_1_lien": "shopify://products/clementines-bio-corse",
             "text_bouton_1_texte": "Précommandez",
-            "checkbox_afficher_le_2eme_bouton": true,
-            "text_bouton_2_texte": "Créez une alerte",
-            "url_bouton_2_lien": "shopify://collections/concours"
+            "checkbox_afficher_le_2eme_bouton": false,
+            "url_bouton_2_lien": "shopify://collections/concours",
+            "text_bouton_2_texte": "Créez une alerte"
           },
           "blocks": {}
         },
@@ -184,8 +184,8 @@
             "url_bouton_1_lien": "",
             "text_bouton_1_texte": "Précommandez",
             "checkbox_afficher_le_2eme_bouton": true,
-            "text_bouton_2_texte": "Créez une alerte",
-            "url_bouton_2_lien": ""
+            "url_bouton_2_lien": "",
+            "text_bouton_2_texte": "Créez une alerte"
           },
           "blocks": {}
         }
