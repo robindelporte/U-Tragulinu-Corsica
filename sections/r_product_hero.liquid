@@ -61,105 +61,121 @@
                       </div>
                       <div class="hide w-embed w-script">
                         <script>
-let swiperInstance = null;
-let thumbsSwiperInstance = null;
-$(".swiper-container").each(function (index) {
-    thumbsSwiperInstance = new Swiper($(this).find(".swiper.is-product-thumbnail")[0], {
-        slidesPerView: "auto",
-        rewind: false,
-        loopedSlides: 8,
-        slideToClickedSlide: true,
-        spaceBetween: "4%",
-    });
-    swiperInstance = new Swiper($(this).find(".swiper.is-product-gallery")[0], {
-        mousewheel: {
-            forceToAxis: true
-        },
-        thumbs: {
-            swiper: thumbsSwiperInstance,
-            slideThumbActiveClass: "is-active",
-        },
-        keyboard: {
-            enabled: true,
-            onlyInViewport: true
-        },
-        navigation: {
-            nextEl: $(this).find(".swiper-next")[0],
-            prevEl: $(this).find(".swiper-prev")[0],
-        },
-        pagination: {
-            el: $(this).find(".swiper_pagination")[0],
-            bulletActiveClass: "is-active",
-            bulletClass: "swiper_bullet",
-            clickable: true,
-            dynamicBullets: false,
-        },
-        breakpoints: {
-            768: {
-                pagination: {
-                    enabled: false,
+let swiperInstances = [];
+let thumbsSwiperInstances = [];
+function initSwiper() {
+    // D&eacute;truit les anciennes instances
+    swiperInstances.forEach(instance => instance && instance.destroy());
+    thumbsSwiperInstances.forEach(instance => instance && instance.destroy());
+    swiperInstances = [];
+    thumbsSwiperInstances = [];
+    $(".swiper-container").each(function (index) {
+        const thumbsSwiper = new Swiper($(this).find(".swiper.is-product-thumbnail")[0], {
+            slidesPerView: "auto",
+            rewind: false,
+            loopedSlides: 8,
+            slideToClickedSlide: true,
+            spaceBetween: "4%",
+        });
+        thumbsSwiperInstances.push(thumbsSwiper);
+        const mainSwiper = new Swiper($(this).find(".swiper.is-product-gallery")[0], {
+            mousewheel: {
+                forceToAxis: true
+            },
+            thumbs: {
+                swiper: thumbsSwiper,
+                slideThumbActiveClass: "is-active",
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true
+            },
+            navigation: {
+                nextEl: $(this).find(".swiper-next")[0],
+                prevEl: $(this).find(".swiper-prev")[0],
+            },
+            pagination: {
+                el: $(this).find(".swiper_pagination")[0],
+                bulletActiveClass: "is-active",
+                bulletClass: "swiper_bullet",
+                clickable: true,
+                dynamicBullets: false,
+            },
+            breakpoints: {
+                768: {
+                    pagination: {
+                        enabled: false,
+                    }
                 }
             }
-        }
+        });
+        swiperInstances.push(mainSwiper);
     });
+}
+// Initialise apr&egrave;s le chargement complet
+window.addEventListener('load', function() {
+    setTimeout(initSwiper, 100);
 });
 function syncSwiperWithVariant(selectedVariant) {
-    if (!swiperInstance) return;
-    const slides = document.querySelectorAll('.swiper-slide.is-product-gallery img');
-    let targetIndex = 0;
-    let found = false;
-    let variantImageSrc = null;
-    if (selectedVariant.featured_image && typeof selectedVariant.featured_image === 'object') {
-        variantImageSrc = selectedVariant.featured_image.src;
-        if (selectedVariant.featured_image.id) {
-            const imageId = selectedVariant.featured_image.id.toString();
+    // Synchronise TOUS les sliders (desktop + mobile)
+    swiperInstances.forEach(swiperInstance => {
+        if (!swiperInstance) return;
+        const slides = document.querySelectorAll('.swiper-slide.is-product-gallery img');
+        let targetIndex = 0;
+        let found = false;
+        let variantImageSrc = null;
+        if (selectedVariant.featured_image && typeof selectedVariant.featured_image === 'object') {
+            variantImageSrc = selectedVariant.featured_image.src;
+            if (selectedVariant.featured_image.id) {
+                const imageId = selectedVariant.featured_image.id.toString();
+                slides.forEach((img, index) => {
+                    const imgSrc = img.getAttribute('src') || '';
+                    if (imgSrc.includes(imageId)) {
+                        targetIndex = index;
+                        found = true;
+                    }
+                });
+            }
+        } else if (selectedVariant.featured_image && typeof selectedVariant.featured_image === 'string') {
+            variantImageSrc = selectedVariant.featured_image;
+        } else if (selectedVariant.featured_media && selectedVariant.featured_media.preview_image) {
+            variantImageSrc = selectedVariant.featured_media.preview_image.src;
+        }
+        if (!found && variantImageSrc) {
+            const cleanUrl = variantImageSrc.replace(/^\/\//, 'https://');
+            const fileName = cleanUrl.split('/').pop().split('?')[0];
             slides.forEach((img, index) => {
                 const imgSrc = img.getAttribute('src') || '';
-                if (imgSrc.includes(imageId)) {
+                const slideFileName = imgSrc.split('/').pop().split('?')[0];
+                if (slideFileName === fileName) {
                     targetIndex = index;
                     found = true;
                 }
             });
         }
-    } else if (selectedVariant.featured_image && typeof selectedVariant.featured_image === 'string') {
-        variantImageSrc = selectedVariant.featured_image;
-    } else if (selectedVariant.featured_media && selectedVariant.featured_media.preview_image) {
-        variantImageSrc = selectedVariant.featured_media.preview_image.src;
-    }
-    if (!found && variantImageSrc) {
-        const cleanUrl = variantImageSrc.replace(/^\/\//, 'https://');
-        const fileName = cleanUrl.split('/').pop().split('?')[0];
-        slides.forEach((img, index) => {
-            const imgSrc = img.getAttribute('src') || '';
-            const slideFileName = imgSrc.split('/').pop().split('?')[0];
-            if (slideFileName === fileName) {
-                targetIndex = index;
-                found = true;
-            }
-        });
-    }
-    if (!found && variantImageSrc) {
-        slides.forEach((img, index) => {
-            const imgSrc = img.getAttribute('src') || '';
-            const cleanImgSrc = imgSrc.replace(/^\/\//, 'https://').split('?')[0];
-            const cleanVariantSrc = variantImageSrc.replace(/^\/\//, 'https://').split('?')[0];
-            if (cleanImgSrc === cleanVariantSrc) {
-                targetIndex = index;
-                found = true;
-            }
-        });
-    }
-    if (!found && variantImageSrc) {
-        const fileName = variantImageSrc.split('/').pop().split('?')[0].replace('.webp', '');
-        slides.forEach((img, index) => {
-            const imgSrc = img.getAttribute('src') || '';
-            if (imgSrc.includes(fileName)) {
-                targetIndex = index;
-                found = true;
-            }
-        });
-    }
-    swiperInstance.slideTo(targetIndex, 300);
+        if (!found && variantImageSrc) {
+            slides.forEach((img, index) => {
+                const imgSrc = img.getAttribute('src') || '';
+                const cleanImgSrc = imgSrc.replace(/^\/\//, 'https://').split('?')[0];
+                const cleanVariantSrc = variantImageSrc.replace(/^\/\//, 'https://').split('?')[0];
+                if (cleanImgSrc === cleanVariantSrc) {
+                    targetIndex = index;
+                    found = true;
+                }
+            });
+        }
+        if (!found && variantImageSrc) {
+            const fileName = variantImageSrc.split('/').pop().split('?')[0].replace('.webp', '');
+            slides.forEach((img, index) => {
+                const imgSrc = img.getAttribute('src') || '';
+                if (imgSrc.includes(fileName)) {
+                    targetIndex = index;
+                    found = true;
+                }
+            });
+        }
+        swiperInstance.slideTo(targetIndex, 300);
+    });
 }
 document.addEventListener('DOMContentLoaded', function() {
     const variantInputs = document.querySelectorAll('input[data-selectortype="radio"]');
