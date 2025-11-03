@@ -5,7 +5,9 @@
                     
                     
                     {% if block.settings.checkbox_afficher_le_2eme_bouton == true %}
-Créez une alerte{% endif %}
+<div>
+                      <a href="{{ block.settings.url_bouton_2_lien }}" class="button is-secondary w-button"> {{ block.settings.text_bouton_2_texte }} </a>
+                    </div>{% endif %}
                     
                   
                 </div> {% schema %} {
@@ -29,15 +31,15 @@ Créez une alerte{% endif %}
             "default": true
         },
         {
+            "id": "url_bouton_2_lien",
+            "type": "url",
+            "label": "Bouton 2 : Lien"
+        },
+        {
             "id": "text_bouton_2_texte",
             "type": "text",
             "label": "Bouton 2 : Texte",
             "default": "Cr\u00e9ez une alerte"
-        },
-        {
-            "id": "url_bouton_2_lien",
-            "type": "url",
-            "label": "Bouton 2 : Lien"
         }
     ],
     "presets": [

@@ -648,9 +648,6 @@ document.addEventListener('DOMContentLoaded', function() {
 {{ section.settings.text_unite_de_mesure }}
 </p>
                     </div>
-                    <div class="produt_header-price-unity">
-                      <div li-object="product.selected_or_first_available_variant.unit_price_measurement.reference_unit">{{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}</div>
-                    </div>
                   </div>
                   <div li-object="product.description" class="product_description w-richtext">{{ product.description }}</div>
                   <div class="product-header_form-block w-form">
@@ -740,9 +737,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
                             <a href="#" class="button is-product is-out-off-stock w-button">Nous sommes hors saison</a>
                             <div>
-                              <div class="hors-saison_rich-text w-richtext">
-                                <p>Prochaine récolte prévue en <strong>novembre 2025</strong></p>
-                              </div>
+                              <div class="hors-saison_rich-text w-richtext"> {{ section.settings.richtext_prochaine_recolte }} </div>
                             </div>
                               </div>
 {% endif %}
@@ -954,6 +949,12 @@ document.addEventListener('DOMContentLoaded', function() {
             "type": "text",
             "label": "with Subscription",
             "default": "S\u2019abonner"
+        },
+        {
+            "id": "richtext_prochaine_recolte",
+            "type": "richtext",
+            "label": "Prochaine r\u00e9colte",
+            "default": "<p>\n                                Prochaine r\u00e9colte pr\u00e9vue en <strong>novembre 2025<\/strong>\n                              <\/p>"
         }
     ],
     "presets": [
