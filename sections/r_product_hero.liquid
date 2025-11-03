@@ -308,17 +308,6 @@ document.addEventListener('DOMContentLoaded', function() {
                       <p>Ferme & Région : <span>
 {{ section.settings.text_producteur_ferme }}
 </span></p>
-{% if product.metafields.custom.producteur != blank %}
-  {% assign producteur = product.metafields.custom.producteur.value %}
-  {% assign balises_clean = producteur.balises | remove: '["' | remove: '"]' %}
-  {% assign balises_array = balises_clean | split: '","' %}
-  
-  <div class="producteurs_tag-wrapper">
-    {% for balise in balises_array %}
-      <div class="product-tag">{{ balise }}</div>
-    {% endfor %}
-  </div>
-{% endif %}
                       {% if product.metafields.custom.producteur != blank %}    <div li-if="product.metafields.custom.producteur != blank" class="producteurs_tag-wrapper">
     
                         {% assign producteur = product.metafields.custom.producteur.value %}
