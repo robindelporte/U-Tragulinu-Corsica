@@ -1,26 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "cart": {
-            "type": "cart",
-            "blocks": {
-                "bloc-vide": {
-                    "name": "Bloc vide",
-                    "type": "bloc-vide"
-                },
-                "bloc-vide-2": {
-                    "name": "Bloc vide 2",
-                    "type": "bloc-vide-2"
-                }
-            },
-            "block_order": [
-                "bloc-vide",
-                "bloc-vide-2"
-            ]
-        }
-    },
-    "layout": "theme",
-    "wrapper": "div.main-wrapper",
-    "order": [
-        "cart"
-    ]
+  "sections": {
+    "cart": {
+      "type": "cart",
+      "settings": {
+        "text_heading": "Votre panier corse",
+        "text_continue_shopping": "Continuer mes achats",
+        "text_product": "Product",
+        "text_quantity": "Quantité",
+        "text_price": "Prix",
+        "text_summary": "Résumé",
+        "text_sum_inkl_vat": "Total (TTC)",
+        "text_discount": "Réduction",
+        "text_comment": "Souhaitez vous insérer une note de commande ?",
+        "text_cart_empty": "Votre panier est vide ?"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "div.main-wrapper",
+  "order": [
+    "cart"
+  ]
 }
