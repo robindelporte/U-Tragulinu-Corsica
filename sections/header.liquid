@@ -54,7 +54,7 @@
                         {% for child_link in link.links %}    <div li-for="child_link in link.links">
                                     
                           
-                            {% render 'nav_product_item', product: product %}
+                            {% render 'nav_product_item', product: child_link.object %}
                             
                         
                         </div>
