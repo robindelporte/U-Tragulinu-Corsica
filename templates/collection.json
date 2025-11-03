@@ -1,50 +1,67 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "collection_hero": {
-            "type": "collection_hero"
-        },
-        "collection_products": {
-            "type": "collection_products"
-        },
-        "icones": {
-            "type": "icones",
-            "blocks": {
-                "item": {
-                    "name": "Item",
-                    "type": "item"
-                }
-            },
-            "block_order": [
-                "item"
-            ]
-        },
-        "faq": {
-            "type": "faq",
-            "blocks": {
-                "faq-item": {
-                    "name": "FAQ Item",
-                    "type": "faq-item"
-                }
-            },
-            "block_order": [
-                "faq-item"
-            ]
-        },
-        "banniere": {
-            "type": "banniere"
-        },
-        "reseaux": {
-            "type": "reseaux"
-        }
+  "sections": {
+    "collection_hero": {
+      "type": "collection_hero",
+      "settings": {}
     },
-    "layout": "collection",
-    "wrapper": "div.main-wrapper",
-    "order": [
-        "collection_hero",
-        "collection_products",
-        "icones",
-        "faq",
-        "banniere",
-        "reseaux"
-    ]
+    "collection_products": {
+      "type": "collection_products",
+      "settings": {}
+    },
+    "icones": {
+      "type": "icones",
+      "blocks": {
+        "item": {
+          "type": "item",
+          "name": "Item",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "item"
+      ],
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq-item": {
+          "type": "faq-item",
+          "name": "FAQ Item",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "faq-item"
+      ],
+      "settings": {}
+    },
+    "banniere": {
+      "type": "banniere",
+      "settings": {}
+    },
+    "reseaux": {
+      "type": "reseaux",
+      "settings": {}
+    }
+  },
+  "layout": "theme",
+  "wrapper": "div.main-wrapper",
+  "order": [
+    "collection_hero",
+    "collection_products",
+    "icones",
+    "faq",
+    "banniere",
+    "reseaux"
+  ]
 }
