@@ -310,29 +310,14 @@ document.addEventListener('DOMContentLoaded', function() {
 </span></p>
 {% if product.metafields.custom.producteur != blank %}
   {% assign producteur = product.metafields.custom.producteur.value %}
+  {% assign balises_raw = producteur.balises | remove: '[' | remove: ']' | remove: '"' %}
+  {% assign balises_array = balises_raw | split: '","' %}
   
-  <div style="background: yellow; padding: 20px; margin: 20px;">
-    <h3>DEBUG PRODUCTEUR</h3>
-    
-    <p><strong>Producteur complet:</strong><br>{{ producteur }}</p>
-    
-    <p><strong>Balises:</strong><br>{{ producteur.balises }}</p>
-    
-    <p><strong>Type de balises:</strong><br>{{ producteur.balises | type }}</p>
-    
-    <p><strong>Taille:</strong><br>{{ producteur.balises.size }}</p>
-    
-    {% if producteur.balises %}
-      <h4>Boucle sur les balises:</h4>
-      {% for balise in producteur.balises %}
-        <div>{{ forloop.index }}. {{ balise }} (type: {{ balise | type }})</div>
-      {% endfor %}
-    {% else %}
-      <p style="color: red;">producteur.balises est vide ou n'existe pas</p>
-    {% endif %}
+  <div class="producteurs_tag-wrapper">
+    {% for balise in balises_array %}
+      <div class="product-tag">{{ balise }}</div>
+    {% endfor %}
   </div>
-{% else %}
-  <p style="background: red; color: white; padding: 10px;">Pas de producteur pour ce produit</p>
 {% endif %}
                       {% if product.metafields.custom.producteur != blank %}    <div li-if="product.metafields.custom.producteur != blank" class="producteurs_tag-wrapper">
     
