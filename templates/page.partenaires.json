@@ -1,33 +1,82 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero_partenaires": {
-            "type": "hero_partenaires"
-        },
-        "processus": {
-            "type": "processus"
-        },
-        "producteurs": {
-            "type": "producteurs",
-            "blocks": {
-                "tab": {
-                    "name": "Tab",
-                    "type": "tab"
-                }
-            },
-            "block_order": [
-                "tab"
-            ]
-        },
-        "banniere": {
-            "type": "banniere"
-        }
+  "sections": {
+    "hero_partenaires": {
+      "type": "hero_partenaires",
+      "settings": {
+        "text_heading": "Histoire de la marque",
+        "text_paragraphe": "Partie de simples tournées de clémentines en région PACA, U-Tragulinu-Corsica est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes."
+      }
     },
-    "layout": "theme",
-    "wrapper": "div.main-wrapper",
-    "order": [
-        "hero_partenaires",
-        "processus",
-        "producteurs",
-        "banniere"
-    ]
+    "processus": {
+      "type": "processus",
+      "settings": {
+        "text_titre": "Un processus qui garantit"
+      }
+    },
+    "producteurs": {
+      "type": "producteurs",
+      "blocks": {
+        "tab": {
+          "type": "tab",
+          "name": "Tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p> Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>Concrètement, côté public :</p><ul><li>Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terroirs).</li><li>Sélection de produits de saison pour limiter le gaspillage.</li><li>Emballages sobres et réutilisables, pensés pour la fraîcheur.</li><li>Vente en circuit court avec une logistique simple et locale.</li><li>Conseils d’usage et recettes traditionnelles pour cuisiner “comme à la maison”.</li></ul>",
+            "text_tab_label": "2021"
+          }
+        },
+        "tab_VMmkNU": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "2025"
+          }
+        },
+        "tab_6XQdLa": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "2026"
+          }
+        }
+      },
+      "block_order": [
+        "tab",
+        "tab_VMmkNU",
+        "tab_6XQdLa"
+      ],
+      "settings": {
+        "text_titre": "Étapes clefs de l’entreprise"
+      }
+    },
+    "banniere": {
+      "type": "banniere",
+      "settings": {
+        "text_titre": "Découvrez nos spécialités",
+        "text_bloc_1_titre": "Nos fruits &amp; agrumes",
+        "url_bloc_1_lien": "",
+        "text_bloc_2_titre": "Notre épicerie Corse",
+        "url_bloc_2_lien": ""
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "div.main-wrapper",
+  "order": [
+    "hero_partenaires",
+    "processus",
+    "producteurs",
+    "banniere"
+  ]
 }
