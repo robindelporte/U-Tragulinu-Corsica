@@ -228,45 +228,37 @@
           "type": "faq-item",
           "name": "FAQ Item",
           "settings": {
-            "text_question": "Heading",
-            "richtext_reponse": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    </p>"
+            "text_question": "Comment sont cueillis vos fruits ?",
+            "richtext_reponse": "<p>Cueillis à la main, un à un, seulement à maturité. On repasse plusieurs fois, tôt le matin, pour ne prendre que les plus mûrs. En agriculture biologique, ils sont triés au verger, déposés en petites cagettes jamais tassés  puis acheminés le jour même à l’atelier. Simple, net, à l’ancienne.</p>"
           }
         },
         "faq_item_hbJFeC": {
           "type": "faq-item",
           "settings": {
-            "text_question": "Heading",
-            "richtext_reponse": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    </p>"
-          }
-        },
-        "faq_item_rRKrFV": {
-          "type": "faq-item",
-          "settings": {
-            "text_question": "Heading",
-            "richtext_reponse": "<p><br/>                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br/>                    </p>"
+            "text_question": "Quels sont les délais de livraison ?",
+            "richtext_reponse": "<p>Nous faisons de notre mieux pour livrer votre commande dans un délai de <strong>8 jours ouvrés </strong>après confirmation. Cependant, nos tournées étant organisées par zones géographiques, des variations peuvent survenir selon votre emplacement.</p>"
           }
         },
         "faq_item_YBgbqR": {
           "type": "faq-item",
           "settings": {
-            "text_question": "Heading",
-            "richtext_reponse": "<p><br/>                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br/>                    </p>"
+            "text_question": "Peut-on congeler les agrumes ?",
+            "richtext_reponse": "<p>Oui. On congèle les agrumes en quartiers, jusqu’à 3 mois. Pelez, détaillez, pré-congelez sur plaque puis emballez bien fermé ; le jus en bacs à glaçons, le zeste aussi. À la décongélation, un peu moins croquants, parfaits pour smoothies, pâtisserie et marinades.</p>"
           }
         },
-        "faq_item_DVWdFy": {
+        "faq_item_rRKrFV": {
           "type": "faq-item",
           "settings": {
-            "text_question": "Heading",
-            "richtext_reponse": "<p><br/>                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br/>                    </p>"
+            "text_question": "Les produits sont-ils certifiés BIO ?",
+            "richtext_reponse": "<p>Oui. Tous nos produits sont certifiés BIO, avec label AB, délivré par un organisme indépendant. Concrètement : sols vivants, zéro pesticide de synthèse, fertilisation raisonnée, traçabilité du verger à l’atelier. Chaque lot est contrôlé régulièrement et porte l’étiquette AB/Eurofeuille.</p>"
           }
         }
       },
       "block_order": [
         "faq-item",
         "faq_item_hbJFeC",
-        "faq_item_rRKrFV",
         "faq_item_YBgbqR",
-        "faq_item_DVWdFy"
+        "faq_item_rRKrFV"
       ],
       "settings": {
         "text_heading": "On à réponse à tout (ou presque)"
