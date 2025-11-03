@@ -609,19 +609,23 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
 {% endif %}
                         <div class="product-header_add-to-cart-wrapper">
-                          <template x-if="selected_or_first_available_variant.available">
+                          {% if product.metafields.custom.saison == true %}    <div li-if="product.metafields.custom.saison == true">
+    
+                            <template x-if="selected_or_first_available_variant.available">
             <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
         
-                            <a li-element="add-to-cart" href="#" class="button is-product w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Ajouter au panier</a>
-                                  </div>
+                              <a li-element="add-to-cart" href="#" class="button is-product w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Ajouter au panier</a>
+                                    </div>
     </template>
-                          <template x-if="!selected_or_first_available_variant.available">
+                            <template x-if="!selected_or_first_available_variant.available">
             <div li-js-if="!selected_or_first_available_variant.available" class="product-header_out-of-stock">
         
-                            <a href="#" class="button is-product is-out-off-stock w-button">En rupture de stock</a>
-                            <div class="text-size-small text-weight-medium">Victime de son succès, nous vous préviendrons de son arrivé au plus vite.</div>
-                                  </div>
+                              <a href="#" class="button is-product is-out-off-stock w-button">En rupture de stock</a>
+                              <div class="text-size-small text-weight-medium">Victime de son succès, nous vous préviendrons de son arrivé au plus vite.</div>
+                                    </div>
     </template>
+                              </div>
+{% endif %}
                           <div class="product-header_out-of-stock">
                             <a href="#" class="button is-product is-out-off-stock w-button">Nous sommes hors saison</a>
                             <div>
