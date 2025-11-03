@@ -2,8 +2,8 @@
           <div li-case="collection.filters.size">
 {% case collection.filters.size %}
 
-            {% when 1 %} 
-<div li-when="1">
+            {% when collection.filters.size == 0 %} 
+<div li-when="collection.filters.size == 0">
 
               <div class="container-large">
                 {% paginate collection.products by 50 %}
@@ -32,8 +32,8 @@
                 </div>{% endpaginate %}
               </div>
             </div>
-            {% else %} 
-<div li-when="">
+            {% when collection.filters.size > 0 %} 
+<div li-when="collection.filters.size > 0">
 
               <div class="container-large">
                 {% paginate collection.products by 50 %}
