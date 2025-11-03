@@ -548,19 +548,19 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="product_add-to-cart-wrapper">
                         <div class="quantity_wrapper">
                           <div class="quantity_holder">
-                            <div aria-label="Baisser quantité" x-on:click="quantity--, inputSize()" role="button" class="quantity_selector">
+                            <div aria-label="Baisser quantité" x-on:click="quantity = Math.max(1, quantity - 1)" role="button" class="quantity_selector">
                               <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
                                   <path fill="currentColor" d="M19 12.998H5v-2h14z"></path>
                                 </svg></div>
-                            </div><input li-element="add-to-cart-quantity" class="mini-cart_line-item_quantity-adjust is-product" value="1" x-model="quantity">
-                            <div aria-label="Augmenter quantité" x-on:click="quantity++, inputSize()" role="button" class="quantity_selector">
+                            </div><input min="1" li-element="add-to-cart-quantity" type="number" x-model.number="quantity" class="mini-cart_line-item_quantity-adjust is-product" x-model="quantity">
+                            <div aria-label="Augmenter quantité" x-on:click="quantity++" role="button" class="quantity_selector">
                               <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
                                   <path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"></path>
                                 </svg></div>
                             </div>
                           </div>
-                          <div x-data="{        get loyaltyPoints() {          const price = selected_or_first_available_variant.price / 100;         const quantity = parseInt(document.querySelector('[li-element=add-to-cart-quantity]')?.value || 1);         return Math.floor(price * quantity);       }     }" class="product_description-fidelity-wrap">
-                            <div class="text-weight-medium">Gagnez <span x-text="loyaltyPoints" class="fidelity_count">20</span> <span class="text-color-orange">points </span>de fidélité</div>
+                          <div class="product_description-fidelity-wrap">
+                            <div class="text-weight-medium">Gagnez <span x-text="Math.floor((selected_or_first_available_variant.price / 100) * quantity)" class="fidelity_count">20</span> <span class="text-color-orange">points </span>de fidélité</div>
                             <div data-tippy-content="1 € dépensés = 1 point fidélité. Points cumulables sur vos prochaines commandes.">
                               <div class="icon-embed-xsmall w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <circle cx="12" cy="12" r="12" fill="#FA5F2B"></circle>
