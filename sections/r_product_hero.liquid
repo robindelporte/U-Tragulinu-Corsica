@@ -310,8 +310,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </span></p>
 {% if product.metafields.custom.producteur != blank %}
   {% assign producteur = product.metafields.custom.producteur.value %}
-  {% assign balises_raw = producteur.balises | remove: '[' | remove: ']' | remove: '"' %}
-  {% assign balises_array = balises_raw | split: '","' %}
+  {% assign balises_clean = producteur.balises | remove: '["' | remove: '"]' %}
+  {% assign balises_array = balises_clean | split: '","' %}
   
   <div class="producteurs_tag-wrapper">
     {% for balise in balises_array %}
