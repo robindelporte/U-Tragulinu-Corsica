@@ -12,6 +12,21 @@
     "r_product_hero": {
       "type": "r_product_hero",
       "blocks": {
+        "loox_reviews_loox_rating_c7WtEH": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-rating/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
         "item": {
           "type": "item",
           "name": "Item",
@@ -21,6 +36,7 @@
         }
       },
       "block_order": [
+        "loox_reviews_loox_rating_c7WtEH",
         "item"
       ],
       "settings": {
@@ -49,12 +65,11 @@
         "text_with_subscription": "S’abonner"
       }
     },
-    "faq_produits": {
-      "type": "faq_produits",
+    "faq_8zTCbL": {
+      "type": "faq",
       "blocks": {
-        "faq-item": {
+        "faq_item_Y9HHDc": {
           "type": "faq-item",
-          "name": "FAQ Item",
           "settings": {
             "text_question": "Heading",
             "richtext_reponse": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    </p>"
@@ -62,10 +77,11 @@
         }
       },
       "block_order": [
-        "faq-item"
+        "faq_item_Y9HHDc"
       ],
+      "name": "FAQ",
       "settings": {
-        "text_heading": "On à réponse à tout <strong>(ou presque)</strong>"
+        "text_heading": "On à réponse à tout (ou presque)"
       }
     },
     "newsletter": {
@@ -95,7 +111,7 @@
   "wrapper": "div.main-wrapper",
   "order": [
     "r_product_hero",
-    "faq_produits",
+    "faq_8zTCbL",
     "newsletter",
     "reseaux"
   ]
