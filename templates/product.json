@@ -31,6 +31,8 @@
         "text_avantage_item_2": "{{ product.metafields.custom.avantage_n_2.value }}",
         "text_avantage_item_3": "{{ product.metafields.custom.avantage_n_3.value }}",
         "text_avantage_item_4": "{{ product.metafields.custom.avantage_n_4.value }}",
+        "text_producteur_titre": "Producteur & Origine",
+        "text_producteur_ferme": "Domaine de La Taste",
         "text_conseil_titre": "Conseils de préparation",
         "text_conseil_1": "Vrai clementine pour un goût sucré et concentré",
         "text_conseil_2": "Récolte à la main pour une qualité optimale",
@@ -42,7 +44,7 @@
         "text_temoignage_2_texte": "Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons",
         "text_temoignage_3_titre": "John Doe",
         "text_temoignage_3_texte": "Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons",
-        "text_unite_de_mesure": "/ caisse (5kg)",
+        "text_unite_de_mesure": "{{ product.metafields.custom.conditionnement.value }}",
         "text_pas_dabonnement": "Je commande ponctuellement",
         "text_with_subscription": "S’abonner"
       }
