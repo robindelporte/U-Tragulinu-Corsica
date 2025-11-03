@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       <div class="loox_parent hide-designer"></div>
                     </div>
                     <div class="product-header_tag-wrapper">
-                      <div class="product-tag">Bio</div>
+                      <div li-object="tag" li-for="tag in product.tags" class="product-tag">{{ tag }}</div>
                     </div>
                   </div>
                   <div>
@@ -626,15 +626,16 @@ document.addEventListener('DOMContentLoaded', function() {
     </template>
                               </div>
 {% endif %}
-                          <div class="product-header_out-of-stock">
+                          {% if product.metafields.custom.saison == false %}    <div li-if="product.metafields.custom.saison == false" class="product-header_out-of-stock">
+    
                             <a href="#" class="button is-product is-out-off-stock w-button">Nous sommes hors saison</a>
                             <div>
-                              <div class="text-size-small text-weight-medium">La saison des clémentines est terminé. </div>
                               <div class="hors-saison_rich-text w-richtext">
                                 <p>Prochaine récolte prévue en <strong>novembre 2025</strong></p>
                               </div>
                             </div>
-                          </div>
+                              </div>
+{% endif %}
                         </div>
                       </div>
                     {% endform %}
