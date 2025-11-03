@@ -3,8 +3,14 @@
                               <div class="product-item_image-link">
                                 <a li-object:href="product.url" href="{{ product.url }}" class="product-item_image-wrapper w-inline-block"><img li-object:src="product.featured_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: 'master' }}" loading="lazy" class="product-item_image"></a>
                                 <div class="product-item_tag_list">
-                                  <div class="tag">Bio</div>
-                                  <div class="tag">Bio</div>
+                                  {% for tag in child_link.object.tags | limit: 2 %}    <div li-for="tag in child_link.object.tags | limit: 2">
+                                    
+                                    
+                            <div li-object="tag" class="tag">{{ tag }}</div>
+                            
+                                  
+                        </div>
+{% endfor %}
                                 </div>
                               </div>
                               <div class="product-item_bottom">
