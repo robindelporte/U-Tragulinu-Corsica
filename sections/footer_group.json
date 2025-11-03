@@ -23,19 +23,22 @@
         "item_XhLGzL": {
           "type": "item",
           "settings": {
-            "text_texte": "Produits <br>100 % Corse"
+            "image_image": "shopify://shop_images/illu.svg",
+            "text_texte": "Circuit court garanti"
           }
         },
         "item_XxPQqj": {
           "type": "item",
           "settings": {
-            "text_texte": "Produits 100 % Corse"
+            "image_image": "shopify://shop_images/illu-1.svg",
+            "text_texte": "Rémunération  des producteurs"
           }
         },
         "item_FryX6g": {
           "type": "item",
           "settings": {
-            "text_texte": "Produits 100 % Corse"
+            "image_image": "shopify://shop_images/illu-2.svg",
+            "text_texte": "Programme  de fidélité"
           }
         }
       },
