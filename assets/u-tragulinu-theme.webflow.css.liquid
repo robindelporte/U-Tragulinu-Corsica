@@ -4286,6 +4286,7 @@ figcaption {
 
 .product_thumbnail-image {
   cursor: pointer;
+  object-fit: cover;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -4737,7 +4738,9 @@ figcaption {
 .product_description-nav-item {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
+  pointer-events: none;
   text-align: center;
+  cursor: default;
   flex-flow: column;
   display: flex;
 }
