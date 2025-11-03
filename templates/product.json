@@ -104,6 +104,17 @@
       ],
       "settings": {}
     },
+    "produits_FkALwE": {
+      "type": "produits",
+      "name": "Produits",
+      "settings": {
+        "text_titre": "Nos meilleures ventes",
+        "collection_collection": "meilleures-ventes",
+        "collection_collection_limit": 4,
+        "url_bouton_lien": "",
+        "text_bouton_texte": "Tous nos produits"
+      }
+    },
     "newsletter": {
       "type": "newsletter",
       "settings": {
@@ -133,6 +144,7 @@
     "r_product_hero",
     "faq_8zTCbL",
     "17621683178e86f7be",
+    "produits_FkALwE",
     "newsletter",
     "reseaux"
   ]
