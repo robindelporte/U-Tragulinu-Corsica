@@ -6,7 +6,7 @@
                 <div class="icon-embed-breadcrumbs w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
                     <path fill="currentColor" d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42"></path>
                   </svg></div>
-                <a li-object="product.collections.first.title" li-object:href="product.collections.first.url" href="{{ product.collections.first.url }}" class="breadcrumbs_link">{{ product.collections.first.title }}</a>
+                <a li-object="product.metafields.custom.collection_principale.value.title" li-object:href="product.metafields.custom.collection_principale.value.url" href="{{ product.metafields.custom.collection_principale.value.url }}" class="breadcrumbs_link">{{ product.metafields.custom.collection_principale.value.title }}</a>
                 <div class="icon-embed-breadcrumbs w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
                     <path fill="currentColor" d="M9.29 15.88L13.17 12L9.29 8.12a.996.996 0 1 1 1.41-1.41l4.59 4.59c.39.39.39 1.02 0 1.41L10.7 17.3a.996.996 0 0 1-1.41 0c-.38-.39-.39-1.03 0-1.42"></path>
                   </svg></div>
@@ -200,23 +200,23 @@ document.addEventListener('DOMContentLoaded', function() {
                   <div class="product_description-wrapper">
                     <div class="product_description-component">
                       <div class="product_description-nav">
-                        <a href="#" class="product_description-nav-item is-active w-inline-block">
+                        <a href="#presentation" class="product_description-nav-item is-active w-inline-block">
                           <div class="text-weight-medium">Présentation</div>
                           <div class="product_description-nav-item-progress"></div>
                         </a>
-                        <a href="#" class="product_description-nav-item w-inline-block">
+                        <a href="#avantages" class="product_description-nav-item w-inline-block">
                           <div class="text-weight-medium">Avantages</div>
                           <div class="product_description-nav-item-progress"></div>
                         </a>
-                        <a href="#" class="product_description-nav-item w-inline-block">
-                          <div class="text-weight-medium">Producteur</div>
+                        <a href="#producteur" class="product_description-nav-item w-inline-block">
+                          <div class="text-weight-medium">Producteurs</div>
                           <div class="product_description-nav-item-progress"></div>
                         </a>
-                        <a href="#" class="product_description-nav-item w-inline-block">
+                        <a href="#conseils" class="product_description-nav-item w-inline-block">
                           <div class="text-weight-medium">Conseils</div>
                           <div class="product_description-nav-item-progress"></div>
                         </a>
-                        <a href="#" class="product_description-nav-item w-inline-block">
+                        <a href="#avis" class="product_description-nav-item w-inline-block">
                           <div class="text-weight-medium">Avis</div>
                           <div class="product_description-nav-item-progress"></div>
                         </a>
@@ -242,13 +242,13 @@ document.addEventListener('DOMContentLoaded', function() {
             {% endif %}
 {% endfor %}
                     </div>
-                    <div class="product_description-element">
+                    <div id="presentation" class="product_description-element">
                       <h2 class="heading-style-h5">
 {{ section.settings.text_pourquoi_titre }}
 </h2>
                       <div class="description_element-rich-text w-richtext"> {{ section.settings.richtext_pourquoi_rich_text }} </div>
                     </div>
-                    <div class="product_description-element is-second">
+                    <div id="avantages" class="product_description-element is-second">
                       <div>
                         <h2 class="text-font-body text-size-medium">
 {{ section.settings.text_avantage_titre }}
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <img src="{{ 'clementines.avif' | asset_url }}" loading="lazy" alt="" class="image-style-full-width image-cover-full aspect-ratio-292x220 border-radius-4">
 {% endif %}
                     </div>
-                    <div class="product_description-element is-producteurs">
+                    <div id="producteur" class="product_description-element is-producteurs">
                       <h2 class="text-font-body text-size-medium">
 {{ section.settings.text_producteur_titre }}
 </h2>
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <img class="image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full" src="{{ 'domaine-de-la-taste.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'domaine-de-la-taste-p-500.avif' | asset_url }} 500w, {{ 'domaine-de-la-taste-p-800.avif' | asset_url }} 800w, {{ 'domaine-de-la-taste.avif' | asset_url }} 1238w">
 {% endif %}
                     </div>
-                    <div class="product_description-element is-producteurs">
+                    <div id="conseils" class="product_description-element is-producteurs">
                       <div>
                         <h2 class="text-font-body text-size-medium">
 {{ section.settings.text_conseil_titre }}
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <img class="product_description-image" src="{{ 'clementines-2.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
 {% endif %}</div>
                     </div>
-                    <div class="product_description-element is-last">
+                    <div id="avis" class="product_description-element is-last">
                       <h2 class="text-font-body text-size-medium">Avis clients</h2>
                       <div class="loox_parent"></div>
                       <div class="product_description-testimonials">
@@ -469,6 +469,93 @@ document.addEventListener('DOMContentLoaded', function() {
                       <div class="text-size-small text-weight-medium">
                         <a href="#" class="text-color-orange text-style-underline">Tous nos avis</a> sur le produit
                       </div>
+                    </div>
+                    <div class="hide w-embed w-script">
+                      <script>
+(function() {
+  const sticky = document.querySelector('.product_description-component');
+  const nav = document.querySelector('.product_description-nav');
+  if (!sticky || !nav) return;
+  const links = Array.from(nav.querySelectorAll('.product_description-nav-item'))
+    .filter(a => a.getAttribute('href') && a.getAttribute('href').startsWith('#'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if (!sections.length) return;
+  /* R&eacute;glages */
+  const LEAD_RATIO = 0.35; // active 35% avant le centre
+  const LEAD_PX = 48;      // petit biais suppl&eacute;mentaire
+  /* Utils */
+  function getScrollContainer(el) {
+    let node = el && el.parentElement;
+    while (node && node !== document.body) {
+      const s = getComputedStyle(node);
+      if (/(auto|scroll)/.test(s.overflowY) && node.scrollHeight > node.clientHeight) return node;
+      node = node.parentElement;
+    }
+    return window;
+  }
+  const scrollContainer = getScrollContainer(sticky);
+  function offsetTopWithinContainer(el, container) {
+    if (container === window) return el.getBoundingClientRect().top + window.scrollY;
+    let y = 0, n = el;
+    while (n && n !== container) { y += n.offsetTop; n = n.offsetParent; }
+    return y - container.clientTop;
+  }
+  function getStickyOffsetPx() {
+    const cs = getComputedStyle(sticky);
+    const top = parseFloat(cs.top) || 0;
+    const h = sticky.offsetHeight || 0;
+    return Math.round(top + h);
+  }
+  let stickyOffset = getStickyOffsetPx();
+  function setActive(id) {
+    links.forEach(a => {
+      const on = a.getAttribute('href') === '#' + id;
+      a.classList.toggle('is-active', on);
+      if (on) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  const getViewportH = () => (scrollContainer === window ? window.innerHeight : scrollContainer.clientHeight);
+  const getScrollTop = () => (scrollContainer === window ? window.scrollY : scrollContainer.scrollTop);
+  function getLeadOffset() { return stickyOffset + (getViewportH() * LEAD_RATIO) + LEAD_PX; }
+  function getLeadLine() { return getScrollTop() + getLeadOffset(); }
+  function getSectionBounds(sec) {
+    const top = offsetTopWithinContainer(sec, scrollContainer);
+    const bottom = top + sec.offsetHeight;
+    return { top, bottom };
+  }
+  function updateActiveByLead() {
+    const line = getLeadLine();
+    let best = null;
+    sections.forEach(sec => {
+      const { top, bottom } = getSectionBounds(sec);
+      const dist = (line < top) ? (top - line) : (line > bottom ? (line - bottom) : 0);
+      if (!best || dist < best.dist) best = { id: sec.id, dist };
+    });
+    if (best) setActive(best.id);
+  }
+  /* Scrollspy pur */
+  let ticking = false;
+  function onScrollOrResize() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const newOff = getStickyOffsetPx();
+        if (newOff !== stickyOffset) stickyOffset = newOff;
+        updateActiveByLead();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  const scroller = (scrollContainer === window) ? window : scrollContainer;
+  scroller.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize);
+  if ('ResizeObserver' in window) new ResizeObserver(onScrollOrResize).observe(sticky);
+  window.addEventListener('load', () => {
+    updateActiveByLead();
+  });
+})();
+</script>
                     </div>
                   </div>
                 </div>
