@@ -610,7 +610,15 @@ document.addEventListener('DOMContentLoaded', function() {
                       <h1 li-object:text="product.title" class="heading-style-h3">
 {{ product.title }}
 </h1>
-                      <div class="loox_parent hide-designer"></div>
+                      <div li-content-for-blocks="" class="loox_parent hide-designer">
+{% for block in section.blocks %}
+{% case block.type %}
+{% when '@app' %}
+{% render block %}
+{% endcase %}
+{% endfor %}
+
+    </div>
                     </div>
                     <div class="product-header_tag-wrapper">
                       {% for tag in product.tags %}    <div li-for="tag in product.tags">
@@ -765,6 +773,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     "default": "Produits <br\/>100 % Corse"
                 }
             ]
+        },
+        {
+            "type": "@app"
         }
     ],
     "settings": [
