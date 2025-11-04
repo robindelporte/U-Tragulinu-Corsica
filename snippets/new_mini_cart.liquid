@@ -532,9 +532,19 @@
 {{ section.settings.text_mini_cart_empty_heading }}
 </h2>
                         <div class="mini-cart_empty-content">
-                          <div>
-{{ section.settings.text_mini_cart_empty_content }}
-</div>
+                          <div class="mini-cart_empty-heading">
+                            <div class="heading-style-h5">Votre panier est vide ?</div>
+                            <div class="text-size-regular">Il semble que rien ne ce trouve dans ce panier pour le moment</div>
+                          </div><img loading="lazy" src="{{ 'panier-empty.svg' | asset_url }}" alt="">
+                        </div>
+                        <div class="mini-cart_footer">
+                          <div li-element="mini-cart-api-response" class="mini-cart_footer-message hide">
+                            <div class="mini-cart_footer-message-item">
+                              <div class="text-size-regular text-weight-bold">Message</div>
+                              <div li-js-object="cartApiResponse?.result?.message" class="text-size-regular text-weight-bold" x-text="cartApiResponse?.result?.message">14,99 $</div>
+                            </div>
+                          </div>
+                          <a li-object:href="routes.root_url" href="{{ routes.root_url }}" class="button is-cart w-button">Découvrir tous nos prodtuis</a>
                         </div>
                       </div>
                     </div>
