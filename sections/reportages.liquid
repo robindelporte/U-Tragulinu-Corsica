@@ -1,0 +1,94 @@
+<div class="padding-section-3-75">
+          <div class="banner_component-wrapper">
+            <div class="padding-global">
+              <div class="container-xlarge">
+                <div class="banner_component">
+                  <div class="banner_heading">
+                    <h2 class="text-color-support">
+{{ section.settings.text_titre }}
+</h2>
+                  </div>
+                  <div class="banner_list">
+                    <div id="w-node-fba066e8-0942-6823-c6fa-6f9b95e1f426-95e1f41c" class="reportages_item">
+                      <h3 class="z-index-2">
+{{ section.settings.text_bloc_1_titre }}
+</h3>
+                      <div class="reportages_image-wrapper">{% if section.settings.image_bloc_1_image %}
+{{ section.settings.image_bloc_1_image | image_url: width: 1000 | image_tag: width: '285', loading: 'lazy', class: 'reportages_image' }}
+{% else %}
+<img width="285" alt="" src="{{ 'hugo.avif' | asset_url }}" loading="lazy" class="reportages_image">
+{% endif %}</div>
+                      <div class="clickable_wrap">
+                        <a href="{{ section.settings.url_bloc_1_lien }}" class="clickable_link w-inline-block"> </a>
+                      </div>
+                    </div>
+                    <div id="w-node-fba066e8-0942-6823-c6fa-6f9b95e1f42d-95e1f41c" class="reportages_item">
+                      <h3 class="z-index-2">
+{{ section.settings.text_bloc_2_titre }}
+</h3>
+                      <div class="reportages_image-wrapper">{% if section.settings.image_bloc_2_image %}
+{{ section.settings.image_bloc_2_image | image_url: width: 1000 | image_tag: width: '285', loading: 'lazy', class: 'reportages_image' }}
+{% else %}
+<img width="285" alt="" src="{{ 'hugo.avif' | asset_url }}" loading="lazy" class="reportages_image">
+{% endif %}</div>
+                      <div class="clickable_wrap">
+                        <a href="{{ section.settings.url_bloc_2_lien }}" class="clickable_link w-inline-block"> </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Reportages",
+    "class": "section_banner",
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "Quelques reportages"
+        },
+        {
+            "id": "text_bloc_1_titre",
+            "type": "text",
+            "label": "Bloc 1 : Titre",
+            "default": "Nos fruits &amp; agrumes"
+        },
+        {
+            "id": "image_bloc_1_image",
+            "type": "image_picker",
+            "label": "Bloc 1 : Image"
+        },
+        {
+            "id": "url_bloc_1_lien",
+            "type": "url",
+            "label": "Bloc 1 : Lien"
+        },
+        {
+            "id": "text_bloc_2_titre",
+            "type": "text",
+            "label": "Bloc 2 : Titre",
+            "default": "Notre \u00e9picerie Corse"
+        },
+        {
+            "id": "image_bloc_2_image",
+            "type": "image_picker",
+            "label": "Bloc 2 : Image"
+        },
+        {
+            "id": "url_bloc_2_lien",
+            "type": "url",
+            "label": "Bloc 2 : Lien"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Reportages",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
