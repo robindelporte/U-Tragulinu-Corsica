@@ -2,9 +2,7 @@
           <div class="container-large">
             <div class="faq_wrapper">
               <div class="faq_heading">
-                <h2>
-{{ section.settings.text_heading }}
-</h2>
+                <div class="w-richtext"> {{ section.settings.richtext_titre }} </div>
               </div>
               <ul x-data="{open: 1}" role="list" class="faq_faq-list">
                 {% for block in section.blocks %}
@@ -60,10 +58,10 @@
     ],
     "settings": [
         {
-            "id": "text_heading",
-            "type": "text",
-            "label": "Heading",
-            "default": "On \u00e0 r\u00e9ponse \u00e0 tout <strong>(ou presque)<\/strong>"
+            "id": "richtext_titre",
+            "type": "richtext",
+            "label": "Titre",
+            "default": "<p>\n                  On \u00e0 r\u00e9ponse \u00e0 tout <strong>(ou presque)<\/strong>\n                <\/p>"
         }
     ],
     "presets": [

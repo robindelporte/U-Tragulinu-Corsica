@@ -1,0 +1,40 @@
+<div class="padding-global">
+          <div class="padding-section-small">
+            <div class="container-large">
+              <div class="producteurs_component">
+                <div li-content-for-theme-blocks="" class="producteurs_heading">
+{% content_for 'blocks' %}
+</div>
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Texte",
+    "class": "section_producteurs",
+    "blocks": [
+        {
+            "type": "titre"
+        },
+        {
+            "type": "paragraphe-largeur-moyenne"
+        },
+        {
+            "type": "@app"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Texte",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "titre"
+                },
+                {
+                    "type": "paragraphe-largeur-moyenne"
+                }
+            ]
+        }
+    ]
+} {% endschema %}
