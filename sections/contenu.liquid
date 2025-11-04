@@ -1,7 +1,7 @@
 <div class="padding-global">
           <div class="padding-section-medium">
             <div class="container-large">
-              <div class="content_component">
+              <div class="content_component is-content">
                 <div li-content-for-theme-blocks="" class="content_content">
 {% content_for 'blocks' %}
 </div>
@@ -16,9 +16,9 @@
                     <video style="height: 100%; width: 100%; object-fit: cover" volume="0" slot="media" playsinline="" loop="" autoplay="" muted="" alt="{{block.settings.video_desktop.alt}}">{% for video_source in block.settings.video_desktop.sources %}<source src="{{video_source.url}}" type="{{video_source.mime_type}}">{% endfor %}</video>
                       </div>
 {% endif %}{% if section.settings.image_illustration %}
-{{ section.settings.image_illustration | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'content_illustration' }}
+{{ section.settings.image_illustration | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'content_illustration hide-tablet' }}
 {% else %}
-<img src="{{ 'illustration-content.svg' | asset_url }}" loading="lazy" alt="" class="content_illustration">
+<img src="{{ 'illustration-content.svg' | asset_url }}" loading="lazy" alt="" class="content_illustration hide-tablet">
 {% endif %}
                 </div>
               </div>
