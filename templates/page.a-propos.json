@@ -33,6 +33,8 @@
           "settings": {
             "text_titre": "Structure de l’entreprise",
             "richtext_contenu": "<p>Du projet artisanal à une maison bien organisée. On garde l’âme du marché ambulant, on ajoute la rigueur qui rassure : qualité, régularité, service client.</p>",
+            "image_image": "shopify://shop_images/hugo-u-tragulinu-3.webp",
+            "image_image_2": "shopify://shop_images/mikasa.webp",
             "text_tab_label": "2025"
           }
         },
@@ -41,6 +43,8 @@
           "settings": {
             "text_titre": "Déploiement & structure",
             "richtext_contenu": "<p>Structure de l’entreprise<br/>Du projet artisanal à une maison bien organisée. On garde l’âme du marché ambulant, on ajoute la rigueur qui rassure : qualité, régularité, service client. </p>",
+            "image_image": "shopify://shop_images/hugo-u-tragulinu-4.webp",
+            "image_image_2": "shopify://shop_images/clementines_0c468b10-3b74-4a0d-891a-807aae8ee9db.webp",
             "text_tab_label": "2026"
           }
         },
@@ -49,6 +53,8 @@
           "settings": {
             "text_titre": "Devenir une référence",
             "richtext_contenu": "<p>Ambition assumée : être le repère des produits corses de confiance. Fidèles à la saison, proches des terres, attentifs au gaspillage et fiers de faire rayonner l’île là où l’on aime bien manger. </p>",
+            "image_image": "shopify://shop_images/vue.webp",
+            "image_image_2": "shopify://shop_images/logo.png",
             "text_tab_label": "2030"
           }
         }
