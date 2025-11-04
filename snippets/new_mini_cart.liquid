@@ -1,0 +1,542 @@
+<script>
+    document.addEventListener('alpine:init', () => {
+
+    Alpine.data('handleMinicart', () => ({
+        init() {
+            console.log('handleMinicart init')
+        },
+        cart: {
+            note: null,
+            attributes: {},
+            items: [],
+            currency: window.Shopify.currency.active,
+            cart_level_discount_applications: [],
+            response: {
+                result : {},
+                show : false,
+                timeout : 5000,
+            },
+            item_count: 0,
+            total_price:0,
+            total_weight: 0,
+            total_discount: 0,
+            original_total_price: 0,
+            items_subtotal_price: 0
+        },
+        _abortController : null,
+        initAbortController() {
+            if(this._abortController) {
+                this._abortController.abort('abort previous request');
+            }
+            this._abortController = new AbortController()
+        },
+        getAbortControllerSignal() {
+            return this._abortController.signal
+        },
+        resetAbortController() {
+            this._abortController = null;
+        },
+        toggleMiniCart() {
+            console.log('(minicart.js) toggleMiniCart called');
+
+            LiquifyHelper.handleTriggerClick();
+
+            this.getCart();
+        },
+
+        /**
+         * Get the cart data.
+         */
+        async getCart() {
+            this.initAbortController()
+            await fetch(window.Shopify.routes.root + 'cart.js', {
+                method: 'GET',
+                signal: this.getAbortControllerSignal(),
+                headers: {'Content-Type': 'application/json'},
+            })
+                .then(response => response.json())
+                .then(data => {
+                    this.resetAbortController();
+
+                    this.cart.item_count = data.item_count;
+
+                    this.cart.items = data.items.map((item) => {
+                        item.title = this.htmlspecialchars_decode(item.title)
+                        return item
+                    })
+
+
+                    this.cart.total_price = data.total_price;
+                    this.cart.total_weight = data.total_weight;
+                    this.cart.total_discount = data.total_discount;
+                    this.cart.original_total_price = data.original_total_price;
+
+                    this.$dispatch('carttotalitems', data.item_count);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        },
+
+        /**
+         * @param key
+         * @param quantity
+         */
+        increaseCartItemQuantity(key, quantity) {
+            this.updateCartItemQuantity(key, parseInt(quantity) + 1);
+        },
+
+        /**
+         * @param key
+         * @param quantity
+         */
+        decreaseCartItemQuantity(key, quantity) {
+            this.updateCartItemQuantity(key, parseInt(quantity) - 1);
+        },
+
+        /**
+         * Update the cart item.
+         *
+         * @param key
+         * @param quantity
+         */
+        updateCartItemQuantity(key, quantity) {
+            this.initAbortController();
+            console.log('updateCartItemQuantity(): key, quantity: ', key, quantity);
+            this.cart.items.filter((product)  => {
+                if(product.key === key) {
+                    product.quantity = quantity
+                }
+            })
+            let updates = {};
+            updates[key] = quantity;
+            fetch(window.Shopify.routes.root + 'cart/update.js', {
+                method: 'POST',
+                signal: this.getAbortControllerSignal(),
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ updates }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    this.resetAbortController();
+                    console.log('updateCartItemQuantity(): ', data);
+
+                    this.$dispatch('cartupdated');
+                    this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    this.$dispatch('showcartmessage', { status: error?.status, message: error, description: error });
+                });
+        },
+
+        /**
+         * Format monetary values.
+         */
+        moneyFormat(value, minor = true) {
+            return LiquifyHelper.moneyFormat(value, minor)
+        },
+
+        htmlspecialchars_decode(string) {
+            return LiquifyHelper.htmlspecialchars_decode(string)
+        },
+
+        /**
+         * Shows the minicart api message
+         * @param event
+         */
+        showCartMessage(event) {
+            //console.log("dispatched showCartMessage", event)
+            if(event?.detail?.status) {
+                this.cart.response.result = event.detail ?? {}
+                this.cart.response.show = true
+                setTimeout(() => {
+                    this.cart.response.result = {};
+                    this.cart.response.show = false
+                }, this.cart.response.timeout ?? 5000)
+            }
+        },
+
+        async returnCartItems() {
+            await this.getCart();
+
+            this.$dispatch('currentcartitems', this.cart.items);
+        },
+
+        /**
+         * @deprecated
+         */
+        set open(open) { // deprecated use  LiquifyHelper instead
+            //console.warn('Deprecated "set open" in mini_cart')
+        },
+        /**
+         * @deprecated
+         */
+        get open() { // deprecated use  LiquifyHelper instead
+            //console.warn('Deprecated "get open" in mini_cart')
+            return false;
+        },
+        /**
+         * @deprecated
+         */
+        set note(note) { // deprecated
+            //console.warn('Deprecated "set note" in mini_cart')
+            this.cart.note = note;
+        },
+        /**
+         * @deprecated
+         */
+        get note() { // deprecated
+            //console.warn('Deprecated "get note" in mini_cart')
+            return this.cart.note;
+        },
+        /**
+         * @deprecated
+         */
+        set attributes(attributes) { // deprecated
+            //console.warn('Deprecated "set attributes" in mini_cart')
+            this.cart.attributes = attributes;
+        },
+        /**
+         * @deprecated
+         */
+        get attributes() { // deprecated
+            //console.warn('Deprecated "get attributes" in mini_cart')
+            return this.cart.attributes;
+        },
+        /**
+         * @deprecated
+         */
+        set original_total_price(original_total_price) { //deprecated
+            //console.warn('Deprecated "set original_total_price" in mini_cart')
+            this.cart.original_total_price = original_total_price;
+        },
+        /**
+         * @deprecated
+         */
+        get original_total_price() { //deprecated
+            //console.warn('Deprecated "get original_total_price" in mini_cart')
+            return this.cart.original_total_price;
+        },
+        /**
+         * @deprecated
+         */
+        set total_price(total_price) { //deprecated
+            //console.warn('Deprecated "set total_price" in mini_cart')
+            this.cart.total_price = total_price;
+        },
+        /**
+         * @deprecated
+         */
+        get total_price() { //deprecated
+            //console.warn('Deprecated "get total_price" in mini_cart')
+            return this.cart.total_price;
+        },
+        /**
+         * @deprecated
+         */
+        set total_discount(total_discount) { //deprecated
+            //console.warn('Deprecated "set total_discount" in mini_cart')
+            this.cart.total_discount = total_discount;
+        },
+        /**
+         * @deprecated
+         */
+        get total_discount() { //deprecated
+            //console.warn('Deprecated "get total_discount" in mini_cart')
+            return this.cart.total_discount;
+        },
+        /**
+         * @deprecated
+         */
+        set total_weight(total_weight) { //deprecated
+            //console.warn('Deprecated "set total_weight" in mini_cart')
+            this.cart.total_discount = total_weight;
+        },
+        /**
+         * @deprecated
+         */
+        get total_weight() { //deprecated
+            //console.warn('Deprecated "get total_weight" in mini_cart')
+            return this.cart.total_weight;
+        },
+        /**
+         * @deprecated
+         */
+        set item_count(item_count) { //deprecated
+            //console.warn('Deprecated "set item_count" in mini_cart')
+            this.cart.total_discount = item_count;
+        },
+        /**
+         * @deprecated
+         */
+        get item_count() { //deprecated
+            //console.warn('Deprecated "get item_count" in mini_cart')
+            return this.cart.item_count;
+        },
+        /**
+         * @deprecated
+         */
+        set items_subtotal_price(items_subtotal_price) { //deprecated
+            //console.warn('Deprecated "set items_subtotal_price" in mini_cart')
+            this.cart.items_subtotal_price = items_subtotal_price;
+        },
+        /**
+         * @deprecated
+         */
+        get items_subtotal_price() { //deprecated
+            //console.warn('Deprecated "get items_subtotal_price" in mini_cart')
+            return this.cart.items_subtotal_price;
+        },
+        /**
+         * @deprecated
+         */
+        set products(products) {
+            //console.warn('Deprecated "set products" in mini_cart')
+            this.cart.items = products;
+        },
+        /**
+         * @deprecated
+         */
+        get products() {
+            //console.warn('Deprecated "get products" in mini_cart')
+            return this.cart.items;
+        },
+        /**
+         * @deprecated
+         */
+        set requires_shipping(requires_shipping) {
+            //console.warn('Deprecated "set requires_shipping" in mini_cart')
+        },
+        /**
+         * @deprecated
+         */
+        get requires_shipping() {
+            //console.warn('Deprecated "get requires_shipping" in mini_cart')
+            return false;
+        },
+        /**
+         * @deprecated
+         */
+        set currency(currency) { //deprecated
+            //console.warn('Deprecated "set currency" in mini_cart')
+            this.cart.currency = currency;
+        },
+        /**
+         * @deprecated
+         */
+        get currency() { //deprecated
+            //console.warn('Deprecated "get currency" in mini_cart')
+            return this.cart.currency;
+        },
+        /**
+         * @deprecated
+         */
+        set cart_level_discount_applications(cart_level_discount_applications) { //deprecated
+            //console.warn('Deprecated "set cart_level_discount_applications" in mini_cart')
+            this.cart.cart_level_discount_applications = cart_level_discount_applications;
+        },
+        /**
+         * @deprecated
+         */
+        get cart_level_discount_applications() { //deprecated
+            //console.warn('Deprecated "get cart_level_discount_applications" in mini_cart')
+            return this.cart.cart_level_discount_applications;
+        },
+        /**
+         * @deprecated
+         */
+        set cartApiResponse(cartApiResponse) { //deprecated
+            //console.warn('Deprecated "set cartApiResponse" in mini_cart')
+            this.cart.cartApiResponse = cartApiResponse;
+        },
+        /**
+         * @deprecated
+         */
+        get cartApiResponse() { //deprecated
+            //console.warn('Deprecated "get cartApiResponse" in mini_cart')
+            return this.cart.response;
+        },
+        /**
+         * @deprecated
+         */
+        set total(total) { //deprecated
+            //console.warn('Deprecated "set total" in mini_cart')
+            this.cart.item_count = total.items;
+            this.cart.total_price = total.price;
+            this.cart.total_weight = total.weight;
+            this.cart.total_discount = total.discount;
+        },
+        /**
+         * @deprecated
+         */
+        get total() { //deprecated
+            //console.warn('Deprecated "get total" in mini_cart')
+            return {
+                items: this.cart.item_count,
+                price: this.cart.total_price,
+                weight: this.cart.total_weight,
+                discount: this.cart.total_discount,
+            };
+        }
+    }))
+
+
+});
+
+</script>
+<div li-element="mini-cart" class="mini-cart" x-data="handleMinicart()" x-init="getCart()" @cartupdated.window="getCart()" @setcartitem.window="updateCartItemQuantity($event.detail.product, $event.detail.quantity)" @increasecartitem.window="increaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @decreasecartitem.window="decreaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage" @getcartitems.window="returnCartItems"><button fs-modal-element="open-8371024" aria-label="{{ aria_label_open_mini_cart }}" x-on:click="$dispatch('cartupdated')" x-on:toggleminicart.window="$el.click()" class="mini-cart_button">
+                    <div aria-hidden="true" class="nav_icon w-embed"><svg width="25" height="23" viewbox="0 0 25 23" fill="none">
+                        <path d="M4.74504 1.53337H0.733276M5.06597 1.53337L7.95445 12.0174C8.19554 12.8442 8.69629 13.5714 9.38263 14.0916C10.069 14.6118 10.9045 14.8973 11.7656 14.9059H23.4532V1.53337H5.06597ZM14.1058 19.5863C14.1058 20.6941 13.2078 21.5922 12.0999 21.5922C10.9921 21.5922 10.0941 20.6941 10.0941 19.5863C10.0941 18.4785 10.9921 17.5804 12.0999 17.5804C13.2078 17.5804 14.1058 18.4785 14.1058 19.5863ZM23.4666 19.5863C23.4666 20.6941 22.5685 21.5922 21.4607 21.5922C20.3529 21.5922 19.4548 20.6941 19.4548 19.5863C19.4548 18.4785 20.3529 17.5804 21.4607 17.5804C22.5685 17.5804 23.4666 18.4785 23.4666 19.5863Z" stroke="#FFF3DE" stroke-width="1.33725" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                    <div x-text="items" x-show="items > 0" x-data="{ items: 0 }" x-on:carttotalitems.window="items = event.detail" class="mini-cart_indicator">1</div>
+                  </button>
+                  <aside fs-modal-element="modal-8371024" x-data="{shippingFree: {{ free_shipping_threshold | times: 100 }}}" data-modal-position="{{ content_position }}" fs-modal-animation="{{ modal_animation }}" fs-modal-duration="{{ modal_animation_duration }}" fs-modal-easing="{{ modal_animation_easing }}" class="mini-cart_modal"><button fs-modal-element="close-8371024" fs-modal-animation="fade" aria-label="{{ aria_label_close_mini_cart }}" class="mini-cart_modal-bg"></button>
+                    <div fs-modal-easing="{{ content_animation_easing }}" fs-modal-animation="{{ content_animation }}" fs-modal-duration="{{ content_animation_duration }}" li-element="mini-cart-container" class="mini-cart_content" :class="open || 'mini-cart-closed'"><button fs-modal-element="close-8371024" aria-label="{{ aria_label_close_mini_cart }}" class="mini-cart_close-button">
+                        <div class="modal_close-icon w-embed"><svg xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                            <path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"></path>
+                          </svg></div>
+                      </button>
+                      <div li-element="mini-cart-full" class="mini-cart_content-inner" :style="total.items < 1 && { display: 'none' }">
+                        <div class="heading-style-h4">
+{{ section.settings.text_mini_cart_heading }}
+</div>
+                        <div>
+                          {% if free_shipping %}    <div li-if="free_shipping" x-show="((shippingFree - cart.total_price) / 100) > 0" class="mini-cart_progress-component">
+    
+                            <div class="mini-cart_progress-bar">
+                              <div x-bind:style="'width: ' + (total.price/shippingFree) *100 + '%'" class="mini-cart_progress-bar-innner"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
+                            </div>
+                            <div><span>
+{{ section.settings.text_mini_cart_free_shipping_start }}
+</span><span li-js-price="shippingFree - total.price" class="text-weight-medium" x-text="LiquifyHelper.moneyFormat(shippingFree - total.price, true, '{{ shop.money_with_currency_format }}')">52,75€</span><span>
+{{ section.settings.text_mini_cart_free_shipping_end }}
+</span></div>
+                              </div>
+{% endif %}
+                          {% if free_shipping %}    <div li-if="free_shipping" x-show="((shippingFree - cart.total_price) / 100) <= 0" class="mini-cart_progress-success">
+    
+                            <div class="mini-cart_progress-bar">
+                              <div x-bind:style="'width: ' + (total.price/shippingFree) *100 + '%'" class="mini-cart_progress-bar-innner is-complete"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
+                            </div>
+                            <div>
+{{ section.settings.text_mini_cart_free_shipping_success }}
+</div>
+                              </div>
+{% endif %}
+                        </div>
+                        <ul role="list" class="mini-cart_item-list w-list-unstyled">
+                          <template x-for="product in products" :key="product.key">
+    <li li-element="mini-cart-item" class="mini-cart_item">
+                            <div class="mini-cart_image-wrap"><img alt="" src="https://cdn.prod.website-files.com/670e011c25fd5165d7afb2de/670e011d25fd5165d7afb3e6_placholder-3.svg" loading="lazy" class="mini-cart_item-image" x-bind:src="product.featured_image.url" x-bind:alt="product.featured_image.alt ? product.featured_image.alt : product.title"></div>
+                            <div class="mini-cart_item-info">
+                              <div class="mini-cart_line-item-info">
+                                <div class="mini-cart_item-top">
+                                  <div li-js-object="product.product_title" class="text-weight-medium text-weight-bold" x-text="product.product_title">Title</div>
+                                  <div class="cart_item-details">
+                                    <div li-js-object="product.variant_title" x-text="product.variant_title">Legacy</div>
+                                  </div>
+                                </div>
+                                <div class="mini-cart_item_price">
+                                  <template x-if="product.line_price < product.original_line_price && product.discounts.length === 0">
+            <div li-js-if="product.line_price < product.original_line_price && product.discounts.length === 0" class="text-size-xsmall text-style-strikethrough">
+        
+                                    <div li-js-price="product.original_line_price" x-text="LiquifyHelper.moneyFormat(product.original_line_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
+                                          </div>
+    </template>
+                                  <div x-bind:style="product.line_price < product.original_line_price && product.discounts.length === 0 ? 'color: var(--base-color-brand--red)' : ''" li-js-price="product.line_price" class="text-size-regular text-weight-medium" x-text="LiquifyHelper.moneyFormat(product.line_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
+                                </div>
+                              </div>
+                              <div class="mini-cart_item-bottom">
+                                <div class="mini-cart_item-quantity"><button li-element="mini-cart-item-decrease" aria-label="{{ aria_label_decrease_product_quantity }}" class="mini-cart_item-quantity-adjust" :productprop="product" @click="$dispatch('decreasecartitem', { product: product.key, quantity: product.quantity, action: 'decrease' })">
+                                    <div aria-hidden="true" class="icon-1x1-xsmall w-embed"><svg width="10" height="11" viewbox="0 0 10 11" fill="none">
+                                        <path d="M0.0654297 5.49414H9.5752" stroke="#1C1F31" stroke-width="0.780288"></path>
+                                      </svg></div>
+                                  </button><input li-element="mini-cart-item-quantity" class="mini-cart_item-quantity-adjust" value="1" :productprop="product" @input="$dispatch('setcartitem', { product: product.key, quantity: product.quantity })" x-model="product.quantity"><button li-element="mini-cart-item-increase" aria-label="{{ aria_label_increase_product_quantity }}" class="mini-cart_item-quantity-adjust" :productprop="product" @click="$dispatch('increasecartitem', { product: product.key, quantity: product.quantity, action: 'increase' })">
+                                    <div aria-hidden="true" class="icon-1x1-xsmall w-embed"><svg width="11" height="11" viewbox="0 0 11 11" fill="none">
+                                        <path d="M0.555664 5.49414H10.0654" stroke="#1C1F31" stroke-width="0.780288"></path>
+                                        <path d="M5.31055 10.249L5.31055 0.739258" stroke="#1C1F31" stroke-width="0.780288"></path>
+                                      </svg></div>
+                                  </button></div><button li-element="mini-cart-item-remove" aria-label="{{ aria_label_remove_product }}" class="mini-cart_item-button" :productprop="product" @click="$dispatch('setcartitem', { product: product.key, quantity: 0 })">
+                                  <div aria-hidden="true" class="icon-1x1-xsmall w-embed"><svg width="14" height="14" viewbox="0 0 14 14" fill="none">
+                                      <path d="M11.5232 2.67038H9.41103V2.24794C9.41103 1.91182 9.27751 1.58948 9.03984 1.35181C8.80217 1.11414 8.47983 0.980621 8.14371 0.980621H5.60908C5.27297 0.980621 4.95062 1.11414 4.71295 1.35181C4.47528 1.58948 4.34176 1.91182 4.34176 2.24794V2.67038H2.22957C2.11753 2.67038 2.01008 2.71488 1.93086 2.79411C1.85164 2.87333 1.80713 2.98078 1.80713 3.09282C1.80713 3.20485 1.85164 3.3123 1.93086 3.39153C2.01008 3.47075 2.11753 3.51525 2.22957 3.51525H2.65201V11.1192C2.65201 11.3432 2.74102 11.5581 2.89947 11.7166C3.05791 11.875 3.27281 11.964 3.49688 11.964H10.2559C10.48 11.964 10.6949 11.875 10.8533 11.7166C11.0118 11.5581 11.1008 11.3432 11.1008 11.1192V3.51525H11.5232C11.6353 3.51525 11.7427 3.47075 11.8219 3.39153C11.9012 3.3123 11.9457 3.20485 11.9457 3.09282C11.9457 2.98078 11.9012 2.87333 11.8219 2.79411C11.7427 2.71488 11.6353 2.67038 11.5232 2.67038ZM5.18664 2.24794C5.18664 2.1359 5.23115 2.02845 5.31037 1.94923C5.38959 1.87001 5.49704 1.8255 5.60908 1.8255H8.14371C8.25575 1.8255 8.3632 1.87001 8.44242 1.94923C8.52165 2.02845 8.56615 2.1359 8.56615 2.24794V2.67038H5.18664V2.24794ZM10.2559 11.1192H3.49688V3.51525H10.2559V11.1192ZM6.03152 5.62745V9.00696C6.03152 9.119 5.98701 9.22645 5.90779 9.30567C5.82857 9.38489 5.72112 9.4294 5.60908 9.4294C5.49704 9.4294 5.38959 9.38489 5.31037 9.30567C5.23115 9.22645 5.18664 9.119 5.18664 9.00696V5.62745C5.18664 5.51541 5.23115 5.40796 5.31037 5.32874C5.38959 5.24952 5.49704 5.20501 5.60908 5.20501C5.72112 5.20501 5.82857 5.24952 5.90779 5.32874C5.98701 5.40796 6.03152 5.51541 6.03152 5.62745ZM8.56615 5.62745V9.00696C8.56615 9.119 8.52165 9.22645 8.44242 9.30567C8.3632 9.38489 8.25575 9.4294 8.14371 9.4294C8.03168 9.4294 7.92423 9.38489 7.845 9.30567C7.76578 9.22645 7.72127 9.119 7.72127 9.00696V5.62745C7.72127 5.51541 7.76578 5.40796 7.845 5.32874C7.92423 5.24952 8.03168 5.20501 8.14371 5.20501C8.25575 5.20501 8.3632 5.24952 8.44242 5.32874C8.52165 5.40796 8.56615 5.51541 8.56615 5.62745Z" fill="#1C1F31"></path>
+                                    </svg></div>
+                                </button>
+                              </div>
+                            </div>
+                          </li></template>
+                        </ul>
+                        <div class="mini-cart_bottom-footer">
+                          <div class="mini-cart_footer-details">
+                            <div class="mini-cart_footer-total">
+                              <div class="text-size-regular">
+{{ section.settings.text_mini_cart_sous_total }}
+</div>
+                              <div class="mini-cart_footer-price">
+                                <div li-js-price="cart.total_price + cart.total_discount" class="text-size-regular" x-text="LiquifyHelper.moneyFormat(cart.total_price + cart.total_discount, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
+                              </div>
+                            </div>
+                            {% if free_shipping %}    <div li-if="free_shipping" class="mini-cart_footer-total">
+    
+                              <div class="text-size-regular">
+{{ section.settings.text_mini_cart_expedition }}
+</div>
+                              <div class="mini-cart_footer-price">
+                                <div x-show="((shippingFree - cart.total_price) / 100)> 0" class="text-size-regular">
+{{ section.settings.text_mini_cart_prix_expedition }}
+</div>
+                                <div x-show=" ((shippingFree - cart.total_price) / 100) <= 0" class="text-size-regular text-color-green">
+{{ section.settings.text_mini_cart_free_shipping }}
+</div>
+                              </div>
+                                </div>
+{% endif %}
+                            <template x-if="cart.total_discount > 0">
+            <div li-js-if="cart.total_discount > 0" class="mini-cart_footer-total">
+        
+                              <div class="text-size-regular">
+{{ section.settings.text_mini_cart_discounts }}
+</div>
+                              <div class="mini-cart_footer-price text-color-red">
+                                <div aria-hidden="true" class="icon-1x1-xsmall w-embed"><svg width="13" height="13" viewbox="0 0 13 13" fill="none">
+                                    <path d="M7.1875 11.9052L11.8427 7.25C11.9126 7.18061 11.9681 7.09801 12.0058 7.007C12.0435 6.91598 12.0628 6.81838 12.0625 6.71985L12.0625 2.375C12.0625 2.27555 12.023 2.18016 11.9527 2.10984C11.8823 2.03951 11.787 2 11.6875 2L7.34265 2C7.24412 1.99969 7.14652 2.01896 7.0555 2.0567C6.96449 2.09444 6.88189 2.1499 6.8125 2.21985L2.15734 6.875C2.08768 6.94465 2.03242 7.02734 1.99472 7.11834C1.95701 7.20935 1.93761 7.30689 1.93761 7.40539C1.93761 7.5039 1.95701 7.60144 1.99472 7.69245C2.03242 7.78345 2.08768 7.86614 2.15734 7.93578L6.12671 11.9052C6.19636 11.9748 6.27905 12.0301 6.37005 12.0678C6.46106 12.1055 6.5586 12.1249 6.65711 12.1249C6.75561 12.1249 6.85315 12.1055 6.94416 12.0678C7.03516 12.0301 7.11785 11.9748 7.1875 11.9052ZM2.6875 7.40516L7.34265 2.75L11.3125 2.75L11.3125 6.71985L6.65734 11.375L2.6875 7.40516ZM9.625 5C9.51374 5 9.40499 4.96701 9.31249 4.90521C9.21999 4.8434 9.14789 4.75555 9.10531 4.65276C9.06274 4.54998 9.0516 4.43688 9.0733 4.32777C9.09501 4.21865 9.14858 4.11842 9.22725 4.03976C9.30592 3.96109 9.40614 3.90752 9.51526 3.88581C9.62437 3.86411 9.73747 3.87525 9.84026 3.91782C9.94304 3.9604 10.0309 4.03249 10.0927 4.125C10.1545 4.2175 10.1875 4.32625 10.1875 4.4375C10.1875 4.58669 10.1282 4.72976 10.0227 4.83525C9.91725 4.94074 9.77418 5 9.625 5Z" fill="currentColor"></path>
+                                  </svg></div>
+                                <div li-js-price="cart.total_discount" class="text-size-regular" x-text="LiquifyHelper.moneyFormat(cart.total_discount, true, '{{ shop.money_with_currency_format }}')">20,00 $</div>
+                              </div>
+                                    </div>
+    </template>
+                            <div class="mini-cart_footer-total">
+                              <div class="text-size-medium text-weight-medium">
+{{ section.settings.text_mini_cart_total }}
+</div>
+                              <div class="mini-cart_footer-price">
+                                <div li-js-price="cart.total_price" class="text-size-medium text-weight-medium" x-text="LiquifyHelper.moneyFormat(cart.total_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div li-element="mini-cart-api-response" class="mini-cart_footer-message hide">
+                            <div class="mini-cart_footer-message-item">
+                              <div class="text-size-regular">
+{{ section.settings.text_mini_cart_cart_message_heading }}
+</div>
+                              <div li-js-object="cartApiResponse?.result?.message" class="text-size-regular text-weight-medium" x-text="cartApiResponse?.result?.message">Response</div>
+                            </div>
+                          </div>
+                          <a class="button is-cart" href="/checkout"><span>
+{{ section.settings.text_mini_cart_go_to_checkout }}
+</span></a>
+                        </div>
+                      </div>
+                      <div x-cloak="" li-element="mini-cart-empty" class="mini-cart_content-inner" :style="total.items && { display: 'none' }">
+                        <h2 class="heading-style-h3-2">
+{{ section.settings.text_mini_cart_empty_heading }}
+</h2>
+                        <div class="mini-cart_empty-content">
+                          <div>
+{{ section.settings.text_mini_cart_empty_content }}
+</div>
+                        </div>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
