@@ -1,0 +1,29 @@
+<div li-block="Bannière" class="nav_top-banner">
+                    
+            
+                    <div class="nav_top-banner-wrap">
+              <a href="{{ block.settings.url_lien_banniere }}" class="nav_link w-inline-block"> <div>{{ block.settings.text_texte_banniere }}</div> </a>
+            </div>
+                    
+          
+                </div> {% schema %} {
+    "name": "Banni\u00e8re",
+    "settings": [
+        {
+            "id": "url_lien_banniere",
+            "type": "url",
+            "label": "Lien banni\u00e8re"
+        },
+        {
+            "id": "text_texte_banniere",
+            "type": "text",
+            "label": "Texte Banni\u00e8re",
+            "default": "Livraison offerte \u00e0 partir de 100\u20ac"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Banni\u00e8re"
+        }
+    ]
+} {% endschema %}
