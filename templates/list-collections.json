@@ -1,0 +1,16 @@
+{
+    "sections": {
+        "small_hero": {
+            "type": "small_hero"
+        },
+        "reseaux": {
+            "type": "reseaux"
+        }
+    },
+    "layout": "list-collections",
+    "wrapper": "div.main-wrapper",
+    "order": [
+        "small_hero",
+        "reseaux"
+    ]
+}
