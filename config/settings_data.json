@@ -57,8 +57,8 @@
           "text_mini_cart_cart_message_heading": "Message",
           "text_mini_cart_go_to_checkout": "Finaliser la commande",
           "text_mini_cart_empty_heading": "Votre panier corse",
-          "url_mini_cart_lien_panier_vide": "",
-          "text_mini_cart_panier_vide": "Go to Checkout",
+          "url_mini_cart_lien_panier_vide": "/",
+          "text_mini_cart_panier_vide": "Continuer mes achats",
           "menu": "menu-produits"
         }
       }
