@@ -3,8 +3,21 @@
                           <div class="product-item_image-link">
                             <a li-object:href="product.url" href="{{ product.url }}" class="product-item_image-wrapper w-inline-block"><img li-object:src="product.featured_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: 'master' }}" loading="lazy" class="product-item_image"></a>
                             <div class="product-card-item_tag_list">
-                              <div class="tag">Bio</div>
-                              <div class="tag">Bio</div>
+                              {% if product.metafields.custom.precommande_disponible == true %}    <div li-if="product.metafields.custom.precommande_disponible == true">
+    
+                                <div class="tag">Précommande</div>
+                                  </div>
+{% endif %}
+                              {% if product.metafields.custom.saison == false %}    <div li-if="product.metafields.custom.saison == false">
+    
+                                <div class="tag">Hors saison</div>
+                                  </div>
+{% endif %}
+                              {% if product.selected_or_first_available_variant.available == false %}    <div li-if="product.selected_or_first_available_variant.available == false">
+    
+                                <div class="tag">En rupture de stock</div>
+                                  </div>
+{% endif %}
                             </div>
                           </div>
                           <div class="product-item_bottom">
