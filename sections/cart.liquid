@@ -9,7 +9,7 @@
 </span></a>
             </div>
             <div class="cart_shipping-wrapper">
-              <div class="mini-cart_progess-wrapper">
+              <div x-data="{ freeShipping: {{ section.settings.free_shipping }}}" class="mini-cart_progess-wrapper">
                 <div class="mini-cart_footer_progress-component" style="'display: ' + (((freeShipping - total.price) / 100) < 0 ? 'none' : 'block')">
                   <div class="mini-cart_footer_progress-bar">
                     <div class="mini-cart_footer_progress-bar-innner" style="'width: ' + (total.price/freeShipping) *100 + '%'"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
@@ -252,7 +252,7 @@
         {
             "type": "text",
             "id": "free_shipping",
-            "label": "Livraison gratuite",
+            "label": "Free Shipping",
             "default": "100"
         },
         {
