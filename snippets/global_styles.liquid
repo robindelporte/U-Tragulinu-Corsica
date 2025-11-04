@@ -379,3 +379,23 @@ html.wf-design-mode .hide-designer {
 }
 </style>
       </div>
+      <div class="hide w-embed w-script">
+        <script>
+const searchDropdown = document.querySelector('.nav_predictive-search-holder');
+const miniCart = document.querySelector('.nav_mini-cart');
+if (searchDropdown && miniCart) {
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'class') {
+        if (searchDropdown.classList.contains('w--open')) {
+          miniCart.classList.add('z-index-minus-1');
+        } else {
+          miniCart.classList.remove('z-index-minus-1');
+        }
+      }
+    });
+  });
+  observer.observe(searchDropdown, { attributes: true });
+}
+</script>
+      </div>
