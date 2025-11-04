@@ -1,7 +1,7 @@
 <div class="padding-global padding-section-small">
           <div class="container-large">
             <div class="headline-wrapper">
-              <h2 id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0beb96-0526affc" class="heading-style-h2">
+              <h2 id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218a0-7ad2189c" class="heading-style-h2">
 {{ section.settings.text_heading }}
 </h2>
               <a href="{{ routes.root_url }}" li-object:href="routes.root_url" class="text-size-small text-style-link hide-mobile-landscape"><span>
@@ -15,7 +15,7 @@
 <div class="cart_wrapper-left">
                     <div class="cart_table is-list">
                       <div class="cart_grid is-header w-hidden-tiny">
-                        <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0beb9f-0526affc" class="cart_table-header">
+                        <div id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218ab-7ad2189c" class="cart_table-header">
                           <p class="text-size-regular">
 {{ section.settings.text_product }}
 </p>
@@ -25,7 +25,7 @@
 {{ section.settings.text_quantity }}
 </p>
                         </div>
-                        <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0beba5-0526affc" class="cart_table-header">
+                        <div id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218b1-7ad2189c" class="cart_table-header">
                           <p class="text-size-regular">
 {{ section.settings.text_price }}
 </p>
@@ -34,8 +34,8 @@
                       {% for item in cart.items %}    <div li-for="item in cart.items" class="cart_item">
                                     
                         
-                            <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0beba9-0526affc" class="display-inlineflex">
-                          <a href="{{ item.url }}" li-object:href="item.url" id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0bebaa-0526affc" class="w-inline-block"><img li-object:src="item.image |  img_url: 'small'" src="{{ item.image |  img_url: 'small' }}" alt="" class="cart_image"></a>
+                            <div id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218b5-7ad2189c" class="display-inlineflex">
+                          <a href="{{ item.url }}" li-object:href="item.url" id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218b6-7ad2189c" class="w-inline-block"><img li-object:src="item.image |  img_url: 'small'" src="{{ item.image |  img_url: 'small' }}" alt="" class="cart_image"></a>
                           <div class="cart_info-order">
                             <a href="{{ item.url }}" li-object:href="item.url" li-object="item.title" class="text-size-regular">{{ item.title }}</a>
                             <div class="hide">
@@ -46,14 +46,14 @@
                         </div>
                             
                         
-                            <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0bebb4-0526affc" class="cart_table-item anzahl">
+                            <div id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218c0-7ad2189c" class="cart_table-item anzahl">
                           <div class="cart_quantity-wrapper">
-                            <div>Quantité</div><input class="cart_quantity w-input" li-object:value="{{ item.quantity }}" maxlength="256" name="updates[]" data-name="updates[]" placeholder="1" type="number" id="updates[]" required="" value="{{ {{ item.quantity }} }}">
+                            <div>Quantité</div><input class="cart_quantity w-input" li-object:value="item.quantity" maxlength="256" name="updates[]" data-name="updates[]" placeholder="1" type="number" id="updates[]" required="" value="{{ item.quantity }}">
                           </div>
                         </div>
                             
                         
-                            <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0bebbc-0526affc" class="cart_price-info">
+                            <div id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218c5-7ad2189c" class="cart_price-info">
                           <div li-object="item.final_line_price | money" class="text-style-tagline">{{ item.final_line_price | money }}</div>
                           {% if item.original_line_price > item.final_line_price %}    <div li-if="item.original_line_price > item.final_line_price">
     
@@ -78,9 +78,9 @@
                     </div>
                   </div>
                   <div class="cart_wrapper-right">
-                    <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0bebc3-0526affc" class="cart_table outline-solid-1">
+                    <div id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218ce-7ad2189c" class="cart_table outline-solid-1">
                       <div class="cart_summary-header w-hidden-tiny">
-                        <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0bebc5-0526affc" class="cart_table-header">
+                        <div id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218d0-7ad2189c" class="cart_table-header">
                           <p class="text-size-regular">
 {{ section.settings.text_summary }}
 </p>
@@ -118,7 +118,7 @@
                     </div>
                     <div class="cart_table outline-solid-1">
                       <div class="cart_note-header w-hidden-tiny">
-                        <div id="w-node-_7efc0c64-e28a-5341-1e13-d144ac0bebdd-0526affc" class="cart_table-header">
+                        <div id="w-node-_44626406-89d9-5c1e-222b-dd1a7ad218ef-7ad2189c" class="cart_table-header">
                           <p class="text-size-regular">
 {{ section.settings.text_comment }}
 </p>
