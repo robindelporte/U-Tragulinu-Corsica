@@ -61,6 +61,31 @@
         "text_heading": "Étapes clefs de l’entreprise"
       }
     },
+    "contenu_video_wLxg6J": {
+      "type": "contenu_video",
+      "blocks": {
+        "titre_tQtfjk": {
+          "type": "titre",
+          "settings": {
+            "text_headline": "Un fondateur passionné"
+          }
+        },
+        "texte_pe6NKn": {
+          "type": "texte",
+          "settings": {
+            "richtext_paragraph": "<p>Hugo, fondateur passionné, a commencé en tant qu’ouvrier agricole chez des amis de longue date en Plaine Orientale. Touché par le gaspillage des récoltes, il a imaginé une solution pour acheminer ces trésors de l’île jusqu’aux tables de France. Entrepreneur dans l’âme, il a bâti une entreprise fondée sur le respect du terroir et le lien humain : de sa première livraison de 400 kg en 2021 à plus de 30 tonnes de fruits vendues aujourd’hui.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "titre_tQtfjk",
+        "texte_pe6NKn"
+      ],
+      "name": "Contenu Video",
+      "settings": {
+        "image_position": "left"
+      }
+    },
     "produits_DfrRTm": {
       "type": "produits",
       "name": "Produits",
@@ -88,6 +113,7 @@
   "order": [
     "hero_contenu_ay8rnM",
     "team_VT3pmM",
+    "contenu_video_wLxg6J",
     "produits_DfrRTm",
     "banniere"
   ]
