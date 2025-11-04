@@ -3,9 +3,7 @@
             <div class="container-small">
               <div class="newsletter_component-wrapper"><img src="{{ 'illu-newsletter-2.svg' | asset_url }}" loading="lazy" alt="" class="illustration_newsletter-2 hide-mobile-landscape">
                 <div class="newsletter_component">
-                  <h2 class="text-align-center">
-{{ section.settings.text_titre }}
-</h2>
+                  <div class="text-align-center w-richtext"> {{ section.settings.richtext_titre }} </div>
                   <div class="newsletter_form-block w-form">
                     {% form 'customer', return_to: '/', class: 'newsletter_form' %}
 <div class="form_field-wrapper"><input class="form_input w-input" maxlength="256" name="contact[email]" data-name="Email" placeholder="{{ section.settings.placeholder_text }}" type="email" id="Email" required=""></div>
@@ -33,10 +31,10 @@
     "class": "section_newsletter",
     "settings": [
         {
-            "id": "text_titre",
-            "type": "text",
+            "id": "richtext_titre",
+            "type": "richtext",
             "label": "Titre",
-            "default": "Rejoignez le mouvement du <strong>vrai go\u00fbt Corse<\/strong>"
+            "default": "<p>\n                    Rejoignez le mouvement du <strong>vrai go\u00fbt Corse<\/strong>\n                  <\/p>"
         },
         {
             "id": "text_checkbox",

@@ -4,9 +4,7 @@
               <div class="container-xlarge">
                 <div class="origine_component">
                   <div class="origine_heading">
-                    <h2>
-{{ section.settings.text_titre }}
-</h2>
+                    <div class="w-richtext"> {{ section.settings.richtext_titre }} </div>
                   </div>
                   <div class="origine_content">
                     <div class="origine_step-line">
@@ -54,10 +52,10 @@
     "class": "section_origine",
     "settings": [
         {
-            "id": "text_titre",
-            "type": "text",
+            "id": "richtext_titre",
+            "type": "richtext",
             "label": "Titre",
-            "default": "<strong>L\u2019origine <\/strong>de nos produits"
+            "default": "<p>\n                      <strong>L\u2019origine <\/strong>de nos produits\n                    <\/p>"
         },
         {
             "id": "image_image_origine_1",

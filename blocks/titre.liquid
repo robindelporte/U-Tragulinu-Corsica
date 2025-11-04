@@ -1,21 +1,17 @@
 <div li-block="Titre">
                     
                     
-                    <h2>
-                      <div>
-{{ block.settings.text_texte }}
-</div>
-                    </h2>
+                    <div class="w-richtext"> {{ block.settings.richtext_titre }} </div>
                     
                   
                 </div> {% schema %} {
     "name": "Titre",
     "settings": [
         {
-            "id": "text_texte",
-            "type": "text",
-            "label": "Texte",
-            "default": "Notre histoire"
+            "id": "richtext_titre",
+            "type": "richtext",
+            "label": "Titre",
+            "default": "<p>\n                      Les vraies cl\u00e9mentines sont bient\u00f4t de retour\n                    <\/p>"
         }
     ],
     "presets": [

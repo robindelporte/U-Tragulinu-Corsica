@@ -3,9 +3,7 @@
             <div class="container-medium">
               <div class="products_components">
                 <div class="products_heading">
-                  <h2 class="best-sellers-heading">
-{{ section.settings.text_titre }}
-</h2>
+                  <div class="w-richtext"> {{ section.settings.richtext_titre }} </div>
                   <p class="text-style-tagline">Pour tous les fans de (vrai) produit</p>
                 </div>
                 <div class="swiper is-product-swiper w-dyn-list">
@@ -37,10 +35,10 @@
     "class": "section_products",
     "settings": [
         {
-            "id": "text_titre",
-            "type": "text",
+            "id": "richtext_titre",
+            "type": "richtext",
             "label": "Titre",
-            "default": "Nos <strong>meilleures <\/strong>ventes"
+            "default": "<p>\n                    Nos <strong>meilleures <\/strong>ventes\n                  <\/p>"
         },
         {
             "id": "collection_collection",
