@@ -5945,6 +5945,66 @@ figcaption {
   display: none;
 }
 
+.mini-cart_progess-wrapper {
+  padding: .5rem;
+}
+
+.mini-cart_footer_progress-component {
+  padding: .25rem 1.5rem;
+}
+
+.heading-style-h4-4 {
+  letter-spacing: -1.6px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.mini-cart_footer_progress-bar {
+  background-color: #fff;
+  border-radius: 1rem;
+  height: 7px;
+  margin-top: 1rem;
+  margin-bottom: .7rem;
+}
+
+.mini-cart_footer_progress-bar-innner {
+  background-color: var(--_primitives---brand--orange);
+  border-radius: 1rem;
+  width: 50%;
+  height: 100%;
+  transition: width .2s;
+  position: relative;
+}
+
+.mini-cart_footer_progress-bar-innner.is-complete {
+  width: 100%;
+}
+
+.heading-style-h4-5 {
+  letter-spacing: -1.6px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.mini-cart_footer_progress-bar-icon {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  bottom: auto;
+  left: auto;
+  right: 0%;
+  transform: translate(0, -80%);
+}
+
+.cart_shipping-wrapper {
+  border: 1px solid var(--_primitives---brand--orange);
+  background-color: var(--_primitives---brand--support);
+  border-radius: .75rem;
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     letter-spacing: -3.2px;
@@ -6953,6 +7013,12 @@ figcaption {
   .icons_item-heading {
     letter-spacing: -1.25px;
   }
+
+  .heading-style-h4-4, .heading-style-h4-5 {
+    letter-spacing: -1.6px;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -7490,6 +7556,21 @@ figcaption {
   .icons_item-heading {
     font-size: 1.25rem;
   }
+
+  .heading-style-h4-4 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .mini-cart_footer_progress-bar {
+    margin-top: .7rem;
+    margin-bottom: .6rem;
+  }
+
+  .heading-style-h4-5 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -7950,6 +8031,11 @@ figcaption {
   .icon-embed-breadcrumbs {
     width: .75rem;
     height: .75rem;
+  }
+
+  .mini-cart_footer_progress-bar {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
   }
 }
 

@@ -629,13 +629,31 @@
                   <div li-element="dropdown-toggle" class="nav_mini-cart-close" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"></div>
                   <div class="mini-cart_component">
                     <div li-element="mini-cart-full" class="mini-cart_full" :style="total.items < 1 && { display: 'none' }">
-                      <div class="mini-cart_header">
-                        <div class="heading-style-h4">Votre panier corse</div><button li-element="dropdown-toggle" aria-label="Close Cart" class="nav_dropdown-close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))">
-                          <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="16" viewbox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect x="12.4622" y="15.125" width="17.6291" height="2.51844" rx="1.25922" transform="rotate(-134.983 12.4622 15.125)" fill="#3C3B3B"></rect>
-                              <rect y="13.337" width="17.6291" height="2.51844" rx="1.25922" transform="rotate(-44.9834 0 13.337)" fill="#3C3B3B"></rect>
-                            </svg></div>
-                        </button>
+                      <div class="mini-cart_top">
+                        <div class="mini-cart_header">
+                          <div class="heading-style-h4">Votre panier corse</div><button li-element="dropdown-toggle" aria-label="Close Cart" class="nav_dropdown-close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))">
+                            <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="16" viewbox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="12.4622" y="15.125" width="17.6291" height="2.51844" rx="1.25922" transform="rotate(-134.983 12.4622 15.125)" fill="#3C3B3B"></rect>
+                                <rect y="13.337" width="17.6291" height="2.51844" rx="1.25922" transform="rotate(-44.9834 0 13.337)" fill="#3C3B3B"></rect>
+                              </svg></div>
+                          </button>
+                        </div>
+                        <div class="mini-cart_progess-wrapper">
+                          <div class="mini-cart_footer_progress-component" style="'display: ' + (((freeShipping - total.price) / 100) < 0 ? 'none' : 'block')">
+                            <div class="mini-cart_footer_progress-bar">
+                              <div class="mini-cart_footer_progress-bar-innner" style="'width: ' + (total.price/freeShipping) *100 + '%'"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
+                            </div>
+                            <div class="text-size-small">Encore <span li-js-price="freeShipping - total.price" x-text="LiquifyHelper.moneyFormat(freeShipping - total.price, true, '{{ shop.money_with_currency_format }}')">$52.75</span> pour la livraison à domicile offerte !</div>
+                          </div>
+                          <div class="mini-cart_footer_progress-component" style="'display: ' + (((freeShipping - total.price) / 100) < 0 ? 'block' : 'none')">
+                            <div class="mini-cart_footer_progress-bar">
+                              <div class="mini-cart_footer_progress-bar-innner is-complete"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
+                            </div>
+                            <div class="spacer-tiny"></div>
+                            <div class="text-size-small">Félicitations ! Vous avez débloqué la livraison gratuite pour votre commande.</div>
+                          </div>
+                          
+                        </div>
                       </div>
                       <div class="mini-cart_line-item no-scrollbar">
                         <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
@@ -764,6 +782,16 @@
             "step": 1,
             "label": "Limit: Search - Bestseller",
             "default": 6
+        },
+        {
+            "type": "header",
+            "content": "free_shipping"
+        },
+        {
+            "type": "text",
+            "id": "free_shipping",
+            "label": "Livraison gratuite",
+            "default": "100"
         },
         {
             "type": "header",
