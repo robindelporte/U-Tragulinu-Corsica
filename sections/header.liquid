@@ -1,238 +1,242 @@
-<div data-animation="default" class="nav_component w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="157c9fd8-515c-55e7-4eac-67b4732992e4" role="banner" data-duration="400" x-data="">
-        <div class="nav_container">
-          <a href="{{ routes.root_url }}" li-object:href="routes.root_url" class="nav_logo-link w-nav-brand">{% if section.settings.image_logo %}
+<div class="nav_wrapper">
+        <div li-content-for-theme-blocks="">
+{% content_for 'blocks' %}
+</div>
+        <div data-animation="default" class="nav_component w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="157c9fd8-515c-55e7-4eac-67b4732992e4" role="banner" data-duration="400" x-data="">
+          <div class="nav_container">
+            <a href="{{ routes.root_url }}" li-object:href="routes.root_url" class="nav_logo-link w-nav-brand">{% if section.settings.image_logo %}
 {{ section.settings.image_logo | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'nav_logo' }}
 {% else %}
 <img loading="lazy" alt="" src="{{ 'logo_1.svg' | asset_url }}" class="nav_logo">
 {% endif %}</a>
-          <nav role="navigation" id="w-node-_157c9fd8-515c-55e7-4eac-67b4732992e8-732992e2" class="nav_menu is-page-height-tablet w-nav-menu">
-            {% for link in linklists[section.settings.menu].links %}    <div data-delay="200" data-hover="false" nav-links="" li-for="link in linklists[section.settings.menu].links" class="nav_menu-dropdown w-dropdown">
+            <nav role="navigation" id="w-node-_157c9fd8-515c-55e7-4eac-67b4732992e8-732992e2" class="nav_menu is-page-height-tablet w-nav-menu">
+              {% for link in linklists[section.settings.menu].links %}    <div data-delay="200" data-hover="false" nav-links="" li-for="link in linklists[section.settings.menu].links" class="nav_menu-dropdown w-dropdown">
                                     
-              
+                
                             <div class="nav_dropdown-toggle w-dropdown-toggle">
-                {% if link.links.size > 0 %}    <div li-if="link.links.size > 0">
+                  {% if link.links.size > 0 %}    <div li-if="link.links.size > 0">
     
-                  <div class="nav_chevron-wrap">
-                    <div li-object="link.title | split: '-' | last">{{ link.title | split: '-' | last }}</div>
-                    {% if link.links.size > 0 %}    <div li-if="link.links.size > 0" class="dropdown-icon w-embed">
-    <svg width="9" height="8" viewbox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.63397 7C4.01887 7.66667 4.98113 7.66667 5.36603 7L8.39711 1.75C8.78201 1.08333 8.30089 0.25 7.53109 0.25H1.46891C0.699111 0.25 0.217986 1.08333 0.602886 1.75L3.63397 7Z" fill="currentcolor"></path>
-                      </svg>    </div>
-{% endif %}
-                  </div>
-                    </div>
-{% endif %}
-                {% if link.links.size == 0 %}    <div li-if="link.links.size == 0">
-    
-                  <a li-object:href="link.url" href="{{ link.url }}" class="w-inline-block">
-                    <div>
+                    <div class="nav_chevron-wrap">
                       <div li-object="link.title | split: '-' | last">{{ link.title | split: '-' | last }}</div>
-                    </div>
-                  </a>
-                    </div>
+                      {% if link.links.size > 0 %}    <div li-if="link.links.size > 0" class="dropdown-icon w-embed">
+    <svg width="9" height="8" viewbox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M3.63397 7C4.01887 7.66667 4.98113 7.66667 5.36603 7L8.39711 1.75C8.78201 1.08333 8.30089 0.25 7.53109 0.25H1.46891C0.699111 0.25 0.217986 1.08333 0.602886 1.75L3.63397 7Z" fill="currentcolor"></path>
+                        </svg>    </div>
 {% endif %}
-              </div>
+                    </div>
+                      </div>
+{% endif %}
+                  {% if link.links.size == 0 %}    <div li-if="link.links.size == 0">
+    
+                    <a li-object:href="link.url" href="{{ link.url }}" class="w-inline-block">
+                      <div>
+                        <div li-object="link.title | split: '-' | last">{{ link.title | split: '-' | last }}</div>
+                      </div>
+                    </a>
+                      </div>
+{% endif %}
+                </div>
                             
-              
+                
                             {% if link.links.size > 0  %}    <nav li-if="link.links.size > 0 " class="nav_dropdown-list no-scrollbar w-dropdown-list">
     
-                <div class="nav_dropdown-line-wrapper">
-                  <div class="padding-global">
-                    <div class="container-large">
-                      <div class="nav_dropdown-line"></div>
+                  <div class="nav_dropdown-line-wrapper">
+                    <div class="padding-global">
+                      <div class="container-large">
+                        <div class="nav_dropdown-line"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="padding-global max-width-full">
-                  <div class="container-large">
-                    <div class="nav_dropdown-wrapper">
-                      <div class="nav_dropdown-content">
-                        <p class="heading-style-h4">Nos fruits & agrumes de saison</p>
-                        <p class="hide-tablet">Chaque saison, nous récoltons à la main, sans traitement avant et après récole les vrais produits corses. Fruits & agrumes sont présents pour parfaire vos envies et rajouter du goût dans vos caisses à partager, toujours avec respect des producteurs et un circuit ultracourt.</p>
-                      </div>
-                      <div class="nav_dropdown-grid">
-                        {% for child_link in link.links %}    <div li-for="child_link in link.links">
+                  <div class="padding-global max-width-full">
+                    <div class="container-large">
+                      <div class="nav_dropdown-wrapper">
+                        <div class="nav_dropdown-content">
+                          <p class="heading-style-h4">Nos fruits & agrumes de saison</p>
+                          <p class="hide-tablet">Chaque saison, nous récoltons à la main, sans traitement avant et après récole les vrais produits corses. Fruits & agrumes sont présents pour parfaire vos envies et rajouter du goût dans vos caisses à partager, toujours avec respect des producteurs et un circuit ultracourt.</p>
+                        </div>
+                        <div class="nav_dropdown-grid">
+                          {% for child_link in link.links %}    <div li-for="child_link in link.links">
                                     
-                          
+                            
                             {% render 'nav_product_item', product: child_link.object %}
                             
-                        
+                          
                         </div>
 {% endfor %}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                  </nav>
+                    </nav>
 {% endif %}
                             
-            
+              
                         </div>
 {% endfor %}
-          </nav>
-          <div class="nav_shop-icons">
-            <div class="nav_search">
-              <div data-delay="0" data-hover="false" class="nav_dropdown w-dropdown">
-                <div class="nav_shop-icon w-dropdown-toggle">
-                  <div class="icon-embed-xsmall w-embed"><svg width="26" height="27" viewbox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.11 20.6677C4.53 20.6677 0 16.1277 0 10.5577C0 4.98765 4.53 0.447655 10.11 0.447655C15.69 0.447655 20.22 4.97765 20.22 10.5577C20.22 13.2577 19.17 15.7977 17.26 17.7077C15.35 19.6177 12.81 20.6677 10.11 20.6677ZM10.11 2.44765C5.64 2.44765 2 6.08765 2 10.5577C2 15.0277 5.64 18.6677 10.11 18.6677C12.28 18.6677 14.31 17.8277 15.84 16.2977C17.37 14.7677 18.22 12.7277 18.22 10.5677C18.22 6.09765 14.58 2.45765 10.11 2.45765V2.44765Z" fill="#3C3B3B"></path>
-                      <path d="M17.269 16.2958L15.8345 17.6894L24.3144 26.4186L25.749 25.025L17.269 16.2958Z" fill="#3C3B3B"></path>
-                    </svg></div>
-                </div>
-                <nav class="nav_predictive-search-holder w-dropdown-list">
-                  <div li-element="dropdown-toggle" class="nav_predictive-search-close" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"></div>
-                  <div class="predictive-search_component">
-                    <div class="predictive-search_header">
-                      <div class="heading-style-h4">
+            </nav>
+            <div class="nav_shop-icons">
+              <div class="nav_search">
+                <div data-delay="0" data-hover="false" class="nav_dropdown w-dropdown">
+                  <div class="nav_shop-icon w-dropdown-toggle">
+                    <div class="icon-embed-xsmall w-embed"><svg width="26" height="27" viewbox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.11 20.6677C4.53 20.6677 0 16.1277 0 10.5577C0 4.98765 4.53 0.447655 10.11 0.447655C15.69 0.447655 20.22 4.97765 20.22 10.5577C20.22 13.2577 19.17 15.7977 17.26 17.7077C15.35 19.6177 12.81 20.6677 10.11 20.6677ZM10.11 2.44765C5.64 2.44765 2 6.08765 2 10.5577C2 15.0277 5.64 18.6677 10.11 18.6677C12.28 18.6677 14.31 17.8277 15.84 16.2977C17.37 14.7677 18.22 12.7277 18.22 10.5677C18.22 6.09765 14.58 2.45765 10.11 2.45765V2.44765Z" fill="#3C3B3B"></path>
+                        <path d="M17.269 16.2958L15.8345 17.6894L24.3144 26.4186L25.749 25.025L17.269 16.2958Z" fill="#3C3B3B"></path>
+                      </svg></div>
+                  </div>
+                  <nav class="nav_predictive-search-holder w-dropdown-list">
+                    <div li-element="dropdown-toggle" class="nav_predictive-search-close" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"></div>
+                    <div class="predictive-search_component">
+                      <div class="predictive-search_header">
+                        <div class="heading-style-h4">
 {{ section.settings.text_search }}
 </div><button li-element="dropdown-toggle" aria-label="Close Search" class="nav_dropdown-close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))">
-                        <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.84775 14.178L0.447754 12.778L6.04775 7.17798L0.447754 1.57798L1.84775 0.177979L7.44775 5.77798L13.0478 0.177979L14.4478 1.57798L8.84775 7.17798L14.4478 12.778L13.0478 14.178L7.44775 8.57798L1.84775 14.178Z" fill="currentColor"></path>
-                          </svg></div>
-                      </button>
-                    </div><predictive-search class="predictive-search">
-                      <div class="predictive-search_holder">
-                        <div class="predictive-search_form w-form">
-                          <form id="wf-form-produkt-suche" name="wf-form-produkt-suche" data-name="produkt-suche" action="/search" method="get" class="predictive-search_form-component" data-wf-page-id="68f8dfc79e590fbe6283bfc9" data-wf-element-id="d4fd6338-abda-ad60-1e57-0c0079543165">
-                            <div class="predictive-search_input-holder"><label for="search-input" class="form_hidden-label">Search</label><input type="search" id="search-input" placeholder="Rechercher" name="q" class="predictive-search_input">
-                              <a href="#" class="predictive-search_search-button w-inline-block">
-                                <div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 25 25" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
-                                    <mask id="mask0_2941_121300" style="mask-type:alpha" maskunits="userSpaceOnUse" x="0" y="0" width="25" height="25">
-                                      <rect x="0.123535" y="0.987549" width="24" height="24" fill="#D9D9D9"></rect>
-                                    </mask>
-                                    <g mask="url(#mask0_2941_121300)">
-                                      <path d="M19.7235 21.9875L13.4235 15.6875C12.9235 16.0875 12.3485 16.4042 11.6985 16.6375C11.0485 16.8709 10.3569 16.9875 9.62354 16.9875C7.80687 16.9875 6.26937 16.3584 5.01104 15.1C3.7527 13.8417 3.12354 12.3042 3.12354 10.4875C3.12354 8.67088 3.7527 7.13338 5.01104 5.87505C6.26937 4.61672 7.80687 3.98755 9.62354 3.98755C11.4402 3.98755 12.9777 4.61672 14.236 5.87505C15.4944 7.13338 16.1235 8.67088 16.1235 10.4875C16.1235 11.2209 16.0069 11.9125 15.7735 12.5625C15.5402 13.2125 15.2235 13.7875 14.8235 14.2875L21.1235 20.5875L19.7235 21.9875ZM9.62354 14.9875C10.8735 14.9875 11.936 14.55 12.811 13.675C13.686 12.8 14.1235 11.7375 14.1235 10.4875C14.1235 9.23755 13.686 8.17505 12.811 7.30005C11.936 6.42505 10.8735 5.98755 9.62354 5.98755C8.37354 5.98755 7.31104 6.42505 6.43604 7.30005C5.56104 8.17505 5.12354 9.23755 5.12354 10.4875C5.12354 11.7375 5.56104 12.8 6.43604 13.675C7.31104 14.55 8.37354 14.9875 9.62354 14.9875Z" fill="currentColor"></path>
-                                    </g>
-                                  </svg></div>
-                              </a><input type="submit" data-wait="Please wait..." id="submit-search" class="hide w-button" value="Submit">
-                            </div>
-                            <div id="predictive-search" fs-scrolldisable-element="preserve" class="predictive-search_overflow no-scrollbar">
-                              <div li-section="predictive_search" class="predictive-search_section">
-                                {% if predictive_search.performed %}    <div li-if="predictive_search.performed" class="predictive-search_conditional">
+                          <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1.84775 14.178L0.447754 12.778L6.04775 7.17798L0.447754 1.57798L1.84775 0.177979L7.44775 5.77798L13.0478 0.177979L14.4478 1.57798L8.84775 7.17798L14.4478 12.778L13.0478 14.178L7.44775 8.57798L1.84775 14.178Z" fill="currentColor"></path>
+                            </svg></div>
+                        </button>
+                      </div><predictive-search class="predictive-search">
+                        <div class="predictive-search_holder">
+                          <div class="predictive-search_form w-form">
+                            <form id="wf-form-produkt-suche" name="wf-form-produkt-suche" data-name="produkt-suche" action="/search" method="get" class="predictive-search_form-component" data-wf-page-id="68f8dfc79e590fbe6283bfc9" data-wf-element-id="d4fd6338-abda-ad60-1e57-0c0079543165">
+                              <div class="predictive-search_input-holder"><label for="search-input" class="form_hidden-label">Search</label><input type="search" id="search-input" placeholder="Rechercher" name="q" class="predictive-search_input">
+                                <a href="#" class="predictive-search_search-button w-inline-block">
+                                  <div class="icon-embed-xsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 25 25" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                                      <mask id="mask0_2941_121300" style="mask-type:alpha" maskunits="userSpaceOnUse" x="0" y="0" width="25" height="25">
+                                        <rect x="0.123535" y="0.987549" width="24" height="24" fill="#D9D9D9"></rect>
+                                      </mask>
+                                      <g mask="url(#mask0_2941_121300)">
+                                        <path d="M19.7235 21.9875L13.4235 15.6875C12.9235 16.0875 12.3485 16.4042 11.6985 16.6375C11.0485 16.8709 10.3569 16.9875 9.62354 16.9875C7.80687 16.9875 6.26937 16.3584 5.01104 15.1C3.7527 13.8417 3.12354 12.3042 3.12354 10.4875C3.12354 8.67088 3.7527 7.13338 5.01104 5.87505C6.26937 4.61672 7.80687 3.98755 9.62354 3.98755C11.4402 3.98755 12.9777 4.61672 14.236 5.87505C15.4944 7.13338 16.1235 8.67088 16.1235 10.4875C16.1235 11.2209 16.0069 11.9125 15.7735 12.5625C15.5402 13.2125 15.2235 13.7875 14.8235 14.2875L21.1235 20.5875L19.7235 21.9875ZM9.62354 14.9875C10.8735 14.9875 11.936 14.55 12.811 13.675C13.686 12.8 14.1235 11.7375 14.1235 10.4875C14.1235 9.23755 13.686 8.17505 12.811 7.30005C11.936 6.42505 10.8735 5.98755 9.62354 5.98755C8.37354 5.98755 7.31104 6.42505 6.43604 7.30005C5.56104 8.17505 5.12354 9.23755 5.12354 10.4875C5.12354 11.7375 5.56104 12.8 6.43604 13.675C7.31104 14.55 8.37354 14.9875 9.62354 14.9875Z" fill="currentColor"></path>
+                                      </g>
+                                    </svg></div>
+                                </a><input type="submit" data-wait="Please wait..." id="submit-search" class="hide w-button" value="Submit">
+                              </div>
+                              <div id="predictive-search" fs-scrolldisable-element="preserve" class="predictive-search_overflow no-scrollbar">
+                                <div li-section="predictive_search" class="predictive-search_section">
+                                  {% if predictive_search.performed %}    <div li-if="predictive_search.performed" class="predictive-search_conditional">
     
-                                  {% assign first_column_results_size = predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size | plus: predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size | plus: predictive_search.resources.products.size %}
-                                  {% if first_column_results_size > 0 %}    <div li-if="first_column_results_size > 0" class="predictive-search_conditional">
+                                    {% assign first_column_results_size = predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size | plus: predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size | plus: predictive_search.resources.products.size %}
+                                    {% if first_column_results_size > 0 %}    <div li-if="first_column_results_size > 0" class="predictive-search_conditional">
     
-                                    {% if predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 %}    <div li-if="predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0" class="predictive-search_topic">
+                                      {% if predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 %}    <div li-if="predictive_search.resources.products.size > 0 or predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0" class="predictive-search_topic">
     
-                                      <div class="predictive-search_headline">
-                                        <div class="text-style-muted">Produits</div>
-                                      </div>
-                                      <ul role="list" class="predictive-search_product-list w-list-unstyled">
-                                        {% for product in predictive_search.resources.products %}    <li li-for="product in predictive_search.resources.products" class="predictive-search_produt-item">
+                                        <div class="predictive-search_headline">
+                                          <div class="text-style-muted">Produits</div>
+                                        </div>
+                                        <ul role="list" class="predictive-search_product-list w-list-unstyled">
+                                          {% for product in predictive_search.resources.products %}    <li li-for="product in predictive_search.resources.products" class="predictive-search_produt-item">
                                     
-                                          
+                                            
                             <a li-object:href="product.url" href="{{ product.url }}" class="predictive-search_line-item w-inline-block">
-                                            <div class="predictive-search_image-wrapper"><img li-object:src="product.featured_media | image_url: width: 150" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_media | image_url: width: 150 }}" loading="lazy" class="predictive-search_image"></div>
-                                            <div class="predictive-search_product-info">
-                                              <div class="text-size-regular text-weight-bold"><span li-object="product.title">{{ product.title }}</span></div>
-                                              <div class="text-size-small"><span li-object="product.price | money">{{ product.price | money }}</span></div>
-                                            </div>
-                                          </a>
+                                              <div class="predictive-search_image-wrapper"><img li-object:src="product.featured_media | image_url: width: 150" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_media | image_url: width: 150 }}" loading="lazy" class="predictive-search_image"></div>
+                                              <div class="predictive-search_product-info">
+                                                <div class="text-size-regular text-weight-bold"><span li-object="product.title">{{ product.title }}</span></div>
+                                                <div class="text-size-small"><span li-object="product.price | money">{{ product.price | money }}</span></div>
+                                              </div>
+                                            </a>
                             
-                                        
+                                          
                         </li>
 {% endfor %}
-                                      </ul>
-                                        </div>
+                                        </ul>
+                                          </div>
 {% endif %}
-                                    {% if predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 %}    <div li-if="predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0" class="predictive-search_topic">
+                                      {% if predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0 %}    <div li-if="predictive_search.resources.queries.size > 0 or predictive_search.resources.collections.size > 0" class="predictive-search_topic">
     
-                                      <div class="predictive-search_headline">
-                                        <div class="text-style-muted">Suggestions</div>
-                                      </div>
-                                      <ul role="list" class="predictive-search_list w-list-unstyled">
-                                        {% for query in predictive_search.resources.queries %}    <li li-for="query in predictive_search.resources.queries" class="predictive-search_item">
+                                        <div class="predictive-search_headline">
+                                          <div class="text-style-muted">Suggestions</div>
+                                        </div>
+                                        <ul role="list" class="predictive-search_list w-list-unstyled">
+                                          {% for query in predictive_search.resources.queries %}    <li li-for="query in predictive_search.resources.queries" class="predictive-search_item">
                                     
-                                          
+                                            
                             <a li-object:href="query.url" href="{{ query.url }}" class="predictive-search_link w-inline-block">
-                                            <div li-object="query.styled_text">{{ query.styled_text }}</div>
-                                          </a>
+                                              <div li-object="query.styled_text">{{ query.styled_text }}</div>
+                                            </a>
                             
-                                        
-                        </li>
-{% endfor %}
-                                        {% for collection in predictive_search.resources.collections %}    <li li-for="collection in predictive_search.resources.collections" class="predictive-search_item">
-                                    
                                           
-                            <a li-object:href="collection.url" href="{{ collection.url }}" class="predictive-search_link w-inline-block">
-                                            <div li-object="collection.title">{{ collection.title }}</div>
-                                          </a>
-                            
-                                        
                         </li>
 {% endfor %}
-                                      </ul>
+                                          {% for collection in predictive_search.resources.collections %}    <li li-for="collection in predictive_search.resources.collections" class="predictive-search_item">
+                                    
+                                            
+                            <a li-object:href="collection.url" href="{{ collection.url }}" class="predictive-search_link w-inline-block">
+                                              <div li-object="collection.title">{{ collection.title }}</div>
+                                            </a>
+                            
+                                          
+                        </li>
+{% endfor %}
+                                        </ul>
+                                          </div>
+{% endif %}
+                                        </div>
+{% endif %}
+                                    {% if first_column_results_size == 0 %}    <div li-if="first_column_results_size == 0" class="predictive-search_conditional">
+    
+                                      <div class="predictive-search_topic">
+                                        <div class="text-style-muted">Nous avons rien trouvé avec "<span li-object="predictive_search.terms">{{ predictive_search.terms }}</span>"</div>
+                                      </div>
                                         </div>
 {% endif %}
                                       </div>
 {% endif %}
-                                  {% if first_column_results_size == 0 %}    <div li-if="first_column_results_size == 0" class="predictive-search_conditional">
+                                  {% unless predictive_search.performed %}    <div li-unless="predictive_search.performed" class="predictive-search_conditional">
     
-                                    <div class="predictive-search_topic">
-                                      <div class="text-style-muted">Nous avons rien trouvé avec "<span li-object="predictive_search.terms">{{ predictive_search.terms }}</span>"</div>
-                                    </div>
-                                      </div>
-{% endif %}
-                                    </div>
-{% endif %}
-                                {% unless predictive_search.performed %}    <div li-unless="predictive_search.performed" class="predictive-search_conditional">
-    
-                                  <div class="predictive-search_overflow">
-                                    <div class="predictive-search_topic">
-                                      <div class="predictive-search_headline">
-                                        <div class="text-style-muted">Meilleures ventes</div>
-                                      </div>
-                                      <ul role="list" class="predictive-search_product-list w-list-unstyled">
-                                        {% for product in section.settings.collection_search_bestseller.products limit: section.settings.collection_search_bestseller_limit %}
+                                    <div class="predictive-search_overflow">
+                                      <div class="predictive-search_topic">
+                                        <div class="predictive-search_headline">
+                                          <div class="text-style-muted">Meilleures ventes</div>
+                                        </div>
+                                        <ul role="list" class="predictive-search_product-list w-list-unstyled">
+                                          {% for product in section.settings.collection_search_bestseller.products limit: section.settings.collection_search_bestseller_limit %}
 <li class="predictive-search_produt-item">
     
-                                          
+                                            
     <a li-object:href="product.url" href="{{ product.url }}" class="predictive-search_line-item w-inline-block">
-                                            <div class="predictive-search_image-wrapper"><img li-object:src="product.featured_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: 'master' }}" loading="lazy" class="predictive-search_image"></div>
-                                            <div class="predictive-search_product-info">
-                                              <div class="text-size-regular text-weight-bold"><span li-object="product.title">{{ product.title }}</span></div>
-                                              <div class="text-size-small"><span li-object="product.price | money">{{ product.price | money }}</span></div>
-                                            </div>
-                                          </a>
+                                              <div class="predictive-search_image-wrapper"><img li-object:src="product.featured_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: 'master' }}" loading="lazy" class="predictive-search_image"></div>
+                                              <div class="predictive-search_product-info">
+                                                <div class="text-size-regular text-weight-bold"><span li-object="product.title">{{ product.title }}</span></div>
+                                                <div class="text-size-small"><span li-object="product.price | money">{{ product.price | money }}</span></div>
+                                              </div>
+                                            </a>
     
-                                        
+                                          
 </li>
 {% endfor %}
-                                      </ul>
+                                        </ul>
+                                      </div>
                                     </div>
-                                  </div>
-                                    </div>
+                                      </div>
 {% endunless %}
+                                </div>
                               </div>
+                            </form>
+                            <div class="hide w-form-done">
+                              <div>Thank you! Your submission has been received!</div>
                             </div>
-                          </form>
-                          <div class="hide w-form-done">
-                            <div>Thank you! Your submission has been received!</div>
-                          </div>
-                          <div class="hide w-form-fail">
-                            <div>Oops! Something went wrong while submitting the form.</div>
+                            <div class="hide w-form-fail">
+                              <div>Oops! Something went wrong while submitting the form.</div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </predictive-search>
-                  </div>
-                </nav>
-              </div>
-            </div>
-            {% if shop.customer_accounts_optional %}    <div li-if="shop.customer_accounts_optional" class="nav_account">
-    
-              <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav_shop-icon w-inline-block">
-                <div class="icon-embed-xsmall w-embed"><svg width="24" height="29" viewbox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.8867 14.2033C8.0767 14.2033 4.98669 11.1033 4.98669 7.30333C4.98669 3.50333 8.0867 0.403332 11.8867 0.403332C15.6867 0.403332 18.7867 3.50333 18.7867 7.30333C18.7867 11.1033 15.6867 14.2033 11.8867 14.2033ZM11.8867 2.40333C9.1867 2.40333 6.98669 4.60333 6.98669 7.30333C6.98669 10.0033 9.1867 12.2033 11.8867 12.2033C14.5867 12.2033 16.7867 10.0033 16.7867 7.30333C16.7867 4.60333 14.5867 2.40333 11.8867 2.40333Z" fill="#3C3B3B"></path>
-                    <path d="M3.4668 15.1133C4.6368 13.9033 6.48727 13.573 7.94727 14.333C10.2892 15.5351 13.0878 15.6211 15.4724 14.5061C15.5933 14.4496 15.7115 14.3919 15.8271 14.333C17.2971 13.5834 19.1368 13.9035 20.3066 15.1133C23.7166 18.6532 23.9265 22.973 20.8867 26.9629C20.1767 27.9029 19.0264 28.4629 17.8164 28.4629H5.95703C4.74703 28.4629 3.59672 27.9029 2.88672 26.9629C-0.15305 22.973 0.0568795 18.6532 3.4668 15.1133ZM18.8662 16.503C18.3062 15.9233 17.4262 15.7534 16.7363 16.1133C16.4075 16.2815 16.0372 16.4685 15.6374 16.6603C13.1236 17.8657 10.2356 17.8321 7.78169 16.5093C7.52493 16.3708 7.27698 16.237 7.03711 16.1133C6.34727 15.7634 5.47723 15.9233 4.90723 16.503C3.00728 18.4829 1.38691 21.6931 4.47656 25.753C4.81656 26.203 5.36703 26.4629 5.95703 26.4629H17.8164C18.4064 26.4629 18.9569 26.193 19.2969 25.753C22.3966 21.6931 20.7762 18.4829 18.8662 16.503Z" fill="#3C3B3B"></path>
-                  </svg></div>
-              </a>
+                      </predictive-search>
+                    </div>
+                  </nav>
                 </div>
+              </div>
+              {% if shop.customer_accounts_optional %}    <div li-if="shop.customer_accounts_optional" class="nav_account">
+    
+                <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav_shop-icon w-inline-block">
+                  <div class="icon-embed-xsmall w-embed"><svg width="24" height="29" viewbox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.8867 14.2033C8.0767 14.2033 4.98669 11.1033 4.98669 7.30333C4.98669 3.50333 8.0867 0.403332 11.8867 0.403332C15.6867 0.403332 18.7867 3.50333 18.7867 7.30333C18.7867 11.1033 15.6867 14.2033 11.8867 14.2033ZM11.8867 2.40333C9.1867 2.40333 6.98669 4.60333 6.98669 7.30333C6.98669 10.0033 9.1867 12.2033 11.8867 12.2033C14.5867 12.2033 16.7867 10.0033 16.7867 7.30333C16.7867 4.60333 14.5867 2.40333 11.8867 2.40333Z" fill="#3C3B3B"></path>
+                      <path d="M3.4668 15.1133C4.6368 13.9033 6.48727 13.573 7.94727 14.333C10.2892 15.5351 13.0878 15.6211 15.4724 14.5061C15.5933 14.4496 15.7115 14.3919 15.8271 14.333C17.2971 13.5834 19.1368 13.9035 20.3066 15.1133C23.7166 18.6532 23.9265 22.973 20.8867 26.9629C20.1767 27.9029 19.0264 28.4629 17.8164 28.4629H5.95703C4.74703 28.4629 3.59672 27.9029 2.88672 26.9629C-0.15305 22.973 0.0568795 18.6532 3.4668 15.1133ZM18.8662 16.503C18.3062 15.9233 17.4262 15.7534 16.7363 16.1133C16.4075 16.2815 16.0372 16.4685 15.6374 16.6603C13.1236 17.8657 10.2356 17.8321 7.78169 16.5093C7.52493 16.3708 7.27698 16.237 7.03711 16.1133C6.34727 15.7634 5.47723 15.9233 4.90723 16.503C3.00728 18.4829 1.38691 21.6931 4.47656 25.753C4.81656 26.203 5.36703 26.4629 5.95703 26.4629H17.8164C18.4064 26.4629 18.9569 26.193 19.2969 25.753C22.3966 21.6931 20.7762 18.4829 18.8662 16.503Z" fill="#3C3B3B"></path>
+                    </svg></div>
+                </a>
+                  </div>
 {% endif %}
-            <div class="nav_mini-cart">
-              <div class="mini-cart_css w-embed">
-                <style>
+              <div class="nav_mini-cart">
+                <div class="mini-cart_css w-embed">
+                  <style>
 [data-modal-position="right"] {
 	justify-content: flex-end;
 }
@@ -248,18 +252,19 @@
   height: 70vh;
 }
 </style>
+                </div>
+                
+                {% render 'new_mini_cart', free_shipping_threshold: section.settings.mini_cart_free_shipping_threshold, content_animation_duration: section.settings.mini_cart_content_animation_duration, aria_label_increase_product_quantity: section.settings.aria_label_increase_product_quantity, modal_animation_easing: section.settings.mini_cart_modal_animation_easing, modal_animation: section.settings.mini_cart_modal_animation, aria_label_open_mini_cart: section.settings.aria_label_open_mini_cart, aria_label_decrease_product_quantity: section.settings.aria_label_decrease_product_quantity, aria_label_remove_product: section.settings.aria_label_remove_product, aria_label_close_mini_cart: section.settings.aria_label_close_mini_cart, modal_animation_duration: section.settings.mini_cart_modal_animation_duration, content_animation: section.settings.mini_cart_content_animation, free_shipping: section.settings.mini_cart_free_shipping, content_animation_easing: section.settings.mini_cart_content_animation_easing, content_position: section.settings.mini_cart_content_position %}
               </div>
-              
-              {% render 'new_mini_cart', free_shipping_threshold: section.settings.mini_cart_free_shipping_threshold, content_animation_duration: section.settings.mini_cart_content_animation_duration, aria_label_increase_product_quantity: section.settings.aria_label_increase_product_quantity, modal_animation_easing: section.settings.mini_cart_modal_animation_easing, modal_animation: section.settings.mini_cart_modal_animation, aria_label_open_mini_cart: section.settings.aria_label_open_mini_cart, aria_label_decrease_product_quantity: section.settings.aria_label_decrease_product_quantity, aria_label_remove_product: section.settings.aria_label_remove_product, aria_label_close_mini_cart: section.settings.aria_label_close_mini_cart, modal_animation_duration: section.settings.mini_cart_modal_animation_duration, content_animation: section.settings.mini_cart_content_animation, free_shipping: section.settings.mini_cart_free_shipping, content_animation_easing: section.settings.mini_cart_content_animation_easing, content_position: section.settings.mini_cart_content_position %}
             </div>
-          </div>
-          <div class="nav_menu-button w-nav-button">
-            <div class="menu-icon">
-              <div class="menu-icon_line-top"></div>
-              <div class="menu-icon_line-middle">
-                <div class="menu-icon_line-middle-inner"></div>
+            <div class="nav_menu-button w-nav-button">
+              <div class="menu-icon">
+                <div class="menu-icon_line-top"></div>
+                <div class="menu-icon_line-middle">
+                  <div class="menu-icon_line-middle-inner"></div>
+                </div>
+                <div class="menu-icon_line-bottom"></div>
               </div>
-              <div class="menu-icon_line-bottom"></div>
             </div>
           </div>
         </div>
@@ -267,6 +272,14 @@
     "tag": "section",
     "name": "header",
     "class": "section_header-group",
+    "blocks": [
+        {
+            "type": "banniere"
+        },
+        {
+            "type": "@app"
+        }
+    ],
     "settings": [
         {
             "id": "image_logo",
@@ -614,7 +627,11 @@
         {
             "name": "header",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "banniere"
+                }
+            ]
         }
     ]
 } {% endschema %}
