@@ -60,11 +60,42 @@
         "text_titre": "Étapes clefs de l’entreprise"
       }
     },
+    "producteurs_kYd4d8": {
+      "type": "producteurs",
+      "blocks": {
+        "tab_3wzKQ4": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p>\n                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.\n                            ‍\n                            Concrètement, côté public :\n                            \n                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "This is some text inside of a div block."
+          }
+        }
+      },
+      "block_order": [
+        "tab_3wzKQ4"
+      ],
+      "name": "Producteurs",
+      "settings": {
+        "text_titre": "Étapes clefs de l’entreprise"
+      }
+    },
+    "produits_DfrRTm": {
+      "type": "produits",
+      "name": "Produits",
+      "settings": {
+        "richtext_titre": "<h2>Nos <strong>meilleures </strong>ventes</h2>",
+        "collection_collection": "meilleures-ventes",
+        "collection_collection_limit": 4,
+        "url_bouton_lien": "shopify://collections/meilleures-ventes",
+        "text_bouton_texte": "Tous nos produits"
+      }
+    },
     "banniere": {
       "type": "banniere",
       "settings": {
         "text_titre": "Découvrez nos spécialités",
-        "text_bloc_1_titre": "Nos fruits &amp; agrumes",
+        "text_bloc_1_titre": "Nos fruits & agrumes",
         "url_bloc_1_lien": "",
         "text_bloc_2_titre": "Notre épicerie Corse",
         "url_bloc_2_lien": ""
@@ -77,6 +108,8 @@
     "hero_partenaires",
     "processus",
     "producteurs",
+    "producteurs_kYd4d8",
+    "produits_DfrRTm",
     "banniere"
   ]
 }

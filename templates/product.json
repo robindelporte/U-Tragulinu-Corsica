@@ -131,7 +131,7 @@
       ],
       "name": "FAQ",
       "settings": {
-        "text_heading": "On à réponse à tout (ou presque)"
+        "richtext_titre": "<h2>On à réponse à tout <strong>(ou presque)</strong></h2>"
       }
     },
     "17621683178e86f7be": {
@@ -158,7 +158,7 @@
       "type": "produits",
       "name": "Produits",
       "settings": {
-        "text_titre": "Nos meilleures ventes",
+        "richtext_titre": "<h2>Nos <strong>meilleures </strong>ventes</h2>",
         "collection_collection": "meilleures-ventes",
         "collection_collection_limit": 4,
         "url_bouton_lien": "",
@@ -168,7 +168,7 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "text_titre": "Rejoignez le mouvement du <strong>vrai goût Corse</strong>",
+        "richtext_titre": "<h2>Rejoignez le mouvement du <strong>vrai goût Corse</strong></h2>",
         "text_checkbox": "En vous inscrivant, vous acceptez de recevoir des messages de marketing. Affichez notre politique de confidentialité et nos conditions de service pour en savoir plus."
       }
     },
