@@ -183,5 +183,26 @@ window.addEventListener('resize', function() {
   });
 </script>
   {% render 'search_javascript' %}
+  <div>
+    <script>
+(function() {
+  const searchHolder = document.querySelector('.nav_predictive-search-holder');
+  const miniCart = document.querySelector('.nav_mini-cart');
+  if (searchHolder && miniCart) {
+    const observer = new MutationObserver(() => {
+      if (searchHolder.classList.contains('w--open')) {
+        miniCart.classList.add('z-index-minus-1');
+      } else {
+        miniCart.classList.remove('z-index-minus-1');
+      }
+    });
+    observer.observe(searchHolder, { 
+      attributes: true, 
+      attributeFilter: ['class'] 
+    });
+  }
+})();
+</script>
+  </div>
 </body>
 </html>
