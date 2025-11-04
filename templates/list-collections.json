@@ -13,15 +13,32 @@
       "type": "small_hero",
       "settings": {}
     },
+    "liste_collections_URKnFQ": {
+      "type": "liste_collections",
+      "name": "Liste Collections",
+      "settings": {}
+    },
     "reseaux": {
       "type": "reseaux",
-      "settings": {}
+      "settings": {
+        "text_heading": "Suivez-nous sur nos réseaux sociaux",
+        "text_paragraphe": "“Partagez vos plus belles recettes et vos paniers de fruits corses sur Instagram,Facebook et TikTok avec le hashtag #UTragulinuCorsica pour être mis en avant sur notre page !”",
+        "url_facebook": "",
+        "text_nom_facebook": "U Tragulinu Corsica",
+        "url_instagram": "",
+        "text_nom_instagram": "@U_tragulinu_corsica",
+        "url_youtube": "",
+        "text_nom_tiktok": "U-tragulinu-corsica",
+        "url_linkedin": "",
+        "text_nom_linkedin": "Hugo Delorieux"
+      }
     }
   },
   "layout": "list-collections",
   "wrapper": "div.main-wrapper",
   "order": [
     "small_hero",
+    "liste_collections_URKnFQ",
     "reseaux"
   ]
 }
