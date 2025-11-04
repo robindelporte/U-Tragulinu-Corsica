@@ -14,59 +14,51 @@
       "name": "Hero Contenu",
       "settings": {}
     },
-    "producteurs": {
-      "type": "producteurs",
+    "team_VT3pmM": {
+      "type": "team",
       "blocks": {
-        "tab": {
+        "tab_7zzkpQ": {
           "type": "tab",
-          "name": "Tab",
           "settings": {
             "text_titre": "Le lancement",
-            "richtext_contenu": "<p> Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.</p>",
-            "image_image": "shopify://shop_images/hugo-u-tragulinu_1.webp",
-            "image_image_2": "shopify://shop_images/hugo-u-tragulinu-2.webp",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
             "text_tab_label": "2021"
           }
         },
-        "tab_VMmkNU": {
+        "tab_q4pTUc": {
           "type": "tab",
           "settings": {
-            "text_titre": "Structure de l’entreprise",
-            "richtext_contenu": "<p>Du projet artisanal à une maison bien organisée. On garde l’âme du marché ambulant, on ajoute la rigueur qui rassure : qualité, régularité, service client.</p>",
-            "image_image": "shopify://shop_images/hugo-u-tragulinu-3.webp",
-            "image_image_2": "shopify://shop_images/mikasa.webp",
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
             "text_tab_label": "2025"
           }
         },
-        "tab_6XQdLa": {
+        "tab_XXMTyd": {
           "type": "tab",
           "settings": {
-            "text_titre": "Déploiement & structure",
-            "richtext_contenu": "<p>Structure de l’entreprise<br/>Du projet artisanal à une maison bien organisée. On garde l’âme du marché ambulant, on ajoute la rigueur qui rassure : qualité, régularité, service client. </p>",
-            "image_image": "shopify://shop_images/hugo-u-tragulinu-4.webp",
-            "image_image_2": "shopify://shop_images/clementines_0c468b10-3b74-4a0d-891a-807aae8ee9db.webp",
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
             "text_tab_label": "2026"
           }
         },
-        "tab_JWFkT7": {
+        "tab_zDQEF9": {
           "type": "tab",
           "settings": {
-            "text_titre": "Devenir une référence",
-            "richtext_contenu": "<p>Ambition assumée : être le repère des produits corses de confiance. Fidèles à la saison, proches des terres, attentifs au gaspillage et fiers de faire rayonner l’île là où l’on aime bien manger. </p>",
-            "image_image": "shopify://shop_images/vue.webp",
-            "image_image_2": "shopify://shop_images/logo.png",
-            "text_tab_label": "2030"
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "2020"
           }
         }
       },
       "block_order": [
-        "tab",
-        "tab_VMmkNU",
-        "tab_6XQdLa",
-        "tab_JWFkT7"
+        "tab_7zzkpQ",
+        "tab_q4pTUc",
+        "tab_XXMTyd",
+        "tab_zDQEF9"
       ],
+      "name": "Team",
       "settings": {
-        "text_titre": "Étapes clefs de l’entreprise"
+        "text_heading": "Étapes clefs de l’entreprise"
       }
     },
     "produits_DfrRTm": {
@@ -95,7 +87,7 @@
   "wrapper": "div.main-wrapper",
   "order": [
     "hero_contenu_ay8rnM",
-    "producteurs",
+    "team_VT3pmM",
     "produits_DfrRTm",
     "banniere"
   ]
