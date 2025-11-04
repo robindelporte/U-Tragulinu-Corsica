@@ -1,15 +1,10 @@
 <!doctype html>
-<html data-wf-page="68f0ca6da225fb12cecccced" data-wf-site="68e63cea4969ff06483b2dd7" lang="{{ request.locale.iso_code }}">
+<html data-wf-page="690a3af5db32a3d5aba105be" data-wf-site="68e63cea4969ff06483b2dd7" lang="{{ request.locale.iso_code }}">
 <head>
   <meta charset="utf-8">
-  <title>{{ page_title }}</title>
-  <meta content="{{ page_description }}" name="description">
-  <meta content="{{ page_title }}" property="og:title">
-  <meta content="{{ page_description }}" property="og:description">
-  <meta content="{{ page_title }}" property="twitter:title">
-  <meta content="{{ page_description }}" property="twitter:description">
-  <meta property="og:type" content="website">
-  <meta content="summary_large_image" name="twitter:card">
+  <title>List-Collections</title>
+  <meta content="List-Collections" property="og:title">
+  <meta content="List-Collections" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="{{ 'normalize.css' | asset_url }}" rel="stylesheet" type="text/css">
@@ -123,19 +118,8 @@
   <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
   <!--  [Attributes by Finsweet] Modal  -->
   <script async="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-modal@1/modal.js"></script>
-  <script type="application/ld+json">
-          {
-             "@context":"http:\/\/schema.org",
-             "@type":"WebPage",
-             "url":"{{ shop.url }}",
-             "mainEntity":{"@type":"offerCatalog",
-             "name": "{{ collection.title }}",
-             "url": "{{ collection.url }}",
-             "numberOfItems":{{ collection.products.size }}}
-      }
-    </script>
 <script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
-<body li-page="collection" li-layout="theme">
+<body li-page="list-collections" li-layout="theme">
   <div class="page-wrapper">
     {% render 'global_styles' %}
     {% section 'header' %}
@@ -175,61 +159,5 @@
 })();
 </script>
   </div>
-  <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const THRESHOLD_REM = 7.5;
-  const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-  const THRESHOLD_PX = THRESHOLD_REM * remPx;
-  document.querySelectorAll('.small-hero_subtitle').forEach((wrap) => {
-    const content = wrap.querySelector('.collection_description');
-    const overlay = wrap.querySelector('.small_hero-subtitle-overlay');
-    const toggle  = wrap.querySelector('.small-hero_subtitle-link');
-    if (!content || !overlay || !toggle) return;
-    const collapse = () => {
-      wrap.classList.remove('is-expanded');
-      wrap.classList.add('is-collapsed');
-      content.style.maxHeight = THRESHOLD_PX + 'px';
-      if (overlay) overlay.style.display = ''; // visible
-      if (toggle) { toggle.style.display = ''; toggle.textContent = 'Lire plus'; }
-    };
-    const expand = () => {
-      wrap.classList.add('is-expanded');
-      wrap.classList.remove('is-collapsed');
-      content.style.maxHeight = content.scrollHeight + 'px';
-      if (overlay) overlay.style.display = 'none'; // masque l&rsquo;overlay quand c&rsquo;est ouvert
-      if (toggle) toggle.textContent = 'Lire moins';
-    };
-    const evaluate = () => {
-      const needs = content.scrollHeight > THRESHOLD_PX + 1;
-      if (!needs) {
-        // Pas assez de contenu &rarr; pas d&rsquo;overlay, pas de lien
-        content.style.maxHeight = '';
-        if (overlay) overlay.style.display = 'none';
-        if (toggle) toggle.style.display = 'none';
-        wrap.classList.remove('is-expanded', 'is-collapsed');
-      } else {
-        if (!wrap.classList.contains('is-expanded')) collapse();
-      }
-    };
-    // Toggle
-    toggle.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (wrap.classList.contains('is-expanded')) collapse();
-      else expand();
-    });
-    // Recalcule quand le contenu change
-    const ro = new ResizeObserver(() => { if (!wrap.classList.contains('is-expanded')) evaluate(); });
-    ro.observe(content);
-    // Images charg&eacute;es apr&egrave;s coup
-    content.querySelectorAll('img').forEach(img => {
-      if (!img.complete) img.addEventListener('load', () => {
-        if (!wrap.classList.contains('is-expanded')) evaluate();
-      }, { once: true });
-    });
-    // Premi&egrave;re passe
-    evaluate();
-  });
-});
-</script>
 </body>
 </html>

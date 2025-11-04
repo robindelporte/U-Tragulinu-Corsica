@@ -1,0 +1,29 @@
+{
+    "sections": {
+        "search": {
+            "type": "search"
+        },
+        "icones": {
+            "type": "icones",
+            "blocks": {
+                "item": {
+                    "name": "Item",
+                    "type": "item"
+                }
+            },
+            "block_order": [
+                "item"
+            ]
+        },
+        "reseaux": {
+            "type": "reseaux"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "div.main-wrapper",
+    "order": [
+        "search",
+        "icones",
+        "reseaux"
+    ]
+}
