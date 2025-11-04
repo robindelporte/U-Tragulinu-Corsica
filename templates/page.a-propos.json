@@ -1,107 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero_contenu": {
-            "type": "hero_contenu"
-        },
-        "team": {
-            "type": "team",
-            "blocks": {
-                "tab": {
-                    "name": "Tab",
-                    "type": "tab"
-                }
-            },
-            "block_order": [
-                "tab"
-            ]
-        },
-        "contenu_video": {
-            "type": "contenu_video",
-            "blocks": {
-                "sur-titre": {
-                    "name": "Sur titre",
-                    "type": "sur-titre"
-                },
-                "titre": {
-                    "name": "Titre",
-                    "type": "titre"
-                },
-                "texte": {
-                    "name": "Texte",
-                    "type": "texte"
-                },
-                "boutons": {
-                    "name": "Boutons",
-                    "type": "boutons"
-                }
-            },
-            "block_order": [
-                "sur-titre",
-                "titre",
-                "texte",
-                "boutons"
-            ]
-        },
-        "banniere": {
-            "type": "banniere"
-        },
-        "producteurs": {
-            "type": "producteurs",
-            "blocks": {
-                "producteur": {
-                    "name": "Producteur",
-                    "type": "producteur"
-                },
-                "sur-titre": {
-                    "name": "Sur titre",
-                    "type": "sur-titre"
-                },
-                "headline": {
-                    "name": "Headline",
-                    "type": "headline"
-                },
-                "text": {
-                    "name": "Text",
-                    "type": "text"
-                },
-                "boutons": {
-                    "name": "Boutons",
-                    "type": "boutons"
-                }
-            },
-            "block_order": [
-                "producteur",
-                "sur-titre",
-                "headline",
-                "text",
-                "boutons"
-            ]
-        },
-        "faq": {
-            "type": "faq",
-            "blocks": {
-                "faq-item": {
-                    "name": "FAQ Item",
-                    "type": "faq-item"
-                }
-            },
-            "block_order": [
-                "faq-item"
-            ]
-        },
-        "reseaux": {
-            "type": "reseaux"
-        }
+  "sections": {
+    "hero_partenaires": {
+      "type": "hero_partenaires",
+      "settings": {
+        "text_heading": "Histoire de la marque",
+        "text_paragraphe": "Partie de simples tournées de clémentines en région PACA, U-Tragulinu-Corsica est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes."
+      }
     },
-    "layout": "theme",
-    "wrapper": "div.main-wrapper",
-    "order": [
-        "hero_contenu",
-        "team",
-        "contenu_video",
-        "banniere",
-        "producteurs",
-        "faq",
-        "reseaux"
-    ]
+    "processus": {
+      "type": "processus",
+      "settings": {
+        "text_titre": "Un processus qui garantit"
+      }
+    },
+    "producteurs": {
+      "type": "producteurs",
+      "blocks": {
+        "tab": {
+          "type": "tab",
+          "name": "Tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p> Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>Concrètement, côté public :</p><ul><li>Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terroirs).</li><li>Sélection de produits de saison pour limiter le gaspillage.</li><li>Emballages sobres et réutilisables, pensés pour la fraîcheur.</li><li>Vente en circuit court avec une logistique simple et locale.</li><li>Conseils d’usage et recettes traditionnelles pour cuisiner “comme à la maison”.</li></ul>",
+            "text_tab_label": "2021"
+          }
+        },
+        "tab_VMmkNU": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "2025"
+          }
+        },
+        "tab_6XQdLa": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "2026"
+          }
+        }
+      },
+      "block_order": [
+        "tab",
+        "tab_VMmkNU",
+        "tab_6XQdLa"
+      ],
+      "settings": {
+        "text_titre": "Étapes clefs de l’entreprise"
+      }
+    },
+    "producteurs_kYd4d8": {
+      "type": "producteurs",
+      "blocks": {
+        "tab_3wzKQ4": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p>\n                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.\n                            ‍\n                            Concrètement, côté public :\n                            \n                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "This is some text inside of a div block."
+          }
+        }
+      },
+      "block_order": [
+        "tab_3wzKQ4"
+      ],
+      "name": "Producteurs",
+      "settings": {
+        "text_titre": "Étapes clefs de l’entreprise"
+      }
+    },
+    "produits_DfrRTm": {
+      "type": "produits",
+      "name": "Produits",
+      "settings": {
+        "richtext_titre": "<h2>Nos <strong>meilleures </strong>ventes</h2>",
+        "collection_collection": "meilleures-ventes",
+        "collection_collection_limit": 4,
+        "url_bouton_lien": "shopify://collections/meilleures-ventes",
+        "text_bouton_texte": "Tous nos produits"
+      }
+    },
+    "banniere": {
+      "type": "banniere",
+      "settings": {
+        "text_titre": "Découvrez nos spécialités",
+        "text_bloc_1_titre": "Nos fruits & agrumes",
+        "url_bloc_1_lien": "",
+        "text_bloc_2_titre": "Notre épicerie Corse",
+        "url_bloc_2_lien": ""
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "div.main-wrapper",
+  "order": [
+    "hero_partenaires",
+    "processus",
+    "producteurs",
+    "producteurs_kYd4d8",
+    "produits_DfrRTm",
+    "banniere"
+  ]
 }
