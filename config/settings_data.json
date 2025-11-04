@@ -12,6 +12,20 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "banniere_Akibf6": {
+            "type": "banniere",
+            "name": "Bannière",
+            "settings": {
+              "url_lien_banniere": "shopify://collections/concours",
+              "text_texte_banniere": "Livraison offerte à partir de 100€"
+            },
+            "blocks": {}
+          }
+        },
+        "block_order": [
+          "banniere_Akibf6"
+        ],
         "settings": {
           "text_search": "Recherche",
           "collection_search_bestseller": "meilleures-ventes",
@@ -43,6 +57,8 @@
           "text_mini_cart_cart_message_heading": "Message",
           "text_mini_cart_go_to_checkout": "Finaliser la commande",
           "text_mini_cart_empty_heading": "Votre panier corse",
+          "url_mini_cart_lien_panier_vide": "",
+          "text_mini_cart_panier_vide": "Go to Checkout",
           "menu": "menu-produits"
         }
       }
