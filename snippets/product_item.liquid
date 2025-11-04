@@ -12,11 +12,7 @@
                             <a li-object:href="product.url" href="{{ product.url }}" class="product-item_text-link w-inline-block">
                               <div class="product_item-name">
                                 <div li-object="product.title" class="text-style-tagline">{{ product.title }}</div>
-                                {% if product.metafields.custom.conditionnement_cartes %}    <div li-if="product.metafields.custom.conditionnement_cartes">
-    
-                                  <div li-object="product.metafields.custom.conditionnement_cartes" class="text-size-tiny text-style-italic">{{ product.metafields.custom.conditionnement_cartes }}</div>
-                                    </div>
-{% endif %}
+                                <div class="text-size-tiny text-style-italic">Vendu par caisse de 5kg</div>
                               </div>
                               <div class="product-item_price">
                                 <div li-object="product.price | money" class="text-style-tagline">{{ product.price | money }}</div>
