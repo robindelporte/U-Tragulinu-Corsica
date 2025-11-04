@@ -53,7 +53,9 @@
             <div li-block="Sur titre">
                     
                   
-                    <div class="text-size-small text-weight-semibold">Small Headline</div>
+                    <div class="text-size-small text-weight-semibold">
+{{ block.settings.text_sur_titre }}
+</div>
                     
                 
                 </div>
@@ -143,7 +145,14 @@
         {
             "name": "Sur titre",
             "type": "sur-titre",
-            "settings": null
+            "settings": [
+                {
+                    "id": "text_sur_titre",
+                    "type": "text",
+                    "label": "Sur-titre",
+                    "default": "Small Headline"
+                }
+            ]
         },
         {
             "name": "Headline",
