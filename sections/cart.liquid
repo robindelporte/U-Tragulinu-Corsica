@@ -8,6 +8,24 @@
 {{ section.settings.text_continue_shopping }}
 </span></a>
             </div>
+            <div class="cart_shipping-wrapper">
+              <div class="mini-cart_progess-wrapper">
+                <div class="mini-cart_footer_progress-component" style="'display: ' + (((freeShipping - total.price) / 100) < 0 ? 'none' : 'block')">
+                  <div class="mini-cart_footer_progress-bar">
+                    <div class="mini-cart_footer_progress-bar-innner" style="'width: ' + (total.price/freeShipping) *100 + '%'"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
+                  </div>
+                  <div class="text-size-small">Encore <span li-js-price="freeShipping - total.price" x-text="LiquifyHelper.moneyFormat(freeShipping - total.price, true, '{{ shop.money_with_currency_format }}')">$52.75</span> pour la livraison à domicile offerte !</div>
+                </div>
+                <div class="mini-cart_footer_progress-component" style="'display: ' + (((freeShipping - total.price) / 100) < 0 ? 'block' : 'none')">
+                  <div class="mini-cart_footer_progress-bar">
+                    <div class="mini-cart_footer_progress-bar-innner is-complete"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
+                  </div>
+                  <div class="spacer-tiny"></div>
+                  <div class="text-size-small">Félicitations ! Vous avez débloqué la livraison gratuite pour votre commande.</div>
+                </div>
+                
+              </div>
+            </div>
             {% if cart.item_count > 0 %}    <div li-if="cart.item_count > 0">
     
               <div class="cart_form-block w-form">
@@ -226,6 +244,16 @@
             "type": "text",
             "label": "Continue shopping",
             "default": "Continuer mes achats"
+        },
+        {
+            "type": "header",
+            "content": "free_shipping"
+        },
+        {
+            "type": "text",
+            "id": "free_shipping",
+            "label": "Livraison gratuite",
+            "default": "100"
         },
         {
             "id": "text_product",
