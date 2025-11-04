@@ -231,516 +231,26 @@
                 </div>
 {% endif %}
             <div class="nav_mini-cart">
-              <script>
-    document.addEventListener('alpine:init', () => {
-
-    Alpine.data('handleMinicart', () => ({
-        init() {
-            console.log('handleMinicart init')
-        },
-        cart: {
-            note: null,
-            attributes: {},
-            items: [],
-            currency: window.Shopify.currency.active,
-            cart_level_discount_applications: [],
-            response: {
-                result : {},
-                show : false,
-                timeout : 5000,
-            },
-            item_count: 0,
-            total_price:0,
-            total_weight: 0,
-            total_discount: 0,
-            original_total_price: 0,
-            items_subtotal_price: 0
-        },
-        _abortController : null,
-        initAbortController() {
-            if(this._abortController) {
-                this._abortController.abort('abort previous request');
-            }
-            this._abortController = new AbortController()
-        },
-        getAbortControllerSignal() {
-            return this._abortController.signal
-        },
-        resetAbortController() {
-            this._abortController = null;
-        },
-        toggleMiniCart() {
-            console.log('(minicart.js) toggleMiniCart called');
-
-            LiquifyHelper.handleTriggerClick();
-
-            this.getCart();
-        },
-
-        /**
-         * Get the cart data.
-         */
-        async getCart() {
-            this.initAbortController()
-            await fetch(window.Shopify.routes.root + 'cart.js', {
-                method: 'GET',
-                signal: this.getAbortControllerSignal(),
-                headers: {'Content-Type': 'application/json'},
-            })
-                .then(response => response.json())
-                .then(data => {
-                    this.resetAbortController();
-
-                    this.cart.item_count = data.item_count;
-
-                    this.cart.items = data.items.map((item) => {
-                        item.title = this.htmlspecialchars_decode(item.title)
-                        return item
-                    })
-
-
-                    this.cart.total_price = data.total_price;
-                    this.cart.total_weight = data.total_weight;
-                    this.cart.total_discount = data.total_discount;
-                    this.cart.original_total_price = data.original_total_price;
-
-                    this.$dispatch('carttotalitems', data.item_count);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
-        },
-
-        /**
-         * @param key
-         * @param quantity
-         */
-        increaseCartItemQuantity(key, quantity) {
-            this.updateCartItemQuantity(key, parseInt(quantity) + 1);
-        },
-
-        /**
-         * @param key
-         * @param quantity
-         */
-        decreaseCartItemQuantity(key, quantity) {
-            this.updateCartItemQuantity(key, parseInt(quantity) - 1);
-        },
-
-        /**
-         * Update the cart item.
-         *
-         * @param key
-         * @param quantity
-         */
-        updateCartItemQuantity(key, quantity) {
-            this.initAbortController();
-            console.log('updateCartItemQuantity(): key, quantity: ', key, quantity);
-            this.cart.items.filter((product)  => {
-                if(product.key === key) {
-                    product.quantity = quantity
-                }
-            })
-            let updates = {};
-            updates[key] = quantity;
-            fetch(window.Shopify.routes.root + 'cart/update.js', {
-                method: 'POST',
-                signal: this.getAbortControllerSignal(),
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ updates }),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    this.resetAbortController();
-                    console.log('updateCartItemQuantity(): ', data);
-
-                    this.$dispatch('cartupdated');
-                    this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                    this.$dispatch('showcartmessage', { status: error?.status, message: error, description: error });
-                });
-        },
-
-        /**
-         * Format monetary values.
-         */
-        moneyFormat(value, minor = true) {
-            return LiquifyHelper.moneyFormat(value, minor)
-        },
-
-        htmlspecialchars_decode(string) {
-            return LiquifyHelper.htmlspecialchars_decode(string)
-        },
-
-        /**
-         * Shows the minicart api message
-         * @param event
-         */
-        showCartMessage(event) {
-            //console.log("dispatched showCartMessage", event)
-            if(event?.detail?.status) {
-                this.cart.response.result = event.detail ?? {}
-                this.cart.response.show = true
-                setTimeout(() => {
-                    this.cart.response.result = {};
-                    this.cart.response.show = false
-                }, this.cart.response.timeout ?? 5000)
-            }
-        },
-
-        async returnCartItems() {
-            await this.getCart();
-
-            this.$dispatch('currentcartitems', this.cart.items);
-        },
-
-        /**
-         * @deprecated
-         */
-        set open(open) { // deprecated use  LiquifyHelper instead
-            //console.warn('Deprecated "set open" in mini_cart')
-        },
-        /**
-         * @deprecated
-         */
-        get open() { // deprecated use  LiquifyHelper instead
-            //console.warn('Deprecated "get open" in mini_cart')
-            return false;
-        },
-        /**
-         * @deprecated
-         */
-        set note(note) { // deprecated
-            //console.warn('Deprecated "set note" in mini_cart')
-            this.cart.note = note;
-        },
-        /**
-         * @deprecated
-         */
-        get note() { // deprecated
-            //console.warn('Deprecated "get note" in mini_cart')
-            return this.cart.note;
-        },
-        /**
-         * @deprecated
-         */
-        set attributes(attributes) { // deprecated
-            //console.warn('Deprecated "set attributes" in mini_cart')
-            this.cart.attributes = attributes;
-        },
-        /**
-         * @deprecated
-         */
-        get attributes() { // deprecated
-            //console.warn('Deprecated "get attributes" in mini_cart')
-            return this.cart.attributes;
-        },
-        /**
-         * @deprecated
-         */
-        set original_total_price(original_total_price) { //deprecated
-            //console.warn('Deprecated "set original_total_price" in mini_cart')
-            this.cart.original_total_price = original_total_price;
-        },
-        /**
-         * @deprecated
-         */
-        get original_total_price() { //deprecated
-            //console.warn('Deprecated "get original_total_price" in mini_cart')
-            return this.cart.original_total_price;
-        },
-        /**
-         * @deprecated
-         */
-        set total_price(total_price) { //deprecated
-            //console.warn('Deprecated "set total_price" in mini_cart')
-            this.cart.total_price = total_price;
-        },
-        /**
-         * @deprecated
-         */
-        get total_price() { //deprecated
-            //console.warn('Deprecated "get total_price" in mini_cart')
-            return this.cart.total_price;
-        },
-        /**
-         * @deprecated
-         */
-        set total_discount(total_discount) { //deprecated
-            //console.warn('Deprecated "set total_discount" in mini_cart')
-            this.cart.total_discount = total_discount;
-        },
-        /**
-         * @deprecated
-         */
-        get total_discount() { //deprecated
-            //console.warn('Deprecated "get total_discount" in mini_cart')
-            return this.cart.total_discount;
-        },
-        /**
-         * @deprecated
-         */
-        set total_weight(total_weight) { //deprecated
-            //console.warn('Deprecated "set total_weight" in mini_cart')
-            this.cart.total_discount = total_weight;
-        },
-        /**
-         * @deprecated
-         */
-        get total_weight() { //deprecated
-            //console.warn('Deprecated "get total_weight" in mini_cart')
-            return this.cart.total_weight;
-        },
-        /**
-         * @deprecated
-         */
-        set item_count(item_count) { //deprecated
-            //console.warn('Deprecated "set item_count" in mini_cart')
-            this.cart.total_discount = item_count;
-        },
-        /**
-         * @deprecated
-         */
-        get item_count() { //deprecated
-            //console.warn('Deprecated "get item_count" in mini_cart')
-            return this.cart.item_count;
-        },
-        /**
-         * @deprecated
-         */
-        set items_subtotal_price(items_subtotal_price) { //deprecated
-            //console.warn('Deprecated "set items_subtotal_price" in mini_cart')
-            this.cart.items_subtotal_price = items_subtotal_price;
-        },
-        /**
-         * @deprecated
-         */
-        get items_subtotal_price() { //deprecated
-            //console.warn('Deprecated "get items_subtotal_price" in mini_cart')
-            return this.cart.items_subtotal_price;
-        },
-        /**
-         * @deprecated
-         */
-        set products(products) {
-            //console.warn('Deprecated "set products" in mini_cart')
-            this.cart.items = products;
-        },
-        /**
-         * @deprecated
-         */
-        get products() {
-            //console.warn('Deprecated "get products" in mini_cart')
-            return this.cart.items;
-        },
-        /**
-         * @deprecated
-         */
-        set requires_shipping(requires_shipping) {
-            //console.warn('Deprecated "set requires_shipping" in mini_cart')
-        },
-        /**
-         * @deprecated
-         */
-        get requires_shipping() {
-            //console.warn('Deprecated "get requires_shipping" in mini_cart')
-            return false;
-        },
-        /**
-         * @deprecated
-         */
-        set currency(currency) { //deprecated
-            //console.warn('Deprecated "set currency" in mini_cart')
-            this.cart.currency = currency;
-        },
-        /**
-         * @deprecated
-         */
-        get currency() { //deprecated
-            //console.warn('Deprecated "get currency" in mini_cart')
-            return this.cart.currency;
-        },
-        /**
-         * @deprecated
-         */
-        set cart_level_discount_applications(cart_level_discount_applications) { //deprecated
-            //console.warn('Deprecated "set cart_level_discount_applications" in mini_cart')
-            this.cart.cart_level_discount_applications = cart_level_discount_applications;
-        },
-        /**
-         * @deprecated
-         */
-        get cart_level_discount_applications() { //deprecated
-            //console.warn('Deprecated "get cart_level_discount_applications" in mini_cart')
-            return this.cart.cart_level_discount_applications;
-        },
-        /**
-         * @deprecated
-         */
-        set cartApiResponse(cartApiResponse) { //deprecated
-            //console.warn('Deprecated "set cartApiResponse" in mini_cart')
-            this.cart.cartApiResponse = cartApiResponse;
-        },
-        /**
-         * @deprecated
-         */
-        get cartApiResponse() { //deprecated
-            //console.warn('Deprecated "get cartApiResponse" in mini_cart')
-            return this.cart.response;
-        },
-        /**
-         * @deprecated
-         */
-        set total(total) { //deprecated
-            //console.warn('Deprecated "set total" in mini_cart')
-            this.cart.item_count = total.items;
-            this.cart.total_price = total.price;
-            this.cart.total_weight = total.weight;
-            this.cart.total_discount = total.discount;
-        },
-        /**
-         * @deprecated
-         */
-        get total() { //deprecated
-            //console.warn('Deprecated "get total" in mini_cart')
-            return {
-                items: this.cart.item_count,
-                price: this.cart.total_price,
-                weight: this.cart.total_weight,
-                discount: this.cart.total_discount,
-            };
-        }
-    }))
-
-
-});
-
-</script>
-<div data-delay="0" data-hover="false" li-element="mini-cart" class="nav_dropdown w-dropdown" x-data="handleMinicart()" x-init="getCart()" @cartupdated.window="getCart()" @setcartitem.window="updateCartItemQuantity($event.detail.product, $event.detail.quantity)" @increasecartitem.window="increaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @decreasecartitem.window="decreaseCartItemQuantity($event.detail.product, $event.detail.quantity)" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage" @getcartitems.window="returnCartItems">
-                <div li-element="mini-cart-toggle" class="nav_shop-icon w-dropdown-toggle" @click="$dispatch('cartupdated.window')">
-                  <div class="icon-embed-cart w-embed"><svg width="25" height="23" viewbox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.74504 1.53337H0.733276M5.06597 1.53337L7.95445 12.0174C8.19554 12.8442 8.69629 13.5714 9.38263 14.0916C10.069 14.6118 10.9045 14.8973 11.7656 14.9059H23.4532V1.53337H5.06597ZM14.1058 19.5863C14.1058 20.6941 13.2078 21.5922 12.0999 21.5922C10.9921 21.5922 10.0941 20.6941 10.0941 19.5863C10.0941 18.4785 10.9921 17.5804 12.0999 17.5804C13.2078 17.5804 14.1058 18.4785 14.1058 19.5863ZM23.4666 19.5863C23.4666 20.6941 22.5685 21.5922 21.4607 21.5922C20.3529 21.5922 19.4548 20.6941 19.4548 19.5863C19.4548 18.4785 20.3529 17.5804 21.4607 17.5804C22.5685 17.5804 23.4666 18.4785 23.4666 19.5863Z" stroke="#FFF3DE" stroke-width="1.33725" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg></div>
-                  <div li-element="mini-cart-item-count" class="nav_shop-quantity" x-data="{ items: 0 }" x-text="items" @carttotalitems.window="items = event.detail">1</div>
-                </div>
-                <nav li-element="mini-cart-container" class="nav_mini-cart-holder w-dropdown-list" :class="open || 'mini-cart-closed'">
-                  <div li-element="dropdown-toggle" class="nav_mini-cart-close" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))"></div>
-                  <div class="mini-cart_component">
-                    <div li-element="mini-cart-full" class="mini-cart_full" :style="total.items < 1 && { display: 'none' }">
-                      <div class="mini-cart_top">
-                        <div class="mini-cart_header">
-                          <div class="heading-style-h4">Votre panier corse</div><button li-element="dropdown-toggle" aria-label="Close Cart" class="nav_dropdown-close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))">
-                            <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="16" viewbox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="12.4622" y="15.125" width="17.6291" height="2.51844" rx="1.25922" transform="rotate(-134.983 12.4622 15.125)" fill="#3C3B3B"></rect>
-                                <rect y="13.337" width="17.6291" height="2.51844" rx="1.25922" transform="rotate(-44.9834 0 13.337)" fill="#3C3B3B"></rect>
-                              </svg></div>
-                          </button>
-                        </div>
-                        <div x-data="{ freeShipping: {{ section.settings.free_shipping }}}" class="mini-cart_progess-wrapper">
-                          <div class="mini-cart_footer_progress-component" style="'display: ' + (((freeShipping - total.price) / 100) < 0 ? 'none' : 'block')">
-                            <div class="mini-cart_footer_progress-bar">
-                              <div class="mini-cart_footer_progress-bar-innner" style="'width: ' + (total.price/freeShipping) *100 + '%'"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
-                            </div>
-                            <div class="text-size-small">Encore <span li-js-price="freeShipping - total.price" x-text="LiquifyHelper.moneyFormat(freeShipping - total.price, true, '{{ shop.money_with_currency_format }}')">$52.75</span> pour la livraison à domicile offerte !</div>
-                          </div>
-                          <div class="mini-cart_footer_progress-component" style="'display: ' + (((freeShipping - total.price) / 100) < 0 ? 'block' : 'none')">
-                            <div class="mini-cart_footer_progress-bar">
-                              <div class="mini-cart_footer_progress-bar-innner is-complete"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
-                            </div>
-                            <div class="spacer-tiny"></div>
-                            <div class="text-size-small">Félicitations ! Vous avez débloqué la livraison gratuite pour votre commande.</div>
-                          </div>
-                          
-                        </div>
-                      </div>
-                      <div class="mini-cart_line-item no-scrollbar">
-                        <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
-                          <template x-for="product in products" :key="product.key">
-    <li li-element="mini-cart-item" class="mini-cart_line-item_item"><img loading="lazy" alt="" src="../images/product-apparel-2.svg" class="mini-cart_line-item_img" x-bind:src="product.image">
-                            <div class="mini-cart_line-item_product-info">
-                              <div class="mini-cart_line-item-info">
-                                <div>
-                                  <div li-js-object="product.title" class="text-size-regular text-weight-bold" x-text="product.title">Product Title</div>
-                                  <div li-js-object="product.variant_title" class="text-size-small text-color-secondary" x-text="product.variant_title">250g</div>
-                                </div>
-                                <div class="mini-cart_line-item_price">
-                                  <div li-js-price="product.price" class="text-style-tagline" x-text="LiquifyHelper.moneyFormat(product.price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
-                                  <template x-if="product.price < product.original_price">
-            <div li-js-if="product.price < product.original_price">
-        
-                                    <div li-js-price="product.original_price" class="text-size-small text-style-strikethrough text-style-muted" x-text="LiquifyHelper.moneyFormat(product.original_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
-                                          </div>
-    </template>
-                                </div>
-                              </div>
-                              <div class="mini-cart_line-quantity-remove">
-                                <div class="mini-cart_line-item_quantity">
-                                  <a li-element="mini-cart-item-decrease" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('decreasecartitem', { product: product.key, quantity: product.quantity, action: 'decrease' })">-</a><input li-element="mini-cart-item-quantity" class="mini-cart_line-item_quantity-adjust" value="1" :productprop="product" @input="$dispatch('setcartitem', { product: product.key, quantity: product.quantity })" x-model="product.quantity">
-                                  <a li-element="mini-cart-item-increase" href="#" class="mini-cart_line-item_quantity-adjust" :productprop="product" @click="$dispatch('increasecartitem', { product: product.key, quantity: product.quantity, action: 'increase' })">+</a>
-                                </div>
-                                <div li-element="mini-cart-item-remove" class="icon-tash-cart w-embed" :productprop="product" @click="$dispatch('setcartitem', { product: product.key, quantity: 0 })"><svg width="18" height="20" viewbox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.2087 4.01367L14.675 12.6464C14.5387 14.852 14.4705 15.9548 13.9176 16.7477C13.6443 17.1397 13.2924 17.4705 12.8843 17.7191C12.0588 18.222 10.9539 18.222 8.74408 18.222C6.53134 18.222 5.42498 18.222 4.59895 17.7182C4.19057 17.4691 3.83854 17.1377 3.5653 16.7451C3.01263 15.9509 2.94597 14.8465 2.81263 12.6378L2.29199 4.01367" stroke="#545454" stroke-width="1.66667" stroke-linecap="round"></path>
-                                    <path d="M1 4.01389H16.5M12.2424 4.01389L11.6546 2.80121C11.2641 1.99567 11.0688 1.59289 10.732 1.34169C10.6573 1.28597 10.5782 1.23641 10.4955 1.19349C10.1225 1 9.67493 1 8.77973 1C7.86205 1 7.40321 1 7.02406 1.2016C6.94003 1.24628 6.85985 1.29785 6.78434 1.35578C6.44363 1.61716 6.25332 2.03467 5.87269 2.86969L5.35113 4.01389" stroke="#545454" stroke-width="1.66667" stroke-linecap="round"></path>
-                                    <path d="M6.59766 13.4863L6.59766 8.31966" stroke="#545454" stroke-width="1.66667" stroke-linecap="round"></path>
-                                    <path d="M10.9023 13.487L10.9023 8.32031" stroke="#545454" stroke-width="1.66667" stroke-linecap="round"></path>
-                                  </svg></div>
-                              </div>
-                            </div>
-                          </li></template>
-                        </ul>
-                      </div>
-                      <div class="mini-cart_footer">
-                        <div class="mini-cart_footer-total">
-                          <div class="text-size-regular text-weight-bold">Sous-total</div>
-                          <div class="mini-cart_footer-price">
-                            <div li-js-price="total.price" class="text-size-regular text-weight-bold" x-text="LiquifyHelper.moneyFormat(total.price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
-                            <template x-if="total.price < original_total_price">
-            <div li-js-if="total.price < original_total_price" class="mini-cart_conditional">
-        
-                              <div li-js-price="original_total_price" class="text-size-regular text-weight-bold text-style-strikethrough text-style-muted" x-text="LiquifyHelper.moneyFormat(original_total_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>
-                                    </div>
-    </template>
-                          </div>
-                        </div>
-                        <div li-element="mini-cart-api-response" class="mini-cart_footer-message hide">
-                          <div class="mini-cart_footer-message-item">
-                            <div class="text-size-regular text-weight-bold">Message</div>
-                            <div li-js-object="cartApiResponse?.result?.message" class="text-size-regular text-weight-bold" x-text="cartApiResponse?.result?.message">14,99 $</div>
-                          </div>
-                        </div>
-                        <a x-bind:href="'/checkout'" href="#" class="button is-cart w-button">Valider ma commande</a>
-                      </div>
-                    </div>
-                    <div li-cloak="hide" li-element="mini-cart-empty" class="mini-cart_empty" :style="total.items && { display: 'none' }">
-                      <div class="mini-cart_header">
-                        <div class="heading-style-h4">Votre panier corse</div><button li-element="dropdown-toggle" aria-label="Close Cart" class="nav_dropdown-close-button" data-dropdowntoggle="" @click="LiquifyHelper.triggerClick($event.target.closest('.w-dropdown').querySelector('.w-dropdown-toggle.w--open'))">
-                          <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="16" viewbox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect x="12.4622" y="15.125" width="17.6291" height="2.51844" rx="1.25922" transform="rotate(-134.983 12.4622 15.125)" fill="#3C3B3B"></rect>
-                              <rect y="13.337" width="17.6291" height="2.51844" rx="1.25922" transform="rotate(-44.9834 0 13.337)" fill="#3C3B3B"></rect>
-                            </svg></div>
-                        </button>
-                      </div>
-                      <div class="mini-cart_empty-content">
-                        <div class="mini-cart_empty-heading">
-                          <div class="heading-style-h5">Votre panier est vide ?</div>
-                          <div class="text-size-regular">Il semble que rien ne ce trouve dans ce panier pour le moment</div>
-                        </div><img src="{{ 'panier-empty.svg' | asset_url }}" loading="lazy" alt="">
-                      </div>
-                      <div class="mini-cart_footer">
-                        <div li-element="mini-cart-api-response" class="mini-cart_footer-message hide">
-                          <div class="mini-cart_footer-message-item">
-                            <div class="text-size-regular text-weight-bold">Message</div>
-                            <div li-js-object="cartApiResponse?.result?.message" class="text-size-regular text-weight-bold" x-text="cartApiResponse?.result?.message">14,99 $</div>
-                          </div>
-                        </div>
-                        <a li-object:href="routes.root_url" href="{{ routes.root_url }}" class="button is-cart w-button">Découvrir tous nos prodtuis</a>
-                      </div>
-                    </div>
-                  </div>
-                </nav>
+              <div class="mini-cart_css w-embed">
+                <style>
+[data-modal-position="right"] {
+	justify-content: flex-end;
+}
+[data-modal-position="left"] {
+	justify-content: flex-start;
+}
+[data-modal-position="center"] {
+	justify-content: center;
+  align-items: center;
+}
+[data-modal-position="center"] [li-element="mini-cart-container"] {
+	max-height: auto;
+  height: 70vh;
+}
+</style>
               </div>
+              
+              {% render 'new_mini_cart', free_shipping_threshold: section.settings.mini_cart_free_shipping_threshold, content_animation_duration: section.settings.mini_cart_content_animation_duration, aria_label_increase_product_quantity: section.settings.aria_label_increase_product_quantity, modal_animation_easing: section.settings.mini_cart_modal_animation_easing, modal_animation: section.settings.mini_cart_modal_animation, aria_label_open_mini_cart: section.settings.aria_label_open_mini_cart, aria_label_decrease_product_quantity: section.settings.aria_label_decrease_product_quantity, aria_label_remove_product: section.settings.aria_label_remove_product, aria_label_close_mini_cart: section.settings.aria_label_close_mini_cart, modal_animation_duration: section.settings.mini_cart_modal_animation_duration, content_animation: section.settings.mini_cart_content_animation, free_shipping: section.settings.mini_cart_free_shipping, content_animation_easing: section.settings.mini_cart_content_animation_easing, content_position: section.settings.mini_cart_content_position %}
             </div>
           </div>
           <div class="nav_menu-button w-nav-button">
@@ -785,13 +295,304 @@
         },
         {
             "type": "header",
-            "content": "free_shipping"
+            "content": "Mini Cart"
+        },
+        {
+            "type": "select",
+            "id": "mini_cart_content_position",
+            "label": "Content - Position",
+            "options": [
+                {
+                    "value": "right",
+                    "label": "Right"
+                },
+                {
+                    "value": "left",
+                    "label": "Left"
+                },
+                {
+                    "value": "center",
+                    "label": "Center (Pop-Up)"
+                }
+            ],
+            "default": "right"
+        },
+        {
+            "type": "select",
+            "id": "mini_cart_content_animation",
+            "label": "Content - Animation",
+            "info": "Animates the cart content inside the modal",
+            "options": [
+                {
+                    "value": "fade",
+                    "label": "Fade"
+                },
+                {
+                    "value": "slide-up",
+                    "label": "Slide Up"
+                },
+                {
+                    "value": "slide-down",
+                    "label": "Slide Down"
+                },
+                {
+                    "value": "slide-right",
+                    "label": "Slide Right"
+                },
+                {
+                    "value": "slide-left",
+                    "label": "Slide Left"
+                },
+                {
+                    "value": "grow",
+                    "label": "Grow"
+                },
+                {
+                    "value": "shrink",
+                    "label": "Shrink"
+                },
+                {
+                    "value": "spin",
+                    "label": "Spin"
+                }
+            ],
+            "default": "slide-left"
+        },
+        {
+            "type": "select",
+            "id": "mini_cart_content_animation_easing",
+            "label": "Content - Animation Easing",
+            "options": [
+                {
+                    "value": "linear",
+                    "label": "Linear"
+                },
+                {
+                    "value": "ease",
+                    "label": "Ease"
+                },
+                {
+                    "value": "ease-in",
+                    "label": "Ease In"
+                },
+                {
+                    "value": "ease-out",
+                    "label": "Ease Out"
+                },
+                {
+                    "value": "ease-in-out",
+                    "label": "Ease In Out"
+                }
+            ],
+            "default": "ease"
+        },
+        {
+            "type": "number",
+            "id": "mini_cart_content_animation_duration",
+            "label": "Content - Animation Duration (ms)",
+            "default": 500
+        },
+        {
+            "type": "select",
+            "id": "mini_cart_modal_animation",
+            "label": "Modal - Animation",
+            "info": "Animates the modal wrapper",
+            "options": [
+                {
+                    "value": "fade",
+                    "label": "Fade"
+                },
+                {
+                    "value": "slide-up",
+                    "label": "Slide Up"
+                },
+                {
+                    "value": "slide-down",
+                    "label": "Slide Down"
+                },
+                {
+                    "value": "slide-right",
+                    "label": "Slide Right"
+                },
+                {
+                    "value": "slide-left",
+                    "label": "Slide Left"
+                },
+                {
+                    "value": "grow",
+                    "label": "Grow"
+                },
+                {
+                    "value": "shrink",
+                    "label": "Shrink"
+                },
+                {
+                    "value": "spin",
+                    "label": "Spin"
+                }
+            ],
+            "default": "slide-left"
+        },
+        {
+            "type": "select",
+            "id": "mini_cart_modal_animation_easing",
+            "label": "Modal - Animation Easing",
+            "options": [
+                {
+                    "value": "linear",
+                    "label": "Linear"
+                },
+                {
+                    "value": "ease",
+                    "label": "Ease"
+                },
+                {
+                    "value": "ease-in",
+                    "label": "Ease In"
+                },
+                {
+                    "value": "ease-out",
+                    "label": "Ease Out"
+                },
+                {
+                    "value": "ease-in-out",
+                    "label": "Ease In Out"
+                }
+            ],
+            "default": "ease"
+        },
+        {
+            "type": "number",
+            "id": "mini_cart_modal_animation_duration",
+            "label": "Modal - Animation Duration (ms)",
+            "default": 300
+        },
+        {
+            "type": "checkbox",
+            "id": "mini_cart_free_shipping",
+            "label": "Free Shipping - Show Elements",
+            "default": true
+        },
+        {
+            "type": "number",
+            "id": "mini_cart_free_shipping_threshold",
+            "label": "Free Shipping - Threshold",
+            "info": "Sets the threshold in your currency at which the shipping info elements in the cart will show and disappear",
+            "default": 80
         },
         {
             "type": "text",
-            "id": "free_shipping",
-            "label": "Free Shipping",
-            "default": "100"
+            "id": "aria_label_open_mini_cart",
+            "label": "Aria Label - Open Mini Cart",
+            "default": "Open Mini Cart"
+        },
+        {
+            "type": "text",
+            "id": "aria_label_close_mini_cart",
+            "label": "Aria Label - Close Mini Cart",
+            "default": "Close Mini Cart"
+        },
+        {
+            "type": "text",
+            "id": "aria_label_remove_product",
+            "label": "Aria Label - Remove Product",
+            "default": "Remove Product"
+        },
+        {
+            "type": "text",
+            "id": "aria_label_increase_product_quantity",
+            "label": "Aria Label - Increase Product Quantity",
+            "default": "Increase Product Quantity"
+        },
+        {
+            "type": "text",
+            "id": "aria_label_decrease_product_quantity",
+            "label": "Aria Label - Decrease Product Quantity",
+            "default": "Decrease Product Quantity"
+        },
+        {
+            "id": "text_mini_cart_heading",
+            "type": "text",
+            "label": "Mini Cart - Heading",
+            "default": "Votre panier corse"
+        },
+        {
+            "id": "text_mini_cart_free_shipping_start",
+            "type": "text",
+            "label": "Mini Cart - Free Shipping Start",
+            "default": "Encore "
+        },
+        {
+            "id": "text_mini_cart_free_shipping_end",
+            "type": "text",
+            "label": "Mini Cart - Free Shipping End",
+            "default": " pour la livraison \u00e0 domicile offerte !"
+        },
+        {
+            "id": "text_mini_cart_free_shipping_success",
+            "type": "text",
+            "label": "Mini Cart - Free Shipping Success",
+            "default": "F\u00e9licitations ! Vous avez d\u00e9bloqu\u00e9 la livraison gratuite pour votre commande.<br\/>"
+        },
+        {
+            "id": "text_mini_cart_sous_total",
+            "type": "text",
+            "label": "Mini Cart - Sous-total",
+            "default": "Sous-total"
+        },
+        {
+            "id": "text_mini_cart_expedition",
+            "type": "text",
+            "label": "Mini Cart - Exp\u00e9dition",
+            "default": "Exp\u00e9dition"
+        },
+        {
+            "id": "text_mini_cart_prix_expedition",
+            "type": "text",
+            "label": "Mini Cart - Prix Exp\u00e9dition",
+            "default": "Calcul\u00e9 au moment du paiement"
+        },
+        {
+            "id": "text_mini_cart_free_shipping",
+            "type": "text",
+            "label": "Mini Cart - Free Shipping",
+            "default": "Offertes"
+        },
+        {
+            "id": "text_mini_cart_discounts",
+            "type": "text",
+            "label": "Mini Cart - Discounts",
+            "default": "R\u00e9ductions"
+        },
+        {
+            "id": "text_mini_cart_total",
+            "type": "text",
+            "label": "Mini Cart - Total",
+            "default": "Total"
+        },
+        {
+            "id": "text_mini_cart_cart_message_heading",
+            "type": "text",
+            "label": "Mini Cart - Cart Message Heading",
+            "default": "Message"
+        },
+        {
+            "id": "text_mini_cart_go_to_checkout",
+            "type": "text",
+            "label": "Mini Cart - Go to Checkout",
+            "default": "Go to Checkout"
+        },
+        {
+            "id": "text_mini_cart_empty_heading",
+            "type": "text",
+            "label": "Mini Cart - Empty Heading",
+            "default": "Cart"
+        },
+        {
+            "id": "text_mini_cart_empty_content",
+            "type": "text",
+            "label": "Mini Cart - Empty Content",
+            "default": "No products in your cart"
         },
         {
             "type": "header",
