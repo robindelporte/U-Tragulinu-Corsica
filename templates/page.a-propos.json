@@ -83,7 +83,7 @@
       ],
       "name": "Contenu Video",
       "settings": {
-        "image_position": "right"
+        "image_position": "left"
       }
     },
     "reportages_TytYGj": {
@@ -108,10 +108,50 @@
             "text_nom_producteur": "Domaines de La Taste",
             "text_infos_producteur": "Producteurs agricoles indépendants"
           }
+        },
+        "partenaires_4xUFqj": {
+          "type": "partenaires",
+          "settings": {
+            "text_nom_producteur": "Domaines de La Taste",
+            "text_infos_producteur": "Producteurs agricoles indépendants"
+          }
+        },
+        "partenaires_3q3gnT": {
+          "type": "partenaires",
+          "settings": {
+            "text_nom_producteur": "Domaines de La Taste",
+            "text_infos_producteur": "Producteurs agricoles indépendants"
+          }
+        },
+        "partenaires_A7aadM": {
+          "type": "partenaires",
+          "settings": {
+            "text_nom_producteur": "Domaines de La Taste",
+            "text_infos_producteur": "Producteurs agricoles indépendants"
+          }
+        },
+        "partenaires_i7FVQx": {
+          "type": "partenaires",
+          "settings": {
+            "text_nom_producteur": "Domaines de La Taste",
+            "text_infos_producteur": "Producteurs agricoles indépendants"
+          }
+        },
+        "partenaires_EL6fpC": {
+          "type": "partenaires",
+          "settings": {
+            "text_nom_producteur": "Domaines de La Taste",
+            "text_infos_producteur": "Producteurs agricoles indépendants"
+          }
         }
       },
       "block_order": [
-        "partenaires_t4CEcr"
+        "partenaires_t4CEcr",
+        "partenaires_4xUFqj",
+        "partenaires_3q3gnT",
+        "partenaires_A7aadM",
+        "partenaires_i7FVQx",
+        "partenaires_EL6fpC"
       ],
       "name": "Slider - Partenaires",
       "settings": {
