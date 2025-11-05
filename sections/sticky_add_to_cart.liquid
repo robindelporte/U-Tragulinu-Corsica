@@ -14,10 +14,12 @@
                 <div class="product-header_form-block w-form">
                   {% form 'product', product, class: 'product-header_default-state' %}
 <div class="product_sticky-add-to-cart">
-                      <div x-collapse.duration.500ms="" x-show="open" class="product-sticky-add-to-cart_wrapper">
-                        <div class="product-sticky-add-to-cart_info"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="(max-width: 1238px) 100vw, 1238px" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product-sticky-add-to-cart_image">
+                      <div li-cloak="" x-show="open" x-collapse.duration.500ms="" class="product-sticky-add-to-cart_wrapper">
+                        <div class="product-sticky-add-to-cart_info"><img class="product-sticky-add-to-cart_image" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" sizes="100vw" li-object:src="image.src | product_img_url: 'master'" loading="lazy" li-object:alt="image.alt" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
                           <div class="product-sticky-add-to-cart_heading">
-                            <div class="heading-style-h4">Clémentines bio  de la Plaine Orientale</div>
+                            <div li-object:text="product.title" class="heading-style-h4">
+{{ product.title }}
+</div>
                             <div class="product-header_tag-wrapper">
                               {% for tag in product.tags %}    <div li-for="tag in product.tags">
                                     
