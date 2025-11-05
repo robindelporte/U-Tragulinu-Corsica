@@ -4,8 +4,8 @@
             <div li-js-if="selected_or_first_available_variant.available" class="container-large">
         
             <div class="sticky-add-to-cart_wrapper">
-              <div x-data="{ open:false }" class="sticky-add-to-cart_component">
-                <div class="product-sticky-add-to-cart_chevron-wrapper"><button :aria-expanded="open" type="button" class="product-sticky-add-to-cart_chevron">
+              <div x-data="{ open: false }" class="sticky-add-to-cart_component">
+                <div class="product-sticky-add-to-cart_chevron-wrapper"><button type="button" class="product-sticky-add-to-cart_chevron">
                     <div :style="open ? 'transform:rotate(180deg);transition:transform .25s' : 'transition:transform .25s'" class="icon-1x1-small w-embed"><svg width="17" height="18" viewbox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.6729 16.2852L9.07755 9.68985C8.66828 9.28059 8.00465 9.28059 7.59539 9.68985L1.00008 16.2852" stroke="#FA5F2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         <path d="M15.6729 7.90234L9.07755 1.30704C8.66828 0.897773 8.00465 0.897773 7.59539 1.30704L1.00008 7.90234" stroke="#FA5F2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -14,7 +14,7 @@
                 <div class="product-header_form-block w-form">
                   {% form 'product', product, class: 'product-header_default-state' %}
 <div class="product_sticky-add-to-cart">
-                      <div x-cloak="" x-show="open" x-collapse="" class="product-sticky-add-to-cart_wrapper">
+                      <div class="product-sticky-add-to-cart_wrapper" x-transition:leave="transition ease-in duration-200" x-transition:enter="transition ease-out duration-300" x-show="open" x-transition:leave-end="opacity-0 transform translate-y-4" x-transition:enter-end="opacity-100 transform translate-y-0" x-cloak="" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:enter-start="opacity-0 transform translate-y-4">
                         <div class="product-sticky-add-to-cart_info"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product-sticky-add-to-cart_image">
                           <div class="product-sticky-add-to-cart_heading">
                             <div class="heading-style-h4">Clémentines bio  de la Plaine Orientale</div>
