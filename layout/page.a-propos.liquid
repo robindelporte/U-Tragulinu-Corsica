@@ -129,43 +129,6 @@
     {% render 'global_styles' %}
     {% section 'header' %}
     {{ content_for_layout }}
-        <div class="hide w-embed w-script">
-          <script>
-// Fonction pour d&eacute;placer les &eacute;l&eacute;ments avec attributs
-function moveElementsOnResize() {
-  const elementsToMove = document.querySelectorAll('[data-mobile-target]');
-  elementsToMove.forEach(element => {
-    const targetSelector = element.getAttribute('data-mobile-target');
-    const desktopParent = element.getAttribute('data-desktop-parent');
-    const targetElement = document.querySelector(targetSelector);
-    const desktopElement = document.querySelector(desktopParent);
-    if (window.innerWidth <= 767) {
-      // Mobile : d&eacute;placer vers la cible
-      if (targetElement && !targetElement.contains(element)) {
-        targetElement.appendChild(element);
-      }
-    } else {
-      // Desktop : remettre &agrave; sa place d'origine
-      if (desktopElement && !desktopElement.contains(element)) {
-        desktopElement.appendChild(element);
-      }
-    }
-  });
-}
-// Ex&eacute;cuter au chargement
-moveElementsOnResize();
-// Utiliser matchMedia pour mieux d&eacute;tecter les changements
-const mediaQuery = window.matchMedia('(max-width: 767px)');
-// Ex&eacute;cuter quand le media query change
-mediaQuery.addEventListener('change', moveElementsOnResize);
-// Garder aussi le resize pour les cas standards
-let resizeTimer;
-window.addEventListener('resize', function() {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(moveElementsOnResize, 100);
-});
-</script>
-        </div>
       
       {% section 'produits' %}
       {% section 'faq' %}
