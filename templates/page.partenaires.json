@@ -22,6 +22,31 @@
         "text_titre": "Un processus qui garantit"
       }
     },
+    "texte_YqXbjD": {
+      "type": "texte",
+      "blocks": {
+        "titre_3MpxXB": {
+          "type": "titre",
+          "settings": {
+            "richtext_titre": "<h2>Grâce à nos partenaire de confiance</h2>"
+          },
+          "blocks": {}
+        },
+        "paragraphe_moyen_BKT8eU": {
+          "type": "paragraphe-moyen",
+          "settings": {
+            "text_paragraphe": "Chaque année, vous raffolez de nos clémentines, et elles sont bientôt de retour dans vos assiettes ! Dès le début du mois de novembre, elles seront expédiées directement depuis nos producteurs partenaires. Et cette année, vous pouvez déjà prévoir votre commande avant la saison !"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "titre_3MpxXB",
+        "paragraphe_moyen_BKT8eU"
+      ],
+      "name": "Texte",
+      "settings": {}
+    },
     "producteurs": {
       "type": "producteurs",
       "blocks": {
@@ -29,35 +54,48 @@
           "type": "tab",
           "name": "Tab",
           "settings": {
+            "text_titre": "Référence en agriculture biologique, producteurs de clémentines d’exception.",
+            "richtext_contenu": "<p>Producteurs emblématiques de la Plaine Orientale, reconnus pour leurs vergers de clémentiniers bio. </p><p><br/>Ils apportent leur savoir-faire agricole et leur expérience de la vente directe.</p>",
+            "image_image": "shopify://shop_images/domaine-de-la-taste-partner.webp",
+            "image_image_2": "shopify://shop_images/domaine-de-la-taste-partner-2.webp",
+            "text_tab_label": "Domaine de la Taste"
+          }
+        },
+        "tab_eiXw4Q": {
+          "type": "tab",
+          "settings": {
             "text_titre": "Le lancement",
-            "richtext_contenu": "<p> Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>Concrètement, côté public :</p><ul><li>Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terroirs).</li><li>Sélection de produits de saison pour limiter le gaspillage.</li><li>Emballages sobres et réutilisables, pensés pour la fraîcheur.</li><li>Vente en circuit court avec une logistique simple et locale.</li><li>Conseils d’usage et recettes traditionnelles pour cuisiner “comme à la maison”.</li></ul>",
-            "text_tab_label": "2021"
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "This is some text inside of a div block."
+          }
+        },
+        "tab_VTWgqa": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "This is some text inside of a div block."
           }
         },
         "tab_VMmkNU": {
           "type": "tab",
           "settings": {
-            "text_titre": "Le lancement",
-            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
-            "text_tab_label": "2025"
-          }
-        },
-        "tab_6XQdLa": {
-          "type": "tab",
-          "settings": {
-            "text_titre": "Le lancement",
-            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
-            "text_tab_label": "2026"
+            "text_titre": "Coopérative d’agrumiculteurs corses engagés dans l’agriculture biologique.",
+            "richtext_contenu": "<p>Elle réunit des exploitations familiales et assure la qualité et la traçabilité des agrumes.</p>",
+            "image_image": "shopify://shop_images/agrucorse-2.webp",
+            "image_image_2": "shopify://shop_images/agrucorse-1.webp",
+            "text_tab_label": "AgruCorse"
           }
         }
       },
       "block_order": [
         "tab",
-        "tab_VMmkNU",
-        "tab_6XQdLa"
+        "tab_eiXw4Q",
+        "tab_VTWgqa",
+        "tab_VMmkNU"
       ],
       "settings": {
-        "text_titre": "Étapes clefs de l’entreprise"
+        "text_titre": "Pour nos Fruits & agrumes"
       }
     },
     "producteurs_kYd4d8": {
@@ -66,14 +104,41 @@
         "tab_3wzKQ4": {
           "type": "tab",
           "settings": {
+            "text_titre": "Le vignoble du domaine Paradella",
+            "richtext_contenu": "<p>6 hectares sont réservés au vin rouge (Niellucciu) et 2,5 hectares au vin blanc (Vermentinu). </p><p>Le Niellucciu (San Giovese de Toscane) trouve ici un terrain d’expression exceptionnel qui lui permet l’élaboration de vins équilibrés et structurés dont la complexité en fait la richesse.</p>",
+            "text_tab_label": "Paradella"
+          }
+        },
+        "tab_zYFTKz": {
+          "type": "tab",
+          "settings": {
             "text_titre": "Le lancement",
-            "richtext_contenu": "<p>\n                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.\n                            ‍\n                            Concrètement, côté public :\n                            \n                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
-            "text_tab_label": "This is some text inside of a div block."
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "Distilleries artisanales"
+          }
+        },
+        "tab_c9JhNW": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "Terra Vecchia"
+          }
+        },
+        "tab_gYR7Qd": {
+          "type": "tab",
+          "settings": {
+            "text_titre": "Le lancement",
+            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
+            "text_tab_label": "Brasserie Monte Kyrie"
           }
         }
       },
       "block_order": [
-        "tab_3wzKQ4"
+        "tab_3wzKQ4",
+        "tab_zYFTKz",
+        "tab_c9JhNW",
+        "tab_gYR7Qd"
       ],
       "name": "Producteurs",
       "settings": {
@@ -107,6 +172,7 @@
   "order": [
     "hero_partenaires",
     "processus",
+    "texte_YqXbjD",
     "producteurs",
     "producteurs_kYd4d8",
     "produits_DfrRTm",
