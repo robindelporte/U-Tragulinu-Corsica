@@ -1,0 +1,122 @@
+<div class="padding-global padding-section-3-75">
+          <div class="container-large">
+            <div class="partners_component">
+              <div class="hero-mobile"></div>
+              <div class="swiper is-partners">
+                <div class="swiper-wrapper is-partners">
+                  {% for block in section.blocks %}
+    {% if block.type == "partenaires" %}
+                    <div li-block="Partenaires" class="swiper-slide is-partners">
+                                    
+                    
+                                    <div class="partners_image-wrapper">{% if block.settings.image_image %}
+{{ block.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'partners_image' }}
+{% else %}
+<img loading="lazy" alt="" src="{{ 'de-la-taste.avif' | asset_url }}" class="partners_image">
+{% endif %}
+                      <div class="partners_info-wrapper">
+                        <div class="partners_heading">
+{{ block.settings.text_nom_producteur }}
+</div>
+                        <div class="partners_info">
+{{ block.settings.text_infos_producteur }}
+</div>
+                      </div>
+                    </div>
+                                    
+                  
+                            </div>
+            {% endif %}
+{% endfor %}
+                </div>
+                <div class="swiper_pagination is-mixed">
+                  <div class="swiper_bullet is-active"></div>
+                  <div class="swiper_bullet"></div>
+                </div>
+                <div class="swiper_overlay-navigation is-partners"><button aria-label="Previous slide" type="button" class="swiper_button swiper-prev is-partners">
+                    <div class="icon-1x1-small w-embed"><svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.29131 12.9996C-0.764049 11.5563 -0.764048 7.20932 2.29131 5.76604L13.6763 0.388028C16.3297 -0.865402 19.3848 1.0702 19.3848 4.00481L19.3848 14.7608C19.3848 17.6954 16.3297 19.631 13.6763 18.3776L2.29131 12.9996Z" fill="#FA5F2B"></path>
+                      </svg></div>
+                  </button><button aria-label="Next slide" type="button" class="swiper_button swiper-next is-partners">
+                    <div class="icon-1x1-small w-embed"><svg width="20" height="19" viewbox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.0935 5.76604C20.1488 7.20932 20.1488 11.5563 17.0935 12.9996L5.70848 18.3776C3.05503 19.631 0 17.6954 0 14.7608V4.00481C0 1.0702 3.05503 -0.865401 5.70848 0.388029L17.0935 5.76604Z" fill="#FA5F2B"></path>
+                      </svg></div>
+                  </button></div>
+              </div>
+              <div class="partners-content_wrapper">
+                <h2 data-mobile-target=".hero-mobile" data-desktop-parent=".hero-desktop">
+{{ section.settings.text_titre }}
+</h2>
+                <div> {{ section.settings.richtext_paragraphe }} </div>
+                <a href="{{ section.settings.url_button_link }}" class="button w-button"> {{ section.settings.text_button_text }} </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> <script> const partnersSwiper = new Swiper('.swiper.is-partners',{slidesPerView: 1, spaceBetween: 20, loop: true, speed: 600, navigation:{nextEl: '.swiper-next.is-partners', prevEl: '.swiper-prev.is-partners',}, pagination:{el: '.swiper_pagination.is-mixed', clickable: true, bulletClass: 'swiper_bullet', bulletActiveClass: 'is-active', renderBullet: function (index, className){return `<div class="${className}"></div>`;},}, effect: 'slide', a11y:{prevSlideMessage: 'Diapositive pr&eacute;c&eacute;dente', nextSlideMessage: 'Diapositive suivante',}}); </script>
+        <script> // Fonction pour d&eacute;placer les &eacute;l&eacute;ments avec attributs function moveElementsOnResize(){const elementsToMove = document.querySelectorAll('[data-mobile-target]'); elementsToMove.forEach(element =>{const targetSelector = element.getAttribute('data-mobile-target'); const desktopParent = element.getAttribute('data-desktop-parent'); const targetElement = document.querySelector(targetSelector); const desktopElement = document.querySelector(desktopParent); if (window.innerWidth <= 767){// Mobile : d&eacute;placer vers la cible if (targetElement && !targetElement.contains(element)){targetElement.appendChild(element);}}else{// Desktop : remettre &agrave; sa place d'origine if (desktopElement && !desktopElement.contains(element)){desktopElement.appendChild(element);}}});}// Ex&eacute;cuter au chargement moveElementsOnResize(); // Utiliser matchMedia pour mieux d&eacute;tecter les changements const mediaQuery = window.matchMedia('(max-width: 767px)'); // Ex&eacute;cuter quand le media query change mediaQuery.addEventListener('change', moveElementsOnResize); // Garder aussi le resize pour les cas standards let resizeTimer; window.addEventListener('resize', function(){clearTimeout(resizeTimer); resizeTimer = setTimeout(moveElementsOnResize, 100);}); </script> {% schema %} {
+    "tag": "section",
+    "name": "Slider - Partenaires",
+    "class": "section_partners",
+    "blocks": [
+        {
+            "name": "Partenaires",
+            "type": "partenaires",
+            "settings": [
+                {
+                    "id": "image_image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id": "text_nom_producteur",
+                    "type": "text",
+                    "label": "Nom producteur",
+                    "default": "Domaines de La Taste"
+                },
+                {
+                    "id": "text_infos_producteur",
+                    "type": "text",
+                    "label": "Infos producteur",
+                    "default": "Producteurs agricoles ind\u00e9pendants"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "id": "richtext_paragraphe",
+            "type": "richtext",
+            "label": "Paragraphe",
+            "default": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.<\/p>"
+        },
+        {
+            "id": "url_button_link",
+            "type": "url",
+            "label": "Button Link"
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Button"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Slider - Partenaires",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "partenaires"
+                }
+            ]
+        }
+    ]
+} {% endschema %}
