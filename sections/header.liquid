@@ -54,48 +54,45 @@
                           <p li-object="link.object.title" class="heading-style-h4">{{ link.object.title }}</p>
                           <p li-object="link.object.description" class="hide-tablet">{{ link.object.description }}</p>
                           <div style="background: #f0f0f0; padding: 20px; margin: 20px; border: 2px solid #333;">
-  <h3>🔍 DEBUG INFO</h3>
+  <h3>🔍 DEBUG INFO v2</h3>
   
-  <h4>Lien parent :</h4>
-  <p><strong>Titre :</strong> {{ link.title }}</p>
-  <p><strong>Type :</strong> {{ link.type }}</p>
-  <p><strong>URL :</strong> {{ link.url }}</p>
-  <p><strong>Object :</strong> {{ link.object }}</p>
-  <p><strong>Nombre de child_links :</strong> {{ link.links.size }}</p>
+  {% assign possible_handle = link.title | handleize %}
+  <p><strong>Handle généré :</strong> {{ possible_handle }}</p>
   
-  <hr>
-  
-  <h4>Premier child_link :</h4>
-  {% if link.links.size > 0 %}
-    {% assign first_child = link.links.first %}
-    <p><strong>Titre :</strong> {{ first_child.title }}</p>
-    <p><strong>Type :</strong> {{ first_child.type }}</p>
-    <p><strong>Object type :</strong> {{ first_child.object.type }}</p>
+  {% if collections[possible_handle] %}
+    {% assign found_collection = collections[possible_handle] %}
     
-    {% if first_child.object.type == 'product' %}
-      <p><strong>Produit :</strong> {{ first_child.object.title }}</p>
-      <p><strong>Nombre de collections :</strong> {{ first_child.object.collections.size }}</p>
-      
-      {% if first_child.object.collections.size > 0 %}
-        <h5>Première collection du produit :</h5>
-        {% assign prod_collection = first_child.object.collections.first %}
-        <p><strong>Collection titre :</strong> {{ prod_collection.title }}</p>
-        <p><strong>Collection description :</strong> {{ prod_collection.description }}</p>
-        <p><strong>Collection handle :</strong> {{ prod_collection.handle }}</p>
-      {% endif %}
-    {% endif %}
+    <h4>Collection trouvée :</h4>
+    <p><strong>Titre :</strong> "{{ found_collection.title }}"</p>
+    <p><strong>Description :</strong> "{{ found_collection.description }}"</p>
+    <p><strong>Handle :</strong> {{ found_collection.handle }}</p>
+    <p><strong>URL :</strong> {{ found_collection.url }}</p>
+    <p><strong>Nombre de produits :</strong> {{ found_collection.products.size }}</p>
+    <p><strong>All_products_count :</strong> {{ found_collection.all_products_count }}</p>
+    
+    <h5>Dump complet :</h5>
+    <pre>{{ found_collection | json }}</pre>
+    
+  {% else %}
+    <p>❌ Collection non trouvée</p>
   {% endif %}
   
   <hr>
   
-  <h4>Test : chercher collection via handle :</h4>
-  {% assign possible_handle = link.title | handleize %}
-  <p><strong>Handle généré :</strong> {{ possible_handle }}</p>
-  {% if collections[possible_handle] %}
-    <p><strong>✅ Collection trouvée :</strong> {{ collections[possible_handle].title }}</p>
-    <p><strong>Description :</strong> {{ collections[possible_handle].description }}</p>
-  {% else %}
-    <p>❌ Pas de collection avec ce handle</p>
+  <h4>Test avec le premier produit :</h4>
+  {% assign first_child = link.links.first %}
+  <p><strong>Type objet :</strong> {{ first_child.object }}</p>
+  
+  {% if first_child.object %}
+    {% assign first_product = first_child.object %}
+    <p><strong>Produit titre :</strong> {{ first_product.title }}</p>
+    <p><strong>Collections du produit :</strong> {{ first_product.collections.size }}</p>
+    
+    {% if first_product.collections.size > 0 %}
+      {% assign prod_coll = first_product.collections.first %}
+      <p><strong>Collection via produit - Titre :</strong> {{ prod_coll.title }}</p>
+      <p><strong>Collection via produit - Description :</strong> {{ prod_coll.description }}</p>
+    {% endif %}
   {% endif %}
 </div>
                         </div>
