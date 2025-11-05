@@ -1,0 +1,168 @@
+<div class="padding-global">
+          <div class="container-large">
+            <div class="sticky-add-to-cart_wrapper">
+              <template x-if="selected_or_first_available_variant.available">
+            <div x-data="{ open:false }" li-js-if="selected_or_first_available_variant.available" class="sticky-add-to-cart_component">
+        
+                <div class="product-sticky-add-to-cart_chevron-wrapper">
+                  <a :aria-expanded="open" href="#" class="product-sticky-add-to-cart_chevron w-inline-block">
+                    <div :style="open ? 'transform:rotate(180deg);transition:transform .25s' : 'transition:transform .25s'" class="icon-1x1-small w-embed"><svg width="17" height="18" viewbox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.6729 16.2852L9.07755 9.68985C8.66828 9.28059 8.00465 9.28059 7.59539 9.68985L1.00008 16.2852" stroke="#FA5F2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M15.6729 7.90234L9.07755 1.30704C8.66828 0.897773 8.00465 0.897773 7.59539 1.30704L1.00008 7.90234" stroke="#FA5F2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></div>
+                  </a>
+                </div>
+                <div class="product-header_form-block w-form">
+                  {% form 'product', product, class: 'product-header_default-state' %}
+<div class="product_sticky-add-to-cart">
+                      <div x-cloak="" x-show="open" x-collapse="" class="product-sticky-add-to-cart_wrapper">
+                        <div class="product-sticky-add-to-cart_info"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product-sticky-add-to-cart_image">
+                          <div class="product-sticky-add-to-cart_heading">
+                            <div class="heading-style-h4">Clémentines bio  de la Plaine Orientale</div>
+                            <div class="product-header_tag-wrapper">
+                              {% for tag in product.tags %}    <div li-for="tag in product.tags">
+                                    
+                                
+                            <div li-object="tag" class="product-tag">{{ tag }}</div>
+                            
+                              
+                        </div>
+{% endfor %}
+                            </div>
+                          </div>
+                          <div class="product-header_price-wrapper">
+                            <div class="product-header_price">
+                              <div li-object="product.price | money" class="heading-style-h4">{{ product.price | money }}</div>
+                            </div>
+                            <p class="heading-style-h4">
+{{ section.settings.text_unite_de_mesure }}
+</p>
+                          </div>
+                        </div>
+                        <div class="product_sticky-add-to-cart-element">
+                          <div class="quantity_wrapper is-sticky">
+                            <div class="quantity_holder">
+                              <div aria-label="Baisser quantité" x-on:click="quantity = Math.max(1, quantity - 1)" role="button" class="quantity_selector">
+                                <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                                    <path fill="currentColor" d="M19 12.998H5v-2h14z"></path>
+                                  </svg></div>
+                              </div><input min="1" li-element="add-to-cart-quantity" x-model.number="quantity" class="mini-cart_line-item_quantity-adjust is-product" x-model="quantity">
+                              <div aria-label="Augmenter quantité" x-on:click="quantity++" role="button" class="quantity_selector">
+                                <div class="icon-embed-xxsmall w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                                    <path fill="currentColor" d="M19 12.998h-6v6h-2v-6H5v-2h6v-6h2v6h6z"></path>
+                                  </svg></div>
+                              </div>
+                            </div>
+                            <div class="product_description-fidelity-wrap">
+                              <div class="text-weight-medium">Gagnez <span x-text="Math.floor((selected_or_first_available_variant.price / 100) * quantity)" class="fidelity_count">20</span> <span class="text-color-orange">points </span>de fidélité</div>
+                              <div data-tippy-content="1 € dépensés = 1 point fidélité. Points cumulables sur vos prochaines commandes.">
+                                <div class="icon-embed-xsmall w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="12" fill="#FA5F2B"></circle>
+                                    <circle cx="12" cy="12" r="7.5" stroke="#FFF3DE"></circle>
+                                    <path d="M11.5999 14.0197C11.5532 13.7064 11.5699 13.4297 11.6499 13.1897C11.7299 12.943 11.8399 12.723 11.9799 12.5297C12.1265 12.3297 12.2732 12.1397 12.4199 11.9597C12.5732 11.7797 12.7032 11.5997 12.8099 11.4197C12.9165 11.2397 12.9699 11.043 12.9699 10.8297C12.9699 10.6497 12.9332 10.4864 12.8599 10.3397C12.7865 10.193 12.6765 10.0764 12.5299 9.98969C12.3899 9.90302 12.2132 9.85969 11.9999 9.85969C11.7865 9.85969 11.5799 9.91302 11.3799 10.0197C11.1865 10.1197 11.0099 10.2597 10.8499 10.4397L10.3799 10.0097C10.5932 9.76969 10.8399 9.57302 11.1199 9.41969C11.4065 9.25969 11.7332 9.17969 12.0999 9.17969C12.4332 9.17969 12.7265 9.24635 12.9799 9.37969C13.2332 9.50635 13.4266 9.68969 13.5599 9.92969C13.6999 10.163 13.7699 10.4464 13.7699 10.7797C13.7699 11.0397 13.7165 11.2764 13.6099 11.4897C13.5032 11.6964 13.3699 11.8964 13.2099 12.0897C13.0565 12.2764 12.9065 12.4664 12.7599 12.6597C12.6132 12.8464 12.4965 13.0497 12.4099 13.2697C12.3232 13.4897 12.2932 13.7397 12.3199 14.0197H11.5999ZM11.9799 16.1197C11.8199 16.1197 11.6799 16.063 11.5599 15.9497C11.4465 15.8297 11.3899 15.6797 11.3899 15.4997C11.3899 15.3064 11.4465 15.153 11.5599 15.0397C11.6799 14.9197 11.8199 14.8597 11.9799 14.8597C12.1465 14.8597 12.2865 14.9197 12.3999 15.0397C12.5199 15.153 12.5799 15.3064 12.5799 15.4997C12.5799 15.6797 12.5199 15.8297 12.3999 15.9497C12.2865 16.063 12.1465 16.1197 11.9799 16.1197Z" fill="#FFF3DE"></path>
+                                  </svg></div>
+                              </div>
+                            </div>
+                          </div>
+                          {% if product.selling_plan_groups.size > 0 %}    <div li-if="product.selling_plan_groups.size > 0">
+    
+                            <div li-for:inside="variant in product.variants">
+        {% for variant in product.variants %}                            
+                              
+                            <template x-if="{{ variant.id }} === product.selected_or_first_available_variant.id">
+            <div x-data="{ sellingplan_active: false, selling_plan: '' }" li-js-if="{{ variant.id }} === product.selected_or_first_available_variant.id" class="product-header_subscription">
+        
+                                <div :class="{ 'is-active': sellingplan_active === false }" x-data="{ subscriptionPonctual: true }" class="product-header_subscription_radio-wrap is-active"><label class="product-header_subscription_radio-label w-radio">
+                                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product_header-radio w-radio-input w--redirected-checked"></div><input x-on:click="sellingplan_active = false; selling_plan = ''" name="selling_plan_active" data-name="selling_plan_active" type="radio" id="radio-5" style="opacity:0;position:absolute;z-index:-1" checked="" value=""><span class="product-header_radio-label w-form-label" for="radio-5">
+{{ section.settings.text_pas_dabonnement }}
+</span>
+                                  </label></div>
+                                <div :class="{ 'is-active': sellingplan_active === true }" class="product-header_subscription_radio-wrap"><label class="product-header_subscription_radio-label is-on w-radio">
+                                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product_header-radio w-radio-input"></div><input type="radio" name="selling_plan_active" id="radio-4" data-name="selling_plan_active" x-on:click="sellingplan_active = true; selling_plan = '{{ variant.selling_plan_allocations.first.selling_plan.id }}'" style="opacity:0;position:absolute;z-index:-1" value="Radio 4"><span class="product-header_radio-label w-form-label" for="radio-4">
+{{ section.settings.text_with_subscription }}
+</span>
+                                  </label>
+                                  <div x-show="sellingplan_active" class="w-layout-vflex product-header_subscription_radio-label">
+                                    <div class="subscription_ponctual"><select x-model="selling_plan" data-name="selling_plan" class="form_input is-select">
+                                        <option value="">Choisir un plan</option>
+                                        {% for plan in variant.selling_plan_allocations %}    <option li-for="plan in variant.selling_plan_allocations" value="{{ plan.selling_plan.id }}">
+                                    {{ plan.selling_plan.name }}
+                        </option>
+{% endfor %}
+                                      </select></div>
+                                  </div>
+                                </div>
+                                      </div>
+    </template>
+                            <template x-if="sellingplan_active">
+            <input name="selling_plan" type="hidden" x-model="selling_plan" li-js-if="sellingplan_active">
+    </template>
+                            
+                            
+                    {% endfor %}    </div>
+                              </div>
+{% endif %}
+                        </div>
+                      </div>
+                      <div class="product_sticky-add-to-cart-button">
+                        {% if product.metafields.custom.saison == true %}    <div li-if="product.metafields.custom.saison == true">
+    
+                          <template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper">
+        
+                            <a li-element="add-to-cart" href="#" class="button is-product w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Ajouter au panier</a>
+                                  </div>
+    </template>
+                            </div>
+{% endif %}
+                      </div>
+                    </div>
+                  {% endform %}
+                  <div class="hide w-form-done">
+                    <div>Thank you! Your submission has been received!</div>
+                  </div>
+                  <div class="hide w-form-fail">
+                    <div>Oops! Something went wrong while submitting the form.</div>
+                  </div>
+                </div>
+                      </div>
+    </template>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Sticky Add to cart",
+    "class": "section_sticky-add-to-cart",
+    "settings": [
+        {
+            "id": "text_unite_de_mesure",
+            "type": "text",
+            "label": "Unit\u00e9 de mesure",
+            "default": "\/ caisse (5kg)"
+        },
+        {
+            "id": "text_pas_dabonnement",
+            "type": "text",
+            "label": "Pas d'abonnement",
+            "default": "Je commande ponctuellement"
+        },
+        {
+            "id": "text_with_subscription",
+            "type": "text",
+            "label": "with Subscription",
+            "default": "S\u2019abonner"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Sticky Add to cart",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ],
+    "enabled_on": {
+        "templates": [
+            "product"
+        ]
+    }
+} {% endschema %}
