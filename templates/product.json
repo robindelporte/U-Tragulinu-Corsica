@@ -191,7 +191,7 @@
       "type": "sticky_add_to_cart",
       "name": "Sticky Add to cart",
       "settings": {
-        "text_unite_de_mesure": "/ caisse (5kg)",
+        "text_unite_de_mesure": "{{ product.metafields.custom.conditionnement.value }}",
         "text_pas_dabonnement": "Je commande ponctuellement",
         "text_with_subscription": "S’abonner"
       }
