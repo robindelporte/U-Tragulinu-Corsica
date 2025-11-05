@@ -186,6 +186,15 @@
         "url_linkedin": "",
         "text_nom_linkedin": "Hugo Delorieux"
       }
+    },
+    "sticky_add_to_cart_qqTTRQ": {
+      "type": "sticky_add_to_cart",
+      "name": "Sticky Add to cart",
+      "settings": {
+        "text_unite_de_mesure": "/ caisse (5kg)",
+        "text_pas_dabonnement": "Je commande ponctuellement",
+        "text_with_subscription": "S’abonner"
+      }
     }
   },
   "layout": "product",
@@ -196,6 +205,7 @@
     "17621683178e86f7be",
     "produits_FkALwE",
     "newsletter",
-    "reseaux"
+    "reseaux",
+    "sticky_add_to_cart_qqTTRQ"
   ]
 }
