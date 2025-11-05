@@ -106,6 +106,8 @@
           "settings": {
             "text_titre": "Le vignoble du domaine Paradella",
             "richtext_contenu": "<p>6 hectares sont réservés au vin rouge (Niellucciu) et 2,5 hectares au vin blanc (Vermentinu). <br/><br/>Le Niellucciu (San Giovese de Toscane) trouve ici un terrain d’expression exceptionnel qui lui permet l’élaboration de vins équilibrés et structurés dont la complexité en fait la richesse.</p>",
+            "image_image": "shopify://shop_images/paradella-1.webp",
+            "image_image_2": "shopify://shop_images/paradella-2.webp",
             "text_tab_label": "Paradella"
           }
         },
@@ -114,6 +116,8 @@
           "settings": {
             "text_titre": "Kevin – Artisan passionné de liqueurs corses",
             "richtext_contenu": "<p>Kevin est un jeune producteur insulaire qui a choisi de mettre en valeur les richesses naturelles de la Corse à travers des liqueurs artisanales. Installé en plaine orientale, il travaille avec des fruits et plantes issus du terroir, soigneusement sélectionnés auprès de producteurs locaux. De la myrte sauvage à la clémentine corse, chaque bouteille reflète son savoir-faire et son attachement à l’authenticité.</p>",
+            "image_image": "shopify://shop_images/Distilleries_artisanales.webp",
+            "image_image_2": "shopify://shop_images/Distilleries_artisanales_2.webp",
             "text_tab_label": "Distilleries artisanales"
           }
         },
@@ -122,6 +126,8 @@
           "settings": {
             "text_titre": "Vignoble avec cépages endémiques corses",
             "richtext_contenu": "<p>Le vignoble de Terra Vecchia s’étend sur 200 hectares, répartis entre 130 hectares en IGP Île de Beauté et 70 hectares en AOP Corse. Ce découpage reflète la diversité de notre terroir, composé de sols alluvionnaires riches, exposés au soleil de la Plaine orientale et rafraîchis par les brises marines de l’étang de Diana. </p>",
+            "image_image": "shopify://shop_images/Terra_Vecchia.webp",
+            "image_image_2": "shopify://shop_images/Terra_Vecchia_2.webp",
             "text_tab_label": "Terra Vecchia"
           }
         },
@@ -130,6 +136,8 @@
           "settings": {
             "text_titre": "Au croisement du GR20 - Un territoire d’exception",
             "richtext_contenu": "<p>Cette brasserie artisanale est située dans le village de Ghisoni, au cœur de la Corse, face au monument naturel qu’est le Monte Kyrie Eleïson. Elle brasse des bières de qualité à partir d’ingrédients soigneusement sélectionnés. Découvrez son histoire et sa passion pour la bière.</p>",
+            "image_image": "shopify://shop_images/Brasserie_Monte_Kyrie.webp",
+            "image_image_2": "shopify://shop_images/Brasserie_Monte_Kyrie_2.webp",
             "text_tab_label": "Brasserie Monte Kyrie"
           }
         }
