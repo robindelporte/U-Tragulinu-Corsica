@@ -49,53 +49,11 @@
 {% when '@app' %}
 {% render block %}
 
-                {% when 'sur-titre' %}
-            <div li-block="Sur titre">
-                    
-                  
-                    <div class="text-size-small text-weight-semibold">
-{{ block.settings.text_sur_titre }}
-</div>
-                    
-                
-                </div>
-                {% when 'headline' %}
-            <div li-block="Headline">
-                    
-                  
-                    <h2 data-mobile-target=".hero-mobile" data-desktop-parent=".hero-desktop">
-{{ block.settings.text_titre }}
+                <h2 data-mobile-target=".hero-mobile" data-desktop-parent=".hero-desktop">
+{{ section.settings.text_titre }}
 </h2>
-                    
-                
-                </div>
-                {% when 'text' %}
-            <div li-block="Text">
-                    
-                  
-                    <div> {{ block.settings.richtext_paragraphe }} </div>
-                    
-                
-                </div>
-                {% when 'boutons' %}
-            <div li-block="Boutons">
-                    
-                  
-                    <div class="button-group">
-                    {% if block.settings.url_button_link %}    <div li-if="block.settings.url_button_link">
-    
-                      <a href="{{ block.settings.url_button_link }}" class="button w-button"> {{ block.settings.text_button_text }} </a>
-                        </div>
-{% endif %}
-                    {% if block.settings.url_button_link_2 %}    <div li-if="block.settings.url_button_link_2">
-    
-                      <a href="{{ block.settings.url_button_link_2 }}" class="button is-secondary w-button"> {{ block.settings.text_button_text_2 }} </a>
-                        </div>
-{% endif %}
-                  </div>
-                    
-                
-                </div>
+                <div> {{ section.settings.richtext_paragraphe }} </div>
+                <a href="{{ section.settings.url_button_link }}" class="button w-button"> {{ section.settings.text_button_text }} </a>
               {% endcase %}
 {% endfor %}
 
@@ -143,74 +101,33 @@
             ]
         },
         {
-            "name": "Sur titre",
-            "type": "sur-titre",
-            "settings": [
-                {
-                    "id": "text_sur_titre",
-                    "type": "text",
-                    "label": "Sur-titre",
-                    "default": "Small Headline"
-                }
-            ]
-        },
-        {
-            "name": "Headline",
-            "type": "headline",
-            "settings": [
-                {
-                    "id": "text_titre",
-                    "type": "text",
-                    "label": "Titre",
-                    "default": "Lorem ipsum dolor sit amet"
-                }
-            ]
-        },
-        {
-            "name": "Text",
-            "type": "text",
-            "settings": [
-                {
-                    "id": "richtext_paragraphe",
-                    "type": "richtext",
-                    "label": "Paragraphe",
-                    "default": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.<\/p>"
-                }
-            ]
-        },
-        {
-            "name": "Boutons",
-            "type": "boutons",
-            "settings": [
-                {
-                    "id": "url_button_link",
-                    "type": "url",
-                    "label": "Button Link"
-                },
-                {
-                    "id": "text_button_text",
-                    "type": "text",
-                    "label": "Button Text",
-                    "default": "Button"
-                },
-                {
-                    "id": "url_button_link_2",
-                    "type": "url",
-                    "label": "Button Link 2"
-                },
-                {
-                    "id": "text_button_text_2",
-                    "type": "text",
-                    "label": "Button Text 2",
-                    "default": "Button 2"
-                }
-            ]
-        },
-        {
             "type": "@app"
         }
     ],
     "settings": [
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "id": "richtext_paragraphe",
+            "type": "richtext",
+            "label": "Paragraphe",
+            "default": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.<\/p>"
+        },
+        {
+            "id": "url_button_link",
+            "type": "url",
+            "label": "Button Link"
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Button"
+        },
         {
             "type": "header",
             "content": "image-position"
@@ -239,18 +156,6 @@
             "blocks": [
                 {
                     "type": "producteur"
-                },
-                {
-                    "type": "sur-titre"
-                },
-                {
-                    "type": "headline"
-                },
-                {
-                    "type": "text"
-                },
-                {
-                    "type": "boutons"
                 }
             ]
         }
