@@ -86,6 +86,19 @@
         "image_position": "left"
       }
     },
+    "reportages_TytYGj": {
+      "type": "reportages",
+      "name": "Reportages",
+      "settings": {
+        "text_titre": "Quelques reportages",
+        "text_bloc_1_titre": "Reportage BFM Nice Côte d’Azur (2024)",
+        "image_bloc_1_image": "shopify://shop_images/bfm.png",
+        "url_bloc_1_lien": "",
+        "text_bloc_2_titre": "Reportage TV Monaco (bientôt dispo.)",
+        "image_bloc_2_image": "shopify://shop_images/tv-monaco.png",
+        "url_bloc_2_lien": ""
+      }
+    },
     "produits_DfrRTm": {
       "type": "produits",
       "name": "Produits",
@@ -114,6 +127,7 @@
     "hero_contenu_ay8rnM",
     "team_VT3pmM",
     "contenu_video_wLxg6J",
+    "reportages_TytYGj",
     "produits_DfrRTm",
     "banniere"
   ]
