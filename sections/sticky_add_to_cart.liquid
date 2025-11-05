@@ -15,14 +15,8 @@
                   {% form 'product', product, class: 'product-header_default-state' %}
 <div class="product_sticky-add-to-cart">
                       <div 
-  x-cloak
   x-show="open"
-  x-transition:enter="transition ease-out duration-500"
-  x-transition:enter-start="opacity-0 transform -translate-y-4"
-  x-transition:enter-end="opacity-100 transform translate-y-0"
-  x-transition:leave="transition ease-in duration-300"
-  x-transition:leave-start="opacity-100 transform translate-y-0"
-  x-transition:leave-end="opacity-0 transform -translate-y-4"
+  x-collapse
   class="product-sticky-add-to-cart_wrapper"
 >
                         <div class="product-sticky-add-to-cart_info"><img src="{{ 'clementines-2.avif' | asset_url }}" loading="lazy" sizes="100vw" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w" alt="" class="product-sticky-add-to-cart_image">
