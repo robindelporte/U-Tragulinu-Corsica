@@ -1,7 +1,8 @@
-<template x-if="selected_or_first_available_variant.available">
-            <div li-js-if="selected_or_first_available_variant.available" class="padding-global">
+<script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-liquid-container" class="padding-global" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})">
+          <template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="container-large">
         
-          <div class="container-large">
             <div class="sticky-add-to-cart_wrapper">
               <div x-data="{ open:false }" class="sticky-add-to-cart_component">
                 <div class="product-sticky-add-to-cart_chevron-wrapper">
@@ -127,9 +128,9 @@
                 </div>
               </div>
             </div>
-          </div>
-                </div>
-    </template> {% schema %} {
+                  </div>
+    </template>
+        </div> {% schema %} {
     "tag": "section",
     "name": "Sticky Add to cart",
     "class": "section_sticky-add-to-cart",
