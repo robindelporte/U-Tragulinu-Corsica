@@ -99,6 +99,28 @@
         "url_bloc_2_lien": ""
       }
     },
+    "slider_partenaires_kPiEUr": {
+      "type": "slider_partenaires",
+      "blocks": {
+        "partenaires_t4CEcr": {
+          "type": "partenaires",
+          "settings": {
+            "text_nom_producteur": "Domaines de La Taste",
+            "text_infos_producteur": "Producteurs agricoles indépendants"
+          }
+        }
+      },
+      "block_order": [
+        "partenaires_t4CEcr"
+      ],
+      "name": "Slider - Partenaires",
+      "settings": {
+        "text_titre": "Nos partenaires",
+        "richtext_paragraphe": "<p>Nous avançons au rythme de la terre, de la mer et de celles et ceux qui les travaillent. Chaque producteur est choisi pour la qualité de son geste, la clarté de ses pratiques et l’amour des traditions corses.   Nous visitons les exploitations, goûtons, échangeons, et signons des partenariats durables.  Résultat : des produits cueillis ou affinés au plus juste, proposés en circuits courts, dans le respect des saisons et à prix justes pour tout le monde. Pas de promesses creuses, juste des saveurs franches et une traçabilité nette.</p>",
+        "url_button_link": "",
+        "text_button_text": "Découvrir nos partenaires"
+      }
+    },
     "produits_DfrRTm": {
       "type": "produits",
       "name": "Produits",
@@ -128,6 +150,7 @@
     "team_VT3pmM",
     "contenu_video_wLxg6J",
     "reportages_TytYGj",
+    "slider_partenaires_kPiEUr",
     "produits_DfrRTm",
     "banniere"
   ]
