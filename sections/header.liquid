@@ -47,12 +47,14 @@
                       </div>
                     </div>
                   </div>
+                  {% assign first_product = link.links.first.object %}
+                  {% assign menu_collection = first_product.collections.first %}
                   <div class="padding-global max-width-full">
                     <div class="container-large">
                       <div class="nav_dropdown-wrapper">
                         <div class="nav_dropdown-content">
-                          <p li-object="link.object.title" class="heading-style-h4">{{ link.object.title }}</p>
-                          <p li-object="link.object.description" class="hide-tablet">{{ link.object.description }}</p>
+                          <p li-object="menu_collection.title" class="heading-style-h4">{{ menu_collection.title }}</p>
+                          <p li-object="menu_collection.description" class="hide-tablet">{{ menu_collection.description }}</p>
                         </div>
                         <div class="nav_dropdown-grid">
                           {% for child_link in link.links %}    <div li-for="child_link in link.links">
