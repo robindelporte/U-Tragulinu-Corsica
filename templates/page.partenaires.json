@@ -105,7 +105,7 @@
           "type": "tab",
           "settings": {
             "text_titre": "Le vignoble du domaine Paradella",
-            "richtext_contenu": "<p>6 hectares sont réservés au vin rouge (Niellucciu) et 2,5 hectares au vin blanc (Vermentinu). </p><p>Le Niellucciu (San Giovese de Toscane) trouve ici un terrain d’expression exceptionnel qui lui permet l’élaboration de vins équilibrés et structurés dont la complexité en fait la richesse.</p>",
+            "richtext_contenu": "<p>6 hectares sont réservés au vin rouge (Niellucciu) et 2,5 hectares au vin blanc (Vermentinu). <br/><br/>Le Niellucciu (San Giovese de Toscane) trouve ici un terrain d’expression exceptionnel qui lui permet l’élaboration de vins équilibrés et structurés dont la complexité en fait la richesse.</p>",
             "text_tab_label": "Paradella"
           }
         },
