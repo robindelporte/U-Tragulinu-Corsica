@@ -43,26 +43,17 @@
                       </svg></div>
                   </button></div>
               </div>
-              <div li-content-for-blocks="" class="partners-content_wrapper">
-{% for block in section.blocks %}
-{% case block.type %}
-{% when '@app' %}
-{% render block %}
-
+              <div class="partners-content_wrapper">
                 <h2 data-mobile-target=".hero-mobile" data-desktop-parent=".hero-desktop">
 {{ section.settings.text_titre }}
 </h2>
                 <div> {{ section.settings.richtext_paragraphe }} </div>
                 <a href="{{ section.settings.url_button_link }}" class="button w-button"> {{ section.settings.text_button_text }} </a>
-              {% endcase %}
-{% endfor %}
-
-    </div>
+              </div>
             </div>
           </div>
         </div>
-        
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> <script> // Initialisation du Swiper pour les partenaires const partnersSwiper = new Swiper('.swiper.is-partners',{// Param&egrave;tres de base slidesPerView: 1, spaceBetween: 20, loop: true, speed: 600, // Navigation navigation:{nextEl: '.swiper-next.is-partners', prevEl: '.swiper-prev.is-partners',}, // Pagination personnalis&eacute;e pagination:{el: '.swiper_pagination.is-mixed', clickable: true, bulletClass: 'swiper_bullet', bulletActiveClass: 'is-active', renderBullet: function (index, className){return '<div class="' + className + '"></script>';
+        <script> // Initialisation du Swiper pour les partenaires const partnersSwiper = new Swiper('.swiper.is-partners',{// Param&egrave;tres de base slidesPerView: 1, spaceBetween: 20, loop: true, speed: 600, // Navigation navigation:{nextEl: '.swiper-next.is-partners', prevEl: '.swiper-prev.is-partners',}, // Pagination personnalis&eacute;e pagination:{el: '.swiper_pagination.is-mixed', clickable: true, bulletClass: 'swiper_bullet', bulletActiveClass: 'is-active', renderBullet: function (index, className){return '<div class="' + className + '"></script>';
     },
   },
   // Effets et transitions
@@ -99,9 +90,6 @@
                     "default": "Producteurs agricoles ind\u00e9pendants"
                 }
             ]
-        },
-        {
-            "type": "@app"
         }
     ],
     "settings": [
@@ -127,26 +115,6 @@
             "type": "text",
             "label": "Button Text",
             "default": "Button"
-        },
-        {
-            "type": "header",
-            "content": "image-position"
-        },
-        {
-            "type": "select",
-            "id": "image_position",
-            "label": "Image position",
-            "options": [
-                {
-                    "value": "left",
-                    "label": "Left"
-                },
-                {
-                    "value": "right",
-                    "label": "Right"
-                }
-            ],
-            "default": "left"
         }
     ],
     "presets": [
