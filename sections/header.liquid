@@ -51,8 +51,8 @@
                     <div class="container-large">
                       <div class="nav_dropdown-wrapper">
                         <div class="nav_dropdown-content">
-                          <p class="heading-style-h4">Nos fruits & agrumes de saison</p>
-                          <p class="hide-tablet">Chaque saison, nous récoltons à la main, sans traitement avant et après récole les vrais produits corses. Fruits & agrumes sont présents pour parfaire vos envies et rajouter du goût dans vos caisses à partager, toujours avec respect des producteurs et un circuit ultracourt.</p>
+                          <p li-object="link.object.title" class="heading-style-h4">{{ link.object.title }}</p>
+                          <p li-object="link.object.description" class="hide-tablet">{{ link.object.description }}</p>
                         </div>
                         <div class="nav_dropdown-grid">
                           {% for child_link in link.links %}    <div li-for="child_link in link.links">
