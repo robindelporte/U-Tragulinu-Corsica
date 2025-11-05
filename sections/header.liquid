@@ -53,6 +53,9 @@
                         <div class="nav_dropdown-content">
                           <p li-object="link.object.title" class="heading-style-h4">{{ link.object.title }}</p>
                           <p li-object="link.object.description" class="hide-tablet">{{ link.object.description }}</p>
+                          <p>Type de lien : {{ link.type }}</p>
+<p>Objet : {{ link.object }}</p>
+<p>Titre objet : {{ link.object.title }}</p>
                         </div>
                         <div class="nav_dropdown-grid">
                           {% for child_link in link.links %}    <div li-for="child_link in link.links">
