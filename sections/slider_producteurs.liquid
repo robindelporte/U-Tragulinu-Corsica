@@ -53,7 +53,28 @@
             </div>
           </div>
         </div>
-        <script> // Initialisation du Swiper pour les partenaires const partnersSwiper = new Swiper('.swiper.is-partners',{// Param&egrave;tres de base slidesPerView: 1, spaceBetween: 20, loop: true, speed: 600, // Navigation navigation:{nextEl: '.swiper-next.is-partners', prevEl: '.swiper-prev.is-partners',}, // Pagination personnalis&eacute;e pagination:{el: '.swiper_pagination.is-mixed', clickable: true, bulletClass: 'swiper_bullet', bulletActiveClass: 'is-active', renderBullet: function (index, className){return '<div class="' + className + '"></script>';
+        <div class="hide w-embed w-script">
+          <script>
+// Initialisation du Swiper pour les partenaires
+const partnersSwiper = new Swiper('.swiper.is-partners', {
+  // Param&egrave;tres de base
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  speed: 600,
+  // Navigation
+  navigation: {
+    nextEl: '.swiper-next.is-partners',
+    prevEl: '.swiper-prev.is-partners',
+  },
+  // Pagination personnalis&eacute;e
+  pagination: {
+    el: '.swiper_pagination.is-mixed',
+    clickable: true,
+    bulletClass: 'swiper_bullet',
+    bulletActiveClass: 'is-active',
+    renderBullet: function (index, className) {
+      return '<div class="' + className + '"></script></div>';
     },
   },
   // Effets et transitions
