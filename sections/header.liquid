@@ -54,7 +54,9 @@
                       <div class="nav_dropdown-wrapper">
                         <div class="nav_dropdown-content">
                           <p li-object="menu_collection.title" class="heading-style-h4">{{ menu_collection.title }}</p>
-                          <p li-object="menu_collection.description" class="hide-tablet">{{ menu_collection.description }}</p>
+                          <div class="menu_description-wrapper">
+                            <p li-object="menu_collection.description">{{ menu_collection.description }}</p>
+                          </div>
                         </div>
                         <div class="nav_dropdown-grid">
                           {% for child_link in link.links %}    <div li-for="child_link in link.links">
