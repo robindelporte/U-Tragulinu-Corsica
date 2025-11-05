@@ -53,9 +53,51 @@
                         <div class="nav_dropdown-content">
                           <p li-object="link.object.title" class="heading-style-h4">{{ link.object.title }}</p>
                           <p li-object="link.object.description" class="hide-tablet">{{ link.object.description }}</p>
-                          <p>Type de lien : {{ link.type }}</p>
-<p>Objet : {{ link.object }}</p>
-<p>Titre objet : {{ link.object.title }}</p>
+                          <div style="background: #f0f0f0; padding: 20px; margin: 20px; border: 2px solid #333;">
+  <h3>🔍 DEBUG INFO</h3>
+  
+  <h4>Lien parent :</h4>
+  <p><strong>Titre :</strong> {{ link.title }}</p>
+  <p><strong>Type :</strong> {{ link.type }}</p>
+  <p><strong>URL :</strong> {{ link.url }}</p>
+  <p><strong>Object :</strong> {{ link.object }}</p>
+  <p><strong>Nombre de child_links :</strong> {{ link.links.size }}</p>
+  
+  <hr>
+  
+  <h4>Premier child_link :</h4>
+  {% if link.links.size > 0 %}
+    {% assign first_child = link.links.first %}
+    <p><strong>Titre :</strong> {{ first_child.title }}</p>
+    <p><strong>Type :</strong> {{ first_child.type }}</p>
+    <p><strong>Object type :</strong> {{ first_child.object.type }}</p>
+    
+    {% if first_child.object.type == 'product' %}
+      <p><strong>Produit :</strong> {{ first_child.object.title }}</p>
+      <p><strong>Nombre de collections :</strong> {{ first_child.object.collections.size }}</p>
+      
+      {% if first_child.object.collections.size > 0 %}
+        <h5>Première collection du produit :</h5>
+        {% assign prod_collection = first_child.object.collections.first %}
+        <p><strong>Collection titre :</strong> {{ prod_collection.title }}</p>
+        <p><strong>Collection description :</strong> {{ prod_collection.description }}</p>
+        <p><strong>Collection handle :</strong> {{ prod_collection.handle }}</p>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+  
+  <hr>
+  
+  <h4>Test : chercher collection via handle :</h4>
+  {% assign possible_handle = link.title | handleize %}
+  <p><strong>Handle généré :</strong> {{ possible_handle }}</p>
+  {% if collections[possible_handle] %}
+    <p><strong>✅ Collection trouvée :</strong> {{ collections[possible_handle].title }}</p>
+    <p><strong>Description :</strong> {{ collections[possible_handle].description }}</p>
+  {% else %}
+    <p>❌ Pas de collection avec ce handle</p>
+  {% endif %}
+</div>
                         </div>
                         <div class="nav_dropdown-grid">
                           {% for child_link in link.links %}    <div li-for="child_link in link.links">
