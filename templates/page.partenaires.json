@@ -61,22 +61,6 @@
             "text_tab_label": "Domaine de la Taste"
           }
         },
-        "tab_eiXw4Q": {
-          "type": "tab",
-          "settings": {
-            "text_titre": "Le lancement",
-            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
-            "text_tab_label": "This is some text inside of a div block."
-          }
-        },
-        "tab_VTWgqa": {
-          "type": "tab",
-          "settings": {
-            "text_titre": "Le lancement",
-            "richtext_contenu": "<p><br/>                            Née sur les routes des marchés corses, l’initiative remet les producteurs au centre de la table. Notre promesse : des produits sélectionnés avec respect des saisons et une relation directe, honnête, chaleureuse.<br/>                            ‍<br/>                            Concrètement, côté public :<br/>                            <br/>                              Mise en avant des producteurs et de leurs savoir-faire (portraits, histoires, terr</p>",
-            "text_tab_label": "This is some text inside of a div block."
-          }
-        },
         "tab_VMmkNU": {
           "type": "tab",
           "settings": {
@@ -90,8 +74,6 @@
       },
       "block_order": [
         "tab",
-        "tab_eiXw4Q",
-        "tab_VTWgqa",
         "tab_VMmkNU"
       ],
       "settings": {
@@ -169,9 +151,12 @@
       "settings": {
         "text_titre": "Découvrez nos spécialités",
         "text_bloc_1_titre": "Nos fruits & agrumes",
-        "url_bloc_1_lien": "",
+        "image_bloc_1_image_2": "shopify://shop_images/citrons.webp",
+        "url_bloc_1_lien": "shopify://collections/fruits-agrumes",
         "text_bloc_2_titre": "Notre épicerie Corse",
-        "url_bloc_2_lien": ""
+        "image_bloc_2_image_1": "shopify://shop_images/liqueurs.webp",
+        "image_bloc_2_image_2": "shopify://shop_images/table.webp",
+        "url_bloc_2_lien": "shopify://collections/lepicerie"
       }
     }
   },
