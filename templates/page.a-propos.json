@@ -181,6 +181,41 @@
         "text_bloc_2_titre": "Notre épicerie Corse",
         "url_bloc_2_lien": ""
       }
+    },
+    "faq_dtamJc": {
+      "type": "faq",
+      "blocks": {
+        "faq_item_3BE7bb": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "Heading",
+            "richtext_reponse": "<p>\n                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n                    </p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_3BE7bb"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "richtext_titre": "<h2>On à réponse à tout <strong>(ou presque)</strong></h2>"
+      }
+    },
+    "reseaux_zAj8Pe": {
+      "type": "reseaux",
+      "name": "reseaux",
+      "settings": {
+        "text_heading": "Suivez-nous sur nos réseaux sociaux",
+        "text_paragraphe": "“Partagez vos plus belles recettes et vos paniers de fruits corses sur Instagram,Facebook et TikTok avec le hashtag #UTragulinuCorsica pour être mis en avant sur notre page !”",
+        "url_facebook": "",
+        "text_nom_facebook": "U Tragulinu Corsica",
+        "url_instagram": "",
+        "text_nom_instagram": "@U_tragulinu_corsica",
+        "url_youtube": "",
+        "text_nom_tiktok": "U-tragulinu-corsica",
+        "url_linkedin": "",
+        "text_nom_linkedin": "Hugo Delorieux"
+      }
     }
   },
   "layout": "theme",
@@ -192,6 +227,8 @@
     "reportages_TytYGj",
     "slider_partenaires_kPiEUr",
     "produits_DfrRTm",
-    "banniere"
+    "banniere",
+    "faq_dtamJc",
+    "reseaux_zAj8Pe"
   ]
 }
