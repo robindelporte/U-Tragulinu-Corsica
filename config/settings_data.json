@@ -16,7 +16,6 @@
           "banniere_Akibf6": {
             "type": "banniere",
             "name": "Bannière",
-            "disabled": true,
             "settings": {
               "url_lien_banniere": "shopify://collections/meilleures-ventes",
               "text_texte_banniere": "Livraison offerte à partir de 100€"
