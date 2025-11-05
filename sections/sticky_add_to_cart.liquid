@@ -1,9 +1,9 @@
-<div class="padding-global">
+<template x-if="selected_or_first_available_variant.available">
+            <div li-js-if="selected_or_first_available_variant.available" class="padding-global">
+        
           <div class="container-large">
             <div class="sticky-add-to-cart_wrapper">
-              <template x-if="selected_or_first_available_variant.available">
-            <div x-data="{ open:false }" li-js-if="selected_or_first_available_variant.available" class="sticky-add-to-cart_component">
-        
+              <div x-data="{ open:false }" class="sticky-add-to-cart_component">
                 <div class="product-sticky-add-to-cart_chevron-wrapper">
                   <a :aria-expanded="open" href="#" class="product-sticky-add-to-cart_chevron w-inline-block">
                     <div :style="open ? 'transform:rotate(180deg);transition:transform .25s' : 'transition:transform .25s'" class="icon-1x1-small w-embed"><svg width="17" height="18" viewbox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,11 +125,11 @@
                     <div>Oops! Something went wrong while submitting the form.</div>
                   </div>
                 </div>
-                      </div>
-    </template>
+              </div>
             </div>
           </div>
-        </div> {% schema %} {
+                </div>
+    </template> {% schema %} {
     "tag": "section",
     "name": "Sticky Add to cart",
     "class": "section_sticky-add-to-cart",
