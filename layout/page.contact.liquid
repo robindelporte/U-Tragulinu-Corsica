@@ -2,9 +2,14 @@
 <html data-wf-page="6900b0831bd3fc37a0d26782" data-wf-site="68e63cea4969ff06483b2dd7" lang="{{ request.locale.iso_code }}">
 <head>
   <meta charset="utf-8">
-  <title>Contact</title>
-  <meta content="Contact" property="og:title">
-  <meta content="Contact" property="twitter:title">
+  <title>{{ page_title }}</title>
+  <meta content="{{ page_description }}" name="description">
+  <meta content="{{ page_title }}" property="og:title">
+  <meta content="{{ page_description }}" property="og:description">
+  <meta content="{{ page_title }}" property="twitter:title">
+  <meta content="{{ page_description }}" property="twitter:description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="{{ 'normalize.css' | asset_url }}" rel="stylesheet" type="text/css">
