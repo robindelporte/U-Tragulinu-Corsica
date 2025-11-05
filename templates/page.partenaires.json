@@ -13,7 +13,10 @@
       "type": "hero_partenaires",
       "settings": {
         "text_heading": "Nos partenaires",
-        "text_paragraphe": "Tous nos produits proviennent exclusivement de la Corse. Chaque agrume, chaque pièce de charcuterie, chaque bouteille de vin ou liqueur est sélectionné directement auprès de producteurs locaux, après une visite et une validation sur place."
+        "text_paragraphe": "Tous nos produits proviennent exclusivement de la Corse. Chaque agrume, chaque pièce de charcuterie, chaque bouteille de vin ou liqueur est sélectionné directement auprès de producteurs locaux, après une visite et une validation sur place.",
+        "image_image_1": "shopify://shop_images/vin.webp",
+        "image_image_2": "shopify://shop_images/tracteur.webp",
+        "image_image_3": "shopify://shop_images/Distilleries_artisanales_2.webp"
       }
     },
     "processus": {
