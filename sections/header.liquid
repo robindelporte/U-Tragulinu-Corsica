@@ -53,22 +53,6 @@
                         <div class="nav_dropdown-content">
                           <p li-object="link.object.title" class="heading-style-h4">{{ link.object.title }}</p>
                           <p li-object="link.object.description" class="hide-tablet">{{ link.object.description }}</p>
-                          {% if link.links.size > 0 %}
-  {% assign first_product = link.links.first.object %}
-  {% if first_product.collections.size > 0 %}
-    {% assign menu_collection = first_product.collections.first %}
-    
-    <div class="nav_dropdown-content">
-      <p class="heading-style-h4">{{ menu_collection.title }}</p>
-      
-      {% if menu_collection.description != blank %}
-        <p class="hide-tablet">{{ menu_collection.description }}</p>
-      {% else %}
-        <p class="hide-tablet">Chaque saison, nous récoltons à la main...</p>
-      {% endif %}
-    </div>
-  {% endif %}
-{% endif %}
                         </div>
                         <div class="nav_dropdown-grid">
                           {% for child_link in link.links %}    <div li-for="child_link in link.links">
