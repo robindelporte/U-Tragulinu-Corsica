@@ -93,6 +93,7 @@
         "titre_tQtfjk",
         "texte_pe6NKn"
       ],
+      "disabled": true,
       "name": "Contenu Video",
       "settings": {}
     },
@@ -193,9 +194,13 @@
       "settings": {
         "text_titre": "Découvrez nos spécialités",
         "text_bloc_1_titre": "Nos fruits & agrumes",
-        "url_bloc_1_lien": "",
+        "image_bloc_1_image_1": "shopify://shop_images/clementines_0c468b10-3b74-4a0d-891a-807aae8ee9db.webp",
+        "image_bloc_1_image_2": "shopify://shop_images/pomelos.webp",
+        "url_bloc_1_lien": "shopify://collections/fruits-agrumes",
         "text_bloc_2_titre": "Notre épicerie Corse",
-        "url_bloc_2_lien": ""
+        "image_bloc_2_image_1": "shopify://shop_images/liqueurs.webp",
+        "image_bloc_2_image_2": "shopify://shop_images/vin.webp",
+        "url_bloc_2_lien": "shopify://collections/lepicerie"
       }
     },
     "faq_dtamJc": {
