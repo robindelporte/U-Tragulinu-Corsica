@@ -130,10 +130,11 @@
             </div>
                   </div>
     </template>
-        </div> {% schema %} {
+        </div>
+        <script> document.addEventListener('DOMContentLoaded', function(){const stickyCart = document.querySelector('.section_sticky-add-to-cart'); const classicForm = document.querySelector('.product-header_form-block'); if (stickyCart && classicForm){const observer = new IntersectionObserver((entries) =>{entries.forEach(entry =>{if (entry.isIntersecting){// Form classique visible &rarr; cacher sticky stickyCart.style.transform = 'translateY(100%)'; stickyCart.style.opacity = '0';}else{// Form classique hors &eacute;cran &rarr; montrer sticky stickyCart.style.transform = 'translateY(0)'; stickyCart.style.opacity = '1';}});},{threshold: 0.1}); observer.observe(classicForm);}}); </script> {% schema %} {
     "tag": "section",
     "name": "Sticky Add to cart",
-    "class": "section_sticky-add-to-cart",
+    "class": "section_sticky-add-to-cart hidden",
     "settings": [
         {
             "id": "text_unite_de_mesure",
