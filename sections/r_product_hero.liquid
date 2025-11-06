@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         {% for balise in balises_array %}    <div li-for="balise in balises_array">
                                     
                           
-                            <div li-object="balise | strip" class="product-tag">{{ balise | strip }}</div>
+                            <div li-object="balise | strip" class="product-tag">{{ balise | strip | replace: '"', '' }}</div>
                             
                         
                         </div>
