@@ -221,6 +221,7 @@
     },
     "sticky_add_to_cart_qqTTRQ": {
       "type": "sticky_add_to_cart",
+      "disabled": true,
       "name": "Sticky Add to cart",
       "settings": {
         "text_unite_de_mesure": "{{ product.metafields.custom.conditionnement.value }}",
