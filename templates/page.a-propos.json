@@ -116,36 +116,40 @@
           "type": "partenaires",
           "settings": {
             "image_image": "shopify://shop_images/producteurs-4.webp",
-            "text_nom_producteur": "Domaines de La Taste",
-            "text_infos_producteur": "Producteurs agricoles indépendants"
+            "text_nom_producteur": "Domaines Terra Vecchia",
+            "text_infos_producteur": "Producteurs de vins AOP"
           }
         },
         "partenaires_3q3gnT": {
           "type": "partenaires",
           "settings": {
-            "text_nom_producteur": "Domaines de La Taste",
-            "text_infos_producteur": "Producteurs agricoles indépendants"
+            "image_image": "shopify://shop_images/producteurs-3.webp",
+            "text_nom_producteur": "Distilleries artisanales",
+            "text_infos_producteur": "Liqueurs de myrte et de clémencello"
           }
         },
         "partenaires_A7aadM": {
           "type": "partenaires",
           "settings": {
-            "text_nom_producteur": "Domaines de La Taste",
-            "text_infos_producteur": "Producteurs agricoles indépendants"
+            "image_image": "shopify://shop_images/producteurs-2.webp",
+            "text_nom_producteur": "AgruCorse",
+            "text_infos_producteur": "Coopérative d’agrumiculteurs bio"
           }
         },
         "partenaires_i7FVQx": {
           "type": "partenaires",
           "settings": {
-            "text_nom_producteur": "Domaines de La Taste",
-            "text_infos_producteur": "Producteurs agricoles indépendants"
+            "image_image": "shopify://shop_images/producteurs-1.webp",
+            "text_nom_producteur": "Domaine Paradella",
+            "text_infos_producteur": "Producteurs de vins AOP"
           }
         },
         "partenaires_EL6fpC": {
           "type": "partenaires",
           "settings": {
-            "text_nom_producteur": "Domaines de La Taste",
-            "text_infos_producteur": "Producteurs agricoles indépendants"
+            "image_image": "shopify://shop_images/producteurs.webp",
+            "text_nom_producteur": "Famille Testori",
+            "text_infos_producteur": "Charcuterie corse artisanale"
           }
         }
       },
