@@ -14,8 +14,8 @@
                 <div class="product-header_form-block w-form">
                   {% form 'product', product, class: 'product-header_default-state' %}
 <div class="product_sticky-add-to-cart">
-                      <div li-cloak="" x-show="open" x-collapse.duration.500ms="" class="product-sticky-add-to-cart_wrapper">
-                        <div class="product-sticky-add-to-cart_info"><img class="product-sticky-add-to-cart_image" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.featured_image.alt }}" sizes="100vw" li-object:src="product.featured_image | image_url: width: 1000" loading="lazy" li-object:alt="product.featured_image.alt" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
+                      <div li-cloaks="" x-show="open" x-collapse.duration.500ms="" class="product-sticky-add-to-cart_wrapper">
+                        <div class="product-sticky-add-to-cart_info"><img class="product-sticky-add-to-cart_image" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}" sizes="(max-width: 1238px) 100vw, 1238px" li-object:src="product.featured_image | img_url: 'master'" loading="lazy" li-object:alt="product.featured_image.alt" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
                           <div class="product-sticky-add-to-cart_heading">
                             <div li-object:text="product.title" class="heading-style-h4">
 {{ product.title }}
