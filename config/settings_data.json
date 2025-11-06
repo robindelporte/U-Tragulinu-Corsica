@@ -29,6 +29,7 @@
           "banniere_Akibf6"
         ],
         "settings": {
+          "image_logo": "shopify://shop_images/logo.svg",
           "text_search": "Recherche",
           "collection_search_bestseller": "meilleures-ventes",
           "collection_search_bestseller_limit": 6,
