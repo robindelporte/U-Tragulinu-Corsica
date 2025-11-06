@@ -58,7 +58,7 @@
                 <ul li-for:inside="block in section.blocks" x-data="{open: 1}" role="list" class="faq_list is-tabs">
         {% for block in section.blocks %}                            
                   
-                            <li :class="open === {{forloop.index}} ? 'is-active' : ''" role="button" tabindex="0" aria-controls="faq-body-{{forloop.index}}" x-on:click="open = (open === {{forloop.index}} ? 0 : {{forloop.index}}); $el.setAttribute('aria-expanded', open === {{forloop.index}} ? 'true' : 'false')" class="tabs_item is-active">
+                            <li :class="open === {{forloop.index}} ? 'is-active' : ''" role="button" tabindex="0" aria-controls="faq-body-{{forloop.index}}" x-on:click="open = (open === {{forloop.index}} ? 0 : {{forloop.index}}); $el.setAttribute('aria-expanded', open === {{forloop.index}} ? 'true' : 'false')" class="tabs_item">
                     <div class="faq_item-heading">
                       <div li-object="block.settings.text_tab_label" class="heading-style-h4">{{ block.settings.text_tab_label }}</div>
                       <div x-bind:style="open === {{ forloop.index }} ? 'transform: rotate(180deg)' : 'transform: rotate(0deg)'" class="faq_icon w-embed"><svg width="24" height="25" viewbox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
