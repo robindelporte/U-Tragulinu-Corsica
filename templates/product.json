@@ -71,6 +71,7 @@
         "text_avantage_item_2": "{{ product.metafields.custom.avantage_n_2.value }}",
         "text_avantage_item_3": "{{ product.metafields.custom.avantage_n_3.value }}",
         "text_avantage_item_4": "{{ product.metafields.custom.avantage_n_4.value }}",
+        "image_avantage_image": "{{ product.metafields.custom.avantages_image.value }}",
         "text_producteur_titre": "Producteur & Origine",
         "text_producteur_ferme": "{{ product.metafields.custom.producteur.value.ferme.value }}",
         "image_producteur_image": "{{ product.metafields.custom.producteur.value.image.value }}",
