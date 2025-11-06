@@ -14,7 +14,8 @@
       "name": "Hero - A propos",
       "settings": {
         "text_titre": "Histoire de la marque",
-        "text_paragraphe": "Partie de simples tournées de clémentines en région PACA, U-Tragulinu-Corsica est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes."
+        "text_paragraphe": "Partie de simples tournées de clémentines en région PACA, U-Tragulinu-Corsica est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes.",
+        "image_image": "shopify://shop_images/a-propos-background.webp"
       }
     },
     "team_VT3pmM": {
