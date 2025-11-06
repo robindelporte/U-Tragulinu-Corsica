@@ -299,9 +299,9 @@ document.addEventListener('DOMContentLoaded', function() {
                           </li>
                         </ul>
                       </div>{% if section.settings.image_avantage_image %}
-{{ section.settings.image_avantage_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'image-style-full-width image-cover-full aspect-ratio-292x220 border-radius-4' }}
+{{ section.settings.image_avantage_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'avantages_image' }}
 {% else %}
-<img src="{{ 'clementines.avif' | asset_url }}" loading="lazy" alt="" class="image-style-full-width image-cover-full aspect-ratio-292x220 border-radius-4">
+<img src="{{ 'clementines.avif' | asset_url }}" loading="lazy" alt="" class="avantages_image">
 {% endif %}
                     </div>
                     <div id="producteur" class="product_description-element is-producteurs">
