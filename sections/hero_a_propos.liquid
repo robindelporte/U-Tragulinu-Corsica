@@ -1,0 +1,45 @@
+<div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-4rem">
+              <div class="header_component">
+{{ section.settings.text_sous_titre }}
+</div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Hero - A propos",
+    "class": "section_hero-a-propos",
+    "settings": [
+        {
+            "id": "text_sous_titre",
+            "type": "text",
+            "label": "Sous-titre",
+            "default": "\n                <div class=\"margin-bottom margin-medium\">\n                  <div class=\"header_content-wrapper\">\n                    <div class=\"header_heading\">\n                      <h1 li-settings:text=\"Titre\" class=\"heading-style-h1\">Histoire de la marque<\/h1>\n                    <\/div>\n                    <div class=\"header_content\">\n                      <p li-settings:text=\"Paragraphe\" class=\"text-weight-medium\">Partie de simples tourn\u00e9es de cl\u00e9mentines en r\u00e9gion PACA, U-Tragulinu-Corsica est devenue une r\u00e9f\u00e9rence pour relier directement producteurs corses et consommateurs fran\u00e7ais, garantissant qualit\u00e9, authenticit\u00e9 et prix justes.<\/p>\n                    <\/div>\n                  <\/div>\n                <\/div>\n                <div class=\"header_image-wrapper\"><img li-settings:image=\"Image\" loading=\"eager\" alt=\"\" src=\"..\/images\/Placeholder-Image---Landscape.svg\" class=\"header_image\"\/><\/div>\n              "
+        },
+        {
+            "id": "text_titre",
+            "type": "text",
+            "label": "Titre",
+            "default": "Histoire de la marque"
+        },
+        {
+            "id": "text_paragraphe",
+            "type": "text",
+            "label": "Paragraphe",
+            "default": "Partie de simples tourn\u00e9es de cl\u00e9mentines en r\u00e9gion PACA, U-Tragulinu-Corsica est devenue une r\u00e9f\u00e9rence pour relier directement producteurs corses et consommateurs fran\u00e7ais, garantissant qualit\u00e9, authenticit\u00e9 et prix justes."
+        },
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero - A propos",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
