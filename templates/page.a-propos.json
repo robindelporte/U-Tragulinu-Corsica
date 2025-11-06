@@ -86,9 +86,7 @@
         "texte_pe6NKn"
       ],
       "name": "Contenu Video",
-      "settings": {
-        "image_position": "left"
-      }
+      "settings": {}
     },
     "reportages_TytYGj": {
       "type": "reportages",
@@ -116,6 +114,7 @@
         "partenaires_4xUFqj": {
           "type": "partenaires",
           "settings": {
+            "image_image": "shopify://shop_images/producteurs-4.webp",
             "text_nom_producteur": "Domaines de La Taste",
             "text_infos_producteur": "Producteurs agricoles indépendants"
           }

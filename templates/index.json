@@ -16,7 +16,7 @@
           "type": "titre",
           "name": "Titre",
           "settings": {
-            "richtext_titre": "<h1>Les <strong>vraies clémentines</strong> sont bientôt de retour<br/>                    </h1>"
+            "richtext_titre": "<h1>Les <strong>vraies clémentines</strong> sont de retour<br/>                    </h1>"
           },
           "blocks": {}
         },
@@ -38,7 +38,7 @@
           "type": "paragraphe",
           "name": "Paragraphe",
           "settings": {
-            "text_paragraphe": "U TRAGULINU CORSICA est né en 2021 de l’envie de valoriser les fruits et agrumes souvent sous-exploités ou gaspillés.Partie de simples tournées de clémentines en région PACA, la marque est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes."
+            "text_paragraphe": "Chaque année vous raffolez de nos clémentines, et elles sont de retour dans vos caisses à partager ! Commandez les dès maintenant."
           },
           "blocks": {}
         },
@@ -53,7 +53,7 @@
           "name": "Boutons",
           "settings": {
             "url_bouton_1_lien": "shopify://products/clementines-bio-corse",
-            "text_bouton_1_texte": "Précommandez",
+            "text_bouton_1_texte": "Commander",
             "checkbox_afficher_le_2eme_bouton": false,
             "url_bouton_2_lien": "shopify://collections/concours",
             "text_bouton_2_texte": "Créez une alerte"
@@ -71,7 +71,8 @@
           "name": "Témoignage Accueil",
           "settings": {
             "text_nom": "Liliane B.",
-            "text_avis": "Les clémentines de Corse. Petites, mais hyper juteuses, d’une douceur incomparable, un pur régal comme les précédentes commandes et je les ai achetées qu’à U-Tragullinu."
+            "text_avis": "Les clémentines de Corse. Petites, mais hyper juteuses, d’une douceur incomparable, un pur régal comme les précédentes commandes et je les ai achetées qu’à U-Tragullinu.",
+            "image_image": "shopify://shop_images/tarte.webp"
           },
           "blocks": {}
         }
