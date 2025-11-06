@@ -53,12 +53,16 @@
                           </a>
                         </div>
                         <div class="product-header_swiper-tag-wrapper">
-                          <template x-if="!selected_or_first_available_variant.available">
+                          {% if product.metafields.custom.saison == true %}    <div li-if="product.metafields.custom.saison == true">
+    
+                            <template x-if="!selected_or_first_available_variant.available">
             <div li-js-if="!selected_or_first_available_variant.available" class="product-header_swiper-tag">
         
-                            <div>Produit victime de son succès</div>
-                                  </div>
+                              <div>Produit victime de son succès</div>
+                                    </div>
     </template>
+                              </div>
+{% endif %}
                           {% if product.metafields.custom.saison == false %}    <div li-if="product.metafields.custom.saison == false" class="product-header_swiper-tag">
     
                             <div>Pas encore la saison</div>
@@ -624,12 +628,16 @@ document.addEventListener('DOMContentLoaded', function() {
                           </a>
                         </div>
                         <div class="product-header_swiper-tag-wrapper">
-                          <template x-if="!selected_or_first_available_variant.available">
+                          {% if product.metafields.custom.saison == true %}    <div li-if="product.metafields.custom.saison == true">
+    
+                            <template x-if="!selected_or_first_available_variant.available">
             <div li-js-if="!selected_or_first_available_variant.available" class="product-header_swiper-tag">
         
-                            <div>Produit victime de son succès</div>
-                                  </div>
+                              <div>Produit victime de son succès</div>
+                                    </div>
     </template>
+                              </div>
+{% endif %}
                           {% if product.metafields.custom.saison == false %}    <div li-if="product.metafields.custom.saison == false" class="product-header_swiper-tag">
     
                             <div>Pas encore la saison</div>
