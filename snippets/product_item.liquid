@@ -1,18 +1,7 @@
 <script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
 <div li-element="product-variant-container" class="product-card_item" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
                           <div class="product-item_image-link">
-                            <a li-object:href="product.url" href="{{ product.url }}" class="product-item_image-wrapper w-inline-block"><img li-object:src="product.featured_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: 'master' }}" loading="lazy" class="product-item_image">
-                              {% if product.has_only_default_variant == true %}    <div li-if="product.has_only_default_variant == true" class="product_atc-form">
-    
-                                <div class="product_quick-atc-wrapper"><button li-element="add-to-cart" class="product_quick-atc" @click="addToCart($event, true)" :disabled="!addToCartButton">
-                                    <div>Ajout rapide</div>
-                                    <div class="icon-embed-custom-3 w-embed"><svg width="18" height="16" viewbox="0 0 18 16" fill="none">
-                                        <path d="M3.5 0.500001H0.5M11.9 2.5V8.5M14.9 5.5H8.9M3.73999 0.5L5.9 8.34C6.08029 8.95825 6.45474 9.50207 6.96799 9.89106C7.48124 10.28 8.10604 10.4936 8.75 10.5H17.49V0.5H3.73999ZM10.5 14C10.5 14.8284 9.82843 15.5 9 15.5C8.17157 15.5 7.5 14.8284 7.5 14C7.5 13.1716 8.17157 12.5 9 12.5C9.82843 12.5 10.5 13.1716 10.5 14ZM17.5 14C17.5 14.8284 16.8284 15.5 16 15.5C15.1716 15.5 14.5 14.8284 14.5 14C14.5 13.1716 15.1716 12.5 16 12.5C16.8284 12.5 17.5 13.1716 17.5 14Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"></path>
-                                      </svg></div>
-                                  </button></div>
-                                  </div>
-{% endif %}
-                            </a>
+                            <a li-object:href="product.url" href="{{ product.url }}" class="product-item_image-wrapper w-inline-block"><img li-object:src="product.featured_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="{{ product.featured_image.alt }}" src="{{ product.featured_image | img_url: 'master' }}" loading="lazy" class="product-item_image"></a>
                             <div class="product-card-item_tag_list">
                               {% if product.metafields.custom.precommande_disponible == true %}    <div li-if="product.metafields.custom.precommande_disponible == true">
     
