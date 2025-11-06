@@ -156,6 +156,9 @@
       "block_order": [
         "loox_reviews_loox_dynamic_section_m3GEJ3"
       ],
+      "custom_css": [
+        ".shopify-app-block:has(> .loox-widget) {padding-inline: 5%;}"
+      ],
       "settings": {}
     },
     "produits_FkALwE": {
