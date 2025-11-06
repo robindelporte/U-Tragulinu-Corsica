@@ -4808,6 +4808,8 @@ figcaption {
 }
 
 .product_description-icon-list {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
   border-bottom: 1px solid var(--_primitives---brand--orange);
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -4996,9 +4998,10 @@ figcaption {
 
 .product_description-testimonial-image {
   aspect-ratio: 16 / 9;
-  object-fit: fill;
+  object-fit: cover;
   border-radius: .375rem;
   width: 100%;
+  max-height: 9.33398rem;
   margin-top: .375rem;
 }
 
@@ -8678,6 +8681,10 @@ figcaption {
 
   .product_description-icon-list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .product_description-testimonial-image {
+    max-height: 8rem;
   }
 
   .faq-product_item {
