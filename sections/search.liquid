@@ -7,8 +7,8 @@
                     <h1 li-object="search.terms | escape ">{{ search.terms | escape  }}</h1>
                   </div>
                 </div>
-                {% paginate collection.products by 50 %}
-    <div li-paginate:by="50" li-paginate="collection.products" class="filter_layout without-filters" by="50">
+                {% paginate search.results by 50 %}
+    <div li-paginate:by="50" li-paginate="search.results" class="filter_layout without-filters" by="50">
                   <div id="w-node-a0c6bdd1-98cb-55f5-4c1e-53478bffa6a3-9c9c830b" class="filter_feed">
                     <div class="filter_product-list-wrapper w-dyn-list">
                       <div role="list" class="filter_product-list without-filters w-dyn-items">
