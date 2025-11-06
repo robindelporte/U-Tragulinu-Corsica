@@ -9,10 +9,13 @@
  */
 {
   "sections": {
-    "hero_contenu_ay8rnM": {
-      "type": "hero_contenu",
-      "name": "Hero Contenu",
-      "settings": {}
+    "hero_a_propos_Crq9dH": {
+      "type": "hero_a_propos",
+      "name": "Hero - A propos",
+      "settings": {
+        "text_titre": "Histoire de la marque",
+        "text_paragraphe": "Partie de simples tournées de clémentines en région PACA, U-Tragulinu-Corsica est devenue une référence pour relier directement producteurs corses et consommateurs français, garantissant qualité, authenticité et prix justes."
+      }
     },
     "team_VT3pmM": {
       "type": "team",
@@ -221,7 +224,7 @@
   "layout": "theme",
   "wrapper": "div.main-wrapper",
   "order": [
-    "hero_contenu_ay8rnM",
+    "hero_a_propos_Crq9dH",
     "team_VT3pmM",
     "contenu_video_wLxg6J",
     "reportages_TytYGj",
