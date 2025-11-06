@@ -941,6 +941,10 @@ figcaption {
   background-image: url({{ 'add-to-cart-hover.svg' | asset_url }});
 }
 
+.button.is-product:active {
+  transform: scale(.98);
+}
+
 .button.is-product.is-out-off-stock {
   background-color: var(--_primitives---brand--orange-hover);
   pointer-events: none;
@@ -6534,6 +6538,10 @@ figcaption {
 .product_quick-atc:hover {
   background-color: var(--_primitives---colors--white);
   color: var(--_primitives---brand--gris-foncé);
+}
+
+.product_quick-atc:active {
+  transform: scale(.97);
 }
 
 .product_quick-atc.is-no-variant {
