@@ -107,6 +107,7 @@
         "partenaires_t4CEcr": {
           "type": "partenaires",
           "settings": {
+            "image_image": "shopify://shop_images/producteurs-5.webp",
             "text_nom_producteur": "Domaines de La Taste",
             "text_infos_producteur": "Producteurs agricoles indépendants"
           }
