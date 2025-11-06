@@ -23,35 +23,67 @@
         "item": {
           "type": "item",
           "name": "Item",
-          "settings": {}
+          "settings": {
+            "text_texte": "Produits 100 % Corse"
+          }
+        },
+        "item_xLCrVw": {
+          "type": "item",
+          "settings": {
+            "image_image": "shopify://shop_images/illu.svg",
+            "text_texte": "Circuit court garanti"
+          }
+        },
+        "item_kpQHKG": {
+          "type": "item",
+          "settings": {
+            "image_image": "shopify://shop_images/illu-1.svg",
+            "text_texte": "Rémunération  des producteurs"
+          }
+        },
+        "item_jMeVKB": {
+          "type": "item",
+          "settings": {
+            "image_image": "shopify://shop_images/illu-2.svg",
+            "text_texte": "Programme  de fidélité"
+          }
         }
       },
       "block_order": [
-        "item"
-      ],
-      "settings": {}
-    },
-    "faq": {
-      "type": "faq",
-      "blocks": {
-        "faq-item": {
-          "type": "faq-item",
-          "name": "FAQ Item",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "faq-item"
+        "item",
+        "item_xLCrVw",
+        "item_kpQHKG",
+        "item_jMeVKB"
       ],
       "settings": {}
     },
     "banniere": {
       "type": "banniere",
-      "settings": {}
+      "settings": {
+        "text_titre": "Découvrez nos spécialités",
+        "text_bloc_1_titre": "Nos fruits & agrumes",
+        "image_bloc_1_image_2": "shopify://shop_images/clementines-2_b915b619-640e-4d63-b50a-ca769fcb4e73.webp",
+        "url_bloc_1_lien": "shopify://collections/fruits-agrumes",
+        "text_bloc_2_titre": "Notre épicerie Corse",
+        "image_bloc_2_image_1": "shopify://shop_images/liqueurs.webp",
+        "image_bloc_2_image_2": "shopify://shop_images/myrtille-u-tragulinu.jpg",
+        "url_bloc_2_lien": "shopify://collections/lepicerie"
+      }
     },
     "reseaux": {
       "type": "reseaux",
-      "settings": {}
+      "settings": {
+        "text_heading": "Suivez-nous sur nos réseaux sociaux",
+        "text_paragraphe": "“Partagez vos plus belles recettes et vos paniers de fruits corses sur Instagram,Facebook et TikTok avec le hashtag #UTragulinuCorsica pour être mis en avant sur notre page !”",
+        "url_facebook": "",
+        "text_nom_facebook": "U Tragulinu Corsica",
+        "url_instagram": "",
+        "text_nom_instagram": "@U_tragulinu_corsica",
+        "url_youtube": "",
+        "text_nom_tiktok": "U-tragulinu-corsica",
+        "url_linkedin": "",
+        "text_nom_linkedin": "Hugo Delorieux"
+      }
     }
   },
   "layout": "theme",
@@ -60,7 +92,6 @@
     "collection_hero",
     "collection_products",
     "icones",
-    "faq",
     "banniere",
     "reseaux"
   ]
