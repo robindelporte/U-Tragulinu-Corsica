@@ -74,6 +74,16 @@
       },
       "17745481618859153576": {
         "type": "shopify://apps/genie-store-pickup/blocks/app-embed/e00f106c-bb7f-4e25-b11d-baff1a328f6b",
+        "disabled": true,
+        "settings": {}
+      },
+      "7584948915495707528": {
+        "type": "shopify://apps/joy-loyalty-program/blocks/app-embed/555c55c9-9a3d-4fe0-a7a8-2c256984a371",
+        "disabled": false,
+        "settings": {}
+      },
+      "1513253815146976218": {
+        "type": "shopify://apps/omnisend-email-marketing-sms/blocks/app-embed/44704aa2-794f-4c5d-8c8e-039c841158e9",
         "disabled": false,
         "settings": {}
       }
