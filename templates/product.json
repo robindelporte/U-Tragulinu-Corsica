@@ -80,11 +80,12 @@
         "text_conseil_3": "Aucun traitement chimique, naturel et sain",
         "text_conseil_4": "Aucun traitement chimique, naturel et sain",
         "text_temoignage_1_titre": "{{ product.metafields.custom.avis_client_1_nom.value }}",
-        "text_temoignage_1_texte": "Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons",
-        "text_temoignage_2_titre": "John Doe",
-        "text_temoignage_2_texte": "Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons",
-        "text_temoignage_3_titre": "John Doe",
-        "text_temoignage_3_texte": "Juste excellent ! Produits de qualité ! C’est toujours un plaisir d’échanger lors des livraisons",
+        "image_temoignage_1_image": "{{ product.metafields.custom.avis_client_1_image.value }}",
+        "text_temoignage_1_texte": "{{ product.metafields.custom.avis_client_1_avis.value }}",
+        "text_temoignage_2_titre": "{{ product.metafields.custom.avis_client_2_avis.value }}",
+        "text_temoignage_2_texte": "{{ product.metafields.custom.avis_client_2_avis.value }}",
+        "text_temoignage_3_titre": "{{ product.metafields.custom.avis_client_3_nom.value }}",
+        "text_temoignage_3_texte": "{{ product.metafields.custom.avis_client_3_avis.value }}",
         "text_unite_de_mesure": "{{ product.metafields.custom.conditionnement.value }}",
         "text_pas_dabonnement": "Je commande ponctuellement",
         "text_with_subscription": "S’abonner",
