@@ -82,7 +82,7 @@
         "text_temoignage_1_titre": "{{ product.metafields.custom.avis_client_1_nom.value }}",
         "image_temoignage_1_image": "{{ product.metafields.custom.avis_client_1_image.value }}",
         "text_temoignage_1_texte": "{{ product.metafields.custom.avis_client_1_avis.value }}",
-        "text_temoignage_2_titre": "{{ product.metafields.custom.avis_client_2_avis.value }}",
+        "text_temoignage_2_titre": "{{ product.metafields.custom.avis_client_2_nom.value }}",
         "text_temoignage_2_texte": "{{ product.metafields.custom.avis_client_2_avis.value }}",
         "text_temoignage_3_titre": "{{ product.metafields.custom.avis_client_3_nom.value }}",
         "text_temoignage_3_texte": "{{ product.metafields.custom.avis_client_3_avis.value }}",
