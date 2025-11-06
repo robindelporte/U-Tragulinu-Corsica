@@ -1,9 +1,6 @@
 <div class="padding-global padding-section-3-75">
           <div class="container-large">
             <div class="card_component">
-              <div id="w-node-e8f02e4e-6683-77ba-3eda-97d101733853-0173384f" class="card_img-wrapper" style="{% if section.settings.left_right == 'right'%}order: 9999;{% endif %}">
-                <div li-object="section.settings.video | video_tag: controls: true, width: '100%'" class="video_component is-testimonial">{{ section.settings.video | video_tag: controls: true, width: '100%' }}</div>
-              </div>
               <div li-content-for-blocks="" id="w-node-e8f02e4e-6683-77ba-3eda-97d101733855-0173384f" class="content_wrapper">
 {% for block in section.blocks %}
 {% case block.type %}
@@ -61,6 +58,9 @@
 {% endfor %}
 
     </div>
+              <div id="w-node-e8f02e4e-6683-77ba-3eda-97d101733853-0173384f" class="card_img-wrapper">
+                <div li-object="section.settings.video | video_tag: controls: true, width: '100%'" class="video_component is-testimonial">{{ section.settings.video | video_tag: controls: true, width: '100%' }}</div>
+              </div>
             </div>
           </div>
         </div> {% schema %} {
@@ -145,22 +145,6 @@
             "type": "video",
             "id": "video",
             "label": "Upload Video"
-        },
-        {
-            "type": "select",
-            "id": "image_position",
-            "label": "Image position",
-            "options": [
-                {
-                    "value": "left",
-                    "label": "Left"
-                },
-                {
-                    "value": "right",
-                    "label": "Right"
-                }
-            ],
-            "default": "left"
         }
     ],
     "presets": [
