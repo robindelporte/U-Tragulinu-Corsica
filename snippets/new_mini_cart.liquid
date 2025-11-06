@@ -417,7 +417,7 @@
                             {% if free_shipping %}    <div li-if="free_shipping" x-show="((shippingFree - cart.total_price) / 100) <= 0" class="mini-cart_progress-success">
     
                               <div class="mini-cart_progress-bar">
-                                <div x-bind:style="'width: ' + (total.price/shippingFree) *100 + '%'" class="mini-cart_progress-bar-innner is-complete"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
+                                <div class="mini-cart_progress-bar-innner is-complete"><img src="{{ 'illu-1.svg' | asset_url }}" loading="lazy" alt="" class="mini-cart_footer_progress-bar-icon"></div>
                               </div>
                               <div>
 {{ section.settings.text_mini_cart_free_shipping_success }}

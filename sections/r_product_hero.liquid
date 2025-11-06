@@ -326,10 +326,10 @@ document.addEventListener('DOMContentLoaded', function() {
 {% endfor %}
                           </div>
 {% endif %}
-                      <div class="image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full">{% if section.settings.image_producteur_image %}
-{{ section.settings.image_producteur_image | image_url: width: 1000 | image_tag: class: 'image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
+                      <div class="producteurs_image-wrapper">{% if section.settings.image_producteur_image %}
+{{ section.settings.image_producteur_image | image_url: width: 1000 | image_tag: class: 'producteurs_image', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
 {% else %}
-<img class="image-style-full-width aspect-ratio-custom border-radius-4 image-cover-full" src="{{ 'domaine-de-la-taste.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'domaine-de-la-taste-p-500.avif' | asset_url }} 500w, {{ 'domaine-de-la-taste-p-800.avif' | asset_url }} 800w, {{ 'domaine-de-la-taste.avif' | asset_url }} 1238w">
+<img class="producteurs_image" src="{{ 'domaine-de-la-taste.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'domaine-de-la-taste-p-500.avif' | asset_url }} 500w, {{ 'domaine-de-la-taste-p-800.avif' | asset_url }} 800w, {{ 'domaine-de-la-taste.avif' | asset_url }} 1238w">
 {% endif %}</div>
                     </div>
                     <div id="conseils" class="product_description-element is-producteurs">
