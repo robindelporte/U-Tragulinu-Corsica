@@ -372,7 +372,8 @@ document.addEventListener('DOMContentLoaded', function() {
                           </li>
                         </ul>
                       </div>
-                      <div class="product_description-image-grid">{% if section.settings.image_conseil_image_1 %}
+                      {% if product.metafields.custom.conseil_de_preparation_image_3 != blank %}    <div li-if="product.metafields.custom.conseil_de_preparation_image_3 != blank" class="product_description-image-grid">
+    {% if section.settings.image_conseil_image_1 %}
 {{ section.settings.image_conseil_image_1 | image_url: width: 1000 | image_tag: class: 'product_description-image', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
 {% else %}
 <img class="product_description-image" src="{{ 'clementines-2.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
@@ -384,7 +385,8 @@ document.addEventListener('DOMContentLoaded', function() {
 {{ section.settings.image_conseil_image_3 | image_url: width: 1000 | image_tag: class: 'product_description-image', sizes: '(max-width: 1238px) 100vw, 1238px', loading: 'lazy' }}
 {% else %}
 <img class="product_description-image" src="{{ 'clementines-2.avif' | asset_url }}" alt="" sizes="(max-width: 1238px) 100vw, 1238px" loading="lazy" srcset="{{ 'clementines-2-p-500.avif' | asset_url }} 500w, {{ 'clementines-2.avif' | asset_url }} 1238w">
-{% endif %}</div>
+{% endif %}    </div>
+{% endif %}
                     </div>
                     <div id="avis" class="product_description-element is-last">
                       <h2 class="text-font-body text-size-medium">Avis clients</h2>
