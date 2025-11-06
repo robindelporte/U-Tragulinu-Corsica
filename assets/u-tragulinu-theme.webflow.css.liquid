@@ -7511,10 +7511,17 @@ figcaption {
   }
 
   .section_sticky-add-to-cart {
-    z-index: 9999;
+    z-index: 999;
+    width: 100%;
+    transition: opacity .4s, transform .4ms cubic-bezier(.4, 0, .2, 1);
     display: block;
-    position: sticky;
+    position: fixed;
     bottom: 0;
+    transform: translate(0);
+  }
+
+  .section_sticky-add-to-cart.hidden {
+    transform: translate(0, 100%);
   }
 
   .sticky-add-to-cart_wrapper {
