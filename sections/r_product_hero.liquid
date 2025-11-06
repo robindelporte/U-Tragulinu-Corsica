@@ -52,6 +52,19 @@
                               </svg></div>
                           </a>
                         </div>
+                        <div class="product-header_swiper-tag-wrapper">
+                          <template x-if="!selected_or_first_available_variant.available">
+            <div li-js-if="!selected_or_first_available_variant.available" class="product-header_swiper-tag">
+        
+                            <div>Produit victime de son succès</div>
+                                  </div>
+    </template>
+                          {% if product.metafields.custom.saison == false %}    <div li-if="product.metafields.custom.saison == false" class="product-header_swiper-tag">
+    
+                            <div>Pas encore la saison</div>
+                              </div>
+{% endif %}
+                        </div>
                       </div>
                       <div class="hide w-embed w-script">
                         <script>
@@ -600,21 +613,28 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div class="swiper_button-wrapper is-product-slider pointer-events-off z-index-1 hide-mobile-landscape">
                           <a aria-label="Previous Slide" href="#" class="swiper_button swiper-prev pointer-events-on w-inline-block">
-                            <div class="swiper_button-icon is-reversed w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
-                                <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)">
-                                  <path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path>
-                                  <line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line>
-                                </g>
+                            <div class="swiper_button-icon is-reversed w-embed"><svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.0278 8.72345C24.7791 10.0231 24.7791 13.9375 22.0278 15.2371L5.89014 22.8602C3.5008 23.9888 0.749512 22.2458 0.749512 19.6033V4.35724C0.749512 1.71474 3.5008 -0.028264 5.89014 1.1004L22.0278 8.72345Z" fill="#FA5F2B" stroke="#FFF3DE" stroke-width="1.5"></path>
                               </svg></div>
                           </a>
                           <a aria-label="Next Slide" href="#" class="swiper_button swiper-next pointer-events-on w-inline-block">
-                            <div class="swiper_button-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 29.541 22.323">
-                                <g id="Group_44" data-name="Group 44" transform="translate(0 1.014)">
-                                  <path id="Path_1" data-name="Path 1" d="M115.445,20.633l9.311-10.148L115.445.338" transform="translate(-97.25 -0.338)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></path>
-                                  <line id="Line_1" data-name="Line 1" x1="27.506" transform="translate(0 10.148)" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="3"></line>
-                                </g>
+                            <div class="swiper_button-icon w-embed"><svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.0278 8.72345C24.7791 10.0231 24.7791 13.9375 22.0278 15.2371L5.89014 22.8602C3.5008 23.9888 0.749512 22.2458 0.749512 19.6033V4.35724C0.749512 1.71474 3.5008 -0.028264 5.89014 1.1004L22.0278 8.72345Z" fill="#FA5F2B" stroke="#FFF3DE" stroke-width="1.5"></path>
                               </svg></div>
                           </a>
+                        </div>
+                        <div class="product-header_swiper-tag-wrapper">
+                          <template x-if="!selected_or_first_available_variant.available">
+            <div li-js-if="!selected_or_first_available_variant.available" class="product-header_swiper-tag">
+        
+                            <div>Produit victime de son succès</div>
+                                  </div>
+    </template>
+                          {% if product.metafields.custom.saison == false %}    <div li-if="product.metafields.custom.saison == false" class="product-header_swiper-tag">
+    
+                            <div>Pas encore la saison</div>
+                              </div>
+{% endif %}
                         </div>
                       </div>
                       <div class="swiper-slide is-product-thumbnail is-active hide"></div>
