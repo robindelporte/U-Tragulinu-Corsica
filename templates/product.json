@@ -125,13 +125,37 @@
             "text_question": "{{ product.metafields.custom.faq_titre_n_4.value }}",
             "richtext_reponse": "{{ product.metafields.custom.faq_contenu_n_4 | metafield_tag }}"
           }
+        },
+        "faq_item_bbGPza": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "Qui se cache derrière nos produits bio corses ?",
+            "richtext_reponse": "<p>Une équipe locale engagée, travaillant avec des producteurs corses de confiance pour vous offrir des produits authentiques et respectueux de la nature.</p>"
+          }
+        },
+        "faq_item_MBQEkR": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "Pourquoi choisir nos produits bio corses ?",
+            "richtext_reponse": "<p>Nos produits sont 100% bio, issus d’un circuit court et livrés directement, pour préserver la fraîcheur et les saveurs corses.</p>"
+          }
+        },
+        "faq_item_jaLMEQ": {
+          "type": "faq-item",
+          "settings": {
+            "text_question": "Comment garantissons nous la qualité de nos produits ?",
+            "richtext_reponse": "<p>Nous sélectionnons des produits récoltés à maturité, sans traitement chimique, et sans passage en chambre froide, pour une qualité optimale.</p>"
+          }
         }
       },
       "block_order": [
         "faq_item_Y9HHDc",
         "faq_item_TxPpF9",
         "faq_item_APNkyj",
-        "faq_item_nFwUBp"
+        "faq_item_nFwUBp",
+        "faq_item_bbGPza",
+        "faq_item_MBQEkR",
+        "faq_item_jaLMEQ"
       ],
       "name": "FAQ",
       "settings": {
