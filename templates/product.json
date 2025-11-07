@@ -193,7 +193,7 @@
         "richtext_titre": "<h2>Nos <strong>meilleures </strong>ventes</h2>",
         "collection_collection": "meilleures-ventes",
         "collection_collection_limit": 4,
-        "url_bouton_lien": "",
+        "url_bouton_lien": "shopify://collections/meilleures-ventes",
         "text_bouton_texte": "Tous nos produits"
       }
     },
