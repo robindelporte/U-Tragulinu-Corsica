@@ -174,7 +174,7 @@
       "settings": {
         "text_titre": "Nos partenaires",
         "richtext_paragraphe": "<p>Nous avançons au rythme de la terre, de la mer et de celles et ceux qui les travaillent. Chaque producteur est choisi pour la qualité de son geste, la clarté de ses pratiques et l’amour des traditions corses.   Nous visitons les exploitations, goûtons, échangeons, et signons des partenariats durables.  Résultat : des produits cueillis ou affinés au plus juste, proposés en circuits courts, dans le respect des saisons et à prix justes pour tout le monde. Pas de promesses creuses, juste des saveurs franches et une traçabilité nette.</p>",
-        "url_button_link": "",
+        "url_button_link": "shopify://pages/partenaires",
         "text_button_text": "Découvrir nos partenaires"
       }
     },
