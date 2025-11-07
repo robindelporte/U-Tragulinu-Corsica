@@ -160,7 +160,7 @@
       ],
       "name": "FAQ",
       "settings": {
-        "richtext_titre": "<h2>On à réponse à tout <strong>(ou presque)</strong></h2>"
+        "richtext_titre": "<h2>On à réponse à tout <br/><strong>(ou presque)</strong></h2>"
       }
     },
     "17621683178e86f7be": {
