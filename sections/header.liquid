@@ -28,7 +28,7 @@
 {% endif %}
                   {% if link.links.size == 0 %}    <div li-if="link.links.size == 0">
     
-                    <a li-object:href="link.url" href="{{ link.url }}" class="w-inline-block">
+                    <a li-object:href="link.url" href="{{ link.url }}" class="navbar_link w-inline-block">
                       <div>
                         <div li-object="link.title | split: '-' | last">{{ link.title | split: '-' | last }}</div>
                       </div>
