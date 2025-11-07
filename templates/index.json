@@ -97,28 +97,28 @@
           "name": "Item",
           "settings": {
             "image_image": "shopify://shop_images/illu-4.svg",
-            "text_texte": "Produits 100 % Corse"
+            "text_texte": "Produits <br>100% Corse"
           }
         },
         "item_AB9tdm": {
           "type": "item",
           "settings": {
             "image_image": "shopify://shop_images/illu.svg",
-            "text_texte": "Circuit court garanti"
+            "text_texte": "Circuit court <br>garanti"
           }
         },
         "item_VYGW66": {
           "type": "item",
           "settings": {
             "image_image": "shopify://shop_images/illu-1.svg",
-            "text_texte": "Rémunération  des producteurs"
+            "text_texte": "Rémunération <br>des producteurs"
           }
         },
         "item_t6nFw9": {
           "type": "item",
           "settings": {
             "image_image": "shopify://shop_images/illu-2.svg",
-            "text_texte": "Programme de fidélité"
+            "text_texte": "Programme <br>de fidélité"
           }
         }
       },
