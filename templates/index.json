@@ -87,7 +87,10 @@
         "espace-medium",
         "temoignage-accueil"
       ],
-      "settings": {}
+      "settings": {
+        "image_image": "shopify://shop_images/clementines-2.webp",
+        "image_image_principale": "shopify://shop_images/clementines-2.webp"
+      }
     },
     "icones": {
       "type": "icones",
