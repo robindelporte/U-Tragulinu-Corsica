@@ -13,15 +13,18 @@
                       <h3 class="z-index-2">
 {{ section.settings.text_bloc_1_titre }}
 </h3>
-                      <div class="banner_image-wrapper">{% if section.settings.image_bloc_1_image_1 %}
+                      <div class="banner_image-wrapper">
+                        <div class="banner_image-element">{% if section.settings.image_bloc_1_image_1 %}
 {{ section.settings.image_bloc_1_image_1 | image_url: width: 1000 | image_tag: loading: 'lazy', width: '285', class: 'banner_image' }}
 {% else %}
 <img src="{{ 'hugo.avif' | asset_url }}" loading="lazy" width="285" alt="" class="banner_image">
-{% endif %}{% if section.settings.image_bloc_1_image_2 %}
+{% endif %}</div>
+                        <div class="banner_image-element">{% if section.settings.image_bloc_1_image_2 %}
 {{ section.settings.image_bloc_1_image_2 | image_url: width: 1000 | image_tag: loading: 'lazy', width: '285', class: 'banner_image is-second' }}
 {% else %}
 <img src="{{ 'hugo.avif' | asset_url }}" loading="lazy" width="285" alt="" class="banner_image is-second">
-{% endif %}</div><img src="{{ 'background.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg"><img src="{{ 'background-mobile.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg is-mobile">
+{% endif %}</div>
+                      </div><img src="{{ 'background.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg"><img src="{{ 'background-mobile.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg is-mobile">
                       <div class="clickable_wrap">
                         <a href="{{ section.settings.url_bloc_1_lien }}" class="clickable_link w-inline-block"> </a>
                       </div>
@@ -30,15 +33,18 @@
                       <h3 class="z-index-2">
 {{ section.settings.text_bloc_2_titre }}
 </h3>
-                      <div class="banner_image-wrapper">{% if section.settings.image_bloc_2_image_1 %}
+                      <div class="banner_image-wrapper">
+                        <div class="banner_image-element">{% if section.settings.image_bloc_2_image_1 %}
 {{ section.settings.image_bloc_2_image_1 | image_url: width: 1000 | image_tag: loading: 'lazy', width: '285', class: 'banner_image' }}
 {% else %}
 <img src="{{ 'hugo.avif' | asset_url }}" loading="lazy" width="285" alt="" class="banner_image">
-{% endif %}{% if section.settings.image_bloc_2_image_2 %}
+{% endif %}</div>
+                        <div class="banner_image-element">{% if section.settings.image_bloc_2_image_2 %}
 {{ section.settings.image_bloc_2_image_2 | image_url: width: 1000 | image_tag: loading: 'lazy', width: '285', class: 'banner_image is-second' }}
 {% else %}
 <img src="{{ 'hugo.avif' | asset_url }}" loading="lazy" width="285" alt="" class="banner_image is-second">
-{% endif %}</div><img src="{{ 'background.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg"><img src="{{ 'background-mobile.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg is-mobile">
+{% endif %}</div>
+                      </div><img src="{{ 'background.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg"><img src="{{ 'background-mobile.svg' | asset_url }}" loading="lazy" alt="" class="banner_background-svg is-mobile">
                       <div class="clickable_wrap">
                         <a href="{{ section.settings.url_bloc_2_lien }}" class="clickable_link w-inline-block"> </a>
                       </div>
