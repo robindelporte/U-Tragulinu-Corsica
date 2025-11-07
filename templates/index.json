@@ -262,7 +262,7 @@
         "faq_item_rRKrFV"
       ],
       "settings": {
-        "richtext_titre": "<h2>On à réponse à tout <strong>(ou presque)</strong></h2>"
+        "richtext_titre": "<h2>On à réponse à tout <br/><strong>(ou presque)</strong></h2>"
       }
     },
     "newsletter": {
