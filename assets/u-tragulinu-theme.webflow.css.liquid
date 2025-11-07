@@ -3214,8 +3214,13 @@ figcaption {
   grid-row-gap: .75rem;
   flex-flow: column;
   padding: 1.75rem 2.5rem;
+  transition: all .25s;
   display: flex;
   position: relative;
+}
+
+.banner_item:hover {
+  color: var(--_primitives---brand--orange);
 }
 
 .text-color-support {
@@ -6623,6 +6628,15 @@ figcaption {
   color: var(--_primitives---brand--orange);
 }
 
+.banner_image-element {
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: .5rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 991px) {
   h1 {
     letter-spacing: -3.2px;
@@ -8412,6 +8426,15 @@ figcaption {
     aspect-ratio: 336 / 204;
     max-height: 16rem;
   }
+
+  .banner_image-element {
+    aspect-ratio: 2;
+    object-position: 50% 0%;
+  }
+
+  .banner_image-element.is-second {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -8956,6 +8979,10 @@ figcaption {
 
   .avantages_image {
     max-height: 11rem;
+  }
+
+  .banner_image-element {
+    aspect-ratio: 1;
   }
 }
 
