@@ -13,7 +13,8 @@
       "shipping_errors": {
         "shipping_method_not_available_generic": {
           "one": "Malheureusement, nous ne livrons actuellement que dans les départements suivants : 06, 13, 83 et Monaco. L’adresse sélectionnée n’est pas éligible pour la livraison. Veuillez vérifier votre adresse ou en choisir une dans un de nos départements desservis."
-        }
+        },
+        "title": "🚚 Livraison disponible dans 3 départements et Monaco"
       }
     }
   }
