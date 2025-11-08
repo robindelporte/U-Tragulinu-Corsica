@@ -14,7 +14,10 @@
       "settings": {
         "text_heading": "Votre panier corse",
         "text_continue_shopping": "Continuer mes achats",
-        "text_product": "Product",
+        "text_mini_cart_free_shipping_start": "Encore",
+        "text_mini_cart_free_shipping_end": "pour la livraison à domicile offerte !",
+        "text_mini_cart_free_shipping_success": "Félicitations ! Vous avez débloqué la livraison gratuite pour votre commande.",
+        "text_product": "Produit",
         "text_quantity": "Quantité",
         "text_price": "Prix",
         "text_summary": "Résumé",
