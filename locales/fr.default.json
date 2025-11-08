@@ -1,1 +1,20 @@
-{}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "shopify": {
+    "checkout": {
+      "shipping_errors": {
+        "shipping_method_not_available_generic": {
+          "one": "Malheureusement, nous ne livrons actuellement que dans les départements suivants : 06, 13, 83 et Monaco. L’adresse sélectionnée n’est pas éligible pour la livraison. Veuillez vérifier votre adresse ou en choisir une dans un de nos départements desservis."
+        }
+      }
+    }
+  }
+}
