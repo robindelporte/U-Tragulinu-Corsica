@@ -72,11 +72,6 @@
         "disabled": false,
         "settings": {}
       },
-      "17745481618859153576": {
-        "type": "shopify://apps/genie-store-pickup/blocks/app-embed/e00f106c-bb7f-4e25-b11d-baff1a328f6b",
-        "disabled": true,
-        "settings": {}
-      },
       "7584948915495707528": {
         "type": "shopify://apps/joy-loyalty-program/blocks/app-embed/555c55c9-9a3d-4fe0-a7a8-2c256984a371",
         "disabled": false,
@@ -90,6 +85,11 @@
       "7924418359578431505": {
         "type": "shopify://apps/seoant-ai-seo/blocks/seoant-core/8e57283b-dcb0-4f7b-a947-fb5c57a0d59d",
         "disabled": false,
+        "settings": {}
+      },
+      "12924379504690436420": {
+        "type": "shopify://apps/store-pickup-delivery-cr/blocks/app-embed/c3fec40a-5cb2-4a2b-851c-ed1eaed98975",
+        "disabled": true,
         "settings": {}
       }
     }
