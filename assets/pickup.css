@@ -1,0 +1,44 @@
+#pickup-container .cr-store-title{
+    text-align: left;
+}
+#pickup-container .cr-delivery-method.selected {
+    border-color: #e85e31;
+    background-color: #fff3dd;
+}
+
+#pickup-container #pickup-details input {
+    border-color: #e85e31;
+    border-radius:8px;
+}
+
+#pickup-container .activeStore {
+    background: #ffeac4;
+}
+
+#pickup-container #storeUL li a:hover:not(.header) {
+    background-color: #ffeac4;
+    color: #000;
+}
+#pickup-container #storeUL {
+    border-color: #e85e31;
+    border-radius:8px;
+}
+
+#pickup-container #pickup-details label {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+#pickup-container #storeUL li {
+    border-bottom: #e85e31;
+}
+
+#pickup-container #pickup-details div {
+    width: 100%;
+    
+}
+
+#pickup-container .cr-more-details {
+    border: 1px dashed #e85e31;
+    border-radius: 8px;
+}
