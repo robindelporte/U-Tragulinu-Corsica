@@ -64,7 +64,7 @@
         "item_fwR7wy"
       ],
       "settings": {
-        "text_pourquoi_titre": "Pourquoi choisir nos clémentines corses ?",
+        "text_pourquoi_titre": "{{ product.metafields.custom.pourquoi_titre.value }}",
         "richtext_pourquoi_rich_text": "<p>{{ product.metafields.custom.le_du_produit | metafield_tag }}</p>",
         "text_avantage_titre": "Avantage du produit",
         "text_avantage_item_1": "{{ product.metafields.custom.avantage_n_1.value }}",
