@@ -65,17 +65,40 @@
                         return item
                     })
 
-
                     this.cart.total_price = data.total_price;
                     this.cart.total_weight = data.total_weight;
                     this.cart.total_discount = data.total_discount;
                     this.cart.original_total_price = data.original_total_price;
+                    this.cart.attributes = data.attributes || {};
 
                     this.$dispatch('carttotalitems', data.item_count);
                 })
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+        },
+
+        /**
+         * Update cart attributes (for Christmas orders, etc.)
+         */
+        async updateCartAttributes() {
+            const attributes = {
+                'Commande Noël': this.cart.attributes['Commande Noël'] ? 'Oui' : ''
+            };
+            
+            await fetch(window.Shopify.routes.root + 'cart/update.js', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ attributes }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Cart attributes updated:', data.attributes);
+                this.cart.attributes = data.attributes || {};
+            })
+            .catch((error) => {
+                console.error('Error updating attributes:', error);
+            });
         },
 
         /**
@@ -146,7 +169,6 @@
          * @param event
          */
         showCartMessage(event) {
-            //console.log("dispatched showCartMessage", event)
             if(event?.detail?.status) {
                 this.cart.response.result = event.detail ?? {}
                 this.cart.response.show = true
@@ -166,202 +188,173 @@
         /**
          * @deprecated
          */
-        set open(open) { // deprecated use  LiquifyHelper instead
-            //console.warn('Deprecated "set open" in mini_cart')
+        set open(open) {
         },
         /**
          * @deprecated
          */
-        get open() { // deprecated use  LiquifyHelper instead
-            //console.warn('Deprecated "get open" in mini_cart')
+        get open() {
             return false;
         },
         /**
          * @deprecated
          */
-        set note(note) { // deprecated
-            //console.warn('Deprecated "set note" in mini_cart')
+        set note(note) {
             this.cart.note = note;
         },
         /**
          * @deprecated
          */
-        get note() { // deprecated
-            //console.warn('Deprecated "get note" in mini_cart')
+        get note() {
             return this.cart.note;
         },
         /**
          * @deprecated
          */
-        set attributes(attributes) { // deprecated
-            //console.warn('Deprecated "set attributes" in mini_cart')
+        set attributes(attributes) {
             this.cart.attributes = attributes;
         },
         /**
          * @deprecated
          */
-        get attributes() { // deprecated
-            //console.warn('Deprecated "get attributes" in mini_cart')
+        get attributes() {
             return this.cart.attributes;
         },
         /**
          * @deprecated
          */
-        set original_total_price(original_total_price) { //deprecated
-            //console.warn('Deprecated "set original_total_price" in mini_cart')
+        set original_total_price(original_total_price) {
             this.cart.original_total_price = original_total_price;
         },
         /**
          * @deprecated
          */
-        get original_total_price() { //deprecated
-            //console.warn('Deprecated "get original_total_price" in mini_cart')
+        get original_total_price() {
             return this.cart.original_total_price;
         },
         /**
          * @deprecated
          */
-        set total_price(total_price) { //deprecated
-            //console.warn('Deprecated "set total_price" in mini_cart')
+        set total_price(total_price) {
             this.cart.total_price = total_price;
         },
         /**
          * @deprecated
          */
-        get total_price() { //deprecated
-            //console.warn('Deprecated "get total_price" in mini_cart')
+        get total_price() {
             return this.cart.total_price;
         },
         /**
          * @deprecated
          */
-        set total_discount(total_discount) { //deprecated
-            //console.warn('Deprecated "set total_discount" in mini_cart')
+        set total_discount(total_discount) {
             this.cart.total_discount = total_discount;
         },
         /**
          * @deprecated
          */
-        get total_discount() { //deprecated
-            //console.warn('Deprecated "get total_discount" in mini_cart')
+        get total_discount() {
             return this.cart.total_discount;
         },
         /**
          * @deprecated
          */
-        set total_weight(total_weight) { //deprecated
-            //console.warn('Deprecated "set total_weight" in mini_cart')
+        set total_weight(total_weight) {
             this.cart.total_discount = total_weight;
         },
         /**
          * @deprecated
          */
-        get total_weight() { //deprecated
-            //console.warn('Deprecated "get total_weight" in mini_cart')
+        get total_weight() {
             return this.cart.total_weight;
         },
         /**
          * @deprecated
          */
-        set item_count(item_count) { //deprecated
-            //console.warn('Deprecated "set item_count" in mini_cart')
+        set item_count(item_count) {
             this.cart.total_discount = item_count;
         },
         /**
          * @deprecated
          */
-        get item_count() { //deprecated
-            //console.warn('Deprecated "get item_count" in mini_cart')
+        get item_count() {
             return this.cart.item_count;
         },
         /**
          * @deprecated
          */
-        set items_subtotal_price(items_subtotal_price) { //deprecated
-            //console.warn('Deprecated "set items_subtotal_price" in mini_cart')
+        set items_subtotal_price(items_subtotal_price) {
             this.cart.items_subtotal_price = items_subtotal_price;
         },
         /**
          * @deprecated
          */
-        get items_subtotal_price() { //deprecated
-            //console.warn('Deprecated "get items_subtotal_price" in mini_cart')
+        get items_subtotal_price() {
             return this.cart.items_subtotal_price;
         },
         /**
          * @deprecated
          */
         set products(products) {
-            //console.warn('Deprecated "set products" in mini_cart')
             this.cart.items = products;
         },
         /**
          * @deprecated
          */
         get products() {
-            //console.warn('Deprecated "get products" in mini_cart')
             return this.cart.items;
         },
         /**
          * @deprecated
          */
         set requires_shipping(requires_shipping) {
-            //console.warn('Deprecated "set requires_shipping" in mini_cart')
         },
         /**
          * @deprecated
          */
         get requires_shipping() {
-            //console.warn('Deprecated "get requires_shipping" in mini_cart')
             return false;
         },
         /**
          * @deprecated
          */
-        set currency(currency) { //deprecated
-            //console.warn('Deprecated "set currency" in mini_cart')
+        set currency(currency) {
             this.cart.currency = currency;
         },
         /**
          * @deprecated
          */
-        get currency() { //deprecated
-            //console.warn('Deprecated "get currency" in mini_cart')
+        get currency() {
             return this.cart.currency;
         },
         /**
          * @deprecated
          */
-        set cart_level_discount_applications(cart_level_discount_applications) { //deprecated
-            //console.warn('Deprecated "set cart_level_discount_applications" in mini_cart')
+        set cart_level_discount_applications(cart_level_discount_applications) {
             this.cart.cart_level_discount_applications = cart_level_discount_applications;
         },
         /**
          * @deprecated
          */
-        get cart_level_discount_applications() { //deprecated
-            //console.warn('Deprecated "get cart_level_discount_applications" in mini_cart')
+        get cart_level_discount_applications() {
             return this.cart.cart_level_discount_applications;
         },
         /**
          * @deprecated
          */
-        set cartApiResponse(cartApiResponse) { //deprecated
-            //console.warn('Deprecated "set cartApiResponse" in mini_cart')
+        set cartApiResponse(cartApiResponse) {
             this.cart.cartApiResponse = cartApiResponse;
         },
         /**
          * @deprecated
          */
-        get cartApiResponse() { //deprecated
-            //console.warn('Deprecated "get cartApiResponse" in mini_cart')
+        get cartApiResponse() {
             return this.cart.response;
         },
         /**
          * @deprecated
          */
-        set total(total) { //deprecated
-            //console.warn('Deprecated "set total" in mini_cart')
+        set total(total) {
             this.cart.item_count = total.items;
             this.cart.total_price = total.price;
             this.cart.total_weight = total.weight;
@@ -370,8 +363,7 @@
         /**
          * @deprecated
          */
-        get total() { //deprecated
-            //console.warn('Deprecated "get total" in mini_cart')
+        get total() {
             return {
                 items: this.cart.item_count,
                 price: this.cart.total_price,
@@ -522,6 +514,34 @@
                                 <div li-js-object="cartApiResponse?.result?.message" class="text-size-regular text-weight-medium" x-text="cartApiResponse?.result?.message">Response</div>
                               </div>
                             </div>
+                            
+<!-- CHECKBOX COMMANDE NOËL -->
+<div class="mini-cart_christmas-option">
+  <label class="w-checkbox form_checkbox" style="display: flex; align-items: center;">
+    <div 
+      class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox-icon"
+      :class="{ 'w--redirected-checked': cart.attributes['Commande Noël'] === 'Oui' }"
+    ></div>
+    <input 
+      type="checkbox" 
+      style="opacity:0;position:absolute;z-index:-1"
+      :checked="cart.attributes['Commande Noël'] === 'Oui'"
+      @change="cart.attributes['Commande Noël'] = $event.target.checked ? 'Oui' : ''; updateCartAttributes()"
+    >
+    <span class="form_checkbox-label text-size-medium">🎄 Commande spéciale Noël</span>
+    <div style="margin-left: 1rem;">
+      <div data-tippy-content="En cochant cette case, votre commande sera traitée comme une précommande spéciale Noël. Livraison uniquement les 22, 23 ou 24 décembre. Aucune modification d'adresse ou de date possible. Précommandes ouvertes jusqu'au 19 décembre minuit.">
+        <div class="icon-embed-xsmall w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="12" fill="#FA5F2B"></circle>
+          <circle cx="12" cy="12" r="7.5" stroke="#FFF3DE"></circle>
+          <path d="M11.5999 14.0197C11.5532 13.7064 11.5699 13.4297 11.6499 13.1897C11.7299 12.943 11.8399 12.723 11.9799 12.5297C12.1265 12.3297 12.2732 12.1397 12.4199 11.9597C12.5732 11.7797 12.7032 11.5997 12.8099 11.4197C12.9165 11.2397 12.9699 11.043 12.9699 10.8297C12.9699 10.6497 12.9332 10.4864 12.8599 10.3397C12.7865 10.193 12.6765 10.0764 12.5299 9.98969C12.3899 9.90302 12.2132 9.85969 11.9999 9.85969C11.7865 9.85969 11.5799 9.91302 11.3799 10.0197C11.1865 10.1197 11.0099 10.2597 10.8499 10.4397L10.3799 10.0097C10.5932 9.76969 10.8399 9.57302 11.1199 9.41969C11.4065 9.25969 11.7332 9.17969 12.0999 9.17969C12.4332 9.17969 12.7265 9.24635 12.9799 9.37969C13.2332 9.50635 13.4266 9.68969 13.5599 9.92969C13.6999 10.163 13.7699 10.4464 13.7699 10.7797C13.7699 11.0397 13.7165 11.2764 13.6099 11.4897C13.5032 11.6964 13.3699 11.8964 13.2099 12.0897C13.0565 12.2764 12.9065 12.4664 12.7599 12.6597C12.6132 12.8464 12.4965 13.0497 12.4099 13.2697C12.3232 13.4897 12.2932 13.7397 12.3199 14.0197H11.5999ZM11.9799 16.1197C11.8199 16.1197 11.6799 16.063 11.5599 15.9497C11.4465 15.8297 11.3899 15.6797 11.3899 15.4997C11.3899 15.3064 11.4465 15.153 11.5599 15.0397C11.6799 14.9197 11.8199 14.8597 11.9799 14.8597C12.1465 14.8597 12.2865 14.9197 12.3999 15.0397C12.5199 15.153 12.5799 15.3064 12.5799 15.4997C12.5799 15.6797 12.5199 15.8297 12.3999 15.9497C12.2865 16.063 12.1465 16.1197 11.9799 16.1197Z" fill="#FFF3DE"></path>
+        </svg></div>
+      </div>
+    </div>
+  </label>
+</div>
+<!-- FIN CHECKBOX COMMANDE NOËL -->
+                            
                             <a class="button is-cart" href="/checkout"><span>
 {{ section.settings.text_mini_cart_go_to_checkout }}
 </span></a>
