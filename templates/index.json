@@ -16,8 +16,14 @@
           "type": "titre",
           "name": "Titre",
           "settings": {
-            "richtext_titre": "<h1>Les <strong>vraies clémentines</strong> sont de retour<br/>                    </h1>"
+            "richtext_titre": "<h1>Le <strong>meilleur de la Corse</strong> à portée de main</h1>"
           },
+          "blocks": {}
+        },
+        "espace_small_m6P4mD": {
+          "type": "espace-small",
+          "name": "Espace : Small",
+          "settings": {},
           "blocks": {}
         },
         "paragraphe-italique": {
@@ -38,7 +44,7 @@
           "type": "paragraphe",
           "name": "Paragraphe",
           "settings": {
-            "text_paragraphe": "Chaque année vous raffolez de nos clémentines, et elles sont de retour dans vos caisses à partager ! Commandez les dès maintenant."
+            "text_paragraphe": "Clémentines, avocats, pomelos... Des produits authentiques, cultivés sans traitement, qui arrivent ultra-frais chez vous. Commandez dès maintenant."
           },
           "blocks": {}
         },
@@ -79,6 +85,7 @@
       },
       "block_order": [
         "titre",
+        "espace_small_m6P4mD",
         "paragraphe-italique",
         "espace_small_htweMP",
         "paragraphe",
@@ -88,8 +95,8 @@
         "temoignage-accueil"
       ],
       "settings": {
-        "image_image": "shopify://shop_images/clementines-2.webp",
-        "image_image_principale": "shopify://shop_images/clementines-2.webp"
+        "image_image": "shopify://shop_images/CLEMENTINENOEL.jpg",
+        "image_image_principale": "shopify://shop_images/clementine-saison.webp"
       }
     },
     "icones": {
