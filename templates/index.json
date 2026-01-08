@@ -76,9 +76,9 @@
           "type": "temoignage-accueil",
           "name": "Témoignage Accueil",
           "settings": {
-            "text_nom": "Liliane B.",
-            "text_avis": "Les clémentines de Corse. Petites, mais hyper juteuses, d’une douceur incomparable, un pur régal comme les précédentes commandes et je les ai achetées qu’à U-Tragullinu.",
-            "image_image": "shopify://shop_images/tarte.webp"
+            "text_nom": "Alain D.",
+            "text_avis": "Petits mais costauds! Beaucoup de saveurs.Dans un magasin de produits exotiques où j'avais fait de nombreux achats la vendeuse m'a offert un avocat du Brésil, quatre fois plus gros. Beaucoup d'eau et pas beaucoup de gout.",
+            "image_image": "shopify://shop_images/avocat_bio_2.jpg"
           },
           "blocks": {}
         }
@@ -96,7 +96,7 @@
       ],
       "settings": {
         "image_image": "shopify://shop_images/CLEMENTINENOEL.jpg",
-        "image_image_principale": "shopify://shop_images/clementine-saison.webp"
+        "image_image_principale": "shopify://shop_images/avocats_bio.jpg"
       }
     },
     "icones": {
@@ -144,7 +144,7 @@
       "type": "produits",
       "name": "Produits",
       "settings": {
-        "richtext_titre": "<h2>Nos <strong>meilleures </strong>ventes<br/></h2>",
+        "richtext_titre": "<h2>Nos <strong>meilleures </strong>ventes<br/>                  </h2>",
         "collection_collection": "meilleures-ventes",
         "collection_collection_limit": 4,
         "url_bouton_lien": "shopify://collections/meilleures-ventes",
