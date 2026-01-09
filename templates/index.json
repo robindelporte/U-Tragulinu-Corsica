@@ -58,7 +58,7 @@
           "type": "boutons",
           "name": "Boutons",
           "settings": {
-            "url_bouton_1_lien": "shopify://products/clementines-bio-corse",
+            "url_bouton_1_lien": "shopify://products/avocats-bio-corse",
             "text_bouton_1_texte": "Commander",
             "checkbox_afficher_le_2eme_bouton": false,
             "url_bouton_2_lien": "shopify://collections/concours",
