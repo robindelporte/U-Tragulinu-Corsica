@@ -44,7 +44,7 @@
           "type": "paragraphe",
           "name": "Paragraphe",
           "settings": {
-            "text_paragraphe": "Clémentines, avocats, pomelos... Des produits authentiques, cultivés sans traitement, qui arrivent ultra-frais chez vous. Commandez dès maintenant."
+            "text_paragraphe": "Dernier appel : les Oranges à prix doux !La saison s'achève chez U Tragulinu. Profitez de nos dernières oranges bio à prix réduit avant la clôture :12€ la caisse au lieu de 14€Soit 3,43€/kg seulement !Faites le plein de vitamines une dernière fois. Un immense merci pour votre fidélité cette saison et à l'année prochaine !"
           },
           "blocks": {}
         },
@@ -58,7 +58,7 @@
           "type": "boutons",
           "name": "Boutons",
           "settings": {
-            "url_bouton_1_lien": "shopify://products/avocats-bio-corse",
+            "url_bouton_1_lien": "shopify://products/oranges-bio-origine-corse",
             "text_bouton_1_texte": "Commander",
             "checkbox_afficher_le_2eme_bouton": false,
             "url_bouton_2_lien": "shopify://collections/concours",
@@ -96,7 +96,7 @@
       ],
       "settings": {
         "image_image": "shopify://shop_images/CLEMENTINENOEL.jpg",
-        "image_image_principale": "shopify://shop_images/avocats_bio.jpg"
+        "image_image_principale": "shopify://shop_images/WhatsApp_Image_2026-03-18_at_11.10.16.jpg"
       }
     },
     "icones": {
@@ -171,6 +171,8 @@
         "loox_reviews_loox_agg_section_FPFG66": {
           "type": "shopify://apps/loox-reviews/blocks/loox-agg-section/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
           "settings": {
+            "reviews_to_display": "",
+            "default_tab": "automatic",
             "only_photos": false,
             "hide_thumbnails": true,
             "product_handle": "",
