@@ -44,7 +44,7 @@
           "type": "paragraphe",
           "name": "Paragraphe",
           "settings": {
-            "text_paragraphe": "Dernier appel : les Oranges à prix doux ! La saison s'achève chez U Tragulinu. Profitez de nos dernières oranges bio à prix réduit avant la clôture : 10.50€ la caisse au lieu de 14€ Soit 3€/kg seulement ! Faites le plein de vitamines une dernière fois. Un immense merci pour votre fidélité cette saison et à l'année prochaine !"
+            "text_paragraphe": ""
           },
           "blocks": {}
         },
@@ -58,7 +58,7 @@
           "type": "boutons",
           "name": "Boutons",
           "settings": {
-            "url_bouton_1_lien": "shopify://products/oranges-bio-origine-corse",
+            "url_bouton_1_lien": "shopify://collections/fruits-agrumes",
             "text_bouton_1_texte": "Commander",
             "checkbox_afficher_le_2eme_bouton": false,
             "url_bouton_2_lien": "shopify://collections/concours",
@@ -76,9 +76,8 @@
           "type": "temoignage-accueil",
           "name": "Témoignage Accueil",
           "settings": {
-            "text_nom": "Sandrine J.",
-            "text_avis": "Douces et délicieuses",
-            "image_image": "shopify://shop_images/gpMbGSSMd_mid.jpg"
+            "text_nom": "Triki O.",
+            "text_avis": "Bonjour , encore et toujours bien servie !! Jamais dessus !Ont en parle plus de la qualité de vos fuit moi en tout cas je ne commande que chez vous et le patron et très gentil très souriant ça fait du bien merci à bientôt."
           },
           "blocks": {}
         }
@@ -96,7 +95,7 @@
       ],
       "settings": {
         "image_image": "shopify://shop_images/CLEMENTINENOEL.jpg",
-        "image_image_principale": "shopify://shop_images/hero-image.avif"
+        "image_image_principale": "shopify://shop_images/file_00000000645c71fb9bae629f62f0cf04.png"
       }
     },
     "icones": {
