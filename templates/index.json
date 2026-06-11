@@ -59,7 +59,7 @@
           "name": "Boutons",
           "settings": {
             "url_bouton_1_lien": "shopify://products/melons-de-corse-lot-de-3",
-            "text_bouton_1_texte": "Commander",
+            "text_bouton_1_texte": "Commander nos melons",
             "checkbox_afficher_le_2eme_bouton": false,
             "url_bouton_2_lien": "shopify://collections/concours",
             "text_bouton_2_texte": "Créez une alerte"
