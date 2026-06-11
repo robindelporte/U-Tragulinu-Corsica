@@ -58,7 +58,7 @@
           "type": "boutons",
           "name": "Boutons",
           "settings": {
-            "url_bouton_1_lien": "shopify://collections/fruits-agrumes",
+            "url_bouton_1_lien": "shopify://products/melons-de-corse-lot-de-3",
             "text_bouton_1_texte": "Commander",
             "checkbox_afficher_le_2eme_bouton": false,
             "url_bouton_2_lien": "shopify://collections/concours",
@@ -95,7 +95,7 @@
       ],
       "settings": {
         "image_image": "shopify://shop_images/CLEMENTINENOEL.jpg",
-        "image_image_principale": "shopify://shop_images/file_00000000645c71fb9bae629f62f0cf04.png"
+        "image_image_principale": "shopify://shop_images/WhatsAppImage2026-06-10at12.09.13_1.jpg"
       }
     },
     "icones": {
