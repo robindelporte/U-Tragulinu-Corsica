@@ -60,9 +60,9 @@
           "settings": {
             "url_bouton_1_lien": "shopify://collections/fruits-agrumes",
             "text_bouton_1_texte": "Commander nos fruits d'Été",
-            "checkbox_afficher_le_2eme_bouton": false,
-            "url_bouton_2_lien": "shopify://collections/concours",
-            "text_bouton_2_texte": "Créez une alerte"
+            "checkbox_afficher_le_2eme_bouton": true,
+            "url_bouton_2_lien": "shopify://products/planche-charcuterie-corse-porc-noir-nustrale-200g",
+            "text_bouton_2_texte": "Commandez votre planche de charcuterie"
           },
           "blocks": {}
         },
