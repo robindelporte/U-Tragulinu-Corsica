@@ -76,8 +76,9 @@
           "type": "temoignage-accueil",
           "name": "Témoignage Accueil",
           "settings": {
-            "text_nom": "Amelie B.",
-            "text_avis": "J'ai retrouvé le vrai goût du melon."
+            "text_nom": "Renee G.",
+            "text_avis": "Très bonnes. Excellent en  cette période de canicule.",
+            "image_image": "shopify://shop_images/7TIe8XbLA_mid.jpg"
           },
           "blocks": {}
         }
