@@ -16,7 +16,7 @@
           "type": "titre",
           "name": "Titre",
           "settings": {
-            "richtext_titre": "<h1>Le <strong>meilleur de la Corse</strong> à portée de main</h1>"
+            "richtext_titre": "<h1>Le <strong>meilleur de la Corse</strong> à portée de main, Prochaine livraison debut septembre</h1>"
           },
           "blocks": {}
         },
@@ -76,8 +76,8 @@
           "type": "temoignage-accueil",
           "name": "Témoignage Accueil",
           "settings": {
-            "text_nom": "Triki O.",
-            "text_avis": "Bonjour , encore et toujours bien servie !! Jamais dessus !Ont en parle plus de la qualité de vos fuit moi en tout cas je ne commande que chez vous et le patron et très gentil très souriant ça fait du bien merci à bientôt."
+            "text_nom": "Amelie B.",
+            "text_avis": "J'ai retrouvé le vrai goût du melon."
           },
           "blocks": {}
         }
